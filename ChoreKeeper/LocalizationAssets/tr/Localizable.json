@@ -1,0 +1,563 @@
+{
+  "app": {
+    "name": "ChoreKeeper",
+    "tagline": "Ev işlerini çocuklar için eğlenceli, ebeveynler için kolay hale getirir"
+  },
+  "common": {
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Tamam",
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "warning": "Uyarı",
+    "info": "Bilgi",
+    "retry": "Tekrar Dene",
+    "search": "Ara",
+    "settings": "Ayarlar",
+    "logout": "Çıkış Yap",
+    "yes": "Evet",
+    "no": "Hayır",
+    "confirm": "Onayla",
+    "warning_permanent": "UYARI: Bu işlem kalıcıdır ve geri alınamaz.",
+    "this_will": "Bu işlem",
+    "close": "Kapat",
+    "finish": "Bitir",
+    "skip": "Atla",
+    "switch_user": "Kullanıcı Değiştir",
+    "login_as_different_user": "Farklı kullanıcı olarak giriş yap",
+    "no_remembered_users": "Hatırlanan kullanıcı yok",
+    "child": "Çocuk"
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "signup": "Kaydol",
+    "email": "E-posta",
+    "password": "Şifre",
+    "username": "Kullanıcı Adı",
+    "forgot_password": "Şifreni mi unuttun?",
+    "create_account": "Hesap Oluştur",
+    "or_continue_with": "Veya şununla devam et",
+    "remember_email": "E-postayı hatırla",
+    "remember_username": "Kullanıcı adını hatırla",
+    "auto_login": "Otomatik giriş",
+    "login_with_google": "Google ile giriş yap",
+    "login_with_apple": "Apple ile giriş yap",
+    "login_with_facebook": "Facebook ile giriş yap",
+    "login_as_parent": "Ben bir ebeveynin",
+    "login_as_child": "Ben bir çocuğum",
+    "select_role": "Rolünü seç",
+    "reset_password": "Şifreyi Sıfırla",
+    "change_password": "Şifreyi Değiştir",
+    "current_password": "Mevcut Şifre",
+    "new_password": "Yeni Şifre",
+    "confirm_password": "Şifreyi Onayla",
+    "passwords_dont_match": "Şifreler eşleşmiyor",
+    "password_changed": "Şifre değiştirildi",
+    "password_requirements": "Şifre en az 8 karakter uzunluğunda olmalı ve harfler, rakamlar ve semboller içermelidir",
+    "biometric_login": "Biyometrik giriş",
+    "enable_biometric": "Biyometrik girişi etkinleştir?",
+    "biometric_prompt": "Giriş yapmak için parmak izini/yüzünü tara",
+    "not_available": "Bu cihazda kullanılamıyor",
+    "verify_your_email": "E-postanı doğrula",
+    "verification_code_sent_message": "{email} adresine bir doğrulama kodu gönderdik. E-postanı kontrol et ve aşağıya kodu gir.",
+    "verification_code": "Doğrulama kodu",
+    "enter_6_digit_code": "6 haneli kodu gir",
+    "please_enter_verification_code": "Lütfen doğrulama kodunu gir",
+    "verification_code_must_be_6_digits": "Doğrulama kodu 6 haneli olmalıdır",
+    "resend_code": "Kodu yeniden gönder",
+    "resend_code_countdown": "Kodu yeniden gönder ({seconds}s)",
+    "verify_email": "E-postayı doğrula",
+    "email_verified": "E-posta doğrulandı",
+    "email_verification_banner": "Hesap güvenliğini sağlamak için e-posta adresini doğrula",
+    "verify_now": "Şimdi doğrula"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "ChoreKeeper'a Hoş Geldin",
+      "subtitle": "Ev işlerini çocuklar için eğlenceli, ebeveynler için kolay hale getirir",
+      "getStarted": "Başla"
+    },
+    "userType": {
+      "title": "Ben bir...",
+      "parent": "Ebeveyn",
+      "child": "Çocuk"
+    },
+    "createAccount": {
+      "title": "Hesap Oluştur",
+      "email": "E-posta",
+      "password": "Şifre",
+      "confirmPassword": "Şifreyi Onayla",
+      "createAccount": "Hesap Oluştur",
+      "alreadyHaveAccount": "Zaten hesabın var mı? Giriş yap"
+    },
+    "signIn": {
+      "title": "Giriş Yap",
+      "email": "E-posta",
+      "password": "Şifre",
+      "signIn": "Giriş Yap",
+      "forgotPassword": "Şifreni mi unuttun?",
+      "dontHaveAccount": "Hesabın yok mu? Bir tane oluştur"
+    },
+    "skip": "Eğitimi atla",
+    "back": "Geri",
+    "next": "İleri",
+    "finish": "Başla",
+    "close": "Kapat",
+    "parent": {
+      "welcome": {
+        "title": "ChoreKeeper'a Hoş Geldin!",
+        "description": "Hesabını sadece birkaç dakika içinde kuralım. ChoreKeeper, ev işlerini yönetmene, puanları takip etmene ve çocuklarını görevleri tamamladıkları için ödüllendirmene yardımcı olur."
+      },
+      "features": {
+        "title": "ChoreKeeper Neler Sunar",
+        "description": "ChoreKeeper, ev işleri oluşturmak ve atamak, puanları takip etmek ve çocukların için ödüller belirlemek için araçlar sağlar. Her şeyi tek bir yerden yönetebilirsin!"
+      },
+      "chores": {
+        "title": "Ev İşlerini Yönetme",
+        "description": "Ev işleri oluştur, son tarihleri belirle ve çocuklarına ata. Bildirimler alacaklar ve bitirdiklerinde ev işlerini tamamlandı olarak işaretleyebilecekler."
+      },
+      "rewards": {
+        "title": "Ödülleri Ayarlama",
+        "description": "Çocuklarının puan toplayarak kazanabilecekleri ödüller oluştur. Puan eşikleri belirle ve hedeflerine doğru çalışmalarına izin ver!"
+      },
+      "add_child": {
+        "title": "Çocuk Ekleme",
+        "description": "Çocuk eklemek için Aile sekmesine git ve '+' düğmesine dokun. Kullanıcı adlarını ve isimlerini gir, ardından hesap kurulumunu tamamlamaları için kurulum kodunu onlarla paylaş."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "ChoreKeeper'a Hoş Geldin!",
+        "description": "ChoreKeeper, ev işlerini takip etmene ve onları tamamlayarak puan kazanmana yardımcı olur. Uygulamayı nasıl kullanacağımızı öğrenelim!"
+      },
+      "chores": {
+        "title": "Ev İşlerini Görüntüleme ve Tamamlama",
+        "description": "Ev işlerin ana ekranda görünecek. Ayrıntıları görmek için bir ev işine dokun ve bitirdiğinde tamamlandı olarak işaretle. Ebeveynlerin tamamlanan ev işlerini doğrulayacak."
+      },
+      "points": {
+        "title": "Puanları ve Ödülleri Takip Etme",
+        "description": "Ev işlerini tamamlayarak puan kazanırsın. Toplam puanını kontrol et ve hangi ödülleri kazanabileceğini gör. Her ödüle doğru ilerlemeni takip et!"
+      },
+      "settings": {
+        "title": "Kişisel Ayarlar",
+        "description": "Avatarını değiştirerek ve ev işleri için hatırlatıcılar ayarlayarak profilini özelleştirebilirsin. Bu seçeneklere erişmek için Ayarlar simgesine dokun."
+      }
+    }
+  },
+  "dashboard": {
+    "parent": {
+      "title": "Ebeveyn Paneli",
+      "children": "Çocuklar",
+      "chores": "Ev İşleri",
+      "rewards": "Ödüller",
+      "settings": "Ayarlar",
+      "family": "Aile",
+      "statistics": "İstatistikler",
+      "calendar": "Takvim"
+    },
+    "child": {
+      "title": "Panelim",
+      "myChores": "Ev İşlerim",
+      "myRewards": "Ödüllerim",
+      "myPoints": "Puanlarım",
+      "settings": "Ayarlar",
+      "completedChores": "Tamamlanan İşler",
+      "achievements": "Başarılar"
+    },
+    "cork_board": "Mantar Pano",
+    "push_pin": "Raptiye",
+    "pinned_item": "Sabitlenmiş Öğe",
+    "calendar_item": "Takvim",
+    "chores_item": "Ev İşleri Listesi",
+    "rewards_item": "Ödüller",
+    "points_item": "Puan Özeti",
+    "family_item": "Aile Yönetimi",
+    "statistics_item": "İstatistikler ve Raporlar",
+    "achievements_item": "Başarılar",
+    "settings_gear": "Ayarlar Menüsü"
+  },
+  "chores": {
+    "title": "Ev İşleri",
+    "addChore": "Ev İşi Ekle",
+    "editChore": "Ev İşini Düzenle",
+    "deleteChore": "Ev İşini Sil",
+    "choreName": "Ev İşi Adı",
+    "choreDescription": "Açıklama",
+    "dueDate": "Son Tarih",
+    "dueTime": "Son Saat",
+    "assignTo": "Şuna Ata",
+    "points": "Puanlar",
+    "frequency": {
+      "title": "Sıklık",
+      "once": "Bir kez",
+      "daily": "Günlük",
+      "weeklyOnDay": "Haftada belirli günlerde",
+      "monthly": "Aylık",
+      "weekly": "Weekly",
+      "custom": "Custom"
+    },
+    "status": {
+      "title": "Durum",
+      "pending": "Beklemede",
+      "pendingVerification": "Doğrulama Bekliyor",
+      "completed": "Tamamlandı",
+      "missed": "Kaçırıldı",
+      "overdue": "Gecikmiş",
+      "verified": "Doğrulanmış"
+    },
+    "markComplete": "Tamamlandı olarak işaretle",
+    "markIncomplete": "Tamamlanmadı olarak işaretle",
+    "verify": "Doğrula",
+    "reject": "Reddet",
+    "noChores": "Ev işi bulunamadı",
+    "deleteConfirmation": "Bu ev işini silmek istediğinden emin misin?",
+    "recurring": "Tekrarlanan",
+    "days": "Günler",
+    "weeks": "Haftalar",
+    "months": "Aylar",
+    "every": "Her",
+    "on_days": "Şu günlerde",
+    "monday": "Pazartesi",
+    "tuesday": "Salı",
+    "wednesday": "Çarşamba",
+    "thursday": "Perşembe",
+    "friday": "Cuma",
+    "saturday": "Cumartesi",
+    "sunday": "Pazar",
+    "confirm_delete": "Bu ev işini silmek istediğinden emin misin?",
+    "delete_recurring": "Tüm tekrarları mı yoksa sadece bunu mu silmek istiyorsun?",
+    "all_occurrences": "Tüm tekrarlar",
+    "just_this_one": "Sadece bu",
+    "view_calendar": "Takvimi görüntüle",
+    "add_first_chore": "İlk ev işini ekle",
+    "add": "Add Chore",
+    "edit": "Edit Chore",
+    "delete": "Delete Chore",
+    "complete": "Complete",
+    "empty": "No chores found",
+    "parentChores": "Parent Chores",
+    "childChores": "Child Chores",
+    "details": "Details",
+    "schedule": "Schedule",
+    "actions": "Actions",
+    "noDescription": "No description provided",
+    "noDueDate": "No due date",
+    "lastCompleted": "Last Completed",
+    "specificDays": "Specific Days",
+    "dayOfMonth": "Day of Month",
+    "rejectReason": {
+      "title": "Rejection Reason",
+      "placeholder": "Enter reason for rejection"
+    },
+    "filter": {
+      "title": "Filter Chores",
+      "all": "All",
+      "pending": "Pending",
+      "completed": "Completed",
+      "pendingVerification": "Pending Verification",
+      "missed": "Missed",
+      "status": "Status",
+      "category": "Category"
+    },
+    "form": {
+      "createTitle": "Create Chore",
+      "editTitle": "Edit Chore",
+      "basicInfo": "Basic Information",
+      "title": "Title",
+      "description": "Description",
+      "icon": "Icon",
+      "selectIcon": "Select Icon",
+      "assignedChild": "Assigned Child",
+      "selectChild": "Select Child",
+      "noChild": "No Child (Parent Chore)",
+      "dueDate": "Due Date",
+      "hasDueDate": "Has Due Date",
+      "date": "Date",
+      "time": "Time",
+      "frequency": "Frequency",
+      "dayOfMonth": "Day of Month",
+      "points": "Points",
+      "pointValue": "Point Value",
+      "countTowardsDaily": "Count Towards Daily Totals",
+      "countTowardsWeekly": "Count Towards Weekly Totals",
+      "countTowardsMonthly": "Count Towards Monthly Totals",
+      "subtractPointsWhenMissed": "Subtract Points When Missed"
+    }
+  },
+  "rewards": {
+    "title": "Ödüller",
+    "addReward": "Ödül Ekle",
+    "editReward": "Ödülü Düzenle",
+    "deleteReward": "Ödülü Sil",
+    "rewardName": "Ödül Adı",
+    "rewardDescription": "Açıklama",
+    "pointCost": "Puan Maliyeti",
+    "availableUntil": "Şu tarihe kadar geçerli",
+    "claimReward": "Ödülü Talep Et",
+    "noRewards": "Ödül bulunamadı",
+    "deleteConfirmation": "Bu ödülü silmek istediğinden emin misin?",
+    "add_reward": "Ödül Ekle",
+    "edit_reward": "Ödülü Düzenle",
+    "delete_reward": "Ödülü Sil",
+    "reward_name": "Ödül Adı",
+    "please_enter_reward_name": "Lütfen bir ödül adı gir",
+    "description": "Açıklama",
+    "points_required": "Gereken Puanlar",
+    "point_threshold": "Puan Eşiği",
+    "please_enter_point_threshold": "Lütfen bir puan eşiği gir",
+    "reward_type": "Ödül Türü",
+    "as_reached": "Ulaşıldığında",
+    "highest_reached": "En Yüksek Ulaşılan",
+    "allow_negative_threshold": "Negatif eşiğe izin ver",
+    "negative_allowed": "Negatife izin verildi",
+    "available_to": "Şuna Uygun",
+    "status": "Durum",
+    "available": "Mevcut",
+    "claimed": "Talep Edildi",
+    "redeemed": "Kullanıldı",
+    "expired": "Süresi Doldu",
+    "claim": "Talep Et",
+    "redeem": "Kullan",
+    "no_rewards": "Ödül bulunamadı",
+    "add_first_reward": "İlk ödülünü ekle",
+    "confirm_delete": "Bu ödülü silmek istediğinden emin misin?",
+    "delete_reward_confirmation": "'{name}' ödülünü silmek istediğinden emin misin?",
+    "not_enough_points": "Bu ödülü talep etmek için yeterli puan yok",
+    "reward_claimed": "Ödül talep edildi",
+    "reward_redeemed": "Ödül kullanıldı",
+    "claim_reward": "Ödülü Talep Et",
+    "claim_reward_confirmation": "'{name}' ödülünü talep etmek istediğinden emin misin?",
+    "redeemed_on": "{date} tarihinde kullanıldı",
+    "expired_on": "{date} tarihinde süresi doldu",
+    "earned_rewards": "Kazanılan Ödüller",
+    "upcoming_rewards": "Yaklaşan Ödüller",
+    "no_upcoming_rewards": "Yaklaşan ödül yok",
+    "rewards_management": "Ödül Yönetimi",
+    "you_have_earned_rewards": "{count} ödül kazandın!",
+    "empty": {
+      "parent": "Henüz ödül oluşturulmadı",
+      "available": "Mevcut ödül yok",
+      "earned": "Henüz kazanılan ödül yok"
+    },
+    "period": {
+      "daily": "Günlük",
+      "weekly": "Haftalık",
+      "monthly": "Aylık"
+    },
+    "points": "puan",
+    "detail": "Ödül Detayları",
+    "unlockedOnly": "Sadece Açılanları Göster"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "account": "Hesap",
+    "profile": "Profil",
+    "notifications": "Bildirimler",
+    "appearance": "Görünüm",
+    "language": "Dil",
+    "help": "Yardım",
+    "about": "Hakkında",
+    "signOut": "Çıkış Yap",
+    "deleteAccount": "Hesabı Sil",
+    "theme": {
+      "title": "Tema",
+      "light": "Açık",
+      "dark": "Koyu",
+      "system": "Sistem"
+    },
+    "security": "Güvenlik ve Erişim",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları",
+    "version": "Sürüm",
+    "dark_mode": "Koyu Mod",
+    "light_mode": "Açık Mod",
+    "system_theme": "Sistem temasını kullan",
+    "high_contrast": "Yüksek Kontrast",
+    "use_device_language": "Cihaz dilini kullan",
+    "select_language": "Dil seç",
+    "biometric_login": "Biyometrik giriş",
+    "auto_login": "Otomatik giriş",
+    "chore_management": "Ev İşi Yönetimi",
+    "default_due_time": "Varsayılan son saat",
+    "auto_verification": "Otomatik doğrulama",
+    "auto_verification_subtitle": "Ev işlerinin ebeveyn doğrulaması olmadan tamamlandı olarak işaretlenmesine izin ver",
+    "customization": "Özelleştirme",
+    "custom_icons": "Özel simgeler",
+    "custom_icons_subtitle": "Özel simgeler yükle ve yönet",
+    "theme_settings": "Tema ayarları",
+    "requires_tier": "{tier} hesabı gerektirir",
+    "avatar": "Avatar",
+    "change_avatar": "Avatarı değiştir",
+    "avatar_updated": "Avatar güncellendi"
+  },
+  "tutorial": {
+    "title": "Eğitim",
+    "skip": "Eğitimi atla",
+    "back": "Geri",
+    "next": "İleri",
+    "finish": "Başla",
+    "close": "Kapat",
+    "parent": {
+      "welcome": {
+        "title": "ChoreKeeper'a Hoş Geldin!",
+        "description": "Hesabını sadece birkaç dakika içinde kuralım. ChoreKeeper, ev işlerini yönetmene, puanları takip etmene ve çocuklarını görevleri tamamladıkları için ödüllendirmene yardımcı olur."
+      },
+      "features": {
+        "title": "ChoreKeeper Neler Sunar",
+        "description": "ChoreKeeper, ev işleri oluşturmak ve atamak, puanları takip etmek ve çocukların için ödüller belirlemek için araçlar sağlar. Her şeyi tek bir yerden yönetebilirsin!"
+      },
+      "chores": {
+        "title": "Ev İşlerini Yönetme",
+        "description": "Ev işleri oluştur, son tarihleri belirle ve çocuklarına ata. Bildirimler alacaklar ve bitirdiklerinde ev işlerini tamamlandı olarak işaretleyebilecekler."
+      },
+      "rewards": {
+        "title": "Ödülleri Ayarlama",
+        "description": "Çocuklarının puan toplayarak kazanabilecekleri ödüller oluştur. Puan eşikleri belirle ve hedeflerine doğru çalışmalarına izin ver!"
+      },
+      "add_child": {
+        "title": "Çocuk Ekleme",
+        "description": "Çocuk eklemek için Aile sekmesine git ve '+' düğmesine dokun. Kullanıcı adlarını ve isimlerini gir, ardından hesap kurulumunu tamamlamaları için kurulum kodunu onlarla paylaş."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "ChoreKeeper'a Hoş Geldin!",
+        "description": "ChoreKeeper, ev işlerini takip etmene ve onları tamamlayarak puan kazanmana yardımcı olur. Uygulamayı nasıl kullanacağımızı öğrenelim!"
+      },
+      "chores": {
+        "title": "Ev İşlerini Görüntüleme ve Tamamlama",
+        "description": "Ev işlerin ana ekranda görünecek. Ayrıntıları görmek için bir ev işine dokun ve bitirdiğinde tamamlandı olarak işaretle. Ebeveynlerin tamamlanan ev işlerini doğrulayacak."
+      },
+      "points": {
+        "title": "Puanları ve Ödülleri Takip Etme",
+        "description": "Ev işlerini tamamlayarak puan kazanırsın. Toplam puanını kontrol et ve hangi ödülleri kazanabileceğini gör. Her ödüle doğru ilerlemeni takip et!"
+      },
+      "settings": {
+        "title": "Kişisel Ayarlar",
+        "description": "Avatarını değiştirerek ve ev işleri için hatırlatıcılar ayarlayarak profilini özelleştirebilirsin. Bu seçeneklere erişmek için Ayarlar simgesine dokun."
+      }
+    }
+  },
+  "customization": {
+    "title": "Özelleştirme",
+    "avatars": "Avatarlar",
+    "themes": "Temalar",
+    "icons": "Simgeler",
+    "backgrounds": "Arka Planlar",
+    "default_avatars": "Varsayılan Avatarlar",
+    "dicebear_avatars": "DiceBear Avatarları",
+    "uploaded_avatars": "Yüklenen Avatarlar",
+    "create_avatar": "Avatar Oluştur",
+    "upload_avatar": "Avatar Yükle",
+    "select_style": "Stil Seç",
+    "select_age": "Yaş Seç",
+    "select_gender": "Cinsiyet Seç",
+    "randomize": "Rastgele",
+    "hair_style": "Saç Stili",
+    "facial_features": "Yüz Özellikleri",
+    "clothing": "Kıyafet",
+    "save_avatar": "Avatarı Kaydet",
+    "avatar_created": "Avatar oluşturuldu",
+    "avatar_updated": "Avatar güncellendi",
+    "child": "Çocuk",
+    "teen": "Genç",
+    "adult": "Yetişkin",
+    "male": "Erkek",
+    "female": "Kadın",
+    "androgynous": "Androjen",
+    "eyes": "Gözler",
+    "mouth": "Ağız",
+    "nose": "Burun",
+    "eyebrows": "Kaşlar",
+    "body": "Vücut",
+    "custom_avatar": "Özel Avatar",
+    "random_avatar": "Rastgele Avatar",
+    "avatar_type": "Avatar Türü",
+    "dicebear": "DiceBear",
+    "default": "Varsayılan",
+    "custom": "Özel",
+    "seed": "Tohum",
+    "url": "URL",
+    "load": "Yükle",
+    "category": "Kategori",
+    "style": "Stil",
+    "categories": {
+      "chore": "Ev İşi",
+      "reward": "Ödül",
+      "system": "Sistem"
+    },
+    "styles": {
+      "filled": "Dolu",
+      "outlined": "Çizgili"
+    }
+  },
+  "children": {
+    "title": "Çocuklar",
+    "add": "Çocuk Ekle",
+    "detail": "Çocuk Detayları",
+    "empty": {
+      "title": "Hiç Çocuk Eklenmedi",
+      "message": "Ev işlerini ve ödülleri yönetmeye başlamak için ilk çocuğunu ekle"
+    },
+    "years_old": "yaşında"
+  },
+  "statistics": {
+    "title": "İstatistikler",
+    "loading": "İstatistikler yükleniyor...",
+    "noData": "İstatistik verisi mevcut değil",
+    "summary": "Özet",
+    "chart": "Performans Grafiği",
+    "chartPlaceholder": "Daha fazla veri mevcut olduğunda grafik burada görünecek",
+    "totalChores": "Toplam Ev İşleri",
+    "completedChores": "Tamamlanan",
+    "pendingChores": "Bekleyen",
+    "missedChores": "Kaçırılan",
+    "totalPoints": "Toplam Puanlar",
+    "completionRate": "Tamamlanma Oranı",
+    "grouping": {
+      "day": "Günlük",
+      "week": "Haftalık",
+      "month": "Aylık"
+    },
+    "startDate": "Başlangıç Tarihi",
+    "endDate": "Bitiş Tarihi",
+    "selectDateRange": "Tarih Aralığı Seç"
+  },
+  "achievements": {
+    "title": "Başarılar",
+    "unlockedOnly": "Sadece Açılanları Göster",
+    "unlocked": "Açık",
+    "locked": "Kilitli",
+    "progress": "İlerleme",
+    "empty": {
+      "title": "Henüz Başarı Yok",
+      "message": "Başarıları açmak için ev işlerini tamamla ve puan kazan"
+    }
+  },
+  "points": {
+    "summary": {
+      "title": "Puan Özeti",
+      "total": "Toplam",
+      "daily": "Günlük",
+      "weekly": "Haftalık",
+      "monthly": "Aylık"
+    },
+    "adjustment": {
+      "title": "Puanları Ayarla",
+      "amount": "Miktar",
+      "reason": "Neden",
+      "submit": "Gönder"
+    },
+    "history": {
+      "title": "Puan Geçmişi",
+      "empty": "Henüz puan ayarlaması yok",
+      "noReason": "Neden belirtilmedi"
+    }
+  }
+}

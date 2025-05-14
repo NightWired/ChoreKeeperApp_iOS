@@ -1,0 +1,563 @@
+{
+  "app": {
+    "name": "ChoreKeeper",
+    "tagline": "Maakt huishoudelijke taken leuk voor kinderen en eenvoudig voor ouders"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "back": "Terug",
+    "next": "Volgende",
+    "done": "Klaar",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "warning": "Waarschuwing",
+    "info": "Informatie",
+    "retry": "Opnieuw proberen",
+    "search": "Zoeken",
+    "settings": "Instellingen",
+    "logout": "Uitloggen",
+    "yes": "Ja",
+    "no": "Nee",
+    "confirm": "Bevestigen",
+    "warning_permanent": "WAARSCHUWING: Deze actie is permanent en kan niet ongedaan worden gemaakt.",
+    "this_will": "Dit zal",
+    "close": "Sluiten",
+    "finish": "Voltooien",
+    "skip": "Overslaan",
+    "switch_user": "Gebruiker wisselen",
+    "login_as_different_user": "Inloggen als andere gebruiker",
+    "no_remembered_users": "Geen onthouden gebruikers",
+    "child": "Kind"
+  },
+  "auth": {
+    "login": "Inloggen",
+    "signup": "Registreren",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "username": "Gebruikersnaam",
+    "forgot_password": "Wachtwoord vergeten?",
+    "create_account": "Account aanmaken",
+    "or_continue_with": "Of ga verder met",
+    "remember_email": "E-mail onthouden",
+    "remember_username": "Gebruikersnaam onthouden",
+    "auto_login": "Automatisch inloggen",
+    "login_with_google": "Inloggen met Google",
+    "login_with_apple": "Inloggen met Apple",
+    "login_with_facebook": "Inloggen met Facebook",
+    "login_as_parent": "Ik ben een ouder",
+    "login_as_child": "Ik ben een kind",
+    "select_role": "Selecteer je rol",
+    "reset_password": "Wachtwoord resetten",
+    "change_password": "Wachtwoord wijzigen",
+    "current_password": "Huidig wachtwoord",
+    "new_password": "Nieuw wachtwoord",
+    "confirm_password": "Bevestig wachtwoord",
+    "passwords_dont_match": "Wachtwoorden komen niet overeen",
+    "password_changed": "Wachtwoord gewijzigd",
+    "password_requirements": "Wachtwoord moet minimaal 8 tekens lang zijn en een mix van letters, cijfers en symbolen bevatten",
+    "biometric_login": "Biometrisch inloggen",
+    "enable_biometric": "Biometrisch inloggen inschakelen?",
+    "biometric_prompt": "Scan je vingerafdruk/gezicht om in te loggen",
+    "not_available": "Niet beschikbaar op dit apparaat",
+    "verify_your_email": "Verifieer je e-mail",
+    "verification_code_sent_message": "We hebben een verificatiecode gestuurd naar {email}. Controleer je e-mail en voer de code hieronder in.",
+    "verification_code": "Verificatiecode",
+    "enter_6_digit_code": "Voer 6-cijferige code in",
+    "please_enter_verification_code": "Voer verificatiecode in",
+    "verification_code_must_be_6_digits": "Verificatiecode moet 6 cijfers zijn",
+    "resend_code": "Code opnieuw versturen",
+    "resend_code_countdown": "Code opnieuw versturen ({seconds}s)",
+    "verify_email": "E-mail verifiëren",
+    "email_verified": "E-mail geverifieerd",
+    "email_verification_banner": "Verifieer je e-mailadres om accountbeveiliging te garanderen",
+    "verify_now": "Nu verifiëren"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welkom bij ChoreKeeper",
+      "subtitle": "Maakt huishoudelijke taken leuk voor kinderen en eenvoudig voor ouders",
+      "getStarted": "Aan de slag"
+    },
+    "userType": {
+      "title": "Ik ben een...",
+      "parent": "Ouder",
+      "child": "Kind"
+    },
+    "createAccount": {
+      "title": "Account aanmaken",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "confirmPassword": "Bevestig wachtwoord",
+      "createAccount": "Account aanmaken",
+      "alreadyHaveAccount": "Heb je al een account? Inloggen"
+    },
+    "signIn": {
+      "title": "Inloggen",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "signIn": "Inloggen",
+      "forgotPassword": "Wachtwoord vergeten?",
+      "dontHaveAccount": "Heb je geen account? Maak er een aan"
+    },
+    "skip": "Tutorial overslaan",
+    "back": "Terug",
+    "next": "Volgende",
+    "finish": "Aan de slag",
+    "close": "Sluiten",
+    "parent": {
+      "welcome": {
+        "title": "Welkom bij ChoreKeeper!",
+        "description": "Laten we je account in slechts een paar minuten instellen. ChoreKeeper helpt je bij het beheren van huishoudelijke taken, het bijhouden van punten en het belonen van je kinderen voor het voltooien van taken."
+      },
+      "features": {
+        "title": "Wat ChoreKeeper biedt",
+        "description": "ChoreKeeper biedt tools voor het maken en toewijzen van huishoudelijke taken, het bijhouden van punten en het instellen van beloningen voor je kinderen. Je kunt alles vanaf één plek beheren!"
+      },
+      "chores": {
+        "title": "Huishoudelijke taken beheren",
+        "description": "Maak huishoudelijke taken, stel vervaldatums in en wijs ze toe aan je kinderen. Ze ontvangen meldingen en kunnen taken als voltooid markeren wanneer ze klaar zijn."
+      },
+      "rewards": {
+        "title": "Beloningen instellen",
+        "description": "Maak beloningen die je kinderen kunnen verdienen door punten te verzamelen. Stel puntdrempels in en laat ze naar hun doelen toewerken!"
+      },
+      "add_child": {
+        "title": "Een kind toevoegen",
+        "description": "Om een kind toe te voegen, ga naar het tabblad Familie en tik op de '+'-knop. Voer hun gebruikersnaam en voornaam in, en deel vervolgens de instellingscode met hen om de accountinstelling te voltooien."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Welkom bij ChoreKeeper!",
+        "description": "ChoreKeeper helpt je om je huishoudelijke taken bij te houden en punten te verdienen door ze te voltooien. Laten we leren hoe je de app gebruikt!"
+      },
+      "chores": {
+        "title": "Huishoudelijke taken bekijken en voltooien",
+        "description": "Je huishoudelijke taken verschijnen op het startscherm. Tik op een taak om details te zien en markeer deze als voltooid wanneer je klaar bent. Je ouders zullen voltooide taken verifiëren."
+      },
+      "points": {
+        "title": "Punten en beloningen bijhouden",
+        "description": "Door huishoudelijke taken te voltooien verdien je punten. Controleer je totale punten en zie welke beloningen je kunt verdienen. Houd je voortgang naar elke beloning in de gaten!"
+      },
+      "settings": {
+        "title": "Persoonlijke instellingen",
+        "description": "Je kunt je profiel aanpassen door je avatar te wijzigen en herinneringen in te stellen voor huishoudelijke taken. Tik op het instellingenpictogram om toegang te krijgen tot deze opties."
+      }
+    }
+  },
+  "dashboard": {
+    "parent": {
+      "title": "Ouder dashboard",
+      "children": "Kinderen",
+      "chores": "Huishoudelijke taken",
+      "rewards": "Beloningen",
+      "settings": "Instellingen",
+      "family": "Familie",
+      "statistics": "Statistieken",
+      "calendar": "Kalender"
+    },
+    "child": {
+      "title": "Mijn dashboard",
+      "myChores": "Mijn huishoudelijke taken",
+      "myRewards": "Mijn beloningen",
+      "myPoints": "Mijn punten",
+      "settings": "Instellingen",
+      "completedChores": "Voltooide taken",
+      "achievements": "Prestaties"
+    },
+    "cork_board": "Prikbord dashboard",
+    "push_pin": "Punaise",
+    "pinned_item": "Vastgepind item",
+    "calendar_item": "Kalender",
+    "chores_item": "Takenlijst",
+    "rewards_item": "Beloningen",
+    "points_item": "Puntenoverzicht",
+    "family_item": "Familiebeheer",
+    "statistics_item": "Statistieken en rapporten",
+    "achievements_item": "Prestaties",
+    "settings_gear": "Instellingenmenu"
+  },
+  "chores": {
+    "title": "Huishoudelijke taken",
+    "add": "Huishoudelijke taak toevoegen",
+    "edit": "Huishoudelijke taak bewerken",
+    "delete": "Huishoudelijke taak verwijderen",
+    "complete": "Voltooien",
+    "verify": "Verifiëren",
+    "reject": "Afwijzen",
+    "empty": "Geen huishoudelijke taken gevonden",
+    "add_first_chore": "Voeg je eerste huishoudelijke taak toe",
+    "parentChores": "Ouderlijke taken",
+    "childChores": "Kindertaken",
+    "points": "Punten",
+    "details": "Details",
+    "schedule": "Planning",
+    "actions": "Acties",
+    "noDescription": "Geen beschrijving opgegeven",
+    "noDueDate": "Geen vervaldatum",
+    "lastCompleted": "Laatst voltooid",
+    "frequency": {
+      "title": "Frequentie",
+      "once": "Eenmalig",
+      "daily": "Dagelijks",
+      "weekly": "Wekelijks",
+      "weeklyOnDay": "Wekelijks op dag",
+      "monthly": "Maandelijks",
+      "custom": "Aangepast"
+    },
+    "specificDays": "Specifieke dagen",
+    "dayOfMonth": "Dag van de maand",
+    "deleteConfirmation": {
+      "title": "Huishoudelijke taak verwijderen",
+      "message": "Weet je zeker dat je deze huishoudelijke taak wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+    },
+    "rejectReason": {
+      "title": "Reden voor afwijzing",
+      "placeholder": "Voer reden voor afwijzing in"
+    },
+    "filter": {
+      "title": "Huishoudelijke taken filteren",
+      "all": "Alle",
+      "pending": "In afwachting",
+      "completed": "Voltooid",
+      "pendingVerification": "Wacht op verificatie",
+      "missed": "Gemist",
+      "status": "Status",
+      "category": "Categorie"
+    },
+    "form": {
+      "createTitle": "Huishoudelijke taak maken",
+      "editTitle": "Huishoudelijke taak bewerken",
+      "basicInfo": "Basisinformatie",
+      "title": "Titel",
+      "description": "Beschrijving",
+      "icon": "Pictogram",
+      "selectIcon": "Pictogram selecteren",
+      "assignedChild": "Toegewezen kind",
+      "selectChild": "Kind selecteren",
+      "noChild": "Geen kind (Ouderlijke taak)",
+      "dueDate": "Vervaldatum",
+      "hasDueDate": "Heeft vervaldatum",
+      "date": "Datum",
+      "time": "Tijd",
+      "frequency": "Frequentie",
+      "dayOfMonth": "Dag van de maand",
+      "points": "Punten",
+      "pointValue": "Puntwaarde",
+      "countTowardsDaily": "Telt mee voor dagelijkse totalen",
+      "countTowardsWeekly": "Telt mee voor wekelijkse totalen",
+      "countTowardsMonthly": "Telt mee voor maandelijkse totalen",
+      "subtractPointsWhenMissed": "Trek punten af bij missen"
+    },
+    "choreName": "Naam huishoudelijke taak",
+    "choreDescription": "Beschrijving",
+    "dueDate": "Vervaldatum",
+    "dueTime": "Vervaltijd",
+    "assignTo": "Toewijzen aan",
+    "status": {
+      "title": "Status",
+      "pending": "In afwachting",
+      "pendingVerification": "Wacht op verificatie",
+      "completed": "Voltooid",
+      "missed": "Gemist",
+      "overdue": "Te laat",
+      "verified": "Geverifieerd"
+    },
+    "markComplete": "Markeren als voltooid",
+    "markIncomplete": "Markeren als onvoltooid",
+    "noChores": "Geen huishoudelijke taken gevonden",
+    "recurring": "Terugkerend",
+    "days": "Dagen",
+    "weeks": "Weken",
+    "months": "Maanden",
+    "every": "Elke",
+    "on_days": "Op dagen",
+    "monday": "Maandag",
+    "tuesday": "Dinsdag",
+    "wednesday": "Woensdag",
+    "thursday": "Donderdag",
+    "friday": "Vrijdag",
+    "saturday": "Zaterdag",
+    "sunday": "Zondag",
+    "confirm_delete": "Weet je zeker dat je deze huishoudelijke taak wilt verwijderen?",
+    "delete_recurring": "Alle voorkomens verwijderen of alleen deze?",
+    "all_occurrences": "Alle voorkomens",
+    "just_this_one": "Alleen deze",
+    "view_calendar": "Kalender bekijken"
+  },
+  "rewards": {
+    "title": "Beloningen",
+    "addReward": "Beloning toevoegen",
+    "editReward": "Beloning bewerken",
+    "deleteReward": "Beloning verwijderen",
+    "rewardName": "Beloningsnaam",
+    "rewardDescription": "Beschrijving",
+    "pointCost": "Puntkosten",
+    "availableUntil": "Beschikbaar tot",
+    "claimReward": "Beloning claimen",
+    "noRewards": "Geen beloningen gevonden",
+    "deleteConfirmation": "Weet je zeker dat je deze beloning wilt verwijderen?",
+    "add_reward": "Beloning toevoegen",
+    "edit_reward": "Beloning bewerken",
+    "delete_reward": "Beloning verwijderen",
+    "reward_name": "Beloningsnaam",
+    "please_enter_reward_name": "Voer een naam in voor de beloning",
+    "description": "Beschrijving",
+    "points_required": "Vereiste punten",
+    "point_threshold": "Puntdrempel",
+    "please_enter_point_threshold": "Voer een puntdrempel in",
+    "reward_type": "Beloningstype",
+    "as_reached": "Bij bereiken",
+    "highest_reached": "Hoogst bereikt",
+    "allow_negative_threshold": "Negatieve drempel toestaan",
+    "negative_allowed": "Negatief toegestaan",
+    "available_to": "Beschikbaar voor",
+    "status": "Status",
+    "available": "Beschikbaar",
+    "claimed": "Geclaimd",
+    "redeemed": "Ingewisseld",
+    "expired": "Verlopen",
+    "claim": "Claimen",
+    "redeem": "Inwisselen",
+    "no_rewards": "Geen beloningen gevonden",
+    "add_first_reward": "Voeg je eerste beloning toe",
+    "confirm_delete": "Weet je zeker dat je deze beloning wilt verwijderen?",
+    "delete_reward_confirmation": "Weet je zeker dat je de beloning '{name}' wilt verwijderen?",
+    "not_enough_points": "Niet genoeg punten om deze beloning te claimen",
+    "reward_claimed": "Beloning geclaimd",
+    "reward_redeemed": "Beloning ingewisseld",
+    "claim_reward": "Beloning claimen",
+    "claim_reward_confirmation": "Weet je zeker dat je '{name}' wilt claimen?",
+    "redeemed_on": "Ingewisseld op {date}",
+    "expired_on": "Verlopen op {date}",
+    "earned_rewards": "Verdiende beloningen",
+    "upcoming_rewards": "Aankomende beloningen",
+    "no_upcoming_rewards": "Geen aankomende beloningen",
+    "rewards_management": "Beloningenbeheer",
+    "you_have_earned_rewards": "Je hebt {count} beloningen verdiend!",
+    "empty": {
+      "parent": "Nog geen beloningen gemaakt",
+      "available": "Geen beschikbare beloningen",
+      "earned": "Nog geen verdiende beloningen"
+    },
+    "period": {
+      "daily": "Dagelijks",
+      "weekly": "Wekelijks",
+      "monthly": "Maandelijks"
+    },
+    "points": "punten",
+    "detail": "Beloningsdetails",
+    "unlockedOnly": "Toon alleen ontgrendelde"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "account": "Account",
+    "profile": "Profiel",
+    "notifications": "Meldingen",
+    "appearance": "Uiterlijk",
+    "language": "Taal",
+    "help": "Help",
+    "about": "Over",
+    "signOut": "Uitloggen",
+    "deleteAccount": "Account verwijderen",
+    "theme": {
+      "title": "Thema",
+      "light": "Licht",
+      "dark": "Donker",
+      "system": "Systeem"
+    },
+    "security": "Beveiliging en toegang",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "version": "Versie",
+    "dark_mode": "Donkere modus",
+    "light_mode": "Lichte modus",
+    "system_theme": "Systeemthema gebruiken",
+    "high_contrast": "Hoog contrast",
+    "use_device_language": "Apparaattaal gebruiken",
+    "select_language": "Taal selecteren",
+    "biometric_login": "Biometrisch inloggen",
+    "auto_login": "Automatisch inloggen",
+    "chore_management": "Beheer van huishoudelijke taken",
+    "default_due_time": "Standaard vervaltijd",
+    "auto_verification": "Automatische verificatie",
+    "auto_verification_subtitle": "Huishoudelijke taken als voltooid markeren zonder ouderverificatie toestaan",
+    "customization": "Aanpassing",
+    "custom_icons": "Aangepaste pictogrammen",
+    "custom_icons_subtitle": "Aangepaste pictogrammen uploaden en beheren",
+    "theme_settings": "Thema-instellingen",
+    "requires_tier": "Vereist {tier}-account",
+    "avatar": "Avatar",
+    "change_avatar": "Avatar wijzigen",
+    "avatar_updated": "Avatar bijgewerkt"
+  },
+  "tutorial": {
+    "title": "Tutorial",
+    "skip": "Tutorial overslaan",
+    "back": "Terug",
+    "next": "Volgende",
+    "finish": "Aan de slag",
+    "close": "Sluiten",
+    "parent": {
+      "welcome": {
+        "title": "Welkom bij ChoreKeeper!",
+        "description": "Laten we je account in slechts een paar minuten instellen. ChoreKeeper helpt je bij het beheren van huishoudelijke taken, het bijhouden van punten en het belonen van je kinderen voor het voltooien van taken."
+      },
+      "features": {
+        "title": "Wat ChoreKeeper biedt",
+        "description": "ChoreKeeper biedt tools voor het maken en toewijzen van huishoudelijke taken, het bijhouden van punten en het instellen van beloningen voor je kinderen. Je kunt alles vanaf één plek beheren!"
+      },
+      "chores": {
+        "title": "Huishoudelijke taken beheren",
+        "description": "Maak huishoudelijke taken, stel vervaldatums in en wijs ze toe aan je kinderen. Ze ontvangen meldingen en kunnen taken als voltooid markeren wanneer ze klaar zijn."
+      },
+      "rewards": {
+        "title": "Beloningen instellen",
+        "description": "Maak beloningen die je kinderen kunnen verdienen door punten te verzamelen. Stel puntdrempels in en laat ze naar hun doelen toewerken!"
+      },
+      "add_child": {
+        "title": "Een kind toevoegen",
+        "description": "Om een kind toe te voegen, ga naar het tabblad Familie en tik op de '+'-knop. Voer hun gebruikersnaam en voornaam in, en deel vervolgens de instellingscode met hen om de accountinstelling te voltooien."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Welkom bij ChoreKeeper!",
+        "description": "ChoreKeeper helpt je om je huishoudelijke taken bij te houden en punten te verdienen door ze te voltooien. Laten we leren hoe je de app gebruikt!"
+      },
+      "chores": {
+        "title": "Huishoudelijke taken bekijken en voltooien",
+        "description": "Je huishoudelijke taken verschijnen op het startscherm. Tik op een taak om details te zien en markeer deze als voltooid wanneer je klaar bent. Je ouders zullen voltooide taken verifiëren."
+      },
+      "points": {
+        "title": "Punten en beloningen bijhouden",
+        "description": "Door huishoudelijke taken te voltooien verdien je punten. Controleer je totale punten en zie welke beloningen je kunt verdienen. Houd je voortgang naar elke beloning in de gaten!"
+      },
+      "settings": {
+        "title": "Persoonlijke instellingen",
+        "description": "Je kunt je profiel aanpassen door je avatar te wijzigen en herinneringen in te stellen voor huishoudelijke taken. Tik op het instellingenpictogram om toegang te krijgen tot deze opties."
+      }
+    }
+  },
+  "customization": {
+    "title": "Aanpassing",
+    "avatars": "Avatars",
+    "themes": "Thema's",
+    "icons": "Pictogrammen",
+    "backgrounds": "Achtergronden",
+    "default_avatars": "Standaard avatars",
+    "dicebear_avatars": "DiceBear-avatars",
+    "uploaded_avatars": "Geüploade avatars",
+    "create_avatar": "Avatar maken",
+    "upload_avatar": "Avatar uploaden",
+    "select_style": "Stijl selecteren",
+    "select_age": "Leeftijd selecteren",
+    "select_gender": "Geslacht selecteren",
+    "randomize": "Willekeurig",
+    "hair_style": "Kapsel",
+    "facial_features": "Gezichtskenmerken",
+    "clothing": "Kleding",
+    "save_avatar": "Avatar opslaan",
+    "avatar_created": "Avatar gemaakt",
+    "avatar_updated": "Avatar bijgewerkt",
+    "child": "Kind",
+    "teen": "Tiener",
+    "adult": "Volwassene",
+    "male": "Man",
+    "female": "Vrouw",
+    "androgynous": "Androgyn",
+    "eyes": "Ogen",
+    "mouth": "Mond",
+    "nose": "Neus",
+    "eyebrows": "Wenkbrauwen",
+    "body": "Lichaam",
+    "custom_avatar": "Aangepaste avatar",
+    "random_avatar": "Willekeurige avatar",
+    "avatar_type": "Avatartype",
+    "dicebear": "DiceBear",
+    "default": "Standaard",
+    "custom": "Aangepast",
+    "seed": "Seed",
+    "url": "URL",
+    "load": "Laden",
+    "category": "Categorie",
+    "style": "Stijl",
+    "categories": {
+      "chore": "Huishoudelijke taak",
+      "reward": "Beloning",
+      "system": "Systeem"
+    },
+    "styles": {
+      "filled": "Gevuld",
+      "outlined": "Omlijnd"
+    }
+  },
+  "children": {
+    "title": "Kinderen",
+    "add": "Kind toevoegen",
+    "detail": "Kinddetails",
+    "empty": {
+      "title": "Geen kinderen toegevoegd",
+      "message": "Voeg je eerste kind toe om te beginnen met het beheren van huishoudelijke taken en beloningen"
+    },
+    "years_old": "jaar oud"
+  },
+  "statistics": {
+    "title": "Statistieken",
+    "loading": "Statistieken laden...",
+    "noData": "Geen statistiekgegevens beschikbaar",
+    "summary": "Samenvatting",
+    "chart": "Prestatiegrafiek",
+    "chartPlaceholder": "Grafiek verschijnt hier wanneer meer gegevens beschikbaar zijn",
+    "totalChores": "Totaal aantal taken",
+    "completedChores": "Voltooid",
+    "pendingChores": "In afwachting",
+    "missedChores": "Gemist",
+    "totalPoints": "Totaal aantal punten",
+    "completionRate": "Voltooiingspercentage",
+    "grouping": {
+      "day": "Dagelijks",
+      "week": "Wekelijks",
+      "month": "Maandelijks"
+    },
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "selectDateRange": "Datumbereik selecteren"
+  },
+  "achievements": {
+    "title": "Prestaties",
+    "unlockedOnly": "Toon alleen ontgrendelde",
+    "unlocked": "Ontgrendeld",
+    "locked": "Vergrendeld",
+    "progress": "Voortgang",
+    "empty": {
+      "title": "Nog geen prestaties",
+      "message": "Voltooi huishoudelijke taken en verdien punten om prestaties te ontgrendelen"
+    }
+  },
+  "points": {
+    "summary": {
+      "title": "Puntenoverzicht",
+      "total": "Totaal",
+      "daily": "Dagelijks",
+      "weekly": "Wekelijks",
+      "monthly": "Maandelijks"
+    },
+    "adjustment": {
+      "title": "Punten aanpassen",
+      "amount": "Hoeveelheid",
+      "reason": "Reden",
+      "submit": "Indienen"
+    },
+    "history": {
+      "title": "Puntengeschiedenis",
+      "empty": "Nog geen puntenaanpassingen",
+      "noReason": "Geen reden opgegeven"
+    }
+  }
+}

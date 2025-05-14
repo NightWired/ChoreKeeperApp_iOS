@@ -1,0 +1,563 @@
+{
+  "app": {
+    "name": "ChoreKeeper",
+    "tagline": "Gör hushållssysslor roliga för barn och enkla för föräldrar"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Avbryt",
+    "save": "Spara",
+    "delete": "Radera",
+    "edit": "Redigera",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "done": "Klar",
+    "loading": "Laddar...",
+    "error": "Fel",
+    "success": "Lyckades",
+    "warning": "Varning",
+    "info": "Information",
+    "retry": "Försök igen",
+    "search": "Sök",
+    "settings": "Inställningar",
+    "logout": "Logga ut",
+    "yes": "Ja",
+    "no": "Nej",
+    "confirm": "Bekräfta",
+    "warning_permanent": "VARNING: Denna åtgärd är permanent och kan inte ångras.",
+    "this_will": "Detta kommer att",
+    "close": "Stäng",
+    "finish": "Avsluta",
+    "skip": "Hoppa över",
+    "switch_user": "Byt användare",
+    "login_as_different_user": "Logga in som annan användare",
+    "no_remembered_users": "Inga ihågkomna användare",
+    "child": "Barn"
+  },
+  "auth": {
+    "login": "Logga in",
+    "signup": "Registrera",
+    "email": "E-post",
+    "password": "Lösenord",
+    "username": "Användarnamn",
+    "forgot_password": "Glömt lösenord?",
+    "create_account": "Skapa nytt konto",
+    "or_continue_with": "Eller fortsätt med",
+    "remember_email": "Kom ihåg e-post",
+    "remember_username": "Kom ihåg användarnamn",
+    "auto_login": "Automatisk inloggning",
+    "login_with_google": "Logga in med Google",
+    "login_with_apple": "Logga in med Apple",
+    "login_with_facebook": "Logga in med Facebook",
+    "login_as_parent": "Jag är en förälder",
+    "login_as_child": "Jag är ett barn",
+    "select_role": "Välj din roll",
+    "reset_password": "Återställ lösenord",
+    "change_password": "Ändra lösenord",
+    "current_password": "Nuvarande lösenord",
+    "new_password": "Nytt lösenord",
+    "confirm_password": "Bekräfta lösenord",
+    "passwords_dont_match": "Lösenorden matchar inte",
+    "password_changed": "Lösenordet har ändrats",
+    "password_requirements": "Lösenordet måste vara minst 8 tecken långt och innehålla en blandning av bokstäver, siffror och symboler",
+    "biometric_login": "Biometrisk inloggning",
+    "enable_biometric": "Aktivera biometrisk inloggning?",
+    "biometric_prompt": "Skanna ditt fingeravtryck/ansikte för att logga in",
+    "not_available": "Inte tillgängligt på denna enhet",
+    "verify_your_email": "Verifiera din e-post",
+    "verification_code_sent_message": "Vi har skickat en verifieringskod till {email}. Kontrollera din e-post och ange koden nedan.",
+    "verification_code": "Verifieringskod",
+    "enter_6_digit_code": "Ange 6-siffrig kod",
+    "please_enter_verification_code": "Ange verifieringskod",
+    "verification_code_must_be_6_digits": "Verifieringskoden måste vara 6 siffror",
+    "resend_code": "Skicka kod igen",
+    "resend_code_countdown": "Skicka kod igen ({seconds}s)",
+    "verify_email": "Verifiera e-post",
+    "email_verified": "E-post verifierad",
+    "email_verification_banner": "Verifiera din e-postadress för att säkerställa kontosäkerhet",
+    "verify_now": "Verifiera nu"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Välkommen till ChoreKeeper",
+      "subtitle": "Gör hushållssysslor roliga för barn och enkla för föräldrar",
+      "getStarted": "Kom igång"
+    },
+    "userType": {
+      "title": "Jag är en...",
+      "parent": "Förälder",
+      "child": "Barn"
+    },
+    "createAccount": {
+      "title": "Skapa konto",
+      "email": "E-post",
+      "password": "Lösenord",
+      "confirmPassword": "Bekräfta lösenord",
+      "createAccount": "Skapa konto",
+      "alreadyHaveAccount": "Har du redan ett konto? Logga in"
+    },
+    "signIn": {
+      "title": "Logga in",
+      "email": "E-post",
+      "password": "Lösenord",
+      "signIn": "Logga in",
+      "forgotPassword": "Glömt lösenord?",
+      "dontHaveAccount": "Har du inget konto? Skapa ett"
+    },
+    "skip": "Hoppa över handledning",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "finish": "Kom igång",
+    "close": "Stäng",
+    "parent": {
+      "welcome": {
+        "title": "Välkommen till ChoreKeeper!",
+        "description": "Låt oss konfigurera ditt konto på bara några minuter. ChoreKeeper hjälper dig att hantera hushållssysslor, spåra poäng och belöna dina barn för att slutföra uppgifter."
+      },
+      "features": {
+        "title": "Vad ChoreKeeper erbjuder",
+        "description": "ChoreKeeper tillhandahåller verktyg för att skapa och tilldela hushållssysslor, spåra poäng och ställa in belöningar för dina barn. Du kan hantera allt från ett ställe!"
+      },
+      "chores": {
+        "title": "Hantera hushållssysslor",
+        "description": "Skapa hushållssysslor, ställ in förfallodatum och tilldela dem till dina barn. De får meddelanden och kan markera hushållssysslor som slutförda när de är klara."
+      },
+      "rewards": {
+        "title": "Ställa in belöningar",
+        "description": "Skapa belöningar som dina barn kan tjäna genom att samla poäng. Ställ in poängtrösklar och låt dem arbeta mot sina mål!"
+      },
+      "add_child": {
+        "title": "Lägga till ett barn",
+        "description": "För att lägga till ett barn, gå till fliken Familj och tryck på '+'-knappen. Ange deras användarnamn och förnamn, och dela sedan inställningskoden med dem för att slutföra kontoinställningen."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Välkommen till ChoreKeeper!",
+        "description": "ChoreKeeper hjälper dig att hålla koll på dina hushållssysslor och tjäna poäng för att slutföra dem. Låt oss lära oss hur man använder appen!"
+      },
+      "chores": {
+        "title": "Visa och slutför hushållssysslor",
+        "description": "Dina hushållssysslor visas på hemskärmen. Tryck på en hushållssyssla för att se detaljer och markera den som slutförd när du är klar. Dina föräldrar kommer att verifiera slutförda hushållssysslor."
+      },
+      "points": {
+        "title": "Spåra poäng och belöningar",
+        "description": "När du slutför hushållssysslor tjänar du poäng. Kontrollera din totala poäng och se vilka belöningar du kan tjäna. Håll koll på dina framsteg mot varje belöning!"
+      },
+      "settings": {
+        "title": "Personliga inställningar",
+        "description": "Du kan anpassa din profil genom att ändra din avatar och ställa in påminnelser för hushållssysslor. Tryck på inställningsikonen för att komma åt dessa alternativ."
+      }
+    }
+  },
+  "dashboard": {
+    "parent": {
+      "title": "Föräldradashboard",
+      "children": "Barn",
+      "chores": "Hushållssysslor",
+      "rewards": "Belöningar",
+      "settings": "Inställningar",
+      "family": "Familj",
+      "statistics": "Statistik",
+      "calendar": "Kalender"
+    },
+    "child": {
+      "title": "Min dashboard",
+      "myChores": "Mina hushållssysslor",
+      "myRewards": "Mina belöningar",
+      "myPoints": "Mina poäng",
+      "settings": "Inställningar",
+      "completedChores": "Slutförda sysslor",
+      "achievements": "Prestationer"
+    },
+    "cork_board": "Anslagstavla",
+    "push_pin": "Häftstift",
+    "pinned_item": "Fastnålat objekt",
+    "calendar_item": "Kalender",
+    "chores_item": "Sysslolista",
+    "rewards_item": "Belöningar",
+    "points_item": "Poängsammanfattning",
+    "family_item": "Familjehantering",
+    "statistics_item": "Statistik och rapporter",
+    "achievements_item": "Prestationer",
+    "settings_gear": "Inställningsmeny"
+  },
+  "chores": {
+    "title": "Hushållssysslor",
+    "addChore": "Lägg till hushållssyssla",
+    "editChore": "Redigera hushållssyssla",
+    "deleteChore": "Radera hushållssyssla",
+    "choreName": "Namn på hushållssyssla",
+    "choreDescription": "Beskrivning",
+    "dueDate": "Förfallodatum",
+    "dueTime": "Förfallotid",
+    "assignTo": "Tilldela till",
+    "points": "Poäng",
+    "frequency": {
+      "title": "Frekvens",
+      "once": "En gång",
+      "daily": "Dagligen",
+      "weeklyOnDay": "Veckovis på dag",
+      "monthly": "Månadsvis",
+      "weekly": "Weekly",
+      "custom": "Custom"
+    },
+    "status": {
+      "title": "Status",
+      "pending": "Väntar",
+      "pendingVerification": "Väntar på verifiering",
+      "completed": "Slutförd",
+      "missed": "Missad",
+      "overdue": "Försenad",
+      "verified": "Verifierad"
+    },
+    "markComplete": "Markera som slutförd",
+    "markIncomplete": "Markera som ofullständig",
+    "verify": "Verifiera",
+    "reject": "Avvisa",
+    "noChores": "Inga hushållssysslor hittades",
+    "deleteConfirmation": "Är du säker på att du vill radera denna hushållssyssla?",
+    "recurring": "Återkommande",
+    "days": "Dagar",
+    "weeks": "Veckor",
+    "months": "Månader",
+    "every": "Varje",
+    "on_days": "På dagar",
+    "monday": "Måndag",
+    "tuesday": "Tisdag",
+    "wednesday": "Onsdag",
+    "thursday": "Torsdag",
+    "friday": "Fredag",
+    "saturday": "Lördag",
+    "sunday": "Söndag",
+    "confirm_delete": "Är du säker på att du vill radera denna hushållssyssla?",
+    "delete_recurring": "Radera alla förekomster eller bara denna?",
+    "all_occurrences": "Alla förekomster",
+    "just_this_one": "Bara denna",
+    "view_calendar": "Visa kalender",
+    "add_first_chore": "Lägg till din första hushållssyssla",
+    "add": "Add Chore",
+    "edit": "Edit Chore",
+    "delete": "Delete Chore",
+    "complete": "Complete",
+    "empty": "No chores found",
+    "parentChores": "Parent Chores",
+    "childChores": "Child Chores",
+    "details": "Details",
+    "schedule": "Schedule",
+    "actions": "Actions",
+    "noDescription": "No description provided",
+    "noDueDate": "No due date",
+    "lastCompleted": "Last Completed",
+    "specificDays": "Specific Days",
+    "dayOfMonth": "Day of Month",
+    "rejectReason": {
+      "title": "Rejection Reason",
+      "placeholder": "Enter reason for rejection"
+    },
+    "filter": {
+      "title": "Filter Chores",
+      "all": "All",
+      "pending": "Pending",
+      "completed": "Completed",
+      "pendingVerification": "Pending Verification",
+      "missed": "Missed",
+      "status": "Status",
+      "category": "Category"
+    },
+    "form": {
+      "createTitle": "Create Chore",
+      "editTitle": "Edit Chore",
+      "basicInfo": "Basic Information",
+      "title": "Title",
+      "description": "Description",
+      "icon": "Icon",
+      "selectIcon": "Select Icon",
+      "assignedChild": "Assigned Child",
+      "selectChild": "Select Child",
+      "noChild": "No Child (Parent Chore)",
+      "dueDate": "Due Date",
+      "hasDueDate": "Has Due Date",
+      "date": "Date",
+      "time": "Time",
+      "frequency": "Frequency",
+      "dayOfMonth": "Day of Month",
+      "points": "Points",
+      "pointValue": "Point Value",
+      "countTowardsDaily": "Count Towards Daily Totals",
+      "countTowardsWeekly": "Count Towards Weekly Totals",
+      "countTowardsMonthly": "Count Towards Monthly Totals",
+      "subtractPointsWhenMissed": "Subtract Points When Missed"
+    }
+  },
+  "rewards": {
+    "title": "Belöningar",
+    "addReward": "Lägg till belöning",
+    "editReward": "Redigera belöning",
+    "deleteReward": "Radera belöning",
+    "rewardName": "Belöningsnamn",
+    "rewardDescription": "Beskrivning",
+    "pointCost": "Poängkostnad",
+    "availableUntil": "Tillgänglig till",
+    "claimReward": "Gör anspråk på belöning",
+    "noRewards": "Inga belöningar hittades",
+    "deleteConfirmation": "Är du säker på att du vill radera denna belöning?",
+    "add_reward": "Lägg till belöning",
+    "edit_reward": "Redigera belöning",
+    "delete_reward": "Radera belöning",
+    "reward_name": "Belöningsnamn",
+    "please_enter_reward_name": "Ange ett namn för belöningen",
+    "description": "Beskrivning",
+    "points_required": "Poäng som krävs",
+    "point_threshold": "Poängtröskel",
+    "please_enter_point_threshold": "Ange en poängtröskel",
+    "reward_type": "Belöningstyp",
+    "as_reached": "Vid uppnående",
+    "highest_reached": "Högsta uppnådda",
+    "allow_negative_threshold": "Tillåt negativ tröskel",
+    "negative_allowed": "Negativ tillåten",
+    "available_to": "Tillgänglig för",
+    "status": "Status",
+    "available": "Tillgänglig",
+    "claimed": "Anspråk gjort",
+    "redeemed": "Inlöst",
+    "expired": "Utgången",
+    "claim": "Gör anspråk",
+    "redeem": "Lös in",
+    "no_rewards": "Inga belöningar hittades",
+    "add_first_reward": "Lägg till din första belöning",
+    "confirm_delete": "Är du säker på att du vill radera denna belöning?",
+    "delete_reward_confirmation": "Är du säker på att du vill radera belöningen '{name}'?",
+    "not_enough_points": "Inte tillräckligt med poäng för att göra anspråk på denna belöning",
+    "reward_claimed": "Belöning anspråk gjort",
+    "reward_redeemed": "Belöning inlöst",
+    "claim_reward": "Gör anspråk på belöning",
+    "claim_reward_confirmation": "Är du säker på att du vill göra anspråk på '{name}'?",
+    "redeemed_on": "Inlöst den {date}",
+    "expired_on": "Utgången den {date}",
+    "earned_rewards": "Intjänade belöningar",
+    "upcoming_rewards": "Kommande belöningar",
+    "no_upcoming_rewards": "Inga kommande belöningar",
+    "rewards_management": "Belöningshantering",
+    "you_have_earned_rewards": "Du har tjänat {count} belöningar!",
+    "empty": {
+      "parent": "Inga belöningar skapade ännu",
+      "available": "Inga tillgängliga belöningar",
+      "earned": "Inga intjänade belöningar ännu"
+    },
+    "period": {
+      "daily": "Dagligen",
+      "weekly": "Veckovis",
+      "monthly": "Månadsvis"
+    },
+    "points": "poäng",
+    "detail": "Belöningsdetaljer",
+    "unlockedOnly": "Visa endast upplåsta"
+  },
+  "settings": {
+    "title": "Inställningar",
+    "account": "Konto",
+    "profile": "Profil",
+    "notifications": "Aviseringar",
+    "appearance": "Utseende",
+    "language": "Språk",
+    "help": "Hjälp",
+    "about": "Om",
+    "signOut": "Logga ut",
+    "deleteAccount": "Radera konto",
+    "theme": {
+      "title": "Tema",
+      "light": "Ljust",
+      "dark": "Mörkt",
+      "system": "System"
+    },
+    "security": "Säkerhet och åtkomst",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "version": "Version",
+    "dark_mode": "Mörkt läge",
+    "light_mode": "Ljust läge",
+    "system_theme": "Använd systemtema",
+    "high_contrast": "Hög kontrast",
+    "use_device_language": "Använd enhetens språk",
+    "select_language": "Välj språk",
+    "biometric_login": "Biometrisk inloggning",
+    "auto_login": "Automatisk inloggning",
+    "chore_management": "Hantering av hushållssysslor",
+    "default_due_time": "Standard förfallotid",
+    "auto_verification": "Automatisk verifiering",
+    "auto_verification_subtitle": "Tillåt att markera hushållssysslor som slutförda utan föräldraverifiering",
+    "customization": "Anpassning",
+    "custom_icons": "Anpassade ikoner",
+    "custom_icons_subtitle": "Ladda upp och hantera anpassade ikoner",
+    "theme_settings": "Temainställningar",
+    "requires_tier": "Kräver {tier}-konto",
+    "avatar": "Avatar",
+    "change_avatar": "Ändra avatar",
+    "avatar_updated": "Avatar uppdaterad"
+  },
+  "tutorial": {
+    "title": "Handledning",
+    "skip": "Hoppa över handledning",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "finish": "Kom igång",
+    "close": "Stäng",
+    "parent": {
+      "welcome": {
+        "title": "Välkommen till ChoreKeeper!",
+        "description": "Låt oss konfigurera ditt konto på bara några minuter. ChoreKeeper hjälper dig att hantera hushållssysslor, spåra poäng och belöna dina barn för att slutföra uppgifter."
+      },
+      "features": {
+        "title": "Vad ChoreKeeper erbjuder",
+        "description": "ChoreKeeper tillhandahåller verktyg för att skapa och tilldela hushållssysslor, spåra poäng och ställa in belöningar för dina barn. Du kan hantera allt från ett ställe!"
+      },
+      "chores": {
+        "title": "Hantera hushållssysslor",
+        "description": "Skapa hushållssysslor, ställ in förfallodatum och tilldela dem till dina barn. De får meddelanden och kan markera hushållssysslor som slutförda när de är klara."
+      },
+      "rewards": {
+        "title": "Ställa in belöningar",
+        "description": "Skapa belöningar som dina barn kan tjäna genom att samla poäng. Ställ in poängtrösklar och låt dem arbeta mot sina mål!"
+      },
+      "add_child": {
+        "title": "Lägga till ett barn",
+        "description": "För att lägga till ett barn, gå till fliken Familj och tryck på '+'-knappen. Ange deras användarnamn och förnamn, och dela sedan inställningskoden med dem för att slutföra kontoinställningen."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Välkommen till ChoreKeeper!",
+        "description": "ChoreKeeper hjälper dig att hålla koll på dina hushållssysslor och tjäna poäng för att slutföra dem. Låt oss lära oss hur man använder appen!"
+      },
+      "chores": {
+        "title": "Visa och slutför hushållssysslor",
+        "description": "Dina hushållssysslor visas på hemskärmen. Tryck på en hushållssyssla för att se detaljer och markera den som slutförd när du är klar. Dina föräldrar kommer att verifiera slutförda hushållssysslor."
+      },
+      "points": {
+        "title": "Spåra poäng och belöningar",
+        "description": "När du slutför hushållssysslor tjänar du poäng. Kontrollera din totala poäng och se vilka belöningar du kan tjäna. Håll koll på dina framsteg mot varje belöning!"
+      },
+      "settings": {
+        "title": "Personliga inställningar",
+        "description": "Du kan anpassa din profil genom att ändra din avatar och ställa in påminnelser för hushållssysslor. Tryck på inställningsikonen för att komma åt dessa alternativ."
+      }
+    }
+  },
+  "customization": {
+    "title": "Anpassning",
+    "avatars": "Avatarer",
+    "themes": "Teman",
+    "icons": "Ikoner",
+    "backgrounds": "Bakgrunder",
+    "default_avatars": "Standardavatarer",
+    "dicebear_avatars": "DiceBear-avatarer",
+    "uploaded_avatars": "Uppladdade avatarer",
+    "create_avatar": "Skapa avatar",
+    "upload_avatar": "Ladda upp avatar",
+    "select_style": "Välj stil",
+    "select_age": "Välj ålder",
+    "select_gender": "Välj kön",
+    "randomize": "Slumpmässig",
+    "hair_style": "Frisyr",
+    "facial_features": "Ansiktsdrag",
+    "clothing": "Kläder",
+    "save_avatar": "Spara avatar",
+    "avatar_created": "Avatar skapad",
+    "avatar_updated": "Avatar uppdaterad",
+    "child": "Barn",
+    "teen": "Tonåring",
+    "adult": "Vuxen",
+    "male": "Man",
+    "female": "Kvinna",
+    "androgynous": "Androgyn",
+    "eyes": "Ögon",
+    "mouth": "Mun",
+    "nose": "Näsa",
+    "eyebrows": "Ögonbryn",
+    "body": "Kropp",
+    "custom_avatar": "Anpassad avatar",
+    "random_avatar": "Slumpmässig avatar",
+    "avatar_type": "Avatartyp",
+    "dicebear": "DiceBear",
+    "default": "Standard",
+    "custom": "Anpassad",
+    "seed": "Frö",
+    "url": "URL",
+    "load": "Ladda",
+    "category": "Kategori",
+    "style": "Stil",
+    "categories": {
+      "chore": "Hushållssyssla",
+      "reward": "Belöning",
+      "system": "System"
+    },
+    "styles": {
+      "filled": "Fylld",
+      "outlined": "Kontur"
+    }
+  },
+  "children": {
+    "title": "Barn",
+    "add": "Lägg till barn",
+    "detail": "Barndetaljer",
+    "empty": {
+      "title": "Inga barn tillagda",
+      "message": "Lägg till ditt första barn för att komma igång med att hantera hushållssysslor och belöningar"
+    },
+    "years_old": "år gammal"
+  },
+  "statistics": {
+    "title": "Statistik",
+    "loading": "Laddar statistik...",
+    "noData": "Ingen statistikdata tillgänglig",
+    "summary": "Sammanfattning",
+    "chart": "Prestationsdiagram",
+    "chartPlaceholder": "Diagram visas här när mer data är tillgänglig",
+    "totalChores": "Totala hushållssysslor",
+    "completedChores": "Slutförda",
+    "pendingChores": "Väntande",
+    "missedChores": "Missade",
+    "totalPoints": "Totala poäng",
+    "completionRate": "Slutförandegrad",
+    "grouping": {
+      "day": "Dagligen",
+      "week": "Veckovis",
+      "month": "Månadsvis"
+    },
+    "startDate": "Startdatum",
+    "endDate": "Slutdatum",
+    "selectDateRange": "Välj datumintervall"
+  },
+  "achievements": {
+    "title": "Prestationer",
+    "unlockedOnly": "Visa endast upplåsta",
+    "unlocked": "Upplåst",
+    "locked": "Låst",
+    "progress": "Framsteg",
+    "empty": {
+      "title": "Inga prestationer ännu",
+      "message": "Slutför hushållssysslor och tjäna poäng för att låsa upp prestationer"
+    }
+  },
+  "points": {
+    "summary": {
+      "title": "Poängsammanfattning",
+      "total": "Totalt",
+      "daily": "Dagligen",
+      "weekly": "Veckovis",
+      "monthly": "Månadsvis"
+    },
+    "adjustment": {
+      "title": "Justera poäng",
+      "amount": "Belopp",
+      "reason": "Anledning",
+      "submit": "Skicka"
+    },
+    "history": {
+      "title": "Poänghistorik",
+      "empty": "Inga poängjusteringar ännu",
+      "noReason": "Ingen anledning angiven"
+    }
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "app": {
+    "name": "ChoreKeeper",
+    "tagline": "Làm cho việc nhà trở nên thú vị đối với trẻ em và dễ dàng đối với phụ huynh"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "done": "Xong",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "retry": "Thử lại",
+    "search": "Tìm kiếm",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất",
+    "yes": "Có",
+    "no": "Không",
+    "confirm": "Xác nhận",
+    "warning_permanent": "CẢNH BÁO: Hành động này là vĩnh viễn và không thể hoàn tác.",
+    "this_will": "Điều này sẽ",
+    "close": "Đóng",
+    "finish": "Hoàn thành",
+    "skip": "Bỏ qua",
+    "switch_user": "Chuyển người dùng",
+    "login_as_different_user": "Đăng nhập với tư cách người dùng khác",
+    "no_remembered_users": "Không có người dùng được ghi nhớ",
+    "child": "Trẻ em"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "username": "Tên người dùng",
+    "forgot_password": "Quên mật khẩu?",
+    "create_account": "Tạo tài khoản",
+    "or_continue_with": "Hoặc tiếp tục với",
+    "remember_email": "Ghi nhớ email",
+    "remember_username": "Ghi nhớ tên người dùng",
+    "auto_login": "Tự động đăng nhập",
+    "login_with_google": "Đăng nhập bằng Google",
+    "login_with_apple": "Đăng nhập bằng Apple",
+    "login_with_facebook": "Đăng nhập bằng Facebook",
+    "login_as_parent": "Tôi là phụ huynh",
+    "login_as_child": "Tôi là trẻ em",
+    "select_role": "Chọn vai trò của bạn",
+    "reset_password": "Đặt lại mật khẩu",
+    "change_password": "Thay đổi mật khẩu",
+    "current_password": "Mật khẩu hiện tại",
+    "new_password": "Mật khẩu mới",
+    "confirm_password": "Xác nhận mật khẩu",
+    "passwords_dont_match": "Mật khẩu không khớp",
+    "password_changed": "Đã thay đổi mật khẩu",
+    "password_requirements": "Mật khẩu phải có ít nhất 8 ký tự và bao gồm sự kết hợp của chữ cái, số và ký hiệu",
+    "biometric_login": "Đăng nhập sinh trắc học",
+    "enable_biometric": "Bật đăng nhập sinh trắc học?",
+    "biometric_prompt": "Quét vân tay/khuôn mặt của bạn để đăng nhập",
+    "not_available": "Không có sẵn trên thiết bị này",
+    "verify_your_email": "Xác minh email của bạn",
+    "verification_code_sent_message": "Chúng tôi đã gửi mã xác minh đến {email}. Kiểm tra email của bạn và nhập mã bên dưới.",
+    "verification_code": "Mã xác minh",
+    "enter_6_digit_code": "Nhập mã 6 chữ số",
+    "please_enter_verification_code": "Vui lòng nhập mã xác minh",
+    "verification_code_must_be_6_digits": "Mã xác minh phải có 6 chữ số",
+    "resend_code": "Gửi lại mã",
+    "resend_code_countdown": "Gửi lại mã ({seconds}s)",
+    "verify_email": "Xác minh email",
+    "email_verified": "Email đã được xác minh",
+    "email_verification_banner": "Xác minh địa chỉ email của bạn để đảm bảo bảo mật tài khoản",
+    "verify_now": "Xác minh ngay"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Chào mừng đến với ChoreKeeper",
+      "subtitle": "Làm cho việc nhà trở nên thú vị đối với trẻ em và dễ dàng đối với phụ huynh",
+      "getStarted": "Bắt đầu"
+    },
+    "userType": {
+      "title": "Tôi là...",
+      "parent": "Phụ huynh",
+      "child": "Trẻ em"
+    },
+    "createAccount": {
+      "title": "Tạo tài khoản",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "createAccount": "Tạo tài khoản",
+      "alreadyHaveAccount": "Đã có tài khoản? Đăng nhập"
+    },
+    "signIn": {
+      "title": "Đăng nhập",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "signIn": "Đăng nhập",
+      "forgotPassword": "Quên mật khẩu?",
+      "dontHaveAccount": "Chưa có tài khoản? Tạo một tài khoản"
+    },
+    "skip": "Bỏ qua hướng dẫn",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "finish": "Bắt đầu",
+    "close": "Đóng",
+    "parent": {
+      "welcome": {
+        "title": "Chào mừng đến với ChoreKeeper!",
+        "description": "Hãy thiết lập tài khoản của bạn chỉ trong vài phút. ChoreKeeper giúp bạn quản lý việc nhà, theo dõi điểm số và thưởng cho con bạn khi hoàn thành nhiệm vụ."
+      },
+      "features": {
+        "title": "ChoreKeeper Cung Cấp Những Gì",
+        "description": "ChoreKeeper cung cấp các công cụ để tạo và giao việc nhà, theo dõi điểm số và thiết lập phần thưởng cho con bạn. Bạn có thể quản lý mọi thứ từ một nơi!"
+      },
+      "chores": {
+        "title": "Quản lý việc nhà",
+        "description": "Tạo việc nhà, đặt thời hạn và giao cho con bạn. Chúng sẽ nhận được thông báo và có thể đánh dấu việc nhà là đã hoàn thành khi xong."
+      },
+      "rewards": {
+        "title": "Thiết lập phần thưởng",
+        "description": "Tạo phần thưởng mà con bạn có thể kiếm được bằng cách tích lũy điểm. Đặt ngưỡng điểm và để chúng làm việc hướng tới mục tiêu của mình!"
+      },
+      "add_child": {
+        "title": "Thêm trẻ em",
+        "description": "Để thêm trẻ em, hãy đi đến tab Gia đình và nhấn nút '+'. Nhập tên người dùng và tên của chúng, sau đó chia sẻ mã thiết lập với chúng để hoàn tất việc thiết lập tài khoản."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Chào mừng đến với ChoreKeeper!",
+        "description": "ChoreKeeper giúp bạn theo dõi việc nhà của mình và kiếm điểm bằng cách hoàn thành chúng. Hãy học cách sử dụng ứng dụng!"
+      },
+      "chores": {
+        "title": "Xem và hoàn thành việc nhà",
+        "description": "Việc nhà của bạn sẽ xuất hiện trên màn hình chính. Nhấn vào một việc nhà để xem chi tiết và đánh dấu là đã hoàn thành khi bạn xong. Phụ huynh của bạn sẽ xác minh việc nhà đã hoàn thành."
+      },
+      "points": {
+        "title": "Theo dõi điểm và phần thưởng",
+        "description": "Khi hoàn thành việc nhà, bạn kiếm được điểm. Kiểm tra tổng điểm của bạn và xem bạn có thể kiếm được phần thưởng nào. Theo dõi tiến trình của bạn hướng tới mỗi phần thưởng!"
+      },
+      "settings": {
+        "title": "Cài đặt cá nhân",
+        "description": "Bạn có thể tùy chỉnh hồ sơ của mình bằng cách thay đổi hình đại diện và đặt lời nhắc cho việc nhà. Nhấn vào biểu tượng Cài đặt để truy cập các tùy chọn này."
+      }
+    }
+  },
+  "dashboard": {
+    "parent": {
+      "title": "Bảng điều khiển phụ huynh",
+      "children": "Trẻ em",
+      "chores": "Việc nhà",
+      "rewards": "Phần thưởng",
+      "settings": "Cài đặt",
+      "family": "Gia đình",
+      "statistics": "Thống kê",
+      "calendar": "Lịch"
+    },
+    "child": {
+      "title": "Bảng điều khiển của tôi",
+      "myChores": "Việc nhà của tôi",
+      "myRewards": "Phần thưởng của tôi",
+      "myPoints": "Điểm của tôi",
+      "settings": "Cài đặt",
+      "completedChores": "Việc nhà đã hoàn thành",
+      "achievements": "Thành tích"
+    },
+    "cork_board": "Bảng ghim bần",
+    "push_pin": "Ghim",
+    "pinned_item": "Mục đã ghim",
+    "calendar_item": "Lịch",
+    "chores_item": "Danh sách việc nhà",
+    "rewards_item": "Phần thưởng",
+    "points_item": "Tổng kết điểm",
+    "family_item": "Quản lý gia đình",
+    "statistics_item": "Thống kê và báo cáo",
+    "achievements_item": "Thành tích",
+    "settings_gear": "Menu cài đặt"
+  },
+  "chores": {
+    "title": "Việc nhà",
+    "add": "Thêm việc nhà",
+    "edit": "Chỉnh sửa việc nhà",
+    "delete": "Xóa việc nhà",
+    "complete": "Hoàn thành",
+    "verify": "Xác minh",
+    "reject": "Từ chối",
+    "empty": "Không tìm thấy việc nhà",
+    "add_first_chore": "Thêm việc nhà đầu tiên của bạn",
+    "parentChores": "Việc nhà của phụ huynh",
+    "childChores": "Việc nhà của trẻ em",
+    "points": "Điểm",
+    "details": "Chi tiết",
+    "schedule": "Lịch trình",
+    "actions": "Hành động",
+    "noDescription": "Không có mô tả",
+    "noDueDate": "Không có ngày đến hạn",
+    "lastCompleted": "Hoàn thành lần cuối",
+    "frequency": {
+      "title": "Tần suất",
+      "once": "Một lần",
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "weeklyOnDay": "Hàng tuần vào ngày",
+      "monthly": "Hàng tháng",
+      "custom": "Tùy chỉnh"
+    },
+    "specificDays": "Ngày cụ thể",
+    "dayOfMonth": "Ngày trong tháng",
+    "deleteConfirmation": {
+      "title": "Xóa việc nhà",
+      "message": "Bạn có chắc chắn muốn xóa việc nhà này không? Hành động này không thể hoàn tác."
+    },
+    "rejectReason": {
+      "title": "Lý do từ chối",
+      "placeholder": "Nhập lý do từ chối"
+    },
+    "filter": {
+      "title": "Lọc việc nhà",
+      "all": "Tất cả",
+      "pending": "Đang chờ",
+      "completed": "Đã hoàn thành",
+      "pendingVerification": "Đang chờ xác minh",
+      "missed": "Đã bỏ lỡ",
+      "status": "Trạng thái",
+      "category": "Danh mục"
+    },
+    "form": {
+      "createTitle": "Tạo việc nhà",
+      "editTitle": "Chỉnh sửa việc nhà",
+      "basicInfo": "Thông tin cơ bản",
+      "title": "Tiêu đề",
+      "description": "Mô tả",
+      "icon": "Biểu tượng",
+      "selectIcon": "Chọn biểu tượng",
+      "assignedChild": "Trẻ em được giao",
+      "selectChild": "Chọn trẻ em",
+      "noChild": "Không có trẻ em (Việc nhà của phụ huynh)",
+      "dueDate": "Ngày đến hạn",
+      "hasDueDate": "Có ngày đến hạn",
+      "date": "Ngày",
+      "time": "Giờ",
+      "frequency": "Tần suất",
+      "dayOfMonth": "Ngày trong tháng",
+      "points": "Điểm",
+      "pointValue": "Giá trị điểm",
+      "countTowardsDaily": "Tính vào tổng hàng ngày",
+      "countTowardsWeekly": "Tính vào tổng hàng tuần",
+      "countTowardsMonthly": "Tính vào tổng hàng tháng",
+      "subtractPointsWhenMissed": "Trừ điểm khi bỏ lỡ"
+    },
+    "choreName": "Tên việc nhà",
+    "choreDescription": "Mô tả",
+    "dueDate": "Ngày đến hạn",
+    "dueTime": "Giờ đến hạn",
+    "assignTo": "Giao cho",
+    "status": {
+      "title": "Trạng thái",
+      "pending": "Đang chờ",
+      "pendingVerification": "Đang chờ xác minh",
+      "completed": "Đã hoàn thành",
+      "missed": "Đã bỏ lỡ",
+      "overdue": "Quá hạn",
+      "verified": "Đã xác minh"
+    },
+    "markComplete": "Đánh dấu là hoàn thành",
+    "markIncomplete": "Đánh dấu là chưa hoàn thành",
+    "noChores": "Không tìm thấy việc nhà",
+    "recurring": "Lặp lại",
+    "days": "Ngày",
+    "weeks": "Tuần",
+    "months": "Tháng",
+    "every": "Mỗi",
+    "on_days": "Vào các ngày",
+    "monday": "Thứ Hai",
+    "tuesday": "Thứ Ba",
+    "wednesday": "Thứ Tư",
+    "thursday": "Thứ Năm",
+    "friday": "Thứ Sáu",
+    "saturday": "Thứ Bảy",
+    "sunday": "Chủ Nhật",
+    "confirm_delete": "Bạn có chắc chắn muốn xóa việc nhà này không?",
+    "delete_recurring": "Xóa tất cả các lần lặp lại hay chỉ lần này?",
+    "all_occurrences": "Tất cả các lần lặp lại",
+    "just_this_one": "Chỉ lần này",
+    "view_calendar": "Xem lịch"
+  },
+  "rewards": {
+    "title": "Phần thưởng",
+    "addReward": "Thêm phần thưởng",
+    "editReward": "Chỉnh sửa phần thưởng",
+    "deleteReward": "Xóa phần thưởng",
+    "rewardName": "Tên phần thưởng",
+    "rewardDescription": "Mô tả",
+    "pointCost": "Chi phí điểm",
+    "availableUntil": "Có sẵn đến",
+    "claimReward": "Yêu cầu phần thưởng",
+    "noRewards": "Không tìm thấy phần thưởng",
+    "deleteConfirmation": "Bạn có chắc chắn muốn xóa phần thưởng này không?",
+    "add_reward": "Thêm phần thưởng",
+    "edit_reward": "Chỉnh sửa phần thưởng",
+    "delete_reward": "Xóa phần thưởng",
+    "reward_name": "Tên phần thưởng",
+    "please_enter_reward_name": "Vui lòng nhập tên phần thưởng",
+    "description": "Mô tả",
+    "points_required": "Điểm yêu cầu",
+    "point_threshold": "Ngưỡng điểm",
+    "please_enter_point_threshold": "Vui lòng nhập ngưỡng điểm",
+    "reward_type": "Loại phần thưởng",
+    "as_reached": "Khi đạt đến",
+    "highest_reached": "Cao nhất đạt được",
+    "allow_negative_threshold": "Cho phép ngưỡng âm",
+    "negative_allowed": "Cho phép âm",
+    "available_to": "Có sẵn cho",
+    "status": "Trạng thái",
+    "available": "Có sẵn",
+    "claimed": "Đã yêu cầu",
+    "redeemed": "Đã đổi",
+    "expired": "Đã hết hạn",
+    "claim": "Yêu cầu",
+    "redeem": "Đổi",
+    "no_rewards": "Không tìm thấy phần thưởng",
+    "add_first_reward": "Thêm phần thưởng đầu tiên của bạn",
+    "confirm_delete": "Bạn có chắc chắn muốn xóa phần thưởng này không?",
+    "delete_reward_confirmation": "Bạn có chắc chắn muốn xóa phần thưởng '{name}' không?",
+    "not_enough_points": "Không đủ điểm để yêu cầu phần thưởng này",
+    "reward_claimed": "Đã yêu cầu phần thưởng",
+    "reward_redeemed": "Đã đổi phần thưởng",
+    "claim_reward": "Yêu cầu phần thưởng",
+    "claim_reward_confirmation": "Bạn có chắc chắn muốn yêu cầu '{name}' không?",
+    "redeemed_on": "Đã đổi vào {date}",
+    "expired_on": "Đã hết hạn vào {date}",
+    "earned_rewards": "Phần thưởng đã kiếm được",
+    "upcoming_rewards": "Phần thưởng sắp tới",
+    "no_upcoming_rewards": "Không có phần thưởng sắp tới",
+    "rewards_management": "Quản lý phần thưởng",
+    "you_have_earned_rewards": "Bạn đã kiếm được {count} phần thưởng!",
+    "empty": {
+      "parent": "No rewards created yet",
+      "available": "No available rewards",
+      "earned": "No earned rewards yet"
+    },
+    "period": {
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    },
+    "points": "points",
+    "detail": "Reward Details",
+    "unlockedOnly": "Show Unlocked Only"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "account": "Tài khoản",
+    "profile": "Hồ sơ",
+    "notifications": "Thông báo",
+    "appearance": "Giao diện",
+    "language": "Ngôn ngữ",
+    "help": "Trợ giúp",
+    "about": "Giới thiệu",
+    "signOut": "Đăng xuất",
+    "deleteAccount": "Xóa tài khoản",
+    "theme": {
+      "title": "Chủ đề",
+      "light": "Sáng",
+      "dark": "Tối",
+      "system": "Hệ thống"
+    },
+    "security": "Bảo mật và truy cập",
+    "privacy": "Chính sách riêng tư",
+    "terms": "Điều khoản sử dụng",
+    "version": "Phiên bản",
+    "dark_mode": "Chế độ tối",
+    "light_mode": "Chế độ sáng",
+    "system_theme": "Sử dụng chủ đề hệ thống",
+    "high_contrast": "Độ tương phản cao",
+    "use_device_language": "Sử dụng ngôn ngữ thiết bị",
+    "select_language": "Chọn ngôn ngữ",
+    "biometric_login": "Đăng nhập sinh trắc học",
+    "auto_login": "Tự động đăng nhập",
+    "chore_management": "Quản lý việc nhà",
+    "default_due_time": "Thời gian đến hạn mặc định",
+    "auto_verification": "Tự động xác minh",
+    "auto_verification_subtitle": "Cho phép đánh dấu việc nhà là hoàn thành mà không cần xác minh của phụ huynh",
+    "customization": "Tùy chỉnh",
+    "custom_icons": "Biểu tượng tùy chỉnh",
+    "custom_icons_subtitle": "Tải lên và quản lý biểu tượng tùy chỉnh",
+    "theme_settings": "Cài đặt chủ đề",
+    "requires_tier": "Yêu cầu tài khoản {tier}",
+    "avatar": "Hình đại diện",
+    "change_avatar": "Thay đổi hình đại diện",
+    "avatar_updated": "Đã cập nhật hình đại diện"
+  },
+  "tutorial": {
+    "title": "Hướng dẫn",
+    "skip": "Bỏ qua hướng dẫn",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "finish": "Bắt đầu",
+    "close": "Đóng",
+    "parent": {
+      "welcome": {
+        "title": "Chào mừng đến với ChoreKeeper!",
+        "description": "Hãy thiết lập tài khoản của bạn chỉ trong vài phút. ChoreKeeper giúp bạn quản lý việc nhà, theo dõi điểm số và thưởng cho con bạn khi hoàn thành nhiệm vụ."
+      },
+      "features": {
+        "title": "ChoreKeeper Cung Cấp Những Gì",
+        "description": "ChoreKeeper cung cấp các công cụ để tạo và giao việc nhà, theo dõi điểm số và thiết lập phần thưởng cho con bạn. Bạn có thể quản lý mọi thứ từ một nơi!"
+      },
+      "chores": {
+        "title": "Quản lý việc nhà",
+        "description": "Tạo việc nhà, đặt thời hạn và giao cho con bạn. Chúng sẽ nhận được thông báo và có thể đánh dấu việc nhà là đã hoàn thành khi xong."
+      },
+      "rewards": {
+        "title": "Thiết lập phần thưởng",
+        "description": "Tạo phần thưởng mà con bạn có thể kiếm được bằng cách tích lũy điểm. Đặt ngưỡng điểm và để chúng làm việc hướng tới mục tiêu của mình!"
+      },
+      "add_child": {
+        "title": "Thêm trẻ em",
+        "description": "Để thêm trẻ em, hãy đi đến tab Gia đình và nhấn nút '+'. Nhập tên người dùng và tên của chúng, sau đó chia sẻ mã thiết lập với chúng để hoàn tất việc thiết lập tài khoản."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Chào mừng đến với ChoreKeeper!",
+        "description": "ChoreKeeper giúp bạn theo dõi việc nhà của mình và kiếm điểm bằng cách hoàn thành chúng. Hãy học cách sử dụng ứng dụng!"
+      },
+      "chores": {
+        "title": "Xem và hoàn thành việc nhà",
+        "description": "Việc nhà của bạn sẽ xuất hiện trên màn hình chính. Nhấn vào một việc nhà để xem chi tiết và đánh dấu là đã hoàn thành khi bạn xong. Phụ huynh của bạn sẽ xác minh việc nhà đã hoàn thành."
+      },
+      "points": {
+        "title": "Theo dõi điểm và phần thưởng",
+        "description": "Khi hoàn thành việc nhà, bạn kiếm được điểm. Kiểm tra tổng điểm của bạn và xem bạn có thể kiếm được phần thưởng nào. Theo dõi tiến trình của bạn hướng tới mỗi phần thưởng!"
+      },
+      "settings": {
+        "title": "Cài đặt cá nhân",
+        "description": "Bạn có thể tùy chỉnh hồ sơ của mình bằng cách thay đổi hình đại diện và đặt lời nhắc cho việc nhà. Nhấn vào biểu tượng Cài đặt để truy cập các tùy chọn này."
+      }
+    }
+  },
+  "customization": {
+    "title": "Tùy chỉnh",
+    "avatars": "Hình đại diện",
+    "themes": "Chủ đề",
+    "icons": "Biểu tượng",
+    "backgrounds": "Hình nền",
+    "default_avatars": "Hình đại diện mặc định",
+    "dicebear_avatars": "Hình đại diện DiceBear",
+    "uploaded_avatars": "Hình đại diện đã tải lên",
+    "create_avatar": "Tạo hình đại diện",
+    "upload_avatar": "Tải lên hình đại diện",
+    "select_style": "Chọn kiểu",
+    "select_age": "Chọn tuổi",
+    "select_gender": "Chọn giới tính",
+    "randomize": "Ngẫu nhiên",
+    "hair_style": "Kiểu tóc",
+    "facial_features": "Đặc điểm khuôn mặt",
+    "clothing": "Quần áo",
+    "save_avatar": "Lưu hình đại diện",
+    "avatar_created": "Đã tạo hình đại diện",
+    "avatar_updated": "Đã cập nhật hình đại diện",
+    "child": "Trẻ em",
+    "teen": "Thiếu niên",
+    "adult": "Người lớn",
+    "male": "Nam",
+    "female": "Nữ",
+    "androgynous": "Phi giới tính",
+    "eyes": "Mắt",
+    "mouth": "Miệng",
+    "nose": "Mũi",
+    "eyebrows": "Lông mày",
+    "body": "Cơ thể",
+    "custom_avatar": "Hình đại diện tùy chỉnh",
+    "random_avatar": "Hình đại diện ngẫu nhiên",
+    "avatar_type": "Loại hình đại diện",
+    "dicebear": "DiceBear",
+    "default": "Mặc định",
+    "custom": "Tùy chỉnh",
+    "seed": "Hạt giống",
+    "url": "URL",
+    "load": "Tải",
+    "category": "Danh mục",
+    "style": "Kiểu",
+    "categories": {
+      "chore": "Việc nhà",
+      "reward": "Phần thưởng",
+      "system": "Hệ thống"
+    },
+    "styles": {
+      "filled": "Đầy đủ",
+      "outlined": "Viền"
+    }
+  },
+  "children": {
+    "title": "Children",
+    "add": "Add Child",
+    "detail": "Child Details",
+    "empty": {
+      "title": "No Children Added",
+      "message": "Add your first child to get started with managing chores and rewards"
+    },
+    "years_old": "years old"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "loading": "Loading statistics...",
+    "noData": "No statistics data available",
+    "summary": "Summary",
+    "chart": "Performance Chart",
+    "chartPlaceholder": "Chart will appear here when more data is available",
+    "totalChores": "Total Chores",
+    "completedChores": "Completed",
+    "pendingChores": "Pending",
+    "missedChores": "Missed",
+    "totalPoints": "Total Points",
+    "completionRate": "Completion Rate",
+    "grouping": {
+      "day": "Daily",
+      "week": "Weekly",
+      "month": "Monthly"
+    },
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "selectDateRange": "Select Date Range"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "unlockedOnly": "Show Unlocked Only",
+    "unlocked": "Unlocked",
+    "locked": "Locked",
+    "progress": "Progress",
+    "empty": {
+      "title": "No Achievements Yet",
+      "message": "Complete chores and earn points to unlock achievements"
+    }
+  },
+  "points": {
+    "summary": {
+      "title": "Points Summary",
+      "total": "Total",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    },
+    "adjustment": {
+      "title": "Adjust Points",
+      "amount": "Amount",
+      "reason": "Reason",
+      "submit": "Submit"
+    },
+    "history": {
+      "title": "Points History",
+      "empty": "No point adjustments yet",
+      "noReason": "No reason provided"
+    }
+  }
+}

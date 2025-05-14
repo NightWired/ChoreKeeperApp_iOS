@@ -1,0 +1,563 @@
+{
+  "app": {
+    "name": "ChoreKeeper",
+    "tagline": "Sprawia, że obowiązki domowe są zabawne dla dzieci i łatwe dla rodziców"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "done": "Gotowe",
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "warning": "Ostrzeżenie",
+    "info": "Informacja",
+    "retry": "Spróbuj ponownie",
+    "search": "Szukaj",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj",
+    "yes": "Tak",
+    "no": "Nie",
+    "confirm": "Potwierdź",
+    "warning_permanent": "OSTRZEŻENIE: Ta akcja jest trwała i nie może być cofnięta.",
+    "this_will": "To spowoduje",
+    "close": "Zamknij",
+    "finish": "Zakończ",
+    "skip": "Pomiń",
+    "switch_user": "Przełącz użytkownika",
+    "login_as_different_user": "Zaloguj się jako inny użytkownik",
+    "no_remembered_users": "Brak zapamiętanych użytkowników",
+    "child": "Dziecko"
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "signup": "Zarejestruj się",
+    "email": "E-mail",
+    "password": "Hasło",
+    "username": "Nazwa użytkownika",
+    "forgot_password": "Zapomniałeś hasła?",
+    "create_account": "Utwórz konto",
+    "or_continue_with": "Lub kontynuuj z",
+    "remember_email": "Zapamiętaj e-mail",
+    "remember_username": "Zapamiętaj nazwę użytkownika",
+    "auto_login": "Automatyczne logowanie",
+    "login_with_google": "Zaloguj się przez Google",
+    "login_with_apple": "Zaloguj się przez Apple",
+    "login_with_facebook": "Zaloguj się przez Facebook",
+    "login_as_parent": "Jestem rodzicem",
+    "login_as_child": "Jestem dzieckiem",
+    "select_role": "Wybierz swoją rolę",
+    "reset_password": "Zresetuj hasło",
+    "change_password": "Zmień hasło",
+    "current_password": "Obecne hasło",
+    "new_password": "Nowe hasło",
+    "confirm_password": "Potwierdź hasło",
+    "passwords_dont_match": "Hasła nie pasują do siebie",
+    "password_changed": "Hasło zostało zmienione",
+    "password_requirements": "Hasło musi mieć co najmniej 8 znaków i zawierać mieszankę liter, cyfr i symboli",
+    "biometric_login": "Logowanie biometryczne",
+    "enable_biometric": "Włączyć logowanie biometryczne?",
+    "biometric_prompt": "Zeskanuj odcisk palca/twarz, aby się zalogować",
+    "not_available": "Niedostępne na tym urządzeniu",
+    "verify_your_email": "Zweryfikuj swój e-mail",
+    "verification_code_sent_message": "Wysłaliśmy kod weryfikacyjny na adres {email}. Sprawdź swoją skrzynkę e-mail i wprowadź kod poniżej.",
+    "verification_code": "Kod weryfikacyjny",
+    "enter_6_digit_code": "Wprowadź 6-cyfrowy kod",
+    "please_enter_verification_code": "Wprowadź kod weryfikacyjny",
+    "verification_code_must_be_6_digits": "Kod weryfikacyjny musi składać się z 6 cyfr",
+    "resend_code": "Wyślij kod ponownie",
+    "resend_code_countdown": "Wyślij kod ponownie ({seconds}s)",
+    "verify_email": "Zweryfikuj e-mail",
+    "email_verified": "E-mail zweryfikowany",
+    "email_verification_banner": "Zweryfikuj swój adres e-mail, aby zapewnić bezpieczeństwo konta",
+    "verify_now": "Zweryfikuj teraz"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Witaj w ChoreKeeper",
+      "subtitle": "Sprawia, że obowiązki domowe są zabawne dla dzieci i łatwe dla rodziców",
+      "getStarted": "Rozpocznij"
+    },
+    "userType": {
+      "title": "Jestem...",
+      "parent": "Rodzicem",
+      "child": "Dzieckiem"
+    },
+    "createAccount": {
+      "title": "Utwórz konto",
+      "email": "E-mail",
+      "password": "Hasło",
+      "confirmPassword": "Potwierdź hasło",
+      "createAccount": "Utwórz konto",
+      "alreadyHaveAccount": "Masz już konto? Zaloguj się"
+    },
+    "signIn": {
+      "title": "Zaloguj się",
+      "email": "E-mail",
+      "password": "Hasło",
+      "signIn": "Zaloguj się",
+      "forgotPassword": "Zapomniałeś hasła?",
+      "dontHaveAccount": "Nie masz konta? Utwórz je"
+    },
+    "skip": "Pomiń samouczek",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "finish": "Rozpocznij",
+    "close": "Zamknij",
+    "parent": {
+      "welcome": {
+        "title": "Witaj w ChoreKeeper!",
+        "description": "Skonfigurujmy Twoje konto w zaledwie kilka minut. ChoreKeeper pomaga zarządzać obowiązkami domowymi, śledzić punkty i nagradzać dzieci za wykonywanie zadań."
+      },
+      "features": {
+        "title": "Co oferuje ChoreKeeper",
+        "description": "ChoreKeeper dostarcza narzędzia do tworzenia i przydzielania obowiązków domowych, śledzenia punktów i ustawiania nagród dla Twoich dzieci. Możesz zarządzać wszystkim z jednego miejsca!"
+      },
+      "chores": {
+        "title": "Zarządzanie obowiązkami domowymi",
+        "description": "Twórz obowiązki domowe, ustawiaj terminy i przydzielaj je swoim dzieciom. Otrzymają powiadomienia i będą mogły oznaczyć obowiązki jako wykonane po ich zakończeniu."
+      },
+      "rewards": {
+        "title": "Ustawianie nagród",
+        "description": "Twórz nagrody, które Twoje dzieci mogą zdobyć, zbierając punkty. Ustaw progi punktowe i pozwól im dążyć do swoich celów!"
+      },
+      "add_child": {
+        "title": "Dodawanie dziecka",
+        "description": "Aby dodać dziecko, przejdź do zakładki Rodzina i dotknij przycisku '+'. Wprowadź ich nazwę użytkownika i imię, a następnie udostępnij im kod konfiguracyjny, aby dokończyć konfigurację konta."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Witaj w ChoreKeeper!",
+        "description": "ChoreKeeper pomaga śledzić Twoje obowiązki domowe i zdobywać punkty za ich wykonywanie. Nauczmy się, jak korzystać z aplikacji!"
+      },
+      "chores": {
+        "title": "Przeglądanie i wykonywanie obowiązków domowych",
+        "description": "Twoje obowiązki domowe pojawią się na ekranie głównym. Dotknij obowiązku, aby zobaczyć szczegóły i oznacz go jako wykonany, gdy skończysz. Twoi rodzice zweryfikują wykonane obowiązki."
+      },
+      "points": {
+        "title": "Śledzenie punktów i nagród",
+        "description": "Wykonując obowiązki domowe, zdobywasz punkty. Sprawdź swoją całkowitą liczbę punktów i zobacz, jakie nagrody możesz zdobyć. Śledź swoje postępy w kierunku każdej nagrody!"
+      },
+      "settings": {
+        "title": "Ustawienia osobiste",
+        "description": "Możesz dostosować swój profil, zmieniając awatar i ustawiając przypomnienia o obowiązkach domowych. Dotknij ikony ustawień, aby uzyskać dostęp do tych opcji."
+      }
+    }
+  },
+  "dashboard": {
+    "parent": {
+      "title": "Panel rodzica",
+      "children": "Dzieci",
+      "chores": "Obowiązki domowe",
+      "rewards": "Nagrody",
+      "settings": "Ustawienia",
+      "family": "Rodzina",
+      "statistics": "Statystyki",
+      "calendar": "Kalendarz"
+    },
+    "child": {
+      "title": "Mój panel",
+      "myChores": "Moje obowiązki domowe",
+      "myRewards": "Moje nagrody",
+      "myPoints": "Moje punkty",
+      "settings": "Ustawienia",
+      "completedChores": "Ukończone obowiązki",
+      "achievements": "Osiągnięcia"
+    },
+    "cork_board": "Tablica korkowa",
+    "push_pin": "Pinezka",
+    "pinned_item": "Przypięty element",
+    "calendar_item": "Kalendarz",
+    "chores_item": "Lista obowiązków",
+    "rewards_item": "Nagrody",
+    "points_item": "Podsumowanie punktów",
+    "family_item": "Zarządzanie rodziną",
+    "statistics_item": "Statystyki i raporty",
+    "achievements_item": "Osiągnięcia",
+    "settings_gear": "Menu ustawień"
+  },
+  "chores": {
+    "title": "Obowiązki domowe",
+    "add": "Dodaj obowiązek domowy",
+    "edit": "Edytuj obowiązek domowy",
+    "delete": "Usuń obowiązek domowy",
+    "complete": "Ukończ",
+    "verify": "Zweryfikuj",
+    "reject": "Odrzuć",
+    "empty": "Nie znaleziono obowiązków domowych",
+    "add_first_chore": "Dodaj swój pierwszy obowiązek domowy",
+    "parentChores": "Obowiązki rodzica",
+    "childChores": "Obowiązki dziecka",
+    "points": "Punkty",
+    "details": "Szczegóły",
+    "schedule": "Harmonogram",
+    "actions": "Działania",
+    "noDescription": "Brak opisu",
+    "noDueDate": "Brak terminu",
+    "lastCompleted": "Ostatnio ukończony",
+    "frequency": {
+      "title": "Częstotliwość",
+      "once": "Jednorazowo",
+      "daily": "Codziennie",
+      "weekly": "Co tydzień",
+      "weeklyOnDay": "Co tydzień w dany dzień",
+      "monthly": "Co miesiąc",
+      "custom": "Niestandardowa"
+    },
+    "specificDays": "Określone dni",
+    "dayOfMonth": "Dzień miesiąca",
+    "deleteConfirmation": {
+      "title": "Usuń obowiązek domowy",
+      "message": "Czy na pewno chcesz usunąć ten obowiązek domowy? Tej akcji nie można cofnąć."
+    },
+    "rejectReason": {
+      "title": "Powód odrzucenia",
+      "placeholder": "Wprowadź powód odrzucenia"
+    },
+    "filter": {
+      "title": "Filtruj obowiązki domowe",
+      "all": "Wszystkie",
+      "pending": "Oczekujące",
+      "completed": "Ukończone",
+      "pendingVerification": "Oczekujące na weryfikację",
+      "missed": "Pominięte",
+      "status": "Status",
+      "category": "Kategoria"
+    },
+    "form": {
+      "createTitle": "Utwórz obowiązek domowy",
+      "editTitle": "Edytuj obowiązek domowy",
+      "basicInfo": "Podstawowe informacje",
+      "title": "Tytuł",
+      "description": "Opis",
+      "icon": "Ikona",
+      "selectIcon": "Wybierz ikonę",
+      "assignedChild": "Przydzielone dziecko",
+      "selectChild": "Wybierz dziecko",
+      "noChild": "Brak dziecka (Obowiązek rodzica)",
+      "dueDate": "Termin",
+      "hasDueDate": "Ma termin",
+      "date": "Data",
+      "time": "Czas",
+      "frequency": "Częstotliwość",
+      "dayOfMonth": "Dzień miesiąca",
+      "points": "Punkty",
+      "pointValue": "Wartość punktowa",
+      "countTowardsDaily": "Licz do dziennych sum",
+      "countTowardsWeekly": "Licz do tygodniowych sum",
+      "countTowardsMonthly": "Licz do miesięcznych sum",
+      "subtractPointsWhenMissed": "Odejmij punkty gdy pominięto"
+    },
+    "choreName": "Nazwa obowiązku domowego",
+    "choreDescription": "Opis",
+    "dueDate": "Termin",
+    "dueTime": "Czas wykonania",
+    "assignTo": "Przydziel do",
+    "status": {
+      "title": "Status",
+      "pending": "Oczekujący",
+      "pendingVerification": "Oczekuje na weryfikację",
+      "completed": "Ukończony",
+      "missed": "Pominięty",
+      "overdue": "Zaległy",
+      "verified": "Zweryfikowany"
+    },
+    "markComplete": "Oznacz jako ukończony",
+    "markIncomplete": "Oznacz jako nieukończony",
+    "noChores": "Nie znaleziono obowiązków domowych",
+    "recurring": "Powtarzający się",
+    "days": "Dni",
+    "weeks": "Tygodnie",
+    "months": "Miesiące",
+    "every": "Co",
+    "on_days": "W dni",
+    "monday": "Poniedziałek",
+    "tuesday": "Wtorek",
+    "wednesday": "Środa",
+    "thursday": "Czwartek",
+    "friday": "Piątek",
+    "saturday": "Sobota",
+    "sunday": "Niedziela",
+    "confirm_delete": "Czy na pewno chcesz usunąć ten obowiązek domowy?",
+    "delete_recurring": "Usunąć wszystkie wystąpienia czy tylko to jedno?",
+    "all_occurrences": "Wszystkie wystąpienia",
+    "just_this_one": "Tylko to jedno",
+    "view_calendar": "Zobacz kalendarz"
+  },
+  "rewards": {
+    "title": "Nagrody",
+    "addReward": "Dodaj nagrodę",
+    "editReward": "Edytuj nagrodę",
+    "deleteReward": "Usuń nagrodę",
+    "rewardName": "Nazwa nagrody",
+    "rewardDescription": "Opis",
+    "pointCost": "Koszt punktowy",
+    "availableUntil": "Dostępne do",
+    "claimReward": "Odbierz nagrodę",
+    "noRewards": "Nie znaleziono nagród",
+    "deleteConfirmation": "Czy na pewno chcesz usunąć tę nagrodę?",
+    "add_reward": "Dodaj nagrodę",
+    "edit_reward": "Edytuj nagrodę",
+    "delete_reward": "Usuń nagrodę",
+    "reward_name": "Nazwa nagrody",
+    "please_enter_reward_name": "Wprowadź nazwę nagrody",
+    "description": "Opis",
+    "points_required": "Wymagane punkty",
+    "point_threshold": "Próg punktowy",
+    "please_enter_point_threshold": "Wprowadź próg punktowy",
+    "reward_type": "Typ nagrody",
+    "as_reached": "Po osiągnięciu",
+    "highest_reached": "Najwyższy osiągnięty",
+    "allow_negative_threshold": "Zezwalaj na ujemny próg",
+    "negative_allowed": "Ujemne dozwolone",
+    "available_to": "Dostępne dla",
+    "status": "Status",
+    "available": "Dostępne",
+    "claimed": "Odebrane",
+    "redeemed": "Wykorzystane",
+    "expired": "Wygasłe",
+    "claim": "Odbierz",
+    "redeem": "Wykorzystaj",
+    "no_rewards": "Nie znaleziono nagród",
+    "add_first_reward": "Dodaj swoją pierwszą nagrodę",
+    "confirm_delete": "Czy na pewno chcesz usunąć tę nagrodę?",
+    "delete_reward_confirmation": "Czy na pewno chcesz usunąć nagrodę '{name}'?",
+    "not_enough_points": "Niewystarczająca liczba punktów, aby odebrać tę nagrodę",
+    "reward_claimed": "Nagroda odebrana",
+    "reward_redeemed": "Nagroda wykorzystana",
+    "claim_reward": "Odbierz nagrodę",
+    "claim_reward_confirmation": "Czy na pewno chcesz odebrać '{name}'?",
+    "redeemed_on": "Wykorzystano dnia {date}",
+    "expired_on": "Wygasło dnia {date}",
+    "earned_rewards": "Zdobyte nagrody",
+    "upcoming_rewards": "Nadchodzące nagrody",
+    "no_upcoming_rewards": "Brak nadchodzących nagród",
+    "rewards_management": "Zarządzanie nagrodami",
+    "you_have_earned_rewards": "Zdobyłeś {count} nagród!",
+    "empty": {
+      "parent": "Nie utworzono jeszcze nagród",
+      "available": "Brak dostępnych nagród",
+      "earned": "Nie zdobyto jeszcze nagród"
+    },
+    "period": {
+      "daily": "Dziennie",
+      "weekly": "Tygodniowo",
+      "monthly": "Miesięcznie"
+    },
+    "points": "punkty",
+    "detail": "Szczegóły nagrody",
+    "unlockedOnly": "Pokaż tylko odblokowane"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "account": "Konto",
+    "profile": "Profil",
+    "notifications": "Powiadomienia",
+    "appearance": "Wygląd",
+    "language": "Język",
+    "help": "Pomoc",
+    "about": "O aplikacji",
+    "signOut": "Wyloguj się",
+    "deleteAccount": "Usuń konto",
+    "theme": {
+      "title": "Motyw",
+      "light": "Jasny",
+      "dark": "Ciemny",
+      "system": "Systemowy"
+    },
+    "security": "Bezpieczeństwo i dostęp",
+    "privacy": "Polityka prywatności",
+    "terms": "Warunki korzystania",
+    "version": "Wersja",
+    "dark_mode": "Tryb ciemny",
+    "light_mode": "Tryb jasny",
+    "system_theme": "Użyj motywu systemowego",
+    "high_contrast": "Wysoki kontrast",
+    "use_device_language": "Użyj języka urządzenia",
+    "select_language": "Wybierz język",
+    "biometric_login": "Logowanie biometryczne",
+    "auto_login": "Automatyczne logowanie",
+    "chore_management": "Zarządzanie obowiązkami domowymi",
+    "default_due_time": "Domyślny czas wykonania",
+    "auto_verification": "Automatyczna weryfikacja",
+    "auto_verification_subtitle": "Zezwalaj na oznaczanie obowiązków domowych jako ukończone bez weryfikacji rodzica",
+    "customization": "Personalizacja",
+    "custom_icons": "Niestandardowe ikony",
+    "custom_icons_subtitle": "Przesyłaj i zarządzaj niestandardowymi ikonami",
+    "theme_settings": "Ustawienia motywu",
+    "requires_tier": "Wymaga konta {tier}",
+    "avatar": "Awatar",
+    "change_avatar": "Zmień awatar",
+    "avatar_updated": "Awatar zaktualizowany"
+  },
+  "tutorial": {
+    "title": "Samouczek",
+    "skip": "Pomiń samouczek",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "finish": "Rozpocznij",
+    "close": "Zamknij",
+    "parent": {
+      "welcome": {
+        "title": "Witaj w ChoreKeeper!",
+        "description": "Skonfigurujmy Twoje konto w zaledwie kilka minut. ChoreKeeper pomaga zarządzać obowiązkami domowymi, śledzić punkty i nagradzać dzieci za wykonywanie zadań."
+      },
+      "features": {
+        "title": "Co oferuje ChoreKeeper",
+        "description": "ChoreKeeper dostarcza narzędzia do tworzenia i przydzielania obowiązków domowych, śledzenia punktów i ustawiania nagród dla Twoich dzieci. Możesz zarządzać wszystkim z jednego miejsca!"
+      },
+      "chores": {
+        "title": "Zarządzanie obowiązkami domowymi",
+        "description": "Twórz obowiązki domowe, ustawiaj terminy i przydzielaj je swoim dzieciom. Otrzymają powiadomienia i będą mogły oznaczyć obowiązki jako wykonane po ich zakończeniu."
+      },
+      "rewards": {
+        "title": "Ustawianie nagród",
+        "description": "Twórz nagrody, które Twoje dzieci mogą zdobyć, zbierając punkty. Ustaw progi punktowe i pozwól im dążyć do swoich celów!"
+      },
+      "add_child": {
+        "title": "Dodawanie dziecka",
+        "description": "Aby dodać dziecko, przejdź do zakładki Rodzina i dotknij przycisku '+'. Wprowadź ich nazwę użytkownika i imię, a następnie udostępnij im kod konfiguracyjny, aby dokończyć konfigurację konta."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Witaj w ChoreKeeper!",
+        "description": "ChoreKeeper pomaga śledzić Twoje obowiązki domowe i zdobywać punkty za ich wykonywanie. Nauczmy się, jak korzystać z aplikacji!"
+      },
+      "chores": {
+        "title": "Przeglądanie i wykonywanie obowiązków domowych",
+        "description": "Twoje obowiązki domowe pojawią się na ekranie głównym. Dotknij obowiązku, aby zobaczyć szczegóły i oznacz go jako wykonany, gdy skończysz. Twoi rodzice zweryfikują wykonane obowiązki."
+      },
+      "points": {
+        "title": "Śledzenie punktów i nagród",
+        "description": "Wykonując obowiązki domowe, zdobywasz punkty. Sprawdź swoją całkowitą liczbę punktów i zobacz, jakie nagrody możesz zdobyć. Śledź swoje postępy w kierunku każdej nagrody!"
+      },
+      "settings": {
+        "title": "Ustawienia osobiste",
+        "description": "Możesz dostosować swój profil, zmieniając awatar i ustawiając przypomnienia o obowiązkach domowych. Dotknij ikony ustawień, aby uzyskać dostęp do tych opcji."
+      }
+    }
+  },
+  "customization": {
+    "title": "Personalizacja",
+    "avatars": "Awatary",
+    "themes": "Motywy",
+    "icons": "Ikony",
+    "backgrounds": "Tła",
+    "default_avatars": "Domyślne awatary",
+    "dicebear_avatars": "Awatary DiceBear",
+    "uploaded_avatars": "Przesłane awatary",
+    "create_avatar": "Utwórz awatar",
+    "upload_avatar": "Prześlij awatar",
+    "select_style": "Wybierz styl",
+    "select_age": "Wybierz wiek",
+    "select_gender": "Wybierz płeć",
+    "randomize": "Losuj",
+    "hair_style": "Fryzura",
+    "facial_features": "Cechy twarzy",
+    "clothing": "Ubranie",
+    "save_avatar": "Zapisz awatar",
+    "avatar_created": "Awatar utworzony",
+    "avatar_updated": "Awatar zaktualizowany",
+    "child": "Dziecko",
+    "teen": "Nastolatek",
+    "adult": "Dorosły",
+    "male": "Mężczyzna",
+    "female": "Kobieta",
+    "androgynous": "Androgyniczny",
+    "eyes": "Oczy",
+    "mouth": "Usta",
+    "nose": "Nos",
+    "eyebrows": "Brwi",
+    "body": "Ciało",
+    "custom_avatar": "Niestandardowy awatar",
+    "random_avatar": "Losowy awatar",
+    "avatar_type": "Typ awatara",
+    "dicebear": "DiceBear",
+    "default": "Domyślny",
+    "custom": "Niestandardowy",
+    "seed": "Ziarno",
+    "url": "URL",
+    "load": "Wczytaj",
+    "category": "Kategoria",
+    "style": "Styl",
+    "categories": {
+      "chore": "Obowiązek domowy",
+      "reward": "Nagroda",
+      "system": "System"
+    },
+    "styles": {
+      "filled": "Wypełniony",
+      "outlined": "Konturowy"
+    }
+  },
+  "children": {
+    "title": "Dzieci",
+    "add": "Dodaj dziecko",
+    "detail": "Szczegóły dziecka",
+    "empty": {
+      "title": "Nie dodano żadnych dzieci",
+      "message": "Dodaj swoje pierwsze dziecko, aby rozpocząć zarządzanie obowiązkami domowymi i nagrodami"
+    },
+    "years_old": "lat"
+  },
+  "statistics": {
+    "title": "Statystyki",
+    "loading": "Ładowanie statystyk...",
+    "noData": "Brak dostępnych danych statystycznych",
+    "summary": "Podsumowanie",
+    "chart": "Wykres wydajności",
+    "chartPlaceholder": "Wykres pojawi się tutaj, gdy będzie więcej danych",
+    "totalChores": "Wszystkie obowiązki",
+    "completedChores": "Ukończone",
+    "pendingChores": "Oczekujące",
+    "missedChores": "Pominięte",
+    "totalPoints": "Suma punktów",
+    "completionRate": "Wskaźnik ukończenia",
+    "grouping": {
+      "day": "Dziennie",
+      "week": "Tygodniowo",
+      "month": "Miesięcznie"
+    },
+    "startDate": "Data początkowa",
+    "endDate": "Data końcowa",
+    "selectDateRange": "Wybierz zakres dat"
+  },
+  "achievements": {
+    "title": "Osiągnięcia",
+    "unlockedOnly": "Pokaż tylko odblokowane",
+    "unlocked": "Odblokowane",
+    "locked": "Zablokowane",
+    "progress": "Postęp",
+    "empty": {
+      "title": "Brak osiągnięć",
+      "message": "Ukończ obowiązki domowe i zdobywaj punkty, aby odblokować osiągnięcia"
+    }
+  },
+  "points": {
+    "summary": {
+      "title": "Podsumowanie punktów",
+      "total": "Suma",
+      "daily": "Dziennie",
+      "weekly": "Tygodniowo",
+      "monthly": "Miesięcznie"
+    },
+    "adjustment": {
+      "title": "Dostosuj punkty",
+      "amount": "Ilość",
+      "reason": "Powód",
+      "submit": "Zatwierdź"
+    },
+    "history": {
+      "title": "Historia punktów",
+      "empty": "Brak dostosowań punktów",
+      "noReason": "Nie podano powodu"
+    }
+  }
+}

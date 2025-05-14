@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201BE46C2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44B2DD4702C002D3370 /* Localizable.json */; };
+		201BE46D2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44D2DD4702C002D3370 /* Localizable.json */; };
+		201BE46E2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44F2DD4702C002D3370 /* Localizable.json */; };
+		201BE46F2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4512DD4702C002D3370 /* Localizable.json */; };
+		201BE4702DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4532DD4702D002D3370 /* Localizable.json */; };
+		201BE4712DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4552DD4702D002D3370 /* Localizable.json */; };
+		201BE4722DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4572DD4702D002D3370 /* Localizable.json */; };
+		201BE4732DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4592DD4702D002D3370 /* Localizable.json */; };
+		201BE4742DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE45B2DD4702D002D3370 /* Localizable.json */; };
+		201BE4752DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE45D2DD4702D002D3370 /* Localizable.json */; };
+		201BE4762DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE45F2DD4702D002D3370 /* Localizable.json */; };
+		201BE4772DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4612DD4702D002D3370 /* Localizable.json */; };
+		201BE4782DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4632DD4702D002D3370 /* Localizable.json */; };
+		201BE4792DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4652DD4702D002D3370 /* Localizable.json */; };
+		201BE47A2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4672DD4702D002D3370 /* Localizable.json */; };
+		201BE47B2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4692DD4702D002D3370 /* Localizable.json */; };
+		201BE47C2DD4702D002D3370 /* Localizable.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE46B2DD4702D002D3370 /* Localizable.json */; };
 		20549E052DD43819009ED830 /* ChoreKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E042DD43819009ED830 /* ChoreKeeperApp.swift */; };
 		20549E072DD43819009ED830 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E062DD43819009ED830 /* ContentView.swift */; };
 		20549E092DD4381B009ED830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20549E082DD4381B009ED830 /* Assets.xcassets */; };
@@ -36,6 +53,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201BE44B2DD4702C002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE44D2DD4702C002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE44F2DD4702C002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4512DD4702C002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4532DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4552DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4572DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4592DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE45B2DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE45D2DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE45F2DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4612DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4632DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4652DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4672DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE4692DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
+		201BE46B2DD4702D002D3370 /* Localizable.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Localizable.json; sourceTree = "<group>"; };
 		20549E012DD43819009ED830 /* ChoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20549E042DD43819009ED830 /* ChoreKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperApp.swift; sourceTree = "<group>"; };
 		20549E062DD43819009ED830 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +109,166 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201BE4492DD46F82002D3370 /* LocalizationAssets */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4562DD4702D002D3370 /* ar */,
+				201BE45C2DD4702D002D3370 /* de */,
+				201BE4622DD4702D002D3370 /* en */,
+				201BE4522DD4702D002D3370 /* es */,
+				201BE44A2DD4702C002D3370 /* fr */,
+				201BE46A2DD4702D002D3370 /* hi */,
+				201BE4582DD4702D002D3370 /* it */,
+				201BE45E2DD4702D002D3370 /* ja */,
+				201BE44E2DD4702C002D3370 /* ko */,
+				201BE4602DD4702D002D3370 /* nl */,
+				201BE45A2DD4702D002D3370 /* pl */,
+				201BE4502DD4702C002D3370 /* pt */,
+				201BE4642DD4702D002D3370 /* ru */,
+				201BE4662DD4702D002D3370 /* sv */,
+				201BE4542DD4702D002D3370 /* tr */,
+				201BE4682DD4702D002D3370 /* vi */,
+				201BE44C2DD4702C002D3370 /* zh */,
+			);
+			path = LocalizationAssets;
+			sourceTree = "<group>";
+		};
+		201BE44A2DD4702C002D3370 /* fr */ = {
+			isa = PBXGroup;
+			children = (
+				201BE44B2DD4702C002D3370 /* Localizable.json */,
+			);
+			path = fr;
+			sourceTree = "<group>";
+		};
+		201BE44C2DD4702C002D3370 /* zh */ = {
+			isa = PBXGroup;
+			children = (
+				201BE44D2DD4702C002D3370 /* Localizable.json */,
+			);
+			path = zh;
+			sourceTree = "<group>";
+		};
+		201BE44E2DD4702C002D3370 /* ko */ = {
+			isa = PBXGroup;
+			children = (
+				201BE44F2DD4702C002D3370 /* Localizable.json */,
+			);
+			path = ko;
+			sourceTree = "<group>";
+		};
+		201BE4502DD4702C002D3370 /* pt */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4512DD4702C002D3370 /* Localizable.json */,
+			);
+			path = pt;
+			sourceTree = "<group>";
+		};
+		201BE4522DD4702D002D3370 /* es */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4532DD4702D002D3370 /* Localizable.json */,
+			);
+			path = es;
+			sourceTree = "<group>";
+		};
+		201BE4542DD4702D002D3370 /* tr */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4552DD4702D002D3370 /* Localizable.json */,
+			);
+			path = tr;
+			sourceTree = "<group>";
+		};
+		201BE4562DD4702D002D3370 /* ar */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4572DD4702D002D3370 /* Localizable.json */,
+			);
+			path = ar;
+			sourceTree = "<group>";
+		};
+		201BE4582DD4702D002D3370 /* it */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4592DD4702D002D3370 /* Localizable.json */,
+			);
+			path = it;
+			sourceTree = "<group>";
+		};
+		201BE45A2DD4702D002D3370 /* pl */ = {
+			isa = PBXGroup;
+			children = (
+				201BE45B2DD4702D002D3370 /* Localizable.json */,
+			);
+			path = pl;
+			sourceTree = "<group>";
+		};
+		201BE45C2DD4702D002D3370 /* de */ = {
+			isa = PBXGroup;
+			children = (
+				201BE45D2DD4702D002D3370 /* Localizable.json */,
+			);
+			path = de;
+			sourceTree = "<group>";
+		};
+		201BE45E2DD4702D002D3370 /* ja */ = {
+			isa = PBXGroup;
+			children = (
+				201BE45F2DD4702D002D3370 /* Localizable.json */,
+			);
+			path = ja;
+			sourceTree = "<group>";
+		};
+		201BE4602DD4702D002D3370 /* nl */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4612DD4702D002D3370 /* Localizable.json */,
+			);
+			path = nl;
+			sourceTree = "<group>";
+		};
+		201BE4622DD4702D002D3370 /* en */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4632DD4702D002D3370 /* Localizable.json */,
+			);
+			path = en;
+			sourceTree = "<group>";
+		};
+		201BE4642DD4702D002D3370 /* ru */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4652DD4702D002D3370 /* Localizable.json */,
+			);
+			path = ru;
+			sourceTree = "<group>";
+		};
+		201BE4662DD4702D002D3370 /* sv */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4672DD4702D002D3370 /* Localizable.json */,
+			);
+			path = sv;
+			sourceTree = "<group>";
+		};
+		201BE4682DD4702D002D3370 /* vi */ = {
+			isa = PBXGroup;
+			children = (
+				201BE4692DD4702D002D3370 /* Localizable.json */,
+			);
+			path = vi;
+			sourceTree = "<group>";
+		};
+		201BE46A2DD4702D002D3370 /* hi */ = {
+			isa = PBXGroup;
+			children = (
+				201BE46B2DD4702D002D3370 /* Localizable.json */,
+			);
+			path = hi;
+			sourceTree = "<group>";
+		};
 		20549DF82DD43819009ED830 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +292,7 @@
 		20549E032DD43819009ED830 /* ChoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				201BE4492DD46F82002D3370 /* LocalizationAssets */,
 				20549E042DD43819009ED830 /* ChoreKeeperApp.swift */,
 				20549E062DD43819009ED830 /* ContentView.swift */,
 				20549E082DD4381B009ED830 /* Assets.xcassets */,
@@ -237,8 +432,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201BE4742DD4702D002D3370 /* Localizable.json in Resources */,
 				20549E0C2DD4381B009ED830 /* Preview Assets.xcassets in Resources */,
+				201BE4752DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4702DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4712DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE46E2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE46F2DD4702D002D3370 /* Localizable.json in Resources */,
 				20549E092DD4381B009ED830 /* Assets.xcassets in Resources */,
+				201BE47B2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4772DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4732DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4792DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE46D2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4782DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE47C2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE47A2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4762DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE46C2DD4702D002D3370 /* Localizable.json in Resources */,
+				201BE4722DD4702D002D3370 /* Localizable.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
