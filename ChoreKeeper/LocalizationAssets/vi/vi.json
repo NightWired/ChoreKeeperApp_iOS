@@ -559,5 +559,25 @@
       "empty": "No point adjustments yet",
       "noReason": "No reason provided"
     }
+  },
+  "error": {
+    "title": "Đã xảy ra lỗi",
+    "message": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "retry": "Thử lại",
+    "dismiss": "Đóng",
+    "details": "Chi tiết lỗi"
+  },
+  "errors": {
+    "3": "Đã cung cấp dữ liệu đầu vào không hợp lệ",
+    "1000": "Đã xảy ra lỗi mạng",
+    "2000": "Lỗi xác thực",
+    "3001": "Không tìm thấy dữ liệu được yêu cầu",
+    "3003": "Không thể lưu dữ liệu",
+    "3005": "Không thể xóa dữ liệu",
+    "5000": "Lỗi quyền truy cập",
+    "6000": "Lỗi quản lý việc nhà",
+    "7000": "Lỗi quản lý phần thưởng",
+    "8000": "Lỗi quản lý điểm",
+    "9000": "Lỗi hệ thống"
   }
 }

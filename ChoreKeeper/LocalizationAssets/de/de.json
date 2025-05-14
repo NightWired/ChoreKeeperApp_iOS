@@ -830,5 +830,25 @@
       "empty": "Noch keine Punkteanpassungen",
       "noReason": "Kein Grund angegeben"
     }
+  },
+  "error": {
+    "title": "Fehler aufgetreten",
+    "message": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "retry": "Wiederholen",
+    "dismiss": "Schließen",
+    "details": "Fehlerdetails"
+  },
+  "errors": {
+    "3": "Ungültige Eingabe wurde bereitgestellt",
+    "1000": "Ein Netzwerkfehler ist aufgetreten",
+    "2000": "Authentifizierungsfehler",
+    "3001": "Die angeforderten Daten wurden nicht gefunden",
+    "3003": "Fehler beim Speichern der Daten",
+    "3005": "Fehler beim Löschen der Daten",
+    "5000": "Berechtigungsfehler",
+    "6000": "Fehler bei der Aufgabenverwaltung",
+    "7000": "Fehler bei der Belohnungsverwaltung",
+    "8000": "Fehler bei der Punkteverwaltung",
+    "9000": "Systemfehler"
   }
 }

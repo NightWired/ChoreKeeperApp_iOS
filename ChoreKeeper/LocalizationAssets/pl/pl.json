@@ -559,5 +559,25 @@
       "empty": "Brak dostosowań punktów",
       "noReason": "Nie podano powodu"
     }
+  },
+  "error": {
+    "title": "Wystąpił błąd",
+    "message": "Wystąpił błąd. Spróbuj ponownie.",
+    "retry": "Spróbuj ponownie",
+    "dismiss": "Zamknij",
+    "details": "Szczegóły błędu"
+  },
+  "errors": {
+    "3": "Podano nieprawidłowe dane wejściowe",
+    "1000": "Wystąpił błąd sieci",
+    "2000": "Błąd uwierzytelniania",
+    "3001": "Nie znaleziono żądanych danych",
+    "3003": "Nie udało się zapisać danych",
+    "3005": "Nie udało się usunąć danych",
+    "5000": "Błąd uprawnień",
+    "6000": "Błąd zarządzania obowiązkami domowymi",
+    "7000": "Błąd zarządzania nagrodami",
+    "8000": "Błąd zarządzania punktami",
+    "9000": "Błąd systemowy"
   }
 }

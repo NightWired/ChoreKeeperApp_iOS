@@ -830,5 +830,25 @@
       "empty": "Aún no hay ajustes de puntos",
       "noReason": "No se proporcionó motivo"
     }
+  },
+  "error": {
+    "title": "Se Produjo un Error",
+    "message": "Se ha producido un error. Por favor, inténtalo de nuevo.",
+    "retry": "Reintentar",
+    "dismiss": "Cerrar",
+    "details": "Detalles del Error"
+  },
+  "errors": {
+    "3": "Se proporcionó una entrada no válida",
+    "1000": "Se produjo un error de red",
+    "2000": "Error de autenticación",
+    "3001": "No se encontraron los datos solicitados",
+    "3003": "Error al guardar los datos",
+    "3005": "Error al eliminar los datos",
+    "5000": "Error de permisos",
+    "6000": "Error en la gestión de tareas",
+    "7000": "Error en la gestión de recompensas",
+    "8000": "Error en la gestión de puntos",
+    "9000": "Error del sistema"
   }
 }

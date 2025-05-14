@@ -857,5 +857,25 @@
       "empty": "No point adjustments yet",
       "noReason": "No reason provided"
     }
+  },
+  "error": {
+    "title": "Ocorreu um Erro",
+    "message": "Ocorreu um erro. Por favor, tente novamente.",
+    "retry": "Tentar novamente",
+    "dismiss": "Fechar",
+    "details": "Detalhes do Erro"
+  },
+  "errors": {
+    "3": "Foi fornecida uma entrada inválida",
+    "1000": "Ocorreu um erro de rede",
+    "2000": "Erro de autenticação",
+    "3001": "Os dados solicitados não foram encontrados",
+    "3003": "Falha ao salvar os dados",
+    "3005": "Falha ao excluir os dados",
+    "5000": "Erro de permissão",
+    "6000": "Erro na gestão de tarefas",
+    "7000": "Erro na gestão de recompensas",
+    "8000": "Erro na gestão de pontos",
+    "9000": "Erro do sistema"
   }
 }

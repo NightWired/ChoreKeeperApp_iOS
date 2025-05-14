@@ -8,10 +8,15 @@
 import SwiftUI
 import CoreData
 import LocalizationHandler
+import ErrorHandler
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var themeManager: ThemeManager
+
+    // State variables for error handling
+    @State private var showErrorAlert = false
+    @State private var currentError: AppError?
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \User.updatedAt, ascending: true)],
@@ -61,6 +66,14 @@ struct ContentView: View {
                             .foregroundColor(Color("AccentColor"))
                     }
                 }
+
+                // Test Error Handling button
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: testErrorHandling) {
+                        Label("Test Error", systemImage: "exclamationmark.triangle")
+                            .foregroundColor(Color("SecondaryAccentColor"))
+                    }
+                }
             }
             .navigationTitle(LocalizationHandler.localize("app.name"))
 
@@ -69,6 +82,47 @@ struct ContentView: View {
                 .foregroundColor(Color("SecondaryTextColor"))
         }
         .accentColor(Color("AccentColor"))
+        .alert(isPresented: $showErrorAlert) {
+            Alert(
+                title: Text(LocalizationHandler.localize("error.title")),
+                message: Text(currentError?.localizedMessage ?? "Unknown error"),
+                dismissButton: .default(Text(LocalizationHandler.localize("common.ok")))
+            )
+        }
+    }
+
+    // Function to test error handling
+    private func testErrorHandling() {
+        // Create a random error for testing
+        let errorTypes: [AppErrorCode] = [
+            .invalidInput,
+            .networkError,
+            .authenticationError,
+            .dataNotFound,
+            .permissionDenied,
+            .operationFailed
+        ]
+
+        let randomErrorCode = errorTypes.randomElement() ?? .unknown
+        let errorSeverity: ErrorSeverity = [.low, .medium, .high, .critical].randomElement() ?? .medium
+
+        // Create the error
+        currentError = AppError(
+            code: randomErrorCode,
+            severity: errorSeverity,
+            message: nil, // Use localized message from ErrorHandler
+            context: ["source": "Test Button", "timestamp": Date()]
+        )
+
+        // Log the error using ErrorHandler
+        if let error = currentError {
+            ErrorHandler.handle(error)
+
+            // Show the error alert
+            showErrorAlert = true
+
+            print("Generated test error: \(error.formattedCode) - \(error.localizedMessage)")
+        }
     }
 
     private func addUser() {
@@ -89,11 +143,20 @@ struct ContentView: View {
                 // Show a success message using localized string
                 print(LocalizationHandler.localize("common.success"))
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                print(LocalizationHandler.localize("common.error") + ": \(nsError)")
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // Create an AppError from the caught error
+                let appError = AppError.from(
+                    error,
+                    code: .dataSaveFailed,
+                    severity: .high,
+                    context: ["entity": "User", "operation": "create"]
+                )
+
+                // Handle the error using ErrorHandler
+                ErrorHandler.handle(appError)
+
+                // Update UI to show the error
+                currentError = appError
+                showErrorAlert = true
             }
         }
     }
@@ -106,11 +169,20 @@ struct ContentView: View {
                 try viewContext.save()
                 print(LocalizationHandler.localize("common.delete") + " " + LocalizationHandler.localize("common.success"))
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                print(LocalizationHandler.localize("common.error") + ": \(nsError)")
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                // Create an AppError from the caught error
+                let appError = AppError.from(
+                    error,
+                    code: .dataDeleteFailed,
+                    severity: .high,
+                    context: ["entity": "User", "operation": "delete"]
+                )
+
+                // Handle the error using ErrorHandler
+                ErrorHandler.handle(appError)
+
+                // Update UI to show the error
+                currentError = appError
+                showErrorAlert = true
             }
         }
     }
@@ -251,5 +323,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environmentObject(ThemeManager())
+            .onAppear {
+                // Register default middleware for previews
+                ErrorHandler.registerMiddleware(LoggingMiddleware())
+            }
     }
 }

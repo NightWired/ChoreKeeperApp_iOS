@@ -830,5 +830,25 @@
       "empty": "Pas encore d'ajustements de points",
       "noReason": "Aucune raison fournie"
     }
+  },
+  "error": {
+    "title": "Une Erreur s'est Produite",
+    "message": "Une erreur s'est produite. Veuillez réessayer.",
+    "retry": "Réessayer",
+    "dismiss": "Fermer",
+    "details": "Détails de l'Erreur"
+  },
+  "errors": {
+    "3": "Entrée invalide fournie",
+    "1000": "Une erreur réseau s'est produite",
+    "2000": "Erreur d'authentification",
+    "3001": "Les données demandées n'ont pas été trouvées",
+    "3003": "Échec de l'enregistrement des données",
+    "3005": "Échec de la suppression des données",
+    "5000": "Erreur de permission",
+    "6000": "Erreur de gestion des tâches",
+    "7000": "Erreur de gestion des récompenses",
+    "8000": "Erreur de gestion des points",
+    "9000": "Erreur système"
   }
 }

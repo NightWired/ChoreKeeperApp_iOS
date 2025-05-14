@@ -559,5 +559,25 @@
       "empty": "Nog geen puntenaanpassingen",
       "noReason": "Geen reden opgegeven"
     }
+  },
+  "error": {
+    "title": "Er is een fout opgetreden",
+    "message": "Er is een fout opgetreden. Probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "dismiss": "Sluiten",
+    "details": "Foutdetails"
+  },
+  "errors": {
+    "3": "Ongeldige invoer verstrekt",
+    "1000": "Er is een netwerkfout opgetreden",
+    "2000": "Authenticatiefout",
+    "3001": "De gevraagde gegevens zijn niet gevonden",
+    "3003": "Gegevens opslaan mislukt",
+    "3005": "Gegevens verwijderen mislukt",
+    "5000": "Toestemmingsfout",
+    "6000": "Fout bij beheer van huishoudelijke taken",
+    "7000": "Fout bij beloningenbeheer",
+    "8000": "Fout bij puntenbeheer",
+    "9000": "Systeemfout"
   }
 }

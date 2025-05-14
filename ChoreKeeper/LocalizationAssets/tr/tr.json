@@ -559,5 +559,25 @@
       "empty": "Henüz puan ayarlaması yok",
       "noReason": "Neden belirtilmedi"
     }
+  },
+  "error": {
+    "title": "Hata Oluştu",
+    "message": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "retry": "Tekrar Dene",
+    "dismiss": "Kapat",
+    "details": "Hata Detayları"
+  },
+  "errors": {
+    "3": "Geçersiz giriş sağlandı",
+    "1000": "Bir ağ hatası oluştu",
+    "2000": "Kimlik doğrulama hatası",
+    "3001": "İstenen veri bulunamadı",
+    "3003": "Veri kaydetme başarısız oldu",
+    "3005": "Veri silme başarısız oldu",
+    "5000": "İzin hatası",
+    "6000": "Ev işi yönetimi hatası",
+    "7000": "Ödül yönetimi hatası",
+    "8000": "Puan yönetimi hatası",
+    "9000": "Sistem hatası"
   }
 }

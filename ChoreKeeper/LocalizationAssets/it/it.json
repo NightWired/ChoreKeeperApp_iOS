@@ -514,5 +514,25 @@
       "empty": "Nessuna regolazione di punti ancora",
       "noReason": "Nessun motivo fornito"
     }
+  },
+  "error": {
+    "title": "Si è Verificato un Errore",
+    "message": "Si è verificato un errore. Si prega di riprovare.",
+    "retry": "Riprova",
+    "dismiss": "Chiudi",
+    "details": "Dettagli dell'Errore"
+  },
+  "errors": {
+    "3": "È stato fornito un input non valido",
+    "1000": "Si è verificato un errore di rete",
+    "2000": "Errore di autenticazione",
+    "3001": "I dati richiesti non sono stati trovati",
+    "3003": "Impossibile salvare i dati",
+    "3005": "Impossibile eliminare i dati",
+    "5000": "Errore di autorizzazione",
+    "6000": "Errore nella gestione delle faccende",
+    "7000": "Errore nella gestione delle ricompense",
+    "8000": "Errore nella gestione dei punti",
+    "9000": "Errore di sistema"
   }
 }

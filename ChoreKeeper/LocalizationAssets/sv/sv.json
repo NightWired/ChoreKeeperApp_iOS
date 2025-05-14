@@ -559,5 +559,25 @@
       "empty": "Inga poängjusteringar ännu",
       "noReason": "Ingen anledning angiven"
     }
+  },
+  "error": {
+    "title": "Ett fel har inträffat",
+    "message": "Ett fel har inträffat. Försök igen.",
+    "retry": "Försök igen",
+    "dismiss": "Stäng",
+    "details": "Feldetaljer"
+  },
+  "errors": {
+    "3": "Ogiltig inmatning tillhandahölls",
+    "1000": "Ett nätverksfel inträffade",
+    "2000": "Autentiseringsfel",
+    "3001": "Begärd data hittades inte",
+    "3003": "Misslyckades med att spara data",
+    "3005": "Misslyckades med att ta bort data",
+    "5000": "Behörighetsfel",
+    "6000": "Fel vid hantering av hushållssysslor",
+    "7000": "Fel vid hantering av belöningar",
+    "8000": "Fel vid hantering av poäng",
+    "9000": "Systemfel"
   }
 }

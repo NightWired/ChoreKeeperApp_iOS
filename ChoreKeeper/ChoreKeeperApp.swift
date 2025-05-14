@@ -7,6 +7,7 @@
 
 import SwiftUI
 import LocalizationHandler
+import ErrorHandler
 
 // Enum for app theme options
 enum AppTheme: String, CaseIterable {
@@ -103,6 +104,19 @@ struct ChoreKeeperApp: App {
         // Set up localization - explicitly set to English for testing
         localizationService.setLanguage(.english)
 
+        // Initialize ErrorHandler with default middleware
+        ErrorHandler.registerMiddleware(LoggingMiddleware())
+
+        // Create a custom analytics middleware for demonstration
+        class DemoAnalyticsService: AnalyticsService {
+            func reportError(code: String, message: String, severity: String, timestamp: Date, context: [String: Any]) {
+                print("📊 ANALYTICS: Error \(code) (\(severity)) reported: \(message)")
+            }
+        }
+
+        // Register the analytics middleware
+        ErrorHandler.registerMiddleware(AnalyticsMiddleware(analyticsService: DemoAnalyticsService()))
+
         // Print detailed debug information about localization
         print(LocalizationHandler.debugLocalizationInfo())
 
@@ -116,6 +130,11 @@ struct ChoreKeeperApp: App {
             print("Add Child: \(LocalizationHandler.localize("children.add"))")
             print("Edit: \(LocalizationHandler.localize("common.edit"))")
             print("Current theme: \(currentTheme)")
+
+            // Test error handling during initialization
+            print("Testing error handling during initialization:")
+            let testError = AppError(code: .unknown, severity: .low, message: "Test error during initialization")
+            ErrorHandler.handle(testError)
         }
         #endif
     }

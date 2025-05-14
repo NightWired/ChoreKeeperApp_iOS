@@ -515,5 +515,25 @@
       "empty": "No point adjustments yet",
       "noReason": "No reason provided"
     }
+  },
+  "error": {
+    "title": "Error Occurred",
+    "message": "An error has occurred. Please try again.",
+    "retry": "Retry",
+    "dismiss": "Dismiss",
+    "details": "Error Details"
+  },
+  "errors": {
+    "3": "Invalid input was provided",
+    "1000": "A network error occurred",
+    "2000": "Authentication error",
+    "3001": "The requested data was not found",
+    "3003": "Failed to save data",
+    "3005": "Failed to delete data",
+    "5000": "Permission error",
+    "6000": "Chore management error",
+    "7000": "Reward management error",
+    "8000": "Point management error",
+    "9000": "System error"
   }
 }
