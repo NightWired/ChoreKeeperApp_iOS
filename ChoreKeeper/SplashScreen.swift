@@ -7,19 +7,28 @@
 
 import SwiftUI
 
-// Logo image view that uses proper asset management
-struct LogoImageView: View {
+// App logo image view
+struct AppLogoImageView: View {
     let opacity: Double
 
     var body: some View {
-        // Use system image as a placeholder
-        // In a real implementation, you would add the logo to Assets.xcassets
-        // and use Image("DarklightLogo") instead
+        Image("AppLogo")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 250) // 250px wide as requested
+            .opacity(opacity)
+    }
+}
+
+// Developer logo image view
+struct DeveloperLogoImageView: View {
+    let opacity: Double
+
+    var body: some View {
         Image("DeveloperLogo")
             .resizable()
             .scaledToFit()
-            .frame(width: 200) // Reduced from 250px to 200px as requested
-            .foregroundColor(.white)
+            .frame(width: 200) // 200px wide as requested
             .opacity(opacity)
     }
 }
@@ -27,9 +36,12 @@ struct LogoImageView: View {
 struct SplashScreen: View {
     // Animation state variables
     @State private var backgroundOpacity = 0.0
-    @State private var contentOpacity = 0.0
-    @State private var isActive = false
+    @State private var appLogoOpacity = 0.0
+    @State private var developerContentOpacity = 0.0
     @State private var isBlackVisible = false
+
+    // Animation phase tracking
+    @State private var currentPhase = 0
 
     // Environment object for theme
     @EnvironmentObject var themeManager: ThemeManager
@@ -37,8 +49,8 @@ struct SplashScreen: View {
     // Callback for when splash screen should dismiss
     var onSplashComplete: () -> Void
 
-    // Timer to track minimum display time (4 seconds after transition completes)
-    private let minimumDisplayTime: Double = 7.0 // 3s for transition + 4s display time
+    // Timer to track minimum display time (15 seconds total)
+    private let minimumDisplayTime: Double = 15.0
 
     // Fixed colors for splash screen
     private let finalBackgroundColor = Color(white: 0.95) // Pale grey as originally requested
@@ -60,23 +72,21 @@ struct SplashScreen: View {
                 .opacity(backgroundOpacity)
                 .ignoresSafeArea()
 
-            // Content stack with app name, "Powered by" text, and logo
-            VStack(spacing: 20) {
-                // App name in a fun but professional font
-                Text("ChoreKeeper")
-                    .font(.custom("Avenir-Heavy", size: 36))
-                    .foregroundColor(textColor) // Always black as requested
-                    .frame(maxWidth: 250)
+            // First phase: App Logo
+            AppLogoImageView(opacity: appLogoOpacity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                // "Powered by" text at half the size
+            // Second phase: "Powered by" text and Developer Logo
+            VStack(spacing: 10) {
+                // "Powered by" text
                 Text("Powered by")
                     .font(.custom("Avenir-Medium", size: 18))
-                    .foregroundColor(textColor) // Always black as requested
+                    .foregroundColor(textColor)
 
-                // Logo below the text
-                LogoImageView(opacity: 1.0) // Always full opacity since parent VStack controls opacity
+                // Developer Logo below the text
+                DeveloperLogoImageView(opacity: 1.0)
             }
-            .opacity(contentOpacity) // Initially invisible
+            .opacity(developerContentOpacity)
         }
         .onAppear {
             // Start animations when view appears
@@ -102,10 +112,27 @@ struct SplashScreen: View {
             }
         }
 
-        // Step 3: Fade in content (text and logo) slightly delayed
+        // Phase 1: Fade in App Logo (3s fade-in)
         withAnimation(.easeIn(duration: 3.0).delay(0.6)) {
-            contentOpacity = 1.0
+            appLogoOpacity = 1.0
         }
+
+        // Hold App Logo for 3s, then fade out (3s fade-out)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.6) {
+            withAnimation(.easeOut(duration: 3.0)) {
+                appLogoOpacity = 0.0
+            }
+        }
+
+        // Phase 2: Fade in "Powered by" text and Developer Logo (3s fade-in)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 9.6) {
+            withAnimation(.easeIn(duration: 3.0)) {
+                developerContentOpacity = 1.0
+            }
+        }
+
+        // Hold for at least 3s before transitioning to main app
+        // (This is handled by the minimumDisplayTime of 15s)
     }
 }
 
@@ -113,5 +140,6 @@ struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
         SplashScreen(onSplashComplete: {})
             .environmentObject(ThemeManager())
+            .previewDisplayName("Splash Screen")
     }
 }
