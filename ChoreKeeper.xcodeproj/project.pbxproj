@@ -40,6 +40,7 @@
 		20A64D0E2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D0A2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG */; };
 		20A64D0F2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D0B2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG */; };
 		20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A64D102DD517D200D941DF /* SplashScreen.swift */; };
+		20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 20C40CA82DD54E9000570B1F /* ErrorHandler */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		20A64D0A2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_close_mouth_open.PNG; sourceTree = "<group>"; };
 		20A64D0B2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_open_mouth_open.PNG; sourceTree = "<group>"; };
 		20A64D102DD517D200D941DF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		20C40CA72DD54DFD00570B1F /* ErrorHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErrorHandler; path = SwiftModules/ErrorHandler; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */,
 				204600A92DD4808700F2CE8E /* LocalizationHandler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				204600A42DD47AAE00F2CE8E /* LocalizationHandler */,
+				20C40CA72DD54DFD00570B1F /* ErrorHandler */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -408,6 +412,7 @@
 			name = ChoreKeeper;
 			packageProductDependencies = (
 				204600A82DD4808700F2CE8E /* LocalizationHandler */,
+				20C40CA82DD54E9000570B1F /* ErrorHandler */,
 			);
 			productName = ChoreKeeper;
 			productReference = 20549E012DD43819009ED830 /* ChoreKeeper.app */;
@@ -883,6 +888,10 @@
 		204600A82DD4808700F2CE8E /* LocalizationHandler */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LocalizationHandler;
+		};
+		20C40CA82DD54E9000570B1F /* ErrorHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ErrorHandler;
 		};
 /* End XCSwiftPackageProductDependency section */
 
