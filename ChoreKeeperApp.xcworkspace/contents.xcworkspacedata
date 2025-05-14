@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ChoreKeeper/ChoreKeeper.xcodeproj">
+      location = "group:ChoreKeeper.xcodeproj">
    </FileRef>
 </Workspace>
