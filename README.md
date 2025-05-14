@@ -68,6 +68,21 @@ This project is licensed under the terms found in the LICENSE file.
 
 ## Updates
 
+### May 14, 2023
+
+- Added splash screen with logo and app name
+  - Implemented smooth transition from app launch to main content
+  - Created professional fade-in animation with 7-second minimum display time
+  - Added "Powered by" text below app name
+  - Ensured splash screen respects light/dark mode settings
+- Implemented light/dark mode support
+  - Added color assets for consistent theming across the app
+  - Light mode background: #F5F5F7 (pale grey)
+  - Dark mode background: #1F1F1F (dark grey)
+  - Added complementary text and accent colors for both modes
+  - Created theme manager with system/light/dark mode options
+  - Added UI controls for theme switching
+
 ### May 15, 2023
 
 - Enhanced LocalizationHandler module with bundle-based file loading

@@ -34,6 +34,12 @@
 		20549E1B2DD4381B009ED830 /* ChoreKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E1A2DD4381B009ED830 /* ChoreKeeperTests.swift */; };
 		20549E252DD4381B009ED830 /* ChoreKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E242DD4381B009ED830 /* ChoreKeeperUITests.swift */; };
 		20549E272DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */; };
+		20A64D062DD515E200D941DF /* Darklight_Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D052DD515E200D941DF /* Darklight_Logo.svg */; };
+		20A64D0C2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */; };
+		20A64D0D2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */; };
+		20A64D0E2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D0A2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG */; };
+		20A64D0F2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D0B2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG */; };
+		20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A64D102DD517D200D941DF /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,12 @@
 		20549E202DD4381B009ED830 /* ChoreKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoreKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20549E242DD4381B009ED830 /* ChoreKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperUITests.swift; sourceTree = "<group>"; };
 		20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		20A64D052DD515E200D941DF /* Darklight_Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Darklight_Logo.svg; sourceTree = "<group>"; };
+		20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_close_mouth_close.PNG; sourceTree = "<group>"; };
+		20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_open_mouth_close.PNG; sourceTree = "<group>"; };
+		20A64D0A2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_close_mouth_open.PNG; sourceTree = "<group>"; };
+		20A64D0B2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_open_mouth_open.PNG; sourceTree = "<group>"; };
+		20A64D102DD517D200D941DF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +324,7 @@
 		20549E032DD43819009ED830 /* ChoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				20A64D032DD5158400D941DF /* GraphicsAssets */,
 				201BE4492DD46F82002D3370 /* LocalizationAssets */,
 				20549E042DD43819009ED830 /* ChoreKeeperApp.swift */,
 				20549E062DD43819009ED830 /* ContentView.swift */,
@@ -319,6 +332,7 @@
 				20549E0D2DD4381B009ED830 /* Persistence.swift */,
 				20549E0F2DD4381B009ED830 /* ChoreKeeper.xcdatamodeld */,
 				20549E0A2DD4381B009ED830 /* Preview Content */,
+				20A64D102DD517D200D941DF /* SplashScreen.swift */,
 			);
 			path = ChoreKeeper;
 			sourceTree = "<group>";
@@ -346,6 +360,34 @@
 				20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */,
 			);
 			path = ChoreKeeperUITests;
+			sourceTree = "<group>";
+		};
+		20A64D032DD5158400D941DF /* GraphicsAssets */ = {
+			isa = PBXGroup;
+			children = (
+				20A64D072DD5160100D941DF /* teacher */,
+				20A64D042DD515E200D941DF /* logo */,
+			);
+			path = GraphicsAssets;
+			sourceTree = "<group>";
+		};
+		20A64D042DD515E200D941DF /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				20A64D052DD515E200D941DF /* Darklight_Logo.svg */,
+			);
+			path = logo;
+			sourceTree = "<group>";
+		};
+		20A64D072DD5160100D941DF /* teacher */ = {
+			isa = PBXGroup;
+			children = (
+				20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */,
+				20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */,
+				20A64D0A2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG */,
+				20A64D0B2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG */,
+			);
+			path = teacher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,7 +501,10 @@
 				20549E0C2DD4381B009ED830 /* Preview Assets.xcassets in Resources */,
 				201BE4752DD4702D002D3370 /* de.json in Resources */,
 				201BE4702DD4702D002D3370 /* es.json in Resources */,
+				20A64D0D2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG in Resources */,
 				201BE4712DD4702D002D3370 /* tr.json in Resources */,
+				20A64D0C2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG in Resources */,
+				20A64D0E2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_open.PNG in Resources */,
 				201BE46E2DD4702D002D3370 /* ko.json in Resources */,
 				201BE46F2DD4702D002D3370 /* pt.json in Resources */,
 				20549E092DD4381B009ED830 /* Assets.xcassets in Resources */,
@@ -467,12 +512,14 @@
 				201BE4772DD4702D002D3370 /* nl.json in Resources */,
 				201BE4732DD4702D002D3370 /* it.json in Resources */,
 				201BE4792DD4702D002D3370 /* ru.json in Resources */,
+				20A64D0F2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_open.PNG in Resources */,
 				201BE46D2DD4702D002D3370 /* zh.json in Resources */,
 				201BE4782DD4702D002D3370 /* en.json in Resources */,
 				201BE47C2DD4702D002D3370 /* hi.json in Resources */,
 				201BE47A2DD4702D002D3370 /* sv.json in Resources */,
 				201BE4762DD4702D002D3370 /* ja.json in Resources */,
 				201BE46C2DD4702D002D3370 /* fr.json in Resources */,
+				20A64D062DD515E200D941DF /* Darklight_Logo.svg in Resources */,
 				201BE4722DD4702D002D3370 /* ar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */,
 				20549E0E2DD4381B009ED830 /* Persistence.swift in Sources */,
 				20549E112DD4381B009ED830 /* ChoreKeeper.xcdatamodeld in Sources */,
 				20549E072DD43819009ED830 /* ContentView.swift in Sources */,

@@ -11,6 +11,7 @@ import LocalizationHandler
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var themeManager: ThemeManager
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \User.updatedAt, ascending: true)],
@@ -33,11 +34,31 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {}) {
                         Text(LocalizationHandler.localize("common.edit"))
+                            .foregroundColor(Color("AccentColor"))
                     }
                 }
                 ToolbarItem {
                     Button(action: addUser) {
                         Label(LocalizationHandler.localize("children.add"), systemImage: "person.badge.plus")
+                            .foregroundColor(Color("AccentColor"))
+                    }
+                }
+
+                // TEMPORARY: Theme toggle for testing
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Menu {
+                        Button("Light Mode") {
+                            themeManager.theme = .light
+                        }
+                        Button("Dark Mode") {
+                            themeManager.theme = .dark
+                        }
+                        Button("System") {
+                            themeManager.theme = .system
+                        }
+                    } label: {
+                        Label("Theme", systemImage: "circle.lefthalf.filled")
+                            .foregroundColor(Color("AccentColor"))
                     }
                 }
             }
@@ -45,8 +66,9 @@ struct ContentView: View {
 
             Text(LocalizationHandler.localize("dashboard.parent.children"))
                 .font(.largeTitle)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color("SecondaryTextColor"))
         }
+        .accentColor(Color("AccentColor"))
     }
 
     private func addUser() {
@@ -107,29 +129,31 @@ struct UserRowView: View {
     var body: some View {
         HStack {
             Image(systemName: user.userType == "parent" ? "person.circle.fill" : "person.circle")
-                .foregroundColor(user.userType == "parent" ? .blue : .green)
+                .foregroundColor(user.userType == "parent" ? Color("AccentColor") : Color("SecondaryAccentColor"))
                 .font(.title2)
 
             VStack(alignment: .leading) {
                 Text("\(user.firstName ?? "") \(user.lastName ?? "")")
                     .font(.headline)
+                    .foregroundColor(Color("TextColor"))
+
                 Text(user.username ?? "")
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("SecondaryTextColor"))
 
                 // Add user type with localization
                 Text(user.userType == "parent" ?
                      LocalizationHandler.localize("onboarding.userType.parent") :
                      LocalizationHandler.localize("onboarding.userType.child"))
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color("TertiaryTextColor"))
             }
 
             Spacer()
 
             if user.primaryAccount {
                 Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
+                    .foregroundColor(Color("SecondaryAccentColor"))
             }
         }
         .padding(.vertical, 4)
@@ -138,30 +162,36 @@ struct UserRowView: View {
 
 struct UserDetailView: View {
     let user: User
+    @EnvironmentObject var themeManager: ThemeManager
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Image(systemName: user.userType == "parent" ? "person.circle.fill" : "person.circle")
                     .font(.system(size: 60))
-                    .foregroundColor(user.userType == "parent" ? .blue : .green)
+                    .foregroundColor(user.userType == "parent" ? Color("AccentColor") : Color("SecondaryAccentColor"))
 
                 VStack(alignment: .leading) {
                     Text("\(user.firstName ?? "") \(user.lastName ?? "")")
                         .font(.title)
+                        .foregroundColor(Color("TextColor"))
+
                     Text(user.username ?? "")
                         .font(.title3)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color("SecondaryTextColor"))
+
                     Text(user.userType == "parent" ?
                          LocalizationHandler.localize("onboarding.userType.parent") :
                          LocalizationHandler.localize("onboarding.userType.child"))
                         .font(.headline)
+                        .foregroundColor(Color("SecondaryTextColor"))
                         .padding(.top, 2)
                 }
             }
             .padding()
 
             Divider()
+                .background(Color("SecondaryTextColor"))
 
             VStack(alignment: .leading, spacing: 10) {
                 DetailRow(label: LocalizationHandler.localize("auth.username"), value: user.username ?? "Unknown")
@@ -178,6 +208,7 @@ struct UserDetailView: View {
 
             Spacer()
         }
+        .background(Color("BackgroundColor"))
         .navigationTitle(LocalizationHandler.localize("children.detail"))
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -199,13 +230,17 @@ struct DetailRow: View {
         HStack(alignment: .top) {
             Text(label + ":")
                 .font(.headline)
+                .foregroundColor(Color("TextColor"))
                 .frame(width: 120, alignment: .leading)
                 // Use RTL support from LocalizationHandler if needed
                 .multilineTextAlignment(LocalizationHandler.isRightToLeft() ? .trailing : .leading)
+
             Text(value)
                 .font(.body)
+                .foregroundColor(Color("SecondaryTextColor"))
                 // Use RTL support from LocalizationHandler if needed
                 .multilineTextAlignment(LocalizationHandler.isRightToLeft() ? .trailing : .leading)
+
             Spacer()
         }
     }
@@ -213,6 +248,8 @@ struct DetailRow: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(ThemeManager())
     }
 }
