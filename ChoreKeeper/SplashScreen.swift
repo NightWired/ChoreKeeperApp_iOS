@@ -39,9 +39,7 @@ struct SplashScreen: View {
     @State private var appLogoOpacity = 0.0
     @State private var developerContentOpacity = 0.0
     @State private var isBlackVisible = false
-
-    // Animation phase tracking
-    @State private var currentPhase = 0
+    @State private var isSecondPhase = false
 
     // Environment object for theme
     @EnvironmentObject var themeManager: ThemeManager
@@ -53,8 +51,8 @@ struct SplashScreen: View {
     private let minimumDisplayTime: Double = 15.0
 
     // Fixed colors for splash screen
-    private let finalBackgroundColor = Color(white: 0.95) // Pale grey as originally requested
-    private let textColor = Color.black // Black text as originally requested
+    private let finalBackgroundColor = Color(white: 0.95) // Pale grey
+    private let textColor = Color.black // Black text
 
     var body: some View {
         ZStack {
@@ -62,31 +60,35 @@ struct SplashScreen: View {
             Color("BackgroundColor")
                 .ignoresSafeArea()
 
-            // Black overlay that appears at the start of transition
+            // Black overlay for transitions
             Color.black
                 .opacity(isBlackVisible ? 1.0 : 0.0)
                 .ignoresSafeArea()
 
-            // Final background color (pale grey) that fades in
+            // Final background color (pale grey) that fades in and out
             finalBackgroundColor
                 .opacity(backgroundOpacity)
                 .ignoresSafeArea()
 
             // First phase: App Logo
-            AppLogoImageView(opacity: appLogoOpacity)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            if !isSecondPhase {
+                AppLogoImageView(opacity: appLogoOpacity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
 
             // Second phase: "Powered by" text and Developer Logo
-            VStack(spacing: 10) {
-                // "Powered by" text
-                Text("Powered by")
-                    .font(.custom("Avenir-Medium", size: 18))
-                    .foregroundColor(textColor)
+            if isSecondPhase {
+                VStack(spacing: 10) {
+                    // "Powered by" text
+                    Text("Powered by")
+                        .font(.custom("Avenir-Medium", size: 18))
+                        .foregroundColor(textColor)
 
-                // Developer Logo below the text
-                DeveloperLogoImageView(opacity: 1.0)
+                    // Developer Logo below the text
+                    DeveloperLogoImageView(opacity: 1.0)
+                }
+                .opacity(developerContentOpacity)
             }
-            .opacity(developerContentOpacity)
         }
         .onAppear {
             // Start animations when view appears
@@ -100,6 +102,8 @@ struct SplashScreen: View {
     }
 
     private func startAnimations() {
+        // PHASE 1: First Logo Sequence
+
         // Step 1: Show black background immediately
         withAnimation(.easeIn(duration: 0.1)) {
             isBlackVisible = true
@@ -112,20 +116,36 @@ struct SplashScreen: View {
             }
         }
 
-        // Phase 1: Fade in App Logo (3s fade-in)
+        // Step 3: Fade in App Logo (3s fade-in)
         withAnimation(.easeIn(duration: 3.0).delay(0.6)) {
             appLogoOpacity = 1.0
         }
 
-        // Hold App Logo for 3s, then fade out (3s fade-out)
+        // Step 4: Hold App Logo for 3s, then fade out (3s fade-out)
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.6) {
+            // Fade out logo
             withAnimation(.easeOut(duration: 3.0)) {
                 appLogoOpacity = 0.0
             }
+
+            // Fade background back to dark
+            withAnimation(.easeOut(duration: 3.0)) {
+                backgroundOpacity = 0.0
+            }
         }
 
-        // Phase 2: Fade in "Powered by" text and Developer Logo (3s fade-in)
+        // PHASE 2: Second Logo Sequence
+
+        // Step 5: Switch to second phase after first logo fades out
         DispatchQueue.main.asyncAfter(deadline: .now() + 9.6) {
+            isSecondPhase = true
+
+            // Fade in background again
+            withAnimation(.easeIn(duration: 3.0)) {
+                backgroundOpacity = 1.0
+            }
+
+            // Fade in "Powered by" text and Developer Logo
             withAnimation(.easeIn(duration: 3.0)) {
                 developerContentOpacity = 1.0
             }
