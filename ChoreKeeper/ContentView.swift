@@ -7,67 +7,87 @@
 
 import SwiftUI
 import CoreData
+import LocalizationHandler
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \User.updatedAt, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var users: FetchedResults<User>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(users, id: \.id) { user in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        UserDetailView(user: user)
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        UserRowView(user: user)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteUsers)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                    Button(action: {}) {
+                        Text(LocalizationHandler.localize("common.edit"))
+                    }
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addUser) {
+                        Label(LocalizationHandler.localize("children.add"), systemImage: "person.badge.plus")
                     }
                 }
             }
-            Text("Select an item")
+            .navigationTitle(LocalizationHandler.localize("app.name"))
+
+            Text(LocalizationHandler.localize("dashboard.parent.children"))
+                .font(.largeTitle)
+                .foregroundColor(.secondary)
         }
     }
 
-    private func addItem() {
+    private func addUser() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newUser = User(context: viewContext)
+            newUser.id = UUID()
+            newUser.firstName = "New"
+            newUser.lastName = "User"
+            newUser.username = "user\(Int.random(in: 1000...9999))"
+            // Use the localized value for "child"
+            newUser.userType = "child" // Keep the internal value as "child"
+            newUser.createdAt = Date()
+            newUser.updatedAt = Date()
+            newUser.primaryAccount = false
 
             do {
                 try viewContext.save()
+                // Show a success message using localized string
+                print(LocalizationHandler.localize("common.success"))
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
+                print(LocalizationHandler.localize("common.error") + ": \(nsError)")
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteUsers(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { users[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
+                print(LocalizationHandler.localize("common.delete") + " " + LocalizationHandler.localize("common.success"))
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
+                print(LocalizationHandler.localize("common.error") + ": \(nsError)")
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
@@ -80,6 +100,116 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
+
+struct UserRowView: View {
+    let user: User
+
+    var body: some View {
+        HStack {
+            Image(systemName: user.userType == "parent" ? "person.circle.fill" : "person.circle")
+                .foregroundColor(user.userType == "parent" ? .blue : .green)
+                .font(.title2)
+
+            VStack(alignment: .leading) {
+                Text("\(user.firstName ?? "") \(user.lastName ?? "")")
+                    .font(.headline)
+                Text(user.username ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                // Add user type with localization
+                Text(user.userType == "parent" ?
+                     LocalizationHandler.localize("onboarding.userType.parent") :
+                     LocalizationHandler.localize("onboarding.userType.child"))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+
+            Spacer()
+
+            if user.primaryAccount {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+}
+
+struct UserDetailView: View {
+    let user: User
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Image(systemName: user.userType == "parent" ? "person.circle.fill" : "person.circle")
+                    .font(.system(size: 60))
+                    .foregroundColor(user.userType == "parent" ? .blue : .green)
+
+                VStack(alignment: .leading) {
+                    Text("\(user.firstName ?? "") \(user.lastName ?? "")")
+                        .font(.title)
+                    Text(user.username ?? "")
+                        .font(.title3)
+                        .foregroundColor(.secondary)
+                    Text(user.userType == "parent" ?
+                         LocalizationHandler.localize("onboarding.userType.parent") :
+                         LocalizationHandler.localize("onboarding.userType.child"))
+                        .font(.headline)
+                        .padding(.top, 2)
+                }
+            }
+            .padding()
+
+            Divider()
+
+            VStack(alignment: .leading, spacing: 10) {
+                DetailRow(label: LocalizationHandler.localize("auth.username"), value: user.username ?? "Unknown")
+                DetailRow(label: LocalizationHandler.localize("statistics.startDate"), value: formatDate(user.createdAt))
+                DetailRow(label: LocalizationHandler.localize("statistics.endDate"), value: formatDate(user.updatedAt))
+                DetailRow(
+                    label: LocalizationHandler.localize("settings.account"),
+                    value: user.primaryAccount ?
+                        LocalizationHandler.localize("common.yes") :
+                        LocalizationHandler.localize("common.no")
+                )
+            }
+            .padding()
+
+            Spacer()
+        }
+        .navigationTitle(LocalizationHandler.localize("children.detail"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func formatDate(_ date: Date?) -> String {
+        guard let date = date else { return LocalizationHandler.localize("common.loading") }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
+}
+
+struct DetailRow: View {
+    let label: String
+    let value: String
+
+    var body: some View {
+        HStack(alignment: .top) {
+            Text(label + ":")
+                .font(.headline)
+                .frame(width: 120, alignment: .leading)
+                // Use RTL support from LocalizationHandler if needed
+                .multilineTextAlignment(LocalizationHandler.isRightToLeft() ? .trailing : .leading)
+            Text(value)
+                .font(.body)
+                // Use RTL support from LocalizationHandler if needed
+                .multilineTextAlignment(LocalizationHandler.isRightToLeft() ? .trailing : .leading)
+            Spacer()
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

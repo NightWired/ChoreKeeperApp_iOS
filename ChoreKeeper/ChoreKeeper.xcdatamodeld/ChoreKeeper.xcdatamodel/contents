@@ -4,18 +4,18 @@
         <attribute name="avatarData" attributeType="String"/>
         <attribute name="avatarType" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isShared" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="avatars" inverseEntity="Family"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="avatars" inverseEntity="User"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Family"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User"/>
     </entity>
     <entity name="Chore" representedClassName="Chore" syncable="YES" codeGenerationType="class">
         <attribute name="choreDescription" optional="YES" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dueDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isRecurring" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
@@ -25,29 +25,29 @@
         <attribute name="status" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="assignedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="chores" inverseEntity="User"/>
-        <relationship name="childChores" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chore" inverseName="parentChore" inverseEntity="Chore"/>
-        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
-        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="chores" inverseEntity="Family"/>
-        <relationship name="parentChore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chore" inverseName="childChores" inverseEntity="Chore"/>
-        <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointTransaction" inverseName="chore" inverseEntity="PointTransaction"/>
+        <relationship name="assignedTo" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User"/>
+        <relationship name="childChores" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Chore"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Family"/>
+        <relationship name="parentChore" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Chore" inverseName="childChores" inverseEntity="Chore"/>
+        <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="PointTransaction"/>
     </entity>
     <entity name="Family" representedClassName="Family" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="syncCode" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="avatars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avatar" inverseName="family" inverseEntity="Avatar"/>
-        <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="family" inverseEntity="Chore"/>
-        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="family" inverseEntity="User"/>
-        <relationship name="penalties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Penalty" inverseName="family" inverseEntity="Penalty"/>
-        <relationship name="rewards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reward" inverseName="family" inverseEntity="Reward"/>
+        <relationship name="avatars" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Avatar"/>
+        <relationship name="chores" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Chore"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="User"/>
+        <relationship name="penalties" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Penalty"/>
+        <relationship name="rewards" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Reward"/>
     </entity>
     <entity name="Penalty" representedClassName="Penalty" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isAvailable" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="penaltyDescription" optional="YES" attributeType="String"/>
@@ -56,7 +56,7 @@
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="appliedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
         <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
-        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="penalties" inverseEntity="Family"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family"/>
         <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointTransaction" inverseName="penalty" inverseEntity="PointTransaction"/>
     </entity>
     <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
@@ -75,7 +75,7 @@
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reason" optional="YES" attributeType="String"/>
         <attribute name="transactionType" attributeType="String"/>
-        <relationship name="chore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chore" inverseName="pointTransactions" inverseEntity="Chore"/>
+        <relationship name="chore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chore"/>
         <relationship name="penalty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Penalty" inverseName="pointTransactions" inverseEntity="Penalty"/>
         <relationship name="point" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Point" inverseName="pointTransactions" inverseEntity="Point"/>
         <relationship name="reward" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reward" inverseName="pointTransactions" inverseEntity="Reward"/>
@@ -83,22 +83,22 @@
     </entity>
     <entity name="Reward" representedClassName="Reward" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isAvailable" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="pointThreshold" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rewardDescription" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
-        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="rewards" inverseEntity="Family"/>
-        <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointTransaction" inverseName="reward" inverseEntity="PointTransaction"/>
-        <relationship name="redeemedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+        <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Family"/>
+        <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="PointTransaction" inverseName="reward" inverseEntity="PointTransaction"/>
+        <relationship name="redeemedBy" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="avatarId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="deleted" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="firstName" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastName" attributeType="String"/>
@@ -106,9 +106,9 @@
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="username" attributeType="String"/>
         <attribute name="userType" attributeType="String"/>
-        <relationship name="avatars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avatar" inverseName="user" inverseEntity="Avatar"/>
-        <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="assignedTo" inverseEntity="Chore"/>
-        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="members" inverseEntity="Family"/>
+        <relationship name="avatars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avatar"/>
+        <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family"/>
         <relationship name="penalties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Penalty"/>
         <relationship name="points" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Point" inverseName="user" inverseEntity="Point"/>
         <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointTransaction" inverseName="user" inverseEntity="PointTransaction"/>

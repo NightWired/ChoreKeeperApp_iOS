@@ -13,10 +13,39 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+
+        // Create parent user
+        let parentUser = User(context: viewContext)
+        parentUser.id = UUID()
+        parentUser.firstName = "Parent"
+        parentUser.lastName = "User"
+        parentUser.username = "parent123"
+        parentUser.userType = "parent"
+        parentUser.createdAt = Date()
+        parentUser.updatedAt = Date()
+        parentUser.primaryAccount = true
+
+        // Create child users
+        let childNames = [
+            ("Emma", "Smith"),
+            ("Noah", "Johnson"),
+            ("Olivia", "Williams"),
+            ("Liam", "Brown"),
+            ("Ava", "Jones")
+        ]
+
+        for (index, name) in childNames.enumerated() {
+            let childUser = User(context: viewContext)
+            childUser.id = UUID()
+            childUser.firstName = name.0
+            childUser.lastName = name.1
+            childUser.username = "child\(index + 1)"
+            childUser.userType = "child"
+            childUser.createdAt = Date()
+            childUser.updatedAt = Date()
+            childUser.primaryAccount = false
         }
+
         do {
             try viewContext.save()
         } catch {
