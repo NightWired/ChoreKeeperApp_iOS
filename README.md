@@ -70,6 +70,18 @@ This project is licensed under the terms found in the LICENSE file.
 
 ### May 15, 2025
 
+- Implemented DataModels module with repository pattern for Core Data:
+  - Created CoreDataStack for managing Core Data contexts and operations
+  - Implemented Repository pattern for standardized data access
+  - Added QueryBuilder for fluent interface to build complex queries
+  - Created repositories for User and PeriodSettings entities
+  - Added support for the new Rewards and Penalties application modes
+  - Integrated with CoreServices for logging and utilities
+  - Integrated with ErrorHandler for standardized error handling
+  - Successfully integrated and tested in simulator
+
+### May 15, 2025
+
 - Implemented CoreServices module with essential utilities and services:
   - Added centralized logging system with multiple severity levels
   - Created configuration management with environment support

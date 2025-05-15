@@ -43,14 +43,17 @@
         <relationship name="chores" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Chore"/>
         <relationship name="members" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="User"/>
         <relationship name="penalties" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Penalty"/>
+        <relationship name="periodSettings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeriodSettings"/>
         <relationship name="rewards" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Reward"/>
     </entity>
     <entity name="Penalty" representedClassName="Penalty" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fulfilled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isAvailable" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="penaltyDescription" optional="YES" attributeType="String"/>
+        <attribute name="period" optional="YES" attributeType="String"/>
         <attribute name="pointThreshold" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
@@ -58,6 +61,15 @@
         <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
         <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family"/>
         <relationship name="pointTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PointTransaction" inverseName="penalty" inverseEntity="PointTransaction"/>
+    </entity>
+    <entity name="PeriodSettings" representedClassName="PeriodSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="applicationMode" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="period" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family"/>
     </entity>
     <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
         <attribute name="currentTotal" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -84,8 +96,10 @@
     <entity name="Reward" representedClassName="Reward" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fulfilled" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isAvailable" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="period" optional="YES" attributeType="String"/>
         <attribute name="pointThreshold" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rewardDescription" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>

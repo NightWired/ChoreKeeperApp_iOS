@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 import LocalizationHandler
 import ErrorHandler
 import CoreServices
+import DataModels
 
 // Import RefreshTrigger from LoginSelector
 extension RefreshTrigger {}
@@ -23,6 +25,19 @@ extension EnvironmentValues {
     var coreServicesEnabled: Bool {
         get { self[CoreServicesEnabledKey.self] }
         set { self[CoreServicesEnabledKey.self] = newValue }
+    }
+}
+
+// Environment key for DataModels
+private struct DataModelsEnabledKey: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+// Environment value for DataModels
+extension EnvironmentValues {
+    var dataModelsEnabled: Bool {
+        get { self[DataModelsEnabledKey.self] }
+        set { self[DataModelsEnabledKey.self] = newValue }
     }
 }
 
@@ -188,12 +203,17 @@ struct ChoreKeeperApp: App {
         // Configure logger
         Logger.setMinimumLogLevel(isDevelopmentBuild() ? .debug : .info)
 
+        // Initialize DataModels module with the Core Data stack
+        let coreDataStack = CoreDataStack(persistentContainer: persistenceController.container)
+        DataModels.initialize(with: coreDataStack)
+
         // Log initialization
         Logger.info("ChoreKeeper app initialized", context: [
             "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown",
             "build": Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown",
             "language": localizationService.currentLanguage().rawValue,
-            "theme": themeManager.theme.rawValue
+            "theme": themeManager.theme.rawValue,
+            "modules": ["LocalizationHandler", "ErrorHandler", "CoreServices", "DataModels"]
         ])
 
         // Print detailed debug information about localization
@@ -203,6 +223,7 @@ struct ChoreKeeperApp: App {
         // In debug builds, add a delay to allow time to see the console output
         // Store theme value locally to avoid capturing self in closure
         let currentTheme = themeManager.theme.rawValue
+        let viewContext = persistenceController.container.viewContext
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             print("Localization check after delay:")
             print("App name: \(LocalizationHandler.localize("app.name"))")
@@ -230,6 +251,28 @@ struct ChoreKeeperApp: App {
             // Test error handling
             let testError = AppError(code: .unknown, severity: .low, message: "Test error during initialization")
             Logger.log(error: testError)
+
+            // Test DataModels module
+            Logger.info("Testing DataModels module during initialization")
+
+            do {
+                // Test UserRepository
+                let userCount = try UserRepository.shared.count()
+                Logger.info("User count: \(userCount)")
+
+                // Test PeriodSettingsRepository
+                if let family = try? viewContext.fetch(NSFetchRequest<NSManagedObject>(entityName: "Family")).first {
+                    let periodSettings = try PeriodSettingsRepository.shared.getOrCreate(
+                        period: "daily",
+                        type: "reward",
+                        family: family,
+                        defaultApplicationMode: "cumulative"
+                    )
+                    Logger.info("Created period settings with mode: \(periodSettings.value(forKey: "applicationMode") as? String ?? "unknown")")
+                }
+            } catch {
+                Logger.error("Error testing DataModels: \(error.localizedDescription)")
+            }
         }
         #endif
     }
@@ -273,6 +316,8 @@ struct ChoreKeeperApp: App {
             .environmentObject(refreshTrigger)
             // Make CoreServices components available throughout the app
             .environment(\.coreServicesEnabled, true)
+            // Make DataModels components available throughout the app
+            .environment(\.dataModelsEnabled, true)
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LanguageChanged"))) { _ in
                 // Force UI refresh when language changes
                 refreshTrigger.refresh()
