@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201848FB2DD66E7E00F6BB66 /* CoreServices in Frameworks */ = {isa = PBXBuildFile; productRef = 201848FA2DD66E7E00F6BB66 /* CoreServices */; };
 		201BE46C2DD4702D002D3370 /* fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44B2DD4702C002D3370 /* fr.json */; };
 		201BE46D2DD4702D002D3370 /* zh.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44D2DD4702C002D3370 /* zh.json */; };
 		201BE46E2DD4702D002D3370 /* ko.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44F2DD4702C002D3370 /* ko.json */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201848F92DD66E5700F6BB66 /* CoreServices */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CoreServices; path = SwiftModules/CoreServices; sourceTree = "<group>"; };
 		201BE44B2DD4702C002D3370 /* fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fr.json; sourceTree = "<group>"; };
 		201BE44D2DD4702C002D3370 /* zh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zh.json; sourceTree = "<group>"; };
 		201BE44F2DD4702C002D3370 /* ko.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ko.json; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */,
+				201848FB2DD66E7E00F6BB66 /* CoreServices in Frameworks */,
 				204600A92DD4808700F2CE8E /* LocalizationHandler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +311,7 @@
 			children = (
 				204600A42DD47AAE00F2CE8E /* LocalizationHandler */,
 				20C40CA72DD54DFD00570B1F /* ErrorHandler */,
+				201848F92DD66E5700F6BB66 /* CoreServices */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -445,6 +449,7 @@
 			packageProductDependencies = (
 				204600A82DD4808700F2CE8E /* LocalizationHandler */,
 				20C40CA82DD54E9000570B1F /* ErrorHandler */,
+				201848FA2DD66E7E00F6BB66 /* CoreServices */,
 			);
 			productName = ChoreKeeper;
 			productReference = 20549E012DD43819009ED830 /* ChoreKeeper.app */;
@@ -925,6 +930,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		201848FA2DD66E7E00F6BB66 /* CoreServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreServices;
+		};
 		204600A82DD4808700F2CE8E /* LocalizationHandler */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LocalizationHandler;

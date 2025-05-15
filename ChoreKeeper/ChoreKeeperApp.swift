@@ -8,9 +8,23 @@
 import SwiftUI
 import LocalizationHandler
 import ErrorHandler
+import CoreServices
 
 // Import RefreshTrigger from LoginSelector
 extension RefreshTrigger {}
+
+// Environment key for CoreServices
+private struct CoreServicesEnabledKey: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+// Environment value for CoreServices
+extension EnvironmentValues {
+    var coreServicesEnabled: Bool {
+        get { self[CoreServicesEnabledKey.self] }
+        set { self[CoreServicesEnabledKey.self] = newValue }
+    }
+}
 
 // Enum for app theme options
 enum AppTheme: String, CaseIterable {
@@ -116,6 +130,15 @@ struct ChoreKeeperApp: App {
     @StateObject private var themeManager = ThemeManager()
     @StateObject private var refreshTrigger = RefreshTrigger.shared
 
+    // Helper method to determine if we're in a development build
+    private func isDevelopmentBuild() -> Bool {
+        #if DEBUG
+        return true
+        #else
+        return false
+        #endif
+    }
+
     init() {
         // Register the main bundle for localization
         LocalizationHandler.registerBundle(Bundle.main)
@@ -141,6 +164,38 @@ struct ChoreKeeperApp: App {
         // Register the analytics middleware
         ErrorHandler.registerMiddleware(AnalyticsMiddleware(analyticsService: DemoAnalyticsService()))
 
+        // Initialize CoreServices module
+        CoreServices.initialize(with: [
+            "environment": isDevelopmentBuild() ? "development" : "production",
+            "featureFlags": [
+                "enableNewRewards": true,
+                "enablePushNotifications": false, // Disabled since we don't have a developer account
+                "enableCloudSync": false,         // Disabled for simulator testing
+                "enableAdvancedChoreOptions": true,
+                "enableParentalControls": true
+            ],
+            "api": [
+                "baseUrl": "https://api.chorekeeper.com",
+                "timeout": 30,
+                "retryCount": 3
+            ],
+            "logging": [
+                "minimumLevel": "debug",
+                "enableFileLogging": false // Set to true for production
+            ]
+        ])
+
+        // Configure logger
+        Logger.setMinimumLogLevel(isDevelopmentBuild() ? .debug : .info)
+
+        // Log initialization
+        Logger.info("ChoreKeeper app initialized", context: [
+            "version": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknown",
+            "build": Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown",
+            "language": localizationService.currentLanguage().rawValue,
+            "theme": themeManager.theme.rawValue
+        ])
+
         // Print detailed debug information about localization
         print(LocalizationHandler.debugLocalizationInfo())
 
@@ -155,10 +210,26 @@ struct ChoreKeeperApp: App {
             print("Edit: \(LocalizationHandler.localize("common.edit"))")
             print("Current theme: \(currentTheme)")
 
-            // Test error handling during initialization
-            print("Testing error handling during initialization:")
+            // Test error handling and CoreServices during initialization
+            Logger.info("Testing error handling and CoreServices during initialization")
+
+            // Test date utilities
+            let now = Date()
+            let formattedDate = DateUtilities.format(now, style: .medium)
+            Logger.info("Current date: \(formattedDate)")
+
+            // Test string utilities
+            let email = "test@example.com"
+            let isValidEmail = StringUtilities.isValidEmail(email)
+            Logger.info("Email validation: \(email) is \(isValidEmail ? "valid" : "invalid")")
+
+            // Test configuration
+            let isNewRewardsEnabled = Configuration.shared.isFeatureEnabled("enableNewRewards")
+            Logger.info("New rewards feature is \(isNewRewardsEnabled ? "enabled" : "disabled")")
+
+            // Test error handling
             let testError = AppError(code: .unknown, severity: .low, message: "Test error during initialization")
-            ErrorHandler.handle(testError)
+            Logger.log(error: testError)
         }
         #endif
     }
@@ -200,6 +271,8 @@ struct ChoreKeeperApp: App {
             .environmentObject(appState)
             .environmentObject(themeManager)
             .environmentObject(refreshTrigger)
+            // Make CoreServices components available throughout the app
+            .environment(\.coreServicesEnabled, true)
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LanguageChanged"))) { _ in
                 // Force UI refresh when language changes
                 refreshTrigger.refresh()
