@@ -73,9 +73,10 @@
     "email_verified": "이메일이 성공적으로 확인되었습니다",
     "email_verification_banner": "계정 보안을 위해 이메일 주소를 확인해주세요",
     "verify_now": "지금 확인",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook"
+    "login_with_google": "Google로 로그인",
+    "login_with_apple": "Apple로 로그인",
+    "login_with_facebook": "Facebook으로 로그인",
+    "logout_confirmation": "로그아웃하시겠습니까?"
   },
   "errors": {
     "no_internet": "인터넷 연결 없음",

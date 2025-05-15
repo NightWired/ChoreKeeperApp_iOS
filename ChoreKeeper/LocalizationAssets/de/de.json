@@ -73,9 +73,10 @@
     "email_verified": "E-Mail erfolgreich bestätigt",
     "email_verification_banner": "Bitte bestätigen Sie Ihre E-Mail-Adresse, um die Kontosicherheit zu gewährleisten",
     "verify_now": "Jetzt bestätigen",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook"
+    "login_with_google": "Mit Google anmelden",
+    "login_with_apple": "Mit Apple anmelden",
+    "login_with_facebook": "Mit Facebook anmelden",
+    "logout_confirmation": "Sind Sie sicher, dass Sie sich abmelden möchten?"
   },
   "errors": {
     "no_internet": "Keine Internetverbindung",

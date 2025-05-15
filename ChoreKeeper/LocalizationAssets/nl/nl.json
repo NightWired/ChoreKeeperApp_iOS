@@ -75,7 +75,11 @@
     "verify_email": "E-mail verifiëren",
     "email_verified": "E-mail geverifieerd",
     "email_verification_banner": "Verifieer je e-mailadres om accountbeveiliging te garanderen",
-    "verify_now": "Nu verifiëren"
+    "verify_now": "Nu verifiëren",
+    "login_with_google": "Inloggen met Google",
+    "login_with_apple": "Inloggen met Apple",
+    "login_with_facebook": "Inloggen met Facebook",
+    "logout_confirmation": "Weet je zeker dat je wilt uitloggen?"
   },
   "onboarding": {
     "welcome": {

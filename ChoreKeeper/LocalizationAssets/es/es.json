@@ -73,9 +73,10 @@
     "email_verified": "Correo electrónico verificado con éxito.",
     "email_verification_banner": "Por favor verifique su dirección de correo electrónico para garantizar la seguridad de la cuenta.",
     "verify_now": "Verificar ahora",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook"
+    "login_with_google": "Iniciar sesión con Google",
+    "login_with_apple": "Iniciar sesión con Apple",
+    "login_with_facebook": "Iniciar sesión con Facebook",
+    "logout_confirmation": "¿Estás seguro de que quieres cerrar sesión?"
   },
   "errors": {
     "no_internet": "Sin conexión a Internet.",

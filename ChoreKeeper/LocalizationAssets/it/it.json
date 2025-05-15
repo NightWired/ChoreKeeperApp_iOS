@@ -75,7 +75,11 @@
     "verify_email": "Verifica Email",
     "email_verified": "Email verificata con successo",
     "email_verification_banner": "Verifica il tuo indirizzo email per garantire la sicurezza dell'account",
-    "verify_now": "Verifica Ora"
+    "verify_now": "Verifica Ora",
+    "login_with_google": "Accedi con Google",
+    "login_with_apple": "Accedi con Apple",
+    "login_with_facebook": "Accedi con Facebook",
+    "logout_confirmation": "Sei sicuro di voler uscire?"
   },
   "onboarding": {
     "welcome": {

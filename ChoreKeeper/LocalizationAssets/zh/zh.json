@@ -75,7 +75,11 @@
     "verify_email": "Verify Email",
     "email_verified": "Email verified successfully",
     "email_verification_banner": "Please verify your email address to ensure account security",
-    "verify_now": "Verify Now"
+    "verify_now": "Verify Now",
+    "login_with_google": "使用Google登录",
+    "login_with_apple": "使用Apple登录",
+    "login_with_facebook": "使用Facebook登录",
+    "logout_confirmation": "您确定要退出登录吗？"
   },
   "onboarding": {
     "welcome": {

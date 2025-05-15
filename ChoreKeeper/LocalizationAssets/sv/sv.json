@@ -75,7 +75,11 @@
     "verify_email": "Verifiera e-post",
     "email_verified": "E-post verifierad",
     "email_verification_banner": "Verifiera din e-postadress för att säkerställa kontosäkerhet",
-    "verify_now": "Verifiera nu"
+    "verify_now": "Verifiera nu",
+    "login_with_google": "Logga in med Google",
+    "login_with_apple": "Logga in med Apple",
+    "login_with_facebook": "Logga in med Facebook",
+    "logout_confirmation": "Är du säker på att du vill logga ut?"
   },
   "onboarding": {
     "welcome": {

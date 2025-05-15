@@ -73,9 +73,10 @@
     "email_verified": "メールアドレスが正常に確認されました",
     "email_verification_banner": "アカウントのセキュリティを確保するために、メールアドレスを確認してください",
     "verify_now": "今すぐ確認",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook"
+    "login_with_google": "Googleでログイン",
+    "login_with_apple": "Appleでログイン",
+    "login_with_facebook": "Facebookでログイン",
+    "logout_confirmation": "ログアウトしてもよろしいですか？"
   },
   "errors": {
     "no_internet": "インターネット接続がありません",

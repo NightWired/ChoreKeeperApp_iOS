@@ -9,6 +9,9 @@ import SwiftUI
 import LocalizationHandler
 import ErrorHandler
 
+// Import RefreshTrigger from LoginSelector
+extension RefreshTrigger {}
+
 // Enum for app theme options
 enum AppTheme: String, CaseIterable {
     case light, dark, system
@@ -56,10 +59,14 @@ class ThemeManager: ObservableObject {
     }
 }
 
+
+
 // State object to manage app state
 class AppState: ObservableObject {
     @Published var isShowingSplash = true
     @Published var isAppReady = false
+    @Published var isLoggedIn = false
+    @Published var resetNavigation = false
 
     init() {
         // Simulate app initialization time - increased to ensure we have enough time
@@ -84,6 +91,17 @@ class AppState: ObservableObject {
             }
         }
     }
+
+    func logout() {
+        // Reset navigation stack and log out
+        self.isLoggedIn = false
+        self.resetNavigation = true
+
+        // Reset the flag after a short delay to allow for future navigation resets
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.resetNavigation = false
+        }
+    }
 }
 
 @main
@@ -96,13 +114,19 @@ struct ChoreKeeperApp: App {
     // State objects to manage app state and theme
     @StateObject private var appState = AppState()
     @StateObject private var themeManager = ThemeManager()
+    @StateObject private var refreshTrigger = RefreshTrigger.shared
 
     init() {
         // Register the main bundle for localization
         LocalizationHandler.registerBundle(Bundle.main)
 
-        // Set up localization - explicitly set to English for testing
-        localizationService.setLanguage(.english)
+        // Load saved language or use device language
+        if let savedLanguageCode = UserDefaults.standard.string(forKey: "app_language"),
+           let savedLanguage = Language.from(localeIdentifier: savedLanguageCode) {
+            localizationService.setLanguage(savedLanguage)
+        } else {
+            localizationService.setLanguage(Language.deviceLanguage())
+        }
 
         // Initialize ErrorHandler with default middleware
         ErrorHandler.registerMiddleware(LoggingMiddleware())
@@ -147,11 +171,22 @@ struct ChoreKeeperApp: App {
                     .ignoresSafeArea()
 
                 // Main content view
-                ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    // You can add an environment value for the localization service if needed
-                    // .environment(\.localizationService, localizationService)
-                    .opacity(appState.isShowingSplash ? 0 : 1)
+                Group {
+                    if appState.resetNavigation {
+                        // This is a temporary view that will be shown briefly during navigation reset
+                        Color("BackgroundColor").ignoresSafeArea()
+                    } else {
+                        NavigationView {
+                            LoginSelector()
+                                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                                // You can add an environment value for the localization service if needed
+                                // .environment(\.localizationService, localizationService)
+                                .navigationBarHidden(true)
+                        }
+                        .navigationViewStyle(StackNavigationViewStyle())
+                    }
+                }
+                .opacity(appState.isShowingSplash ? 0 : 1)
 
                 // Splash screen
                 if appState.isShowingSplash {
@@ -164,6 +199,11 @@ struct ChoreKeeperApp: App {
             }
             .environmentObject(appState)
             .environmentObject(themeManager)
+            .environmentObject(refreshTrigger)
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LanguageChanged"))) { _ in
+                // Force UI refresh when language changes
+                refreshTrigger.refresh()
+            }
         }
     }
 }

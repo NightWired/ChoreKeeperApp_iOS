@@ -70,9 +70,10 @@
     "email_verified": "Эл. почта успешно подтверждена",
     "email_verification_banner": "Пожалуйста, подтвердите ваш адрес эл. почты для обеспечения безопасности аккаунта",
     "verify_now": "Подтвердить сейчас",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook"
+    "login_with_google": "Войти через Google",
+    "login_with_apple": "Войти через Apple",
+    "login_with_facebook": "Войти через Facebook",
+    "logout_confirmation": "Вы уверены, что хотите выйти?"
   },
   "errors": {
     "no_internet": "Нет подключения к Интернету",
