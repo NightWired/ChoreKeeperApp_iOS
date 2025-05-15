@@ -34,6 +34,14 @@
 		20549E1B2DD4381B009ED830 /* ChoreKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E1A2DD4381B009ED830 /* ChoreKeeperTests.swift */; };
 		20549E252DD4381B009ED830 /* ChoreKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E242DD4381B009ED830 /* ChoreKeeperUITests.swift */; };
 		20549E272DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */; };
+		20768DC92DD58C970077FC4F /* LoginSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DC82DD58C970077FC4F /* LoginSelector.swift */; };
+		20768DCB2DD58CBF0077FC4F /* ParentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DCA2DD58CBF0077FC4F /* ParentLogin.swift */; };
+		20768DCD2DD58CD20077FC4F /* ChildLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DCC2DD58CD20077FC4F /* ChildLogin.swift */; };
+		20768DCF2DD58CF00077FC4F /* ParentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DCE2DD58CF00077FC4F /* ParentDashboard.swift */; };
+		20768DD12DD58CFF0077FC4F /* ChildDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD02DD58CFF0077FC4F /* ChildDashboard.swift */; };
+		20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */; };
+		20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD52DD5A5A20077FC4F /* SettingsView.swift */; };
+		20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD72DD5A5B10077FC4F /* SettingsRow.swift */; };
 		20A64D062DD515E200D941DF /* Darklight_Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D052DD515E200D941DF /* Darklight_Logo.svg */; };
 		20A64D0C2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */; };
 		20A64D0D2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */; };
@@ -91,6 +99,14 @@
 		20549E202DD4381B009ED830 /* ChoreKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoreKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20549E242DD4381B009ED830 /* ChoreKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperUITests.swift; sourceTree = "<group>"; };
 		20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		20768DC82DD58C970077FC4F /* LoginSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelector.swift; sourceTree = "<group>"; };
+		20768DCA2DD58CBF0077FC4F /* ParentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentLogin.swift; sourceTree = "<group>"; };
+		20768DCC2DD58CD20077FC4F /* ChildLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildLogin.swift; sourceTree = "<group>"; };
+		20768DCE2DD58CF00077FC4F /* ParentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDashboard.swift; sourceTree = "<group>"; };
+		20768DD02DD58CFF0077FC4F /* ChildDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDashboard.swift; sourceTree = "<group>"; };
+		20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
+		20768DD52DD5A5A20077FC4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		20768DD72DD5A5B10077FC4F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		20A64D052DD515E200D941DF /* Darklight_Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Darklight_Logo.svg; sourceTree = "<group>"; };
 		20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_close_mouth_close.PNG; sourceTree = "<group>"; };
 		20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_open_mouth_close.PNG; sourceTree = "<group>"; };
@@ -328,6 +344,7 @@
 		20549E032DD43819009ED830 /* ChoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				20768DD22DD5A5670077FC4F /* SharedUIComponents */,
 				20A64D032DD5158400D941DF /* GraphicsAssets */,
 				201BE4492DD46F82002D3370 /* LocalizationAssets */,
 				20549E042DD43819009ED830 /* ChoreKeeperApp.swift */,
@@ -337,6 +354,11 @@
 				20549E0F2DD4381B009ED830 /* ChoreKeeper.xcdatamodeld */,
 				20549E0A2DD4381B009ED830 /* Preview Content */,
 				20A64D102DD517D200D941DF /* SplashScreen.swift */,
+				20768DC82DD58C970077FC4F /* LoginSelector.swift */,
+				20768DCA2DD58CBF0077FC4F /* ParentLogin.swift */,
+				20768DCC2DD58CD20077FC4F /* ChildLogin.swift */,
+				20768DCE2DD58CF00077FC4F /* ParentDashboard.swift */,
+				20768DD02DD58CFF0077FC4F /* ChildDashboard.swift */,
 			);
 			path = ChoreKeeper;
 			sourceTree = "<group>";
@@ -364,6 +386,16 @@
 				20549E262DD4381B009ED830 /* ChoreKeeperUITestsLaunchTests.swift */,
 			);
 			path = ChoreKeeperUITests;
+			sourceTree = "<group>";
+		};
+		20768DD22DD5A5670077FC4F /* SharedUIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */,
+				20768DD52DD5A5A20077FC4F /* SettingsView.swift */,
+				20768DD72DD5A5B10077FC4F /* SettingsRow.swift */,
+			);
+			path = SharedUIComponents;
 			sourceTree = "<group>";
 		};
 		20A64D032DD5158400D941DF /* GraphicsAssets */ = {
@@ -550,9 +582,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */,
+				20768DCF2DD58CF00077FC4F /* ParentDashboard.swift in Sources */,
+				20768DCD2DD58CD20077FC4F /* ChildLogin.swift in Sources */,
+				20768DC92DD58C970077FC4F /* LoginSelector.swift in Sources */,
 				20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */,
 				20549E0E2DD4381B009ED830 /* Persistence.swift in Sources */,
 				20549E112DD4381B009ED830 /* ChoreKeeper.xcdatamodeld in Sources */,
+				20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */,
+				20768DCB2DD58CBF0077FC4F /* ParentLogin.swift in Sources */,
+				20768DD12DD58CFF0077FC4F /* ChildDashboard.swift in Sources */,
+				20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */,
 				20549E072DD43819009ED830 /* ContentView.swift in Sources */,
 				20549E052DD43819009ED830 /* ChoreKeeperApp.swift in Sources */,
 			);
