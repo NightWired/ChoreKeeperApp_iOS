@@ -68,6 +68,16 @@ This project is licensed under the terms found in the LICENSE file.
 
 ## Updates
 
+### May 14, 2025
+
+- Implemented centralized UI components for improved consistency:
+  - Created centralized language selector with visual indicators for selected language
+  - Developed centralized settings view with account type-specific options (parent/child)
+  - Added reusable settings row component for consistent settings UI
+  - Improved navigation management with proper back button handling
+  - Fixed navigation stack issues for logout flow
+  - Added visual indicators for currently selected language options
+
 ### May 14, 2023
 
 - Implemented ErrorHandler module with standardized error handling
@@ -78,7 +88,7 @@ This project is licensed under the terms found in the LICENSE file.
 - Implemented error context for detailed debugging information
 - Added test functionality in UI for error handling demonstration
 
-### May 14, 2023  - Added UI controls for theme switching
+### May 14, 2023
 
 - Added splash screen with logo and app name
   - Implemented smooth transition from app launch to main content
