@@ -32,7 +32,10 @@
     "switch_user": "Gebruiker wisselen",
     "login_as_different_user": "Inloggen als andere gebruiker",
     "no_remembered_users": "Geen onthouden gebruikers",
-    "child": "Kind"
+    "child": "Kind",
+    "about": "Over",
+    "privacy_policy": "Privacybeleid",
+    "terms_of_service": "Gebruiksvoorwaarden"
   },
   "auth": {
     "login": "Inloggen",
@@ -76,9 +79,6 @@
     "email_verified": "E-mail geverifieerd",
     "email_verification_banner": "Verifieer je e-mailadres om accountbeveiliging te garanderen",
     "verify_now": "Nu verifiëren",
-    "login_with_google": "Inloggen met Google",
-    "login_with_apple": "Inloggen met Apple",
-    "login_with_facebook": "Inloggen met Facebook",
     "logout_confirmation": "Weet je zeker dat je wilt uitloggen?"
   },
   "onboarding": {
@@ -107,51 +107,6 @@
       "signIn": "Inloggen",
       "forgotPassword": "Wachtwoord vergeten?",
       "dontHaveAccount": "Heb je geen account? Maak er een aan"
-    },
-    "skip": "Tutorial overslaan",
-    "back": "Terug",
-    "next": "Volgende",
-    "finish": "Aan de slag",
-    "close": "Sluiten",
-    "parent": {
-      "welcome": {
-        "title": "Welkom bij ChoreKeeper!",
-        "description": "Laten we je account in slechts een paar minuten instellen. ChoreKeeper helpt je bij het beheren van huishoudelijke taken, het bijhouden van punten en het belonen van je kinderen voor het voltooien van taken."
-      },
-      "features": {
-        "title": "Wat ChoreKeeper biedt",
-        "description": "ChoreKeeper biedt tools voor het maken en toewijzen van huishoudelijke taken, het bijhouden van punten en het instellen van beloningen voor je kinderen. Je kunt alles vanaf één plek beheren!"
-      },
-      "chores": {
-        "title": "Huishoudelijke taken beheren",
-        "description": "Maak huishoudelijke taken, stel vervaldatums in en wijs ze toe aan je kinderen. Ze ontvangen meldingen en kunnen taken als voltooid markeren wanneer ze klaar zijn."
-      },
-      "rewards": {
-        "title": "Beloningen instellen",
-        "description": "Maak beloningen die je kinderen kunnen verdienen door punten te verzamelen. Stel puntdrempels in en laat ze naar hun doelen toewerken!"
-      },
-      "add_child": {
-        "title": "Een kind toevoegen",
-        "description": "Om een kind toe te voegen, ga naar het tabblad Familie en tik op de '+'-knop. Voer hun gebruikersnaam en voornaam in, en deel vervolgens de instellingscode met hen om de accountinstelling te voltooien."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Welkom bij ChoreKeeper!",
-        "description": "ChoreKeeper helpt je om je huishoudelijke taken bij te houden en punten te verdienen door ze te voltooien. Laten we leren hoe je de app gebruikt!"
-      },
-      "chores": {
-        "title": "Huishoudelijke taken bekijken en voltooien",
-        "description": "Je huishoudelijke taken verschijnen op het startscherm. Tik op een taak om details te zien en markeer deze als voltooid wanneer je klaar bent. Je ouders zullen voltooide taken verifiëren."
-      },
-      "points": {
-        "title": "Punten en beloningen bijhouden",
-        "description": "Door huishoudelijke taken te voltooien verdien je punten. Controleer je totale punten en zie welke beloningen je kunt verdienen. Houd je voortgang naar elke beloning in de gaten!"
-      },
-      "settings": {
-        "title": "Persoonlijke instellingen",
-        "description": "Je kunt je profiel aanpassen door je avatar te wijzigen en herinneringen in te stellen voor huishoudelijke taken. Tik op het instellingenpictogram om toegang te krijgen tot deze opties."
-      }
     }
   },
   "dashboard": {
@@ -186,6 +141,16 @@
     "achievements_item": "Prestaties",
     "settings_gear": "Instellingenmenu"
   },
+  "children": {
+    "title": "Kinderen",
+    "add": "Kind toevoegen",
+    "detail": "Kinddetails",
+    "years_old": "jaar oud",
+    "empty": {
+      "title": "Geen kinderen toegevoegd",
+      "message": "Voeg je eerste kind toe om te beginnen met het beheren van huishoudelijke taken en beloningen"
+    }
+  },
   "chores": {
     "title": "Huishoudelijke taken",
     "add": "Huishoudelijke taak toevoegen",
@@ -205,15 +170,7 @@
     "noDescription": "Geen beschrijving opgegeven",
     "noDueDate": "Geen vervaldatum",
     "lastCompleted": "Laatst voltooid",
-    "frequency": {
-      "title": "Frequentie",
-      "once": "Eenmalig",
-      "daily": "Dagelijks",
-      "weekly": "Wekelijks",
-      "weeklyOnDay": "Wekelijks op dag",
-      "monthly": "Maandelijks",
-      "custom": "Aangepast"
-    },
+    "frequency": "Frequentie",
     "specificDays": "Specifieke dagen",
     "dayOfMonth": "Dag van de maand",
     "deleteConfirmation": {
@@ -263,6 +220,15 @@
     "dueDate": "Vervaldatum",
     "dueTime": "Vervaltijd",
     "assignTo": "Toewijzen aan",
+    "frequencySettings": {
+      "title": "Frequentie",
+      "once": "Eenmalig",
+      "daily": "Dagelijks",
+      "weekly": "Wekelijks",
+      "weeklyOnDay": "Wekelijks op dag",
+      "monthly": "Maandelijks",
+      "custom": "Aangepast"
+    },
     "status": {
       "title": "Status",
       "pending": "In afwachting",
@@ -310,7 +276,7 @@
     "edit_reward": "Beloning bewerken",
     "delete_reward": "Beloning verwijderen",
     "reward_name": "Beloningsnaam",
-    "please_enter_reward_name": "Voer een naam in voor de beloning",
+    "please_enter_reward_name": "Voer een beloningsnaam in",
     "description": "Beschrijving",
     "points_required": "Vereiste punten",
     "point_threshold": "Puntdrempel",
@@ -333,8 +299,8 @@
     "confirm_delete": "Weet je zeker dat je deze beloning wilt verwijderen?",
     "delete_reward_confirmation": "Weet je zeker dat je de beloning '{name}' wilt verwijderen?",
     "not_enough_points": "Niet genoeg punten om deze beloning te claimen",
-    "reward_claimed": "Beloning geclaimd",
-    "reward_redeemed": "Beloning ingewisseld",
+    "reward_claimed": "Beloning succesvol geclaimd",
+    "reward_redeemed": "Beloning succesvol ingewisseld",
     "claim_reward": "Beloning claimen",
     "claim_reward_confirmation": "Weet je zeker dat je '{name}' wilt claimen?",
     "redeemed_on": "Ingewisseld op {date}",
@@ -398,7 +364,30 @@
     "requires_tier": "Vereist {tier}-account",
     "avatar": "Avatar",
     "change_avatar": "Avatar wijzigen",
-    "avatar_updated": "Avatar bijgewerkt"
+    "avatar_updated": "Avatar bijgewerkt",
+    "reminders": "Herinneringen"
+  },
+  "statistics": {
+    "title": "Statistieken",
+    "loading": "Statistieken laden...",
+    "noData": "Geen statistiekgegevens beschikbaar",
+    "summary": "Samenvatting",
+    "chart": "Prestatiegrafiek",
+    "chartPlaceholder": "Grafiek verschijnt hier wanneer meer gegevens beschikbaar zijn",
+    "totalChores": "Totaal aantal taken",
+    "completedChores": "Voltooid",
+    "pendingChores": "In afwachting",
+    "missedChores": "Gemist",
+    "totalPoints": "Totaal aantal punten",
+    "completionRate": "Voltooiingspercentage",
+    "grouping": {
+      "day": "Dagelijks",
+      "week": "Wekelijks",
+      "month": "Maandelijks"
+    },
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "selectDateRange": "Datumbereik selecteren"
   },
   "tutorial": {
     "title": "Tutorial",
@@ -500,38 +489,6 @@
       "filled": "Gevuld",
       "outlined": "Omlijnd"
     }
-  },
-  "children": {
-    "title": "Kinderen",
-    "add": "Kind toevoegen",
-    "detail": "Kinddetails",
-    "empty": {
-      "title": "Geen kinderen toegevoegd",
-      "message": "Voeg je eerste kind toe om te beginnen met het beheren van huishoudelijke taken en beloningen"
-    },
-    "years_old": "jaar oud"
-  },
-  "statistics": {
-    "title": "Statistieken",
-    "loading": "Statistieken laden...",
-    "noData": "Geen statistiekgegevens beschikbaar",
-    "summary": "Samenvatting",
-    "chart": "Prestatiegrafiek",
-    "chartPlaceholder": "Grafiek verschijnt hier wanneer meer gegevens beschikbaar zijn",
-    "totalChores": "Totaal aantal taken",
-    "completedChores": "Voltooid",
-    "pendingChores": "In afwachting",
-    "missedChores": "Gemist",
-    "totalPoints": "Totaal aantal punten",
-    "completionRate": "Voltooiingspercentage",
-    "grouping": {
-      "day": "Dagelijks",
-      "week": "Wekelijks",
-      "month": "Maandelijks"
-    },
-    "startDate": "Startdatum",
-    "endDate": "Einddatum",
-    "selectDateRange": "Datumbereik selecteren"
   },
   "achievements": {
     "title": "Prestaties",

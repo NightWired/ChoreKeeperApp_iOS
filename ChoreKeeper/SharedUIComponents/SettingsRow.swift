@@ -26,6 +26,7 @@ struct SettingsRow: View {
     var value: String? = nil        // Optional value text to display (for navigation rows)
     var isOn: Binding<Bool>? = nil  // Binding for toggle state (for toggle rows)
     var action: (() -> Void)? = nil // Action to perform when tapped
+    var showNavigationArrow: Bool = true // Whether to show the navigation arrow (for navigation rows)
 
     var body: some View {
         Button(action: {
@@ -55,9 +56,11 @@ struct SettingsRow: View {
                             .font(.subheadline)
                     }
 
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 14))
-                        .foregroundColor(Color("SecondaryTextColor"))
+                    if showNavigationArrow {
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14))
+                            .foregroundColor(Color("SecondaryTextColor"))
+                    }
 
                 case .toggle:
                     if let isOn = isOn {

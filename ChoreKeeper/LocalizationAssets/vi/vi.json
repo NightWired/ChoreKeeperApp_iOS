@@ -32,7 +32,10 @@
     "switch_user": "Chuyển người dùng",
     "login_as_different_user": "Đăng nhập với tư cách người dùng khác",
     "no_remembered_users": "Không có người dùng được ghi nhớ",
-    "child": "Trẻ em"
+    "child": "Trẻ em",
+    "about": "Giới thiệu",
+    "privacy_policy": "Chính sách riêng tư",
+    "terms_of_service": "Điều khoản sử dụng"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -75,7 +78,8 @@
     "verify_email": "Xác minh email",
     "email_verified": "Email đã được xác minh",
     "email_verification_banner": "Xác minh địa chỉ email của bạn để đảm bảo bảo mật tài khoản",
-    "verify_now": "Xác minh ngay"
+    "verify_now": "Xác minh ngay",
+    "logout_confirmation": "Bạn có chắc chắn muốn đăng xuất không?"
   },
   "onboarding": {
     "welcome": {
@@ -103,51 +107,6 @@
       "signIn": "Đăng nhập",
       "forgotPassword": "Quên mật khẩu?",
       "dontHaveAccount": "Chưa có tài khoản? Tạo một tài khoản"
-    },
-    "skip": "Bỏ qua hướng dẫn",
-    "back": "Quay lại",
-    "next": "Tiếp theo",
-    "finish": "Bắt đầu",
-    "close": "Đóng",
-    "parent": {
-      "welcome": {
-        "title": "Chào mừng đến với ChoreKeeper!",
-        "description": "Hãy thiết lập tài khoản của bạn chỉ trong vài phút. ChoreKeeper giúp bạn quản lý việc nhà, theo dõi điểm số và thưởng cho con bạn khi hoàn thành nhiệm vụ."
-      },
-      "features": {
-        "title": "ChoreKeeper Cung Cấp Những Gì",
-        "description": "ChoreKeeper cung cấp các công cụ để tạo và giao việc nhà, theo dõi điểm số và thiết lập phần thưởng cho con bạn. Bạn có thể quản lý mọi thứ từ một nơi!"
-      },
-      "chores": {
-        "title": "Quản lý việc nhà",
-        "description": "Tạo việc nhà, đặt thời hạn và giao cho con bạn. Chúng sẽ nhận được thông báo và có thể đánh dấu việc nhà là đã hoàn thành khi xong."
-      },
-      "rewards": {
-        "title": "Thiết lập phần thưởng",
-        "description": "Tạo phần thưởng mà con bạn có thể kiếm được bằng cách tích lũy điểm. Đặt ngưỡng điểm và để chúng làm việc hướng tới mục tiêu của mình!"
-      },
-      "add_child": {
-        "title": "Thêm trẻ em",
-        "description": "Để thêm trẻ em, hãy đi đến tab Gia đình và nhấn nút '+'. Nhập tên người dùng và tên của chúng, sau đó chia sẻ mã thiết lập với chúng để hoàn tất việc thiết lập tài khoản."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Chào mừng đến với ChoreKeeper!",
-        "description": "ChoreKeeper giúp bạn theo dõi việc nhà của mình và kiếm điểm bằng cách hoàn thành chúng. Hãy học cách sử dụng ứng dụng!"
-      },
-      "chores": {
-        "title": "Xem và hoàn thành việc nhà",
-        "description": "Việc nhà của bạn sẽ xuất hiện trên màn hình chính. Nhấn vào một việc nhà để xem chi tiết và đánh dấu là đã hoàn thành khi bạn xong. Phụ huynh của bạn sẽ xác minh việc nhà đã hoàn thành."
-      },
-      "points": {
-        "title": "Theo dõi điểm và phần thưởng",
-        "description": "Khi hoàn thành việc nhà, bạn kiếm được điểm. Kiểm tra tổng điểm của bạn và xem bạn có thể kiếm được phần thưởng nào. Theo dõi tiến trình của bạn hướng tới mỗi phần thưởng!"
-      },
-      "settings": {
-        "title": "Cài đặt cá nhân",
-        "description": "Bạn có thể tùy chỉnh hồ sơ của mình bằng cách thay đổi hình đại diện và đặt lời nhắc cho việc nhà. Nhấn vào biểu tượng Cài đặt để truy cập các tùy chọn này."
-      }
     }
   },
   "dashboard": {
@@ -182,6 +141,16 @@
     "achievements_item": "Thành tích",
     "settings_gear": "Menu cài đặt"
   },
+  "children": {
+    "title": "Trẻ em",
+    "add": "Thêm trẻ em",
+    "detail": "Chi tiết trẻ em",
+    "years_old": "tuổi",
+    "empty": {
+      "title": "Chưa thêm trẻ em nào",
+      "message": "Thêm trẻ em đầu tiên của bạn để bắt đầu quản lý việc nhà và phần thưởng"
+    }
+  },
   "chores": {
     "title": "Việc nhà",
     "add": "Thêm việc nhà",
@@ -201,15 +170,7 @@
     "noDescription": "Không có mô tả",
     "noDueDate": "Không có ngày đến hạn",
     "lastCompleted": "Hoàn thành lần cuối",
-    "frequency": {
-      "title": "Tần suất",
-      "once": "Một lần",
-      "daily": "Hàng ngày",
-      "weekly": "Hàng tuần",
-      "weeklyOnDay": "Hàng tuần vào ngày",
-      "monthly": "Hàng tháng",
-      "custom": "Tùy chỉnh"
-    },
+    "frequency": "Tần suất",
     "specificDays": "Ngày cụ thể",
     "dayOfMonth": "Ngày trong tháng",
     "deleteConfirmation": {
@@ -259,6 +220,15 @@
     "dueDate": "Ngày đến hạn",
     "dueTime": "Giờ đến hạn",
     "assignTo": "Giao cho",
+    "frequencySettings": {
+      "title": "Tần suất",
+      "once": "Một lần",
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "weeklyOnDay": "Hàng tuần vào ngày",
+      "monthly": "Hàng tháng",
+      "custom": "Tùy chỉnh"
+    },
     "status": {
       "title": "Trạng thái",
       "pending": "Đang chờ",
@@ -341,18 +311,18 @@
     "rewards_management": "Quản lý phần thưởng",
     "you_have_earned_rewards": "Bạn đã kiếm được {count} phần thưởng!",
     "empty": {
-      "parent": "No rewards created yet",
-      "available": "No available rewards",
-      "earned": "No earned rewards yet"
+      "parent": "Chưa tạo phần thưởng nào",
+      "available": "Không có phần thưởng nào có sẵn",
+      "earned": "Chưa kiếm được phần thưởng nào"
     },
     "period": {
-      "daily": "Daily",
-      "weekly": "Weekly",
-      "monthly": "Monthly"
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "monthly": "Hàng tháng"
     },
-    "points": "points",
-    "detail": "Reward Details",
-    "unlockedOnly": "Show Unlocked Only"
+    "points": "điểm",
+    "detail": "Chi tiết phần thưởng",
+    "unlockedOnly": "Chỉ hiển thị đã mở khóa"
   },
   "settings": {
     "title": "Cài đặt",
@@ -371,18 +341,18 @@
       "dark": "Tối",
       "system": "Hệ thống"
     },
-    "security": "Bảo mật và truy cập",
+    "security": "Bảo mật & Đăng nhập",
     "privacy": "Chính sách riêng tư",
     "terms": "Điều khoản sử dụng",
     "version": "Phiên bản",
     "dark_mode": "Chế độ tối",
     "light_mode": "Chế độ sáng",
     "system_theme": "Sử dụng chủ đề hệ thống",
-    "high_contrast": "Độ tương phản cao",
+    "high_contrast": "Chế độ tương phản cao",
     "use_device_language": "Sử dụng ngôn ngữ thiết bị",
     "select_language": "Chọn ngôn ngữ",
     "biometric_login": "Đăng nhập sinh trắc học",
-    "auto_login": "Tự động đăng nhập",
+    "auto_login": "Đăng nhập tự động",
     "chore_management": "Quản lý việc nhà",
     "default_due_time": "Thời gian đến hạn mặc định",
     "auto_verification": "Tự động xác minh",
@@ -392,9 +362,32 @@
     "custom_icons_subtitle": "Tải lên và quản lý biểu tượng tùy chỉnh",
     "theme_settings": "Cài đặt chủ đề",
     "requires_tier": "Yêu cầu tài khoản {tier}",
-    "avatar": "Hình đại diện",
-    "change_avatar": "Thay đổi hình đại diện",
-    "avatar_updated": "Đã cập nhật hình đại diện"
+    "avatar": "Ảnh đại diện",
+    "change_avatar": "Thay đổi ảnh đại diện",
+    "avatar_updated": "Đã cập nhật ảnh đại diện",
+    "reminders": "Nhắc nhở"
+  },
+  "statistics": {
+    "title": "Thống kê",
+    "loading": "Đang tải thống kê...",
+    "noData": "Không có dữ liệu thống kê",
+    "summary": "Tổng kết",
+    "chart": "Biểu đồ hiệu suất",
+    "chartPlaceholder": "Biểu đồ sẽ xuất hiện ở đây khi có thêm dữ liệu",
+    "totalChores": "Tổng số việc nhà",
+    "completedChores": "Đã hoàn thành",
+    "pendingChores": "Đang chờ",
+    "missedChores": "Đã bỏ lỡ",
+    "totalPoints": "Tổng điểm",
+    "completionRate": "Tỷ lệ hoàn thành",
+    "grouping": {
+      "day": "Hàng ngày",
+      "week": "Hàng tuần",
+      "month": "Hàng tháng"
+    },
+    "startDate": "Ngày bắt đầu",
+    "endDate": "Ngày kết thúc",
+    "selectDateRange": "Chọn khoảng thời gian"
   },
   "tutorial": {
     "title": "Hướng dẫn",
@@ -497,67 +490,35 @@
       "outlined": "Viền"
     }
   },
-  "children": {
-    "title": "Children",
-    "add": "Add Child",
-    "detail": "Child Details",
-    "empty": {
-      "title": "No Children Added",
-      "message": "Add your first child to get started with managing chores and rewards"
-    },
-    "years_old": "years old"
-  },
-  "statistics": {
-    "title": "Statistics",
-    "loading": "Loading statistics...",
-    "noData": "No statistics data available",
-    "summary": "Summary",
-    "chart": "Performance Chart",
-    "chartPlaceholder": "Chart will appear here when more data is available",
-    "totalChores": "Total Chores",
-    "completedChores": "Completed",
-    "pendingChores": "Pending",
-    "missedChores": "Missed",
-    "totalPoints": "Total Points",
-    "completionRate": "Completion Rate",
-    "grouping": {
-      "day": "Daily",
-      "week": "Weekly",
-      "month": "Monthly"
-    },
-    "startDate": "Start Date",
-    "endDate": "End Date",
-    "selectDateRange": "Select Date Range"
-  },
   "achievements": {
-    "title": "Achievements",
-    "unlockedOnly": "Show Unlocked Only",
-    "unlocked": "Unlocked",
-    "locked": "Locked",
-    "progress": "Progress",
+    "title": "Thành tích",
+    "unlockedOnly": "Chỉ hiển thị đã mở khóa",
+    "unlocked": "Đã mở khóa",
+    "locked": "Đã khóa",
+    "progress": "Tiến độ",
     "empty": {
-      "title": "No Achievements Yet",
-      "message": "Complete chores and earn points to unlock achievements"
+      "title": "Chưa có thành tích nào",
+      "message": "Hoàn thành việc nhà và kiếm điểm để mở khóa thành tích"
     }
   },
   "points": {
     "summary": {
-      "title": "Points Summary",
-      "total": "Total",
-      "daily": "Daily",
-      "weekly": "Weekly",
-      "monthly": "Monthly"
+      "title": "Tổng kết điểm",
+      "total": "Tổng cộng",
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "monthly": "Hàng tháng"
     },
     "adjustment": {
-      "title": "Adjust Points",
-      "amount": "Amount",
-      "reason": "Reason",
-      "submit": "Submit"
+      "title": "Điều chỉnh điểm",
+      "amount": "Số lượng",
+      "reason": "Lý do",
+      "submit": "Gửi"
     },
     "history": {
-      "title": "Points History",
-      "empty": "No point adjustments yet",
-      "noReason": "No reason provided"
+      "title": "Lịch sử điểm",
+      "empty": "Chưa có điều chỉnh điểm nào",
+      "noReason": "Không có lý do được cung cấp"
     }
   },
   "error": {

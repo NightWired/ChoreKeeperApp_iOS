@@ -32,7 +32,10 @@
     "switch_user": "Cambia Utente",
     "login_as_different_user": "Accedi come Utente Diverso",
     "no_remembered_users": "Nessun utente memorizzato",
-    "child": "Bambino"
+    "child": "Bambino",
+    "about": "Informazioni",
+    "privacy_policy": "Informativa sulla Privacy",
+    "terms_of_service": "Termini di Servizio"
   },
   "auth": {
     "login": "Accedi",
@@ -76,9 +79,6 @@
     "email_verified": "Email verificata con successo",
     "email_verification_banner": "Verifica il tuo indirizzo email per garantire la sicurezza dell'account",
     "verify_now": "Verifica Ora",
-    "login_with_google": "Accedi con Google",
-    "login_with_apple": "Accedi con Apple",
-    "login_with_facebook": "Accedi con Facebook",
     "logout_confirmation": "Sei sicuro di voler uscire?"
   },
   "onboarding": {
@@ -141,6 +141,16 @@
     "achievements_item": "Traguardi",
     "settings_gear": "Menu impostazioni"
   },
+  "children": {
+    "title": "Bambini",
+    "add": "Aggiungi Bambino",
+    "detail": "Dettagli Bambino",
+    "years_old": "anni",
+    "empty": {
+      "title": "Nessun Bambino Aggiunto",
+      "message": "Aggiungi il tuo primo bambino per iniziare a gestire compiti e ricompense"
+    }
+  },
   "chores": {
     "title": "Faccende",
     "add": "Aggiungi Faccenda",
@@ -160,15 +170,7 @@
     "noDescription": "Nessuna descrizione fornita",
     "noDueDate": "Nessuna data di scadenza",
     "lastCompleted": "Ultima completata",
-    "frequency": {
-      "title": "Frequenza",
-      "once": "Una volta",
-      "daily": "Giornaliera",
-      "weekly": "Settimanale",
-      "weeklyOnDay": "Settimanale nel Giorno",
-      "monthly": "Mensile",
-      "custom": "Personalizzata"
-    },
+    "frequency": "Frequenza",
     "specificDays": "Giorni specifici",
     "dayOfMonth": "Giorno del mese",
     "deleteConfirmation": {
@@ -218,6 +220,15 @@
     "dueDate": "Data di Scadenza",
     "dueTime": "Ora di Scadenza",
     "assignTo": "Assegna A",
+    "frequencySettings": {
+      "title": "Frequenza",
+      "once": "Una volta",
+      "daily": "Giornaliera",
+      "weekly": "Settimanale",
+      "weeklyOnDay": "Settimanale nel Giorno",
+      "monthly": "Mensile",
+      "custom": "Personalizzata"
+    },
     "status": {
       "title": "Stato",
       "pending": "In attesa",
@@ -353,7 +364,30 @@
     "requires_tier": "Richiede account {tier}",
     "avatar": "Avatar",
     "change_avatar": "Cambia Avatar",
-    "avatar_updated": "Avatar aggiornato con successo"
+    "avatar_updated": "Avatar aggiornato con successo",
+    "reminders": "Promemoria"
+  },
+  "statistics": {
+    "title": "Statistiche",
+    "loading": "Caricamento statistiche...",
+    "noData": "Nessun dato statistico disponibile",
+    "summary": "Riepilogo",
+    "chart": "Grafico delle Prestazioni",
+    "chartPlaceholder": "Il grafico apparirà qui quando saranno disponibili più dati",
+    "totalChores": "Compiti Totali",
+    "completedChores": "Completati",
+    "pendingChores": "In Attesa",
+    "missedChores": "Mancati",
+    "totalPoints": "Punti Totali",
+    "completionRate": "Tasso di Completamento",
+    "grouping": {
+      "day": "Giornaliero",
+      "week": "Settimanale",
+      "month": "Mensile"
+    },
+    "startDate": "Data di Inizio",
+    "endDate": "Data di Fine",
+    "selectDateRange": "Seleziona Intervallo di Date"
   },
   "tutorial": {
     "title": "Tutorial",
@@ -455,38 +489,6 @@
       "filled": "Pieno",
       "outlined": "Contorno"
     }
-  },
-  "children": {
-    "title": "Bambini",
-    "add": "Aggiungi Bambino",
-    "detail": "Dettagli Bambino",
-    "empty": {
-      "title": "Nessun Bambino Aggiunto",
-      "message": "Aggiungi il tuo primo bambino per iniziare a gestire compiti e ricompense"
-    },
-    "years_old": "anni"
-  },
-  "statistics": {
-    "title": "Statistiche",
-    "loading": "Caricamento statistiche...",
-    "noData": "Nessun dato statistico disponibile",
-    "summary": "Riepilogo",
-    "chart": "Grafico delle Prestazioni",
-    "chartPlaceholder": "Il grafico apparirà qui quando saranno disponibili più dati",
-    "totalChores": "Compiti Totali",
-    "completedChores": "Completati",
-    "pendingChores": "In Attesa",
-    "missedChores": "Mancati",
-    "totalPoints": "Punti Totali",
-    "completionRate": "Tasso di Completamento",
-    "grouping": {
-      "day": "Giornaliero",
-      "week": "Settimanale",
-      "month": "Mensile"
-    },
-    "startDate": "Data di Inizio",
-    "endDate": "Data di Fine",
-    "selectDateRange": "Seleziona Intervallo di Date"
   },
   "achievements": {
     "title": "Traguardi",

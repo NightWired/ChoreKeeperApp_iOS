@@ -32,7 +32,10 @@
     "switch_user": "Przełącz użytkownika",
     "login_as_different_user": "Zaloguj się jako inny użytkownik",
     "no_remembered_users": "Brak zapamiętanych użytkowników",
-    "child": "Dziecko"
+    "child": "Dziecko",
+    "about": "O aplikacji",
+    "privacy_policy": "Polityka prywatności",
+    "terms_of_service": "Warunki korzystania"
   },
   "auth": {
     "login": "Zaloguj się",
@@ -76,9 +79,6 @@
     "email_verified": "E-mail zweryfikowany",
     "email_verification_banner": "Zweryfikuj swój adres e-mail, aby zapewnić bezpieczeństwo konta",
     "verify_now": "Zweryfikuj teraz",
-    "login_with_google": "Zaloguj się przez Google",
-    "login_with_apple": "Zaloguj się przez Apple",
-    "login_with_facebook": "Zaloguj się przez Facebook",
     "logout_confirmation": "Czy na pewno chcesz się wylogować?"
   },
   "onboarding": {
@@ -107,51 +107,6 @@
       "signIn": "Zaloguj się",
       "forgotPassword": "Zapomniałeś hasła?",
       "dontHaveAccount": "Nie masz konta? Utwórz je"
-    },
-    "skip": "Pomiń samouczek",
-    "back": "Wstecz",
-    "next": "Dalej",
-    "finish": "Rozpocznij",
-    "close": "Zamknij",
-    "parent": {
-      "welcome": {
-        "title": "Witaj w ChoreKeeper!",
-        "description": "Skonfigurujmy Twoje konto w zaledwie kilka minut. ChoreKeeper pomaga zarządzać obowiązkami domowymi, śledzić punkty i nagradzać dzieci za wykonywanie zadań."
-      },
-      "features": {
-        "title": "Co oferuje ChoreKeeper",
-        "description": "ChoreKeeper dostarcza narzędzia do tworzenia i przydzielania obowiązków domowych, śledzenia punktów i ustawiania nagród dla Twoich dzieci. Możesz zarządzać wszystkim z jednego miejsca!"
-      },
-      "chores": {
-        "title": "Zarządzanie obowiązkami domowymi",
-        "description": "Twórz obowiązki domowe, ustawiaj terminy i przydzielaj je swoim dzieciom. Otrzymają powiadomienia i będą mogły oznaczyć obowiązki jako wykonane po ich zakończeniu."
-      },
-      "rewards": {
-        "title": "Ustawianie nagród",
-        "description": "Twórz nagrody, które Twoje dzieci mogą zdobyć, zbierając punkty. Ustaw progi punktowe i pozwól im dążyć do swoich celów!"
-      },
-      "add_child": {
-        "title": "Dodawanie dziecka",
-        "description": "Aby dodać dziecko, przejdź do zakładki Rodzina i dotknij przycisku '+'. Wprowadź ich nazwę użytkownika i imię, a następnie udostępnij im kod konfiguracyjny, aby dokończyć konfigurację konta."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Witaj w ChoreKeeper!",
-        "description": "ChoreKeeper pomaga śledzić Twoje obowiązki domowe i zdobywać punkty za ich wykonywanie. Nauczmy się, jak korzystać z aplikacji!"
-      },
-      "chores": {
-        "title": "Przeglądanie i wykonywanie obowiązków domowych",
-        "description": "Twoje obowiązki domowe pojawią się na ekranie głównym. Dotknij obowiązku, aby zobaczyć szczegóły i oznacz go jako wykonany, gdy skończysz. Twoi rodzice zweryfikują wykonane obowiązki."
-      },
-      "points": {
-        "title": "Śledzenie punktów i nagród",
-        "description": "Wykonując obowiązki domowe, zdobywasz punkty. Sprawdź swoją całkowitą liczbę punktów i zobacz, jakie nagrody możesz zdobyć. Śledź swoje postępy w kierunku każdej nagrody!"
-      },
-      "settings": {
-        "title": "Ustawienia osobiste",
-        "description": "Możesz dostosować swój profil, zmieniając awatar i ustawiając przypomnienia o obowiązkach domowych. Dotknij ikony ustawień, aby uzyskać dostęp do tych opcji."
-      }
     }
   },
   "dashboard": {
@@ -186,6 +141,16 @@
     "achievements_item": "Osiągnięcia",
     "settings_gear": "Menu ustawień"
   },
+  "children": {
+    "title": "Dzieci",
+    "add": "Dodaj dziecko",
+    "detail": "Szczegóły dziecka",
+    "years_old": "lat",
+    "empty": {
+      "title": "Nie dodano żadnych dzieci",
+      "message": "Dodaj swoje pierwsze dziecko, aby rozpocząć zarządzanie obowiązkami domowymi i nagrodami"
+    }
+  },
   "chores": {
     "title": "Obowiązki domowe",
     "add": "Dodaj obowiązek domowy",
@@ -205,15 +170,7 @@
     "noDescription": "Brak opisu",
     "noDueDate": "Brak terminu",
     "lastCompleted": "Ostatnio ukończony",
-    "frequency": {
-      "title": "Częstotliwość",
-      "once": "Jednorazowo",
-      "daily": "Codziennie",
-      "weekly": "Co tydzień",
-      "weeklyOnDay": "Co tydzień w dany dzień",
-      "monthly": "Co miesiąc",
-      "custom": "Niestandardowa"
-    },
+    "frequency": "Częstotliwość",
     "specificDays": "Określone dni",
     "dayOfMonth": "Dzień miesiąca",
     "deleteConfirmation": {
@@ -263,6 +220,15 @@
     "dueDate": "Termin",
     "dueTime": "Czas wykonania",
     "assignTo": "Przydziel do",
+    "frequencySettings": {
+      "title": "Częstotliwość",
+      "once": "Jednorazowo",
+      "daily": "Codziennie",
+      "weekly": "Co tydzień",
+      "weeklyOnDay": "Co tydzień w dany dzień",
+      "monthly": "Co miesiąc",
+      "custom": "Niestandardowa"
+    },
     "status": {
       "title": "Status",
       "pending": "Oczekujący",
@@ -398,7 +364,30 @@
     "requires_tier": "Wymaga konta {tier}",
     "avatar": "Awatar",
     "change_avatar": "Zmień awatar",
-    "avatar_updated": "Awatar zaktualizowany"
+    "avatar_updated": "Awatar zaktualizowany",
+    "reminders": "Przypomnienia"
+  },
+  "statistics": {
+    "title": "Statystyki",
+    "loading": "Ładowanie statystyk...",
+    "noData": "Brak dostępnych danych statystycznych",
+    "summary": "Podsumowanie",
+    "chart": "Wykres wydajności",
+    "chartPlaceholder": "Wykres pojawi się tutaj, gdy będzie więcej danych",
+    "totalChores": "Wszystkie obowiązki",
+    "completedChores": "Ukończone",
+    "pendingChores": "Oczekujące",
+    "missedChores": "Pominięte",
+    "totalPoints": "Suma punktów",
+    "completionRate": "Wskaźnik ukończenia",
+    "grouping": {
+      "day": "Dziennie",
+      "week": "Tygodniowo",
+      "month": "Miesięcznie"
+    },
+    "startDate": "Data początkowa",
+    "endDate": "Data końcowa",
+    "selectDateRange": "Wybierz zakres dat"
   },
   "tutorial": {
     "title": "Samouczek",
@@ -500,38 +489,6 @@
       "filled": "Wypełniony",
       "outlined": "Konturowy"
     }
-  },
-  "children": {
-    "title": "Dzieci",
-    "add": "Dodaj dziecko",
-    "detail": "Szczegóły dziecka",
-    "empty": {
-      "title": "Nie dodano żadnych dzieci",
-      "message": "Dodaj swoje pierwsze dziecko, aby rozpocząć zarządzanie obowiązkami domowymi i nagrodami"
-    },
-    "years_old": "lat"
-  },
-  "statistics": {
-    "title": "Statystyki",
-    "loading": "Ładowanie statystyk...",
-    "noData": "Brak dostępnych danych statystycznych",
-    "summary": "Podsumowanie",
-    "chart": "Wykres wydajności",
-    "chartPlaceholder": "Wykres pojawi się tutaj, gdy będzie więcej danych",
-    "totalChores": "Wszystkie obowiązki",
-    "completedChores": "Ukończone",
-    "pendingChores": "Oczekujące",
-    "missedChores": "Pominięte",
-    "totalPoints": "Suma punktów",
-    "completionRate": "Wskaźnik ukończenia",
-    "grouping": {
-      "day": "Dziennie",
-      "week": "Tygodniowo",
-      "month": "Miesięcznie"
-    },
-    "startDate": "Data początkowa",
-    "endDate": "Data końcowa",
-    "selectDateRange": "Wybierz zakres dat"
   },
   "achievements": {
     "title": "Osiągnięcia",

@@ -197,29 +197,7 @@ struct ChildDashboard: View {
                             )
                         }
 
-                        // Logout button - more child-friendly
-                        Button(action: {
-                            showLogoutConfirmation = true
-                        }) {
-                            HStack {
-                                Image(systemName: "rectangle.portrait.and.arrow.right")
-                                Text(LocalizationHandler.localize("common.logout"))
-                            }
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 30)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange.opacity(0.7)]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .cornerRadius(20)
-                            .shadow(radius: 2)
-                        }
-                        .padding(.top, 30)
+
                     }
                     .padding()
                 }

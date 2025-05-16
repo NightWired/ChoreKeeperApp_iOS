@@ -39,7 +39,8 @@ struct SettingsView: View {
                             icon: "person.fill",
                             iconColor: Color("AccentColor"),
                             title: "settings.profile",
-                            type: .navigation
+                            type: .navigation,
+                            showNavigationArrow: false
                         )
                     }
 
@@ -49,7 +50,8 @@ struct SettingsView: View {
                             icon: "person.crop.circle",
                             iconColor: Color("SecondaryAccentColor"),
                             title: "settings.avatar",
-                            type: .navigation
+                            type: .navigation,
+                            showNavigationArrow: false
                         )
                     }
 
@@ -60,7 +62,8 @@ struct SettingsView: View {
                                 icon: "lock.fill",
                                 iconColor: .blue,
                                 title: "settings.security",
-                                type: .navigation
+                                type: .navigation,
+                                showNavigationArrow: false
                             )
                         }
                     }
@@ -79,10 +82,7 @@ struct SettingsView: View {
                     .padding(.vertical, 8)
 
                     // Language selector
-                    NavigationLink(destination: EmptyView()) {
-                        LanguageSelector(displayMode: .settingsRow)
-                    }
-                    .disabled(true) // Disable navigation since we're using action sheet
+                    LanguageSelector(displayMode: .settingsRow)
                 }
 
                 // Notifications section
@@ -103,7 +103,8 @@ struct SettingsView: View {
                                 icon: "clock.fill",
                                 iconColor: .purple,
                                 title: "settings.reminders",
-                                type: .navigation
+                                type: .navigation,
+                                showNavigationArrow: false
                             )
                         }
                     }
@@ -127,7 +128,8 @@ struct SettingsView: View {
                                 icon: "clock.fill",
                                 iconColor: .blue,
                                 title: "settings.default_due_time",
-                                type: .navigation
+                                type: .navigation,
+                                showNavigationArrow: false
                             )
                         }
                     }
@@ -141,7 +143,8 @@ struct SettingsView: View {
                             icon: "info.circle.fill",
                             iconColor: .blue,
                             title: "settings.about",
-                            type: .navigation
+                            type: .navigation,
+                            showNavigationArrow: false
                         )
                     }
 
@@ -151,7 +154,8 @@ struct SettingsView: View {
                             icon: "hand.raised.fill",
                             iconColor: .gray,
                             title: "settings.privacy",
-                            type: .navigation
+                            type: .navigation,
+                            showNavigationArrow: false
                         )
                     }
 
@@ -161,7 +165,8 @@ struct SettingsView: View {
                             icon: "doc.text.fill",
                             iconColor: .gray,
                             title: "settings.terms",
-                            type: .navigation
+                            type: .navigation,
+                            showNavigationArrow: false
                         )
                     }
                 }
@@ -176,7 +181,10 @@ struct SettingsView: View {
                             icon: "rectangle.portrait.and.arrow.right",
                             iconColor: .red,
                             title: "common.logout",
-                            type: .action
+                            type: .action,
+                            action: {
+                                showLogoutConfirmation = true
+                            }
                         )
                     }
 

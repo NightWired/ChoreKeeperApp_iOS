@@ -185,21 +185,6 @@ struct ParentDashboard: View {
                         }
 
                         // Additional items can be added here
-
-                        // Logout button
-                        Button(action: {
-                            showLogoutConfirmation = true
-                        }) {
-                            Text(LocalizationHandler.localize("common.logout"))
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding(.vertical, 12)
-                                .padding(.horizontal, 30)
-                                .background(Color.red.opacity(0.8))
-                                .cornerRadius(8)
-                                .shadow(radius: 2)
-                        }
-                        .padding(.top, 30)
                     }
                     .padding()
                 }

@@ -32,7 +32,10 @@
     "switch_user": "Kullanıcı Değiştir",
     "login_as_different_user": "Farklı kullanıcı olarak giriş yap",
     "no_remembered_users": "Hatırlanan kullanıcı yok",
-    "child": "Çocuk"
+    "child": "Çocuk",
+    "about": "Hakkında",
+    "privacy_policy": "Gizlilik Politikası",
+    "terms_of_service": "Kullanım Şartları"
   },
   "auth": {
     "login": "Giriş Yap",
@@ -75,7 +78,8 @@
     "verify_email": "E-postayı doğrula",
     "email_verified": "E-posta doğrulandı",
     "email_verification_banner": "Hesap güvenliğini sağlamak için e-posta adresini doğrula",
-    "verify_now": "Şimdi doğrula"
+    "verify_now": "Şimdi doğrula",
+    "logout_confirmation": "Çıkış yapmak istediğinden emin misin?"
   },
   "onboarding": {
     "welcome": {
@@ -103,51 +107,6 @@
       "signIn": "Giriş Yap",
       "forgotPassword": "Şifreni mi unuttun?",
       "dontHaveAccount": "Hesabın yok mu? Bir tane oluştur"
-    },
-    "skip": "Eğitimi atla",
-    "back": "Geri",
-    "next": "İleri",
-    "finish": "Başla",
-    "close": "Kapat",
-    "parent": {
-      "welcome": {
-        "title": "ChoreKeeper'a Hoş Geldin!",
-        "description": "Hesabını sadece birkaç dakika içinde kuralım. ChoreKeeper, ev işlerini yönetmene, puanları takip etmene ve çocuklarını görevleri tamamladıkları için ödüllendirmene yardımcı olur."
-      },
-      "features": {
-        "title": "ChoreKeeper Neler Sunar",
-        "description": "ChoreKeeper, ev işleri oluşturmak ve atamak, puanları takip etmek ve çocukların için ödüller belirlemek için araçlar sağlar. Her şeyi tek bir yerden yönetebilirsin!"
-      },
-      "chores": {
-        "title": "Ev İşlerini Yönetme",
-        "description": "Ev işleri oluştur, son tarihleri belirle ve çocuklarına ata. Bildirimler alacaklar ve bitirdiklerinde ev işlerini tamamlandı olarak işaretleyebilecekler."
-      },
-      "rewards": {
-        "title": "Ödülleri Ayarlama",
-        "description": "Çocuklarının puan toplayarak kazanabilecekleri ödüller oluştur. Puan eşikleri belirle ve hedeflerine doğru çalışmalarına izin ver!"
-      },
-      "add_child": {
-        "title": "Çocuk Ekleme",
-        "description": "Çocuk eklemek için Aile sekmesine git ve '+' düğmesine dokun. Kullanıcı adlarını ve isimlerini gir, ardından hesap kurulumunu tamamlamaları için kurulum kodunu onlarla paylaş."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "ChoreKeeper'a Hoş Geldin!",
-        "description": "ChoreKeeper, ev işlerini takip etmene ve onları tamamlayarak puan kazanmana yardımcı olur. Uygulamayı nasıl kullanacağımızı öğrenelim!"
-      },
-      "chores": {
-        "title": "Ev İşlerini Görüntüleme ve Tamamlama",
-        "description": "Ev işlerin ana ekranda görünecek. Ayrıntıları görmek için bir ev işine dokun ve bitirdiğinde tamamlandı olarak işaretle. Ebeveynlerin tamamlanan ev işlerini doğrulayacak."
-      },
-      "points": {
-        "title": "Puanları ve Ödülleri Takip Etme",
-        "description": "Ev işlerini tamamlayarak puan kazanırsın. Toplam puanını kontrol et ve hangi ödülleri kazanabileceğini gör. Her ödüle doğru ilerlemeni takip et!"
-      },
-      "settings": {
-        "title": "Kişisel Ayarlar",
-        "description": "Avatarını değiştirerek ve ev işleri için hatırlatıcılar ayarlayarak profilini özelleştirebilirsin. Bu seçeneklere erişmek için Ayarlar simgesine dokun."
-      }
     }
   },
   "dashboard": {
@@ -182,25 +141,93 @@
     "achievements_item": "Başarılar",
     "settings_gear": "Ayarlar Menüsü"
   },
+  "children": {
+    "title": "Çocuklar",
+    "add": "Çocuk Ekle",
+    "detail": "Çocuk Detayları",
+    "years_old": "yaşında",
+    "empty": {
+      "title": "Hiç Çocuk Eklenmedi",
+      "message": "Ev işlerini ve ödülleri yönetmeye başlamak için ilk çocuğunu ekle"
+    }
+  },
   "chores": {
     "title": "Ev İşleri",
-    "addChore": "Ev İşi Ekle",
-    "editChore": "Ev İşini Düzenle",
-    "deleteChore": "Ev İşini Sil",
+    "add": "Ev İşi Ekle",
+    "edit": "Ev İşini Düzenle",
+    "delete": "Ev İşini Sil",
+    "complete": "Tamamla",
+    "verify": "Doğrula",
+    "reject": "Reddet",
+    "empty": "Ev işi bulunamadı",
+    "add_first_chore": "İlk ev işini ekle",
+    "parentChores": "Ebeveyn İşleri",
+    "childChores": "Çocuk İşleri",
+    "points": "Puanlar",
+    "details": "Detaylar",
+    "schedule": "Program",
+    "actions": "İşlemler",
+    "noDescription": "Açıklama yok",
+    "noDueDate": "Son tarih yok",
+    "lastCompleted": "Son Tamamlanma",
+    "frequency": "Sıklık",
+    "specificDays": "Belirli Günler",
+    "dayOfMonth": "Ayın Günü",
+    "deleteConfirmation": {
+      "title": "Ev İşini Sil",
+      "message": "Bu ev işini silmek istediğinden emin misin? Bu işlem geri alınamaz."
+    },
+    "rejectReason": {
+      "title": "Reddetme Nedeni",
+      "placeholder": "Reddetme nedenini gir"
+    },
+    "filter": {
+      "title": "Ev İşlerini Filtrele",
+      "all": "Tümü",
+      "pending": "Beklemede",
+      "completed": "Tamamlandı",
+      "pendingVerification": "Doğrulama Bekliyor",
+      "missed": "Kaçırıldı",
+      "status": "Durum",
+      "category": "Kategori"
+    },
+    "form": {
+      "createTitle": "Ev İşi Oluştur",
+      "editTitle": "Ev İşini Düzenle",
+      "basicInfo": "Temel Bilgiler",
+      "title": "Başlık",
+      "description": "Açıklama",
+      "icon": "Simge",
+      "selectIcon": "Simge Seç",
+      "assignedChild": "Atanan Çocuk",
+      "selectChild": "Çocuk Seç",
+      "noChild": "Çocuk Yok (Ebeveyn İşi)",
+      "dueDate": "Son Tarih",
+      "hasDueDate": "Son Tarihi Var",
+      "date": "Tarih",
+      "time": "Saat",
+      "frequency": "Sıklık",
+      "dayOfMonth": "Ayın Günü",
+      "points": "Puanlar",
+      "pointValue": "Puan Değeri",
+      "countTowardsDaily": "Günlük Toplamlar İçin Say",
+      "countTowardsWeekly": "Haftalık Toplamlar İçin Say",
+      "countTowardsMonthly": "Aylık Toplamlar İçin Say",
+      "subtractPointsWhenMissed": "Kaçırıldığında Puanları Çıkar"
+    },
     "choreName": "Ev İşi Adı",
     "choreDescription": "Açıklama",
     "dueDate": "Son Tarih",
     "dueTime": "Son Saat",
     "assignTo": "Şuna Ata",
-    "points": "Puanlar",
-    "frequency": {
+    "frequencySettings": {
       "title": "Sıklık",
       "once": "Bir kez",
       "daily": "Günlük",
+      "weekly": "Haftalık",
       "weeklyOnDay": "Haftada belirli günlerde",
       "monthly": "Aylık",
-      "weekly": "Weekly",
-      "custom": "Custom"
+      "custom": "Özel"
     },
     "status": {
       "title": "Durum",
@@ -213,10 +240,7 @@
     },
     "markComplete": "Tamamlandı olarak işaretle",
     "markIncomplete": "Tamamlanmadı olarak işaretle",
-    "verify": "Doğrula",
-    "reject": "Reddet",
     "noChores": "Ev işi bulunamadı",
-    "deleteConfirmation": "Bu ev işini silmek istediğinden emin misin?",
     "recurring": "Tekrarlanan",
     "days": "Günler",
     "weeks": "Haftalar",
@@ -234,61 +258,7 @@
     "delete_recurring": "Tüm tekrarları mı yoksa sadece bunu mu silmek istiyorsun?",
     "all_occurrences": "Tüm tekrarlar",
     "just_this_one": "Sadece bu",
-    "view_calendar": "Takvimi görüntüle",
-    "add_first_chore": "İlk ev işini ekle",
-    "add": "Add Chore",
-    "edit": "Edit Chore",
-    "delete": "Delete Chore",
-    "complete": "Complete",
-    "empty": "No chores found",
-    "parentChores": "Parent Chores",
-    "childChores": "Child Chores",
-    "details": "Details",
-    "schedule": "Schedule",
-    "actions": "Actions",
-    "noDescription": "No description provided",
-    "noDueDate": "No due date",
-    "lastCompleted": "Last Completed",
-    "specificDays": "Specific Days",
-    "dayOfMonth": "Day of Month",
-    "rejectReason": {
-      "title": "Rejection Reason",
-      "placeholder": "Enter reason for rejection"
-    },
-    "filter": {
-      "title": "Filter Chores",
-      "all": "All",
-      "pending": "Pending",
-      "completed": "Completed",
-      "pendingVerification": "Pending Verification",
-      "missed": "Missed",
-      "status": "Status",
-      "category": "Category"
-    },
-    "form": {
-      "createTitle": "Create Chore",
-      "editTitle": "Edit Chore",
-      "basicInfo": "Basic Information",
-      "title": "Title",
-      "description": "Description",
-      "icon": "Icon",
-      "selectIcon": "Select Icon",
-      "assignedChild": "Assigned Child",
-      "selectChild": "Select Child",
-      "noChild": "No Child (Parent Chore)",
-      "dueDate": "Due Date",
-      "hasDueDate": "Has Due Date",
-      "date": "Date",
-      "time": "Time",
-      "frequency": "Frequency",
-      "dayOfMonth": "Day of Month",
-      "points": "Points",
-      "pointValue": "Point Value",
-      "countTowardsDaily": "Count Towards Daily Totals",
-      "countTowardsWeekly": "Count Towards Weekly Totals",
-      "countTowardsMonthly": "Count Towards Monthly Totals",
-      "subtractPointsWhenMissed": "Subtract Points When Missed"
-    }
+    "view_calendar": "Takvimi görüntüle"
   },
   "rewards": {
     "title": "Ödüller",
@@ -394,7 +364,30 @@
     "requires_tier": "{tier} hesabı gerektirir",
     "avatar": "Avatar",
     "change_avatar": "Avatarı değiştir",
-    "avatar_updated": "Avatar güncellendi"
+    "avatar_updated": "Avatar güncellendi",
+    "reminders": "Hatırlatıcılar"
+  },
+  "statistics": {
+    "title": "İstatistikler",
+    "loading": "İstatistikler yükleniyor...",
+    "noData": "İstatistik verisi mevcut değil",
+    "summary": "Özet",
+    "chart": "Performans Grafiği",
+    "chartPlaceholder": "Daha fazla veri mevcut olduğunda grafik burada görünecek",
+    "totalChores": "Toplam Ev İşleri",
+    "completedChores": "Tamamlanan",
+    "pendingChores": "Bekleyen",
+    "missedChores": "Kaçırılan",
+    "totalPoints": "Toplam Puanlar",
+    "completionRate": "Tamamlanma Oranı",
+    "grouping": {
+      "day": "Günlük",
+      "week": "Haftalık",
+      "month": "Aylık"
+    },
+    "startDate": "Başlangıç Tarihi",
+    "endDate": "Bitiş Tarihi",
+    "selectDateRange": "Tarih Aralığı Seç"
   },
   "tutorial": {
     "title": "Eğitim",
@@ -497,42 +490,10 @@
       "outlined": "Çizgili"
     }
   },
-  "children": {
-    "title": "Çocuklar",
-    "add": "Çocuk Ekle",
-    "detail": "Çocuk Detayları",
-    "empty": {
-      "title": "Hiç Çocuk Eklenmedi",
-      "message": "Ev işlerini ve ödülleri yönetmeye başlamak için ilk çocuğunu ekle"
-    },
-    "years_old": "yaşında"
-  },
-  "statistics": {
-    "title": "İstatistikler",
-    "loading": "İstatistikler yükleniyor...",
-    "noData": "İstatistik verisi mevcut değil",
-    "summary": "Özet",
-    "chart": "Performans Grafiği",
-    "chartPlaceholder": "Daha fazla veri mevcut olduğunda grafik burada görünecek",
-    "totalChores": "Toplam Ev İşleri",
-    "completedChores": "Tamamlanan",
-    "pendingChores": "Bekleyen",
-    "missedChores": "Kaçırılan",
-    "totalPoints": "Toplam Puanlar",
-    "completionRate": "Tamamlanma Oranı",
-    "grouping": {
-      "day": "Günlük",
-      "week": "Haftalık",
-      "month": "Aylık"
-    },
-    "startDate": "Başlangıç Tarihi",
-    "endDate": "Bitiş Tarihi",
-    "selectDateRange": "Tarih Aralığı Seç"
-  },
   "achievements": {
     "title": "Başarılar",
     "unlockedOnly": "Sadece Açılanları Göster",
-    "unlocked": "Açık",
+    "unlocked": "Açıldı",
     "locked": "Kilitli",
     "progress": "İlerleme",
     "empty": {
@@ -572,8 +533,8 @@
     "1000": "Bir ağ hatası oluştu",
     "2000": "Kimlik doğrulama hatası",
     "3001": "İstenen veri bulunamadı",
-    "3003": "Veri kaydetme başarısız oldu",
-    "3005": "Veri silme başarısız oldu",
+    "3003": "Veri kaydedilemedi",
+    "3005": "Veri silinemedi",
     "5000": "İzin hatası",
     "6000": "Ev işi yönetimi hatası",
     "7000": "Ödül yönetimi hatası",

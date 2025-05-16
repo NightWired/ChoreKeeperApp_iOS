@@ -11,18 +11,19 @@
     "edit": "Modifier",
     "back": "Retour",
     "next": "Suivant",
-    "retry": "Réessayer",
+    "done": "Terminé",
     "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "info": "Information",
+    "retry": "Réessayer",
     "search": "Rechercher",
     "settings": "Paramètres",
     "logout": "Déconnexion",
     "yes": "Oui",
     "no": "Non",
     "confirm": "Confirmer",
-    "success": "Succès",
-    "error": "Erreur",
-    "warning": "Avertissement",
-    "info": "Information",
     "warning_permanent": "ATTENTION: Cette action est permanente et ne peut pas être annulée.",
     "this_will": "Cela va",
     "close": "Fermer",
@@ -32,7 +33,9 @@
     "login_as_different_user": "Se connecter avec un autre compte",
     "no_remembered_users": "Aucun utilisateur mémorisé",
     "child": "Enfant",
-    "done": "Done"
+    "about": "À propos",
+    "privacy_policy": "Politique de confidentialité",
+    "terms_of_service": "Conditions d'utilisation"
   },
   "auth": {
     "login": "Connexion",
@@ -46,6 +49,9 @@
     "remember_email": "Se souvenir du courriel",
     "remember_username": "Se souvenir du nom d'utilisateur",
     "auto_login": "Connexion automatique",
+    "login_with_google": "Se connecter avec Google",
+    "login_with_apple": "Se connecter avec Apple",
+    "login_with_facebook": "Se connecter avec Facebook",
     "login_as_parent": "Je suis un parent",
     "login_as_child": "Je suis un enfant",
     "select_role": "Sélectionnez votre rôle",
@@ -73,160 +79,77 @@
     "email_verified": "Courriel vérifié avec succès",
     "email_verification_banner": "Veuillez vérifier votre adresse courriel pour assurer la sécurité du compte",
     "verify_now": "Vérifier maintenant",
-    "login_with_google": "Se connecter avec Google",
-    "login_with_apple": "Se connecter avec Apple",
-    "login_with_facebook": "Se connecter avec Facebook",
     "logout_confirmation": "Êtes-vous sûr de vouloir vous déconnecter?"
   },
-  "errors": {
-    "no_internet": "Pas de connexion Internet",
-    "check_connection": "Veuillez vérifier votre connexion Internet et réessayer.",
-    "timeout": "Délai d'attente dépassé",
-    "server_slow": "Le serveur met trop de temps à répondre. Veuillez réessayer plus tard.",
-    "network_error": "Erreur réseau",
-    "unable_to_connect": "Impossible de se connecter au serveur. Veuillez vérifier votre connexion.",
-    "server_error": "Le serveur a rencontré un problème. Veuillez réessayer plus tard.",
-    "something_wrong": "Quelque chose s'est mal passé de notre côté. Veuillez réessayer plus tard.",
-    "auth_error": "Erreur d'authentification",
-    "session_expired": "Votre session a expiré. Veuillez vous reconnecter.",
-    "auth_failed": "L'authentification a échoué. Veuillez vérifier vos identifiants et réessayer.",
-    "permission_denied": "Permission refusée",
-    "no_permission": "Vous n'avez pas la permission d'accéder à cette fonctionnalité.",
-    "unexpected_error": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
-    "try_again": "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
-    "invalid_input": "Entrée invalide. Veuillez vérifier vos informations et réessayer.",
-    "required_field": "Ce champ est obligatoire",
-    "invalid_email": "Veuillez entrer une adresse courriel valide",
-    "invalid_password": "Le mot de passe doit comporter au moins 8 caractères",
-    "account_exists": "Un compte avec ce courriel existe déjà",
-    "account_not_found": "Compte non trouvé",
-    "wrong_password": "Mot de passe incorrect",
-    "error_code": "Code d'erreur: {code}",
-    "avatar_generation_failed": "Échec de la génération de l'avatar. Veuillez réessayer.",
-    "avatar_save_failed": "Échec de l'enregistrement de l'avatar. Veuillez réessayer.",
-    "avatar_load_failed": "Échec du chargement des avatars. Veuillez réessayer.",
-    "avatar_preview_failed": "Échec de la génération de l'aperçu. Veuillez réessayer.",
-    "avatar_sync_failed": "Échec de la synchronisation de l'avatar avec d'autres appareils. Votre avatar a été enregistré localement.",
-    "invalid_credentials": "Identifiants invalides. Veuillez vérifier votre nom d'utilisateur et votre mot de passe.",
-    "account_locked": "Une erreur s'est produite : compte verrouillé",
-    "invalid_token": "Une erreur s'est produite : jeton invalide",
-    "biometric_auth_failed": "Une erreur s'est produite : échec de l'authentification biométrique",
-    "sso_auth_failed": "Une erreur s'est produite : échec de l'authentification SSO",
-    "password_reset_failed": "Une erreur s'est produite : échec de la réinitialisation du mot de passe",
-    "email_verification_failed": "Une erreur s'est produite : échec de la vérification du courriel",
-    "invalid_setup_code": "Une erreur s'est produite : code de configuration invalide",
-    "setup_code_expired": "Une erreur s'est produite : code de configuration expiré",
-    "too_many_attempts": "Une erreur s'est produite : trop de tentatives",
-    "password_change_required": "Une erreur s'est produite : changement de mot de passe requis",
-    "password_too_weak": "Une erreur s'est produite : mot de passe trop faible",
-    "password_reused": "Une erreur s'est produite : mot de passe réutilisé",
-    "invalid_old_password": "Une erreur s'est produite : ancien mot de passe invalide",
-    "child_setup_incomplete": "Une erreur s'est produite : configuration de l'enfant incomplète",
-    "parent_account_required": "Une erreur s'est produite : compte parent requis",
-    "server_unreachable": "Une erreur s'est produite : serveur injoignable",
-    "rate_limit_exceeded": "Une erreur s'est produite : limite de taux dépassée",
-    "network_unstable": "Une erreur s'est produite : réseau instable",
-    "invalid_username": "Une erreur s'est produite : nom d'utilisateur invalide",
-    "invalid_date": "Une erreur s'est produite : date invalide",
-    "invalid_time": "Une erreur s'est produite : heure invalide",
-    "invalid_points": "Une erreur s'est produite : points invalides",
-    "invalid_chore_data": "Une erreur s'est produite : données de tâche invalides",
-    "invalid_reward_data": "Une erreur s'est produite : données de récompense invalides",
-    "invalid_child_data": "Une erreur s'est produite : données d'enfant invalides",
-    "invalid_parent_data": "Une erreur s'est produite : données de parent invalides",
-    "invalid_notification_settings": "Une erreur s'est produite : paramètres de notification invalides",
-    "invalid_recurrence": "Une erreur s'est produite : récurrence invalide",
-    "invalid_image_format": "Une erreur s'est produite : format d'image invalide",
-    "file_too_large": "Une erreur s'est produite : fichier trop volumineux",
-    "invalid_data_format": "Une erreur s'est produite : format de données invalide",
-    "server_unavailable": "Une erreur s'est produite : serveur indisponible",
-    "server_maintenance": "Une erreur s'est produite : maintenance du serveur",
-    "api_deprecated": "Une erreur s'est produite : API obsolète",
-    "endpoint_not_found": "Une erreur s'est produite : point de terminaison non trouvé",
-    "method_not_allowed": "Une erreur s'est produite : méthode non autorisée",
-    "response_format_error": "Une erreur s'est produite : erreur de format de réponse",
-    "app_outdated": "Une erreur s'est produite : application obsolète",
-    "incompatible_device": "Une erreur s'est produite : appareil incompatible",
-    "insufficient_storage": "Une erreur s'est produite : stockage insuffisant",
-    "biometric_unavailable": "Une erreur s'est produite : biométrie indisponible",
-    "device_offline": "Une erreur s'est produite : appareil hors ligne",
-    "app_error": "Une erreur s'est produite : erreur d'application",
-    "unsupported_operation": "Une erreur s'est produite : opération non prise en charge",
-    "database_error": "Une erreur s'est produite : erreur de base de données",
-    "insufficient_permissions": "Une erreur s'est produite : permissions insuffisantes",
-    "subscription_required": "Une erreur s'est produite : abonnement requis",
-    "parent_permission_required": "Une erreur s'est produite : permission du parent requise",
-    "child_cannot_access": "Une erreur s'est produite : l'enfant ne peut pas accéder",
-    "cannot_modify_other_user": "Une erreur s'est produite : impossible de modifier un autre utilisateur",
-    "cannot_delete_system_data": "Une erreur s'est produite : impossible de supprimer les données système",
-    "feature_disabled": "Une erreur s'est produite : fonctionnalité désactivée",
-    "trial_expired": "Une erreur s'est produite : essai expiré",
-    "chore_not_found": "Une erreur s'est produite : tâche non trouvée",
-    "chore_already_completed": "Une erreur s'est produite : tâche déjà terminée",
-    "chore_already_verified": "Une erreur s'est produite : tâche déjà vérifiée",
-    "chore_assignment_failed": "Une erreur s'est produite : échec de l'attribution de tâche",
-    "reward_not_found": "Une erreur s'est produite : récompense non trouvée",
-    "insufficient_points": "Une erreur s'est produite : points insuffisants",
-    "reward_already_claimed": "Une erreur s'est produite : récompense déjà réclamée",
-    "reward_already_redeemed": "Une erreur s'est produite : récompense déjà échangée",
-    "reward_expired": "Une erreur s'est produite : récompense expirée",
-    "child_not_found": "Une erreur s'est produite : enfant non trouvé",
-    "family_limit_reached": "Une erreur s'est produite : limite familiale atteinte",
-    "notification_failed": "Une erreur s'est produite : échec de la notification",
-    "reminder_creation_failed": "Une erreur s'est produite : échec de la création du rappel",
-    "calendar_sync_failed": "Une erreur s'est produite : échec de la synchronisation du calendrier",
-    "image_upload_failed": "Une erreur s'est produite : échec du téléchargement de l'image",
-    "backup_failed": "Une erreur s'est produite : échec de la sauvegarde",
-    "restore_failed": "Une erreur s'est produite : échec de la restauration",
-    "export_failed": "Une erreur s'est produite : échec de l'exportation",
-    "import_failed": "Une erreur s'est produite : échec de l'importation",
-    "unknown_error": "Une erreur s'est produite : erreur inconnue",
-    "operation_cancelled": "Une erreur s'est produite : opération annulée",
-    "feature_not_implemented": "Une erreur s'est produite : fonctionnalité non implémentée",
-    "deprecated_feature": "Une erreur s'est produite : fonctionnalité obsolète",
-    "beta_feature_error": "Une erreur s'est produite : erreur de fonctionnalité bêta",
-    "configuration_error": "Une erreur s'est produite : erreur de configuration",
-    "environment_error": "Une erreur s'est produite : erreur d'environnement",
-    "resource_not_found": "Une erreur s'est produite : ressource non trouvée",
-    "resource_busy": "Une erreur s'est produite : ressource occupée",
-    "operation_timeout": "Une erreur s'est produite : délai d'opération dépassé"
+  "onboarding": {
+    "welcome": {
+      "title": "Bienvenue sur ChoreKeeper",
+      "subtitle": "Rendre les tâches amusantes pour les enfants et faciles pour les parents",
+      "getStarted": "Commencer"
+    },
+    "userType": {
+      "title": "Je suis un...",
+      "parent": "Parent",
+      "child": "Enfant"
+    },
+    "createAccount": {
+      "title": "Créer un Compte",
+      "email": "Courriel",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le Mot de passe",
+      "createAccount": "Créer un Compte",
+      "alreadyHaveAccount": "Vous avez déjà un compte? Connectez-vous"
+    },
+    "signIn": {
+      "title": "Se Connecter",
+      "email": "Courriel",
+      "password": "Mot de passe",
+      "signIn": "Se Connecter",
+      "forgotPassword": "Mot de passe oublié?",
+      "dontHaveAccount": "Vous n'avez pas de compte? Créez-en un"
+    }
   },
-  "settings": {
-    "title": "Paramètres",
-    "account": "Compte",
-    "notifications": "Notifications",
-    "theme": "Thème",
-    "language": "Langue",
-    "security": "Sécurité et connexion",
-    "about": "À propos",
-    "help": "Aide et support",
-    "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation",
-    "version": "Version",
-    "dark_mode": "Mode sombre",
-    "light_mode": "Mode clair",
-    "system_theme": "Utiliser le thème du système",
-    "high_contrast": "Mode contraste élevé",
-    "use_device_language": "Utiliser la langue de l'appareil",
-    "select_language": "Sélectionner la langue",
-    "biometric_login": "Connexion biométrique",
-    "auto_login": "Connexion automatique",
-    "chore_management": "Gestion des tâches",
-    "default_due_time": "Heure d'échéance par défaut",
-    "auto_verification": "Vérification automatique",
-    "auto_verification_subtitle": "Permettre de marquer les tâches comme terminées sans vérification parentale",
-    "customization": "Personnalisation",
-    "custom_icons": "Icônes personnalisées",
-    "custom_icons_subtitle": "Télécharger et gérer des icônes personnalisées",
-    "theme_settings": "Paramètres de thème",
-    "requires_tier": "Nécessite un compte {tier}",
-    "profile": "Profil",
-    "avatar": "Avatar",
-    "change_avatar": "Changer d'avatar",
-    "avatar_updated": "Avatar mis à jour avec succès",
-    "appearance": "Appearance",
-    "signOut": "Sign Out",
-    "deleteAccount": "Delete Account"
+  "dashboard": {
+    "parent": {
+      "title": "Tableau de Bord Parent",
+      "children": "Enfants",
+      "chores": "Tâches",
+      "rewards": "Récompenses",
+      "settings": "Paramètres",
+      "family": "Famille",
+      "statistics": "Statistiques",
+      "calendar": "Calendrier"
+    },
+    "child": {
+      "title": "Mon Tableau de Bord",
+      "myChores": "Mes Tâches",
+      "myRewards": "Mes Récompenses",
+      "myPoints": "Mes Points",
+      "settings": "Paramètres",
+      "completedChores": "Tâches Terminées",
+      "achievements": "Réussites"
+    },
+    "cork_board": "Tableau d'affichage en liège",
+    "push_pin": "Punaise",
+    "pinned_item": "Élément épinglé",
+    "calendar_item": "Calendrier",
+    "chores_item": "Liste de tâches",
+    "rewards_item": "Récompenses",
+    "points_item": "Résumé des points",
+    "family_item": "Gestion de la famille",
+    "statistics_item": "Statistiques et rapports",
+    "achievements_item": "Réussites",
+    "settings_gear": "Menu des paramètres"
+  },
+  "children": {
+    "title": "Enfants",
+    "add": "Ajouter un Enfant",
+    "detail": "Détails de l'Enfant",
+    "years_old": "ans",
+    "empty": {
+      "title": "Aucun Enfant Ajouté",
+      "message": "Ajoutez votre premier enfant pour commencer à gérer les tâches et les récompenses"
+    }
   },
   "chores": {
     "title": "Tâches",
@@ -247,15 +170,7 @@
     "noDescription": "Aucune description fournie",
     "noDueDate": "Pas de date d'échéance",
     "lastCompleted": "Dernière terminée",
-    "frequency": {
-      "title": "Fréquence",
-      "once": "Une fois",
-      "daily": "Quotidienne",
-      "weekly": "Hebdomadaire",
-      "weeklyOnDay": "Hebdomadaire le jour",
-      "monthly": "Mensuelle",
-      "custom": "Personnalisée"
-    },
+    "frequency": "Fréquence",
     "specificDays": "Jours spécifiques",
     "dayOfMonth": "Jour du mois",
     "deleteConfirmation": {
@@ -305,6 +220,15 @@
     "dueDate": "Date d'échéance",
     "dueTime": "Heure d'échéance",
     "assignTo": "Assigner à",
+    "frequencySettings": {
+      "title": "Fréquence",
+      "once": "Une fois",
+      "daily": "Quotidienne",
+      "weekly": "Hebdomadaire",
+      "weeklyOnDay": "Hebdomadaire le jour",
+      "monthly": "Mensuelle",
+      "custom": "Personnalisée"
+    },
     "status": {
       "title": "Statut",
       "pending": "En attente",
@@ -336,37 +260,18 @@
     "just_this_one": "Seulement celle-ci",
     "view_calendar": "Voir le calendrier"
   },
-  "family": {
-    "title": "Famille",
-    "add_child": "Ajouter un enfant",
-    "edit_child": "Modifier l'enfant",
-    "delete_child": "Supprimer l'enfant",
-    "child_name": "Nom de l'enfant",
-    "child_username": "Nom d'utilisateur de l'enfant",
-    "child_password": "Mot de passe de l'enfant",
-    "confirm_password": "Confirmer le mot de passe",
-    "setup_code": "Code de configuration",
-    "no_children": "Aucun enfant trouvé",
-    "add_first_child": "Ajoutez votre premier enfant",
-    "confirm_delete": "Êtes-vous sûr de vouloir supprimer {name}?",
-    "account_created": "Compte enfant créé avec succès",
-    "setup_instructions": "Donnez à votre enfant ce code de configuration pour compléter la configuration de son compte:",
-    "setup_expires": "Ce code expirera dans 24 heures",
-    "link_child": "Lier un enfant existant",
-    "link": "Lier",
-    "enter_child_email": "Entrez l'email de l'enfant",
-    "no_user_found": "Aucun utilisateur trouvé avec cet email",
-    "not_child_account": "Cet utilisateur n'est pas enregistré comme enfant",
-    "child_already_linked": "Cet enfant est déjà dans votre famille",
-    "account_removed": "Le compte de {name} a été supprimé",
-    "delete_account_completely": "Supprimer complètement le compte de l'enfant",
-    "remove_chores_points": "Supprimer tout l'historique des tâches et des points",
-    "delete_settings": "Supprimer tous les paramètres et préférences personnalisés",
-    "remove_permanently": "Supprimer définitivement",
-    "family_management": "Gestion de la famille"
-  },
   "rewards": {
     "title": "Récompenses",
+    "addReward": "Ajouter une récompense",
+    "editReward": "Modifier la récompense",
+    "deleteReward": "Supprimer la récompense",
+    "rewardName": "Nom de la récompense",
+    "rewardDescription": "Description",
+    "pointCost": "Coût en points",
+    "availableUntil": "Disponible jusqu'au",
+    "claimReward": "Réclamer la récompense",
+    "noRewards": "Aucune récompense trouvée",
+    "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer cette récompense?",
     "add_reward": "Ajouter une récompense",
     "edit_reward": "Modifier la récompense",
     "delete_reward": "Supprimer la récompense",
@@ -405,16 +310,6 @@
     "no_upcoming_rewards": "Aucune récompense à venir",
     "rewards_management": "Gestion des récompenses",
     "you_have_earned_rewards": "Vous avez gagné {count} récompenses!",
-    "addReward": "Add Reward",
-    "editReward": "Edit Reward",
-    "deleteReward": "Delete Reward",
-    "rewardName": "Reward Name",
-    "rewardDescription": "Description",
-    "pointCost": "Point Cost",
-    "availableUntil": "Available Until",
-    "claimReward": "Claim Reward",
-    "noRewards": "No rewards found",
-    "deleteConfirmation": "Are you sure you want to delete this reward?",
     "empty": {
       "parent": "Aucune récompense créée pour l'instant",
       "available": "Aucune récompense disponible",
@@ -429,56 +324,118 @@
     "detail": "Détails de la Récompense",
     "unlockedOnly": "Afficher Uniquement les Débloquées"
   },
-  "penalties": {
-    "title": "Pénalités",
-    "add_penalty": "Ajouter une pénalité",
-    "edit_penalty": "Modifier la pénalité",
-    "delete_penalty": "Supprimer la pénalité",
-    "penalty_name": "Nom de la pénalité",
-    "please_enter_penalty_name": "Veuillez entrer un nom de pénalité",
-    "description": "Description",
-    "points_to_deduct": "Points à déduire",
-    "please_enter_points_to_deduct": "Veuillez entrer les points à déduire",
-    "points_must_be_positive": "Les points doivent être un nombre positif",
-    "below_threshold": "En dessous du seuil",
-    "at_threshold": "Au seuil",
-    "above_threshold": "Au-dessus du seuil",
-    "when_below": "Quand en dessous",
-    "when_at": "Quand au",
-    "when_above": "Quand au-dessus",
-    "deducts": "Déduit",
-    "available_to": "Disponible pour",
-    "status": "Statut",
-    "available": "Disponible",
-    "applied": "Appliqué",
-    "waived": "Annulé",
-    "expired": "Expiré",
-    "apply": "Appliquer",
-    "waive": "Annuler",
-    "no_penalties": "Aucune pénalité trouvée",
-    "add_first_penalty": "Ajoutez votre première pénalité",
-    "confirm_delete": "Êtes-vous sûr de vouloir supprimer cette pénalité?",
-    "delete_penalty_confirmation": "Êtes-vous sûr de vouloir supprimer la pénalité '{name}'?",
-    "confirm_apply": "Êtes-vous sûr de vouloir appliquer cette pénalité?",
-    "confirm_waive": "Êtes-vous sûr de vouloir annuler cette pénalité?",
-    "penalty_applied": "Pénalité appliquée avec succès",
-    "penalty_waived": "Pénalité annulée avec succès",
-    "applied_on": "Appliqué le {date}",
-    "applicable_penalties": "Pénalités applicables"
+  "settings": {
+    "title": "Paramètres",
+    "account": "Compte",
+    "profile": "Profil",
+    "notifications": "Notifications",
+    "appearance": "Apparence",
+    "language": "Langue",
+    "help": "Aide",
+    "about": "À propos",
+    "signOut": "Déconnexion",
+    "deleteAccount": "Supprimer le compte",
+    "theme": {
+      "title": "Thème",
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
+    },
+    "security": "Sécurité et connexion",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "version": "Version",
+    "dark_mode": "Mode sombre",
+    "light_mode": "Mode clair",
+    "system_theme": "Utiliser le thème du système",
+    "high_contrast": "Mode contraste élevé",
+    "use_device_language": "Utiliser la langue de l'appareil",
+    "select_language": "Sélectionner la langue",
+    "biometric_login": "Connexion biométrique",
+    "auto_login": "Connexion automatique",
+    "chore_management": "Gestion des tâches",
+    "default_due_time": "Heure d'échéance par défaut",
+    "auto_verification": "Vérification automatique",
+    "auto_verification_subtitle": "Permettre de marquer les tâches comme terminées sans vérification parentale",
+    "customization": "Personnalisation",
+    "custom_icons": "Icônes personnalisées",
+    "custom_icons_subtitle": "Télécharger et gérer des icônes personnalisées",
+    "theme_settings": "Paramètres de thème",
+    "requires_tier": "Nécessite un compte {tier}",
+    "avatar": "Avatar",
+    "change_avatar": "Changer d'avatar",
+    "avatar_updated": "Avatar mis à jour avec succès",
+    "reminders": "Rappels"
   },
-  "notifications": {
-    "title": "Notifications",
-    "chore_expiry": "Rappels d'expiration des tâches",
-    "reminder_time": "Temps de rappel avant l'échéance",
-    "new_chore": "Notifications de nouvelles tâches",
-    "reward_earned": "Notifications de récompenses gagnées",
-    "chore_verified": "Notifications de tâches vérifiées",
-    "chore_rejected": "Notifications de tâches rejetées",
-    "chore_completed": "Notifications de tâches terminées",
-    "penalty": "Notifications de pénalités",
-    "hours": "{count} heures",
-    "enable_all": "Activer toutes les notifications",
-    "disable_all": "Désactiver toutes les notifications"
+  "statistics": {
+    "title": "Statistiques",
+    "loading": "Chargement des statistiques...",
+    "noData": "Aucune donnée statistique disponible",
+    "summary": "Résumé",
+    "chart": "Graphique de Performance",
+    "chartPlaceholder": "Le graphique apparaîtra ici lorsque plus de données seront disponibles",
+    "totalChores": "Total des Tâches",
+    "completedChores": "Terminées",
+    "pendingChores": "En Attente",
+    "missedChores": "Manquées",
+    "totalPoints": "Total des Points",
+    "completionRate": "Taux de Réalisation",
+    "grouping": {
+      "day": "Quotidien",
+      "week": "Hebdomadaire",
+      "month": "Mensuel"
+    },
+    "startDate": "Date de Début",
+    "endDate": "Date de Fin",
+    "selectDateRange": "Sélectionner une Période"
+  },
+  "tutorial": {
+    "title": "Tutoriel",
+    "skip": "Passer le Tutoriel",
+    "back": "Retour",
+    "next": "Suivant",
+    "finish": "Commencer",
+    "close": "Fermer",
+    "parent": {
+      "welcome": {
+        "title": "Bienvenue sur ChoreKeeper!",
+        "description": "Configurons votre compte en quelques minutes. ChoreKeeper vous aide à gérer les tâches, suivre les points et récompenser vos enfants pour l'accomplissement des tâches."
+      },
+      "features": {
+        "title": "Ce que ChoreKeeper Propose",
+        "description": "ChoreKeeper fournit des outils pour créer et attribuer des tâches, suivre les points et mettre en place des récompenses pour vos enfants. Vous pouvez tout gérer depuis un seul endroit!"
+      },
+      "chores": {
+        "title": "Gestion des Tâches",
+        "description": "Créez des tâches, définissez des dates d'échéance et attribuez-les à vos enfants. Ils recevront des notifications et pourront marquer les tâches comme terminées une fois accomplies."
+      },
+      "rewards": {
+        "title": "Configuration des Récompenses",
+        "description": "Créez des récompenses que vos enfants peuvent gagner en accumulant des points. Définissez des seuils de points et laissez-les travailler vers leurs objectifs!"
+      },
+      "add_child": {
+        "title": "Ajouter un Enfant",
+        "description": "Pour ajouter un enfant, allez dans l'onglet Famille et appuyez sur le bouton '+'. Entrez son nom d'utilisateur et son prénom, puis partagez le code de configuration avec lui pour compléter la configuration de son compte."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Bienvenue sur ChoreKeeper!",
+        "description": "ChoreKeeper t'aide à suivre tes tâches et à gagner des points en les accomplissant. Apprenons à utiliser l'application!"
+      },
+      "chores": {
+        "title": "Voir et Accomplir des Tâches",
+        "description": "Tes tâches apparaîtront sur l'écran d'accueil. Appuie sur une tâche pour voir les détails, et marque-la comme terminée quand tu as fini. Ton parent vérifiera les tâches terminées."
+      },
+      "points": {
+        "title": "Suivi des Points et des Récompenses",
+        "description": "Au fur et à mesure que tu accomplis des tâches, tu gagneras des points. Vérifie ton total de points et vois quelles récompenses tu peux gagner. Garde un œil sur ta progression vers chaque récompense!"
+      },
+      "settings": {
+        "title": "Paramètres Personnels",
+        "description": "Tu peux personnaliser ton profil en changeant ton avatar et en configurant des rappels de tâches. Appuie sur l'icône Paramètres pour accéder à ces options."
+      }
+    }
   },
   "customization": {
     "title": "Personnalisation",
@@ -532,274 +489,6 @@
       "filled": "Rempli",
       "outlined": "Contour"
     }
-  },
-  "tutorial": {
-    "title": "Tutoriel",
-    "skip": "Passer le Tutoriel",
-    "back": "Retour",
-    "next": "Suivant",
-    "finish": "Commencer",
-    "close": "Fermer",
-    "parent": {
-      "welcome": {
-        "title": "Bienvenue sur ChoreKeeper!",
-        "description": "Configurons votre compte en quelques minutes. ChoreKeeper vous aide à gérer les tâches, suivre les points et récompenser vos enfants pour l'accomplissement des tâches."
-      },
-      "features": {
-        "title": "Ce que ChoreKeeper Propose",
-        "description": "ChoreKeeper fournit des outils pour créer et attribuer des tâches, suivre les points et mettre en place des récompenses pour vos enfants. Vous pouvez tout gérer depuis un seul endroit!"
-      },
-      "chores": {
-        "title": "Gestion des Tâches",
-        "description": "Créez des tâches, définissez des dates d'échéance et attribuez-les à vos enfants. Ils recevront des notifications et pourront marquer les tâches comme terminées une fois accomplies."
-      },
-      "rewards": {
-        "title": "Configuration des Récompenses",
-        "description": "Créez des récompenses que vos enfants peuvent gagner en accumulant des points. Définissez des seuils de points et laissez-les travailler vers leurs objectifs!"
-      },
-      "add_child": {
-        "title": "Ajouter un Enfant",
-        "description": "Pour ajouter un enfant, allez dans l'onglet Famille et appuyez sur le bouton '+'. Entrez son nom d'utilisateur et son prénom, puis partagez le code de configuration avec lui pour compléter la configuration de son compte."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Bienvenue sur ChoreKeeper!",
-        "description": "ChoreKeeper t'aide à suivre tes tâches et à gagner des points en les accomplissant. Apprenons à utiliser l'application!"
-      },
-      "chores": {
-        "title": "Voir et Accomplir des Tâches",
-        "description": "Tes tâches apparaîtront sur l'écran d'accueil. Appuie sur une tâche pour voir les détails, et marque-la comme terminée quand tu as fini. Ton parent vérifiera les tâches terminées."
-      },
-      "points": {
-        "title": "Suivi des Points et des Récompenses",
-        "description": "Au fur et à mesure que tu accomplis des tâches, tu gagneras des points. Vérifie ton total de points et vois quelles récompenses tu peux gagner. Garde un œil sur ta progression vers chaque récompense!"
-      },
-      "settings": {
-        "title": "Paramètres Personnels",
-        "description": "Tu peux personnaliser ton profil en changeant ton avatar et en configurant des rappels de tâches. Appuie sur l'icône Paramètres pour accéder à ces options."
-      }
-    }
-  },
-  "rewards_and_penalties": "Récompenses et Pénalités",
-  "select_child": "Sélectionner un enfant",
-  "family_wide": "Pour toute la famille",
-  "no_rewards_yet": "Pas encore de récompenses. Ajoutez votre première récompense!",
-  "no_penalties_yet": "Pas encore de pénalités. Ajoutez votre première pénalité!",
-  "threshold": "Seuil",
-  "point_value": "Points",
-  "period": "Période",
-  "please_enter_valid_number": "Veuillez entrer un nombre valide",
-  "dashboard": {
-    "parent": {
-      "title": "Tableau de Bord Parent",
-      "children": "Enfants",
-      "chores": "Tâches",
-      "rewards": "Récompenses",
-      "settings": "Paramètres",
-      "family": "Famille",
-      "statistics": "Statistiques",
-      "calendar": "Calendrier"
-    },
-    "child": {
-      "title": "Mon Tableau de Bord",
-      "myChores": "Mes Tâches",
-      "myRewards": "Mes Récompenses",
-      "myPoints": "Mes Points",
-      "settings": "Paramètres",
-      "completedChores": "Tâches Terminées",
-      "achievements": "Réussites"
-    },
-    "cork_board": "Tableau d'affichage en liège",
-    "push_pin": "Punaise",
-    "pinned_item": "Élément épinglé",
-    "calendar_item": "Calendrier",
-    "chores_item": "Liste de tâches",
-    "rewards_item": "Récompenses",
-    "points_item": "Résumé des points",
-    "family_item": "Gestion de la famille",
-    "statistics_item": "Statistiques et rapports",
-    "achievements_item": "Réussites",
-    "settings_gear": "Menu des paramètres"
-  },
-  "points_system": {
-    "dashboard": "Tableau de bord des points",
-    "my_points": "Mes points",
-    "error_loading": "Erreur de chargement des points",
-    "summary_for": "Résumé des points de {name}",
-    "total": "Points totaux",
-    "daily": "Points quotidiens",
-    "weekly": "Points hebdomadaires",
-    "monthly": "Points mensuels",
-    "as_of": "En date du {date}",
-    "today_at": "Aujourd'hui à {time}",
-    "earned_for": "Gagné pour",
-    "progress": "Progression",
-    "remaining": "Restant",
-    "adjust_points": "Ajuster les points",
-    "add_points": "Ajouter des points",
-    "remove_points": "Retirer des points",
-    "add_subtract": "Ajouter/Retirer",
-    "enter_points": "Saisir les points",
-    "enter_reason": "Saisir la raison",
-    "points_adjusted": "Points ajustés avec succès",
-    "points_added": "Points ajoutés avec succès",
-    "points_removed": "Points retirés avec succès",
-    "points": "Points",
-    "reason": "Raison",
-    "recent_adjustments": "Ajustements Récents",
-    "sync_status": "État de Synchronisation",
-    "synced": "Synchronisé",
-    "not_synced": "Non Synchronisé",
-    "sync_now": "Synchroniser Maintenant",
-    "sync_in_progress": "Synchronisation en Cours",
-    "sync_complete": "Synchronisation Terminée",
-    "sync_failed": "Échec de la Synchronisation"
-  },
-  "common_ui": {
-    "reason_optional": "Raison (optionnelle)",
-    "parent": "Parent",
-    "not_logged_in": "Non connecté",
-    "child_profile_not_found": "Profil d'enfant non trouvé",
-    "no_children_yet": "Pas encore d'enfants. Ajoutez d'abord un enfant!",
-    "error_loading_data": "Erreur lors du chargement des données",
-    "retry": "Réessayer",
-    "no_point_adjustments": "Aucun ajustement de points trouvé",
-    "point_adjustment_history": "Historique des ajustements de points",
-    "sync_error": "Erreur de synchronisation",
-    "sync_error_message": "Échec de la synchronisation des ajustements de points. Veuillez réessayer plus tard."
-  },
-  "onboarding": {
-    "welcome": {
-      "title": "Bienvenue sur ChoreKeeper",
-      "subtitle": "Rendre les tâches amusantes pour les enfants et faciles pour les parents",
-      "getStarted": "Commencer"
-    },
-    "userType": {
-      "title": "Je suis un...",
-      "parent": "Parent",
-      "child": "Enfant"
-    },
-    "createAccount": {
-      "title": "Créer un Compte",
-      "email": "Courriel",
-      "password": "Mot de passe",
-      "confirmPassword": "Confirmer le Mot de passe",
-      "createAccount": "Créer un Compte",
-      "alreadyHaveAccount": "Vous avez déjà un compte? Connectez-vous"
-    },
-    "signIn": {
-      "title": "Se Connecter",
-      "email": "Courriel",
-      "password": "Mot de passe",
-      "signIn": "Se Connecter",
-      "forgotPassword": "Mot de passe oublié?",
-      "dontHaveAccount": "Vous n'avez pas de compte? Créez-en un"
-    },
-    "skip": "Passer le Tutoriel",
-    "back": "Retour",
-    "next": "Suivant",
-    "finish": "Commencer",
-    "close": "Fermer",
-    "parent": {
-      "welcome": {
-        "title": "Bienvenue sur ChoreKeeper!",
-        "description": "Configurons votre compte en quelques minutes. ChoreKeeper vous aide à gérer les tâches, suivre les points et récompenser vos enfants pour l'accomplissement des tâches."
-      },
-      "features": {
-        "title": "Ce que ChoreKeeper Propose",
-        "description": "ChoreKeeper fournit des outils pour créer et attribuer des tâches, suivre les points et mettre en place des récompenses pour vos enfants. Vous pouvez tout gérer depuis un seul endroit!"
-      },
-      "chores": {
-        "title": "Gestion des Tâches",
-        "description": "Créez des tâches, définissez des dates d'échéance et attribuez-les à vos enfants. Ils recevront des notifications et pourront marquer les tâches comme terminées une fois accomplies."
-      },
-      "rewards": {
-        "title": "Configuration des Récompenses",
-        "description": "Créez des récompenses que vos enfants peuvent gagner en accumulant des points. Définissez des seuils de points et laissez-les travailler vers leurs objectifs!"
-      },
-      "add_child": {
-        "title": "Ajouter un Enfant",
-        "description": "Pour ajouter un enfant, allez dans l'onglet Famille et appuyez sur le bouton '+'. Entrez son nom d'utilisateur et son prénom, puis partagez le code de configuration avec lui pour compléter la configuration de son compte."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Bienvenue sur ChoreKeeper!",
-        "description": "ChoreKeeper t'aide à suivre tes tâches et à gagner des points en les accomplissant. Apprenons à utiliser l'application!"
-      },
-      "chores": {
-        "title": "Voir et Accomplir des Tâches",
-        "description": "Tes tâches apparaîtront sur l'écran d'accueil. Appuie sur une tâche pour voir les détails et marque-la comme terminée quand tu as fini. Ton parent vérifiera les tâches terminées."
-      },
-      "points": {
-        "title": "Suivi des Points et Récompenses",
-        "description": "En accomplissant des tâches, tu gagneras des points. Vérifie ton total de points et vois quelles récompenses tu peux gagner. Garde un œil sur ta progression vers chaque récompense!"
-      },
-      "settings": {
-        "title": "Paramètres Personnels",
-        "description": "Tu peux personnaliser ton profil en changeant ton avatar et en configurant des rappels de tâches. Appuie sur l'icône Paramètres pour accéder à ces options."
-      }
-    }
-  },
-  "help": {
-    "tutorial": "Tutoriel",
-    "show_tutorial": "Afficher le Tutoriel",
-    "help_center": "Centre d'Aide",
-    "faq": "Questions Fréquemment Posées",
-    "contact_support": "Contacter le Support",
-    "getting_started": {
-      "title": "Premiers Pas",
-      "description": "Bienvenue sur ChoreKeeper! Cette application vous aide à gérer les tâches, suivre les points et récompenser vos enfants pour l'accomplissement des tâches. Commençons par les bases."
-    },
-    "creating_chores": {
-      "title": "Création de Tâches",
-      "description": "Pour créer une tâche, appuyez sur le bouton '+' sur l'écran des Tâches. Entrez un nom, une description, une valeur en points et une date d'échéance. Vous pouvez également rendre les tâches récurrentes sur une base quotidienne, hebdomadaire ou mensuelle."
-    },
-    "assigning_chores": {
-      "title": "Attribution des Tâches",
-      "description": "Lors de la création d'une tâche, sélectionnez à quel enfant elle doit être attribuée. Vous pouvez également créer des tâches familiales que n'importe quel enfant peut accomplir."
-    },
-    "tracking_points": {
-      "title": "Suivi des Points",
-      "description": "Les points sont automatiquement attribués lorsque les tâches sont accomplies et vérifiées. Vous pouvez voir les totaux de points et l'historique dans le Tableau de Bord des Points."
-    },
-    "creating_rewards": {
-      "title": "Création de Récompenses",
-      "description": "Pour créer une récompense, allez à l'écran des Récompenses et appuyez sur le bouton '+'. Entrez un nom, une description et un seuil de points. Vous pouvez définir des récompenses à gagner lorsque les points atteignent un certain niveau ou lorsque le niveau de points le plus élevé est atteint dans une période."
-    }
-  },
-  "children": {
-    "title": "Enfants",
-    "add": "Ajouter un Enfant",
-    "detail": "Détails de l'Enfant",
-    "empty": {
-      "title": "Aucun Enfant Ajouté",
-      "message": "Ajoutez votre premier enfant pour commencer à gérer les tâches et les récompenses"
-    },
-    "years_old": "ans"
-  },
-  "statistics": {
-    "title": "Statistiques",
-    "loading": "Chargement des statistiques...",
-    "noData": "Aucune donnée statistique disponible",
-    "summary": "Résumé",
-    "chart": "Graphique de Performance",
-    "chartPlaceholder": "Le graphique apparaîtra ici lorsque plus de données seront disponibles",
-    "totalChores": "Total des Tâches",
-    "completedChores": "Terminées",
-    "pendingChores": "En Attente",
-    "missedChores": "Manquées",
-    "totalPoints": "Total des Points",
-    "completionRate": "Taux de Réalisation",
-    "grouping": {
-      "day": "Quotidien",
-      "week": "Hebdomadaire",
-      "month": "Mensuel"
-    },
-    "startDate": "Date de Début",
-    "endDate": "Date de Fin",
-    "selectDateRange": "Sélectionner une Période"
   },
   "achievements": {
     "title": "Réussites",

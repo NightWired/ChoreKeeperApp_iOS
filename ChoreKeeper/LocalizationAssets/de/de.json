@@ -11,18 +11,19 @@
     "edit": "Bearbeiten",
     "back": "Zurück",
     "next": "Weiter",
-    "retry": "Wiederholen",
+    "done": "Fertig",
     "loading": "Wird geladen...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "warning": "Warnung",
+    "info": "Information",
+    "retry": "Wiederholen",
     "search": "Suchen",
     "settings": "Einstellungen",
     "logout": "Abmelden",
     "yes": "Ja",
     "no": "Nein",
     "confirm": "Bestätigen",
-    "success": "Erfolg",
-    "error": "Fehler",
-    "warning": "Warnung",
-    "info": "Information",
     "warning_permanent": "WARNUNG: Diese Aktion ist dauerhaft und kann nicht rückgängig gemacht werden.",
     "this_will": "Dies wird",
     "close": "Schließen",
@@ -32,7 +33,9 @@
     "login_as_different_user": "Als anderer Benutzer anmelden",
     "no_remembered_users": "Keine gespeicherten Benutzer",
     "child": "Kind",
-    "done": "Done"
+    "about": "Über",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "terms_of_service": "Nutzungsbedingungen"
   },
   "auth": {
     "login": "Anmelden",
@@ -46,6 +49,9 @@
     "remember_email": "E-Mail speichern",
     "remember_username": "Benutzernamen speichern",
     "auto_login": "Automatisch anmelden",
+    "login_with_google": "Mit Google anmelden",
+    "login_with_apple": "Mit Apple anmelden",
+    "login_with_facebook": "Mit Facebook anmelden",
     "login_as_parent": "Ich bin ein Elternteil",
     "login_as_child": "Ich bin ein Kind",
     "select_role": "Wählen Sie Ihre Rolle",
@@ -73,160 +79,77 @@
     "email_verified": "E-Mail erfolgreich bestätigt",
     "email_verification_banner": "Bitte bestätigen Sie Ihre E-Mail-Adresse, um die Kontosicherheit zu gewährleisten",
     "verify_now": "Jetzt bestätigen",
-    "login_with_google": "Mit Google anmelden",
-    "login_with_apple": "Mit Apple anmelden",
-    "login_with_facebook": "Mit Facebook anmelden",
     "logout_confirmation": "Sind Sie sicher, dass Sie sich abmelden möchten?"
   },
-  "errors": {
-    "no_internet": "Keine Internetverbindung",
-    "check_connection": "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
-    "timeout": "Zeitüberschreitung der Anfrage",
-    "server_slow": "Der Server braucht zu lange, um zu antworten. Bitte versuchen Sie es später erneut.",
-    "network_error": "Netzwerkfehler",
-    "unable_to_connect": "Verbindung zum Server nicht möglich. Bitte überprüfen Sie Ihre Verbindung.",
-    "server_error": "Ein Problem mit dem Server ist aufgetreten. Bitte versuchen Sie es später erneut.",
-    "something_wrong": "Etwas ist auf unserer Seite schiefgelaufen. Bitte versuchen Sie es später erneut.",
-    "auth_error": "Authentifizierungsfehler",
-    "session_expired": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
-    "auth_failed": "Authentifizierung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten und versuchen Sie es erneut.",
-    "permission_denied": "Zugriff verweigert",
-    "no_permission": "Sie haben keine Berechtigung, auf diese Funktion zuzugreifen.",
-    "unexpected_error": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-    "try_again": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
-    "invalid_input": "Ungültige Eingabe. Bitte überprüfen Sie Ihre Informationen und versuchen Sie es erneut.",
-    "required_field": "Dieses Feld ist erforderlich",
-    "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-    "invalid_password": "Das Passwort muss mindestens 8 Zeichen lang sein",
-    "account_exists": "Ein Konto mit dieser E-Mail existiert bereits",
-    "account_not_found": "Konto nicht gefunden",
-    "wrong_password": "Falsches Passwort",
-    "error_code": "Fehlercode: {code}",
-    "avatar_generation_failed": "Avatar konnte nicht generiert werden. Bitte versuchen Sie es erneut.",
-    "avatar_save_failed": "Avatar konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.",
-    "avatar_load_failed": "Avatare konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
-    "avatar_preview_failed": "Vorschau konnte nicht generiert werden. Bitte versuchen Sie es erneut.",
-    "avatar_sync_failed": "Avatar konnte nicht mit anderen Geräten synchronisiert werden. Ihr Avatar wurde lokal gespeichert.",
-    "invalid_credentials": "Ungültige Anmeldedaten. Bitte überprüfen Sie Ihren Benutzernamen und Ihr Passwort.",
-    "account_locked": "Ein Fehler ist aufgetreten: Konto gesperrt",
-    "invalid_token": "Ein Fehler ist aufgetreten: Ungültiges Token",
-    "biometric_auth_failed": "Ein Fehler ist aufgetreten: Biometrische Authentifizierung fehlgeschlagen",
-    "sso_auth_failed": "Ein Fehler ist aufgetreten: SSO-Authentifizierung fehlgeschlagen",
-    "password_reset_failed": "Ein Fehler ist aufgetreten: Passwort-Zurücksetzung fehlgeschlagen",
-    "email_verification_failed": "Ein Fehler ist aufgetreten: E-Mail-Verifizierung fehlgeschlagen",
-    "invalid_setup_code": "Ein Fehler ist aufgetreten: Ungültiger Einrichtungscode",
-    "setup_code_expired": "Ein Fehler ist aufgetreten: Einrichtungscode abgelaufen",
-    "too_many_attempts": "Ein Fehler ist aufgetreten: Zu viele Versuche",
-    "password_change_required": "Ein Fehler ist aufgetreten: Passwortänderung erforderlich",
-    "password_too_weak": "Ein Fehler ist aufgetreten: Passwort zu schwach",
-    "password_reused": "Ein Fehler ist aufgetreten: Passwort bereits verwendet",
-    "invalid_old_password": "Ein Fehler ist aufgetreten: Ungültiges altes Passwort",
-    "child_setup_incomplete": "Ein Fehler ist aufgetreten: Kindereinrichtung unvollständig",
-    "parent_account_required": "Ein Fehler ist aufgetreten: Elternkonto erforderlich",
-    "server_unreachable": "Ein Fehler ist aufgetreten: Server nicht erreichbar",
-    "rate_limit_exceeded": "Ein Fehler ist aufgetreten: Ratenlimit überschritten",
-    "network_unstable": "Ein Fehler ist aufgetreten: Netzwerk instabil",
-    "invalid_username": "Ein Fehler ist aufgetreten: Ungültiger Benutzername",
-    "invalid_date": "Ein Fehler ist aufgetreten: Ungültiges Datum",
-    "invalid_time": "Ein Fehler ist aufgetreten: Ungültige Zeit",
-    "invalid_points": "Ein Fehler ist aufgetreten: Ungültige Punkte",
-    "invalid_chore_data": "Ein Fehler ist aufgetreten: Ungültige Aufgabendaten",
-    "invalid_reward_data": "Ein Fehler ist aufgetreten: Ungültige Belohnungsdaten",
-    "invalid_child_data": "Ein Fehler ist aufgetreten: Ungültige Kinderdaten",
-    "invalid_parent_data": "Ein Fehler ist aufgetreten: Ungültige Elterndaten",
-    "invalid_notification_settings": "Ein Fehler ist aufgetreten: Ungültige Benachrichtigungseinstellungen",
-    "invalid_recurrence": "Ein Fehler ist aufgetreten: Ungültige Wiederholung",
-    "invalid_image_format": "Ein Fehler ist aufgetreten: Ungültiges Bildformat",
-    "file_too_large": "Ein Fehler ist aufgetreten: Datei zu groß",
-    "invalid_data_format": "Ein Fehler ist aufgetreten: Ungültiges Datenformat",
-    "server_unavailable": "Ein Fehler ist aufgetreten: Server nicht verfügbar",
-    "server_maintenance": "Ein Fehler ist aufgetreten: Server-Wartung",
-    "api_deprecated": "Ein Fehler ist aufgetreten: API veraltet",
-    "endpoint_not_found": "Ein Fehler ist aufgetreten: Endpunkt nicht gefunden",
-    "method_not_allowed": "Ein Fehler ist aufgetreten: Methode nicht erlaubt",
-    "response_format_error": "Ein Fehler ist aufgetreten: Antwortformatfehler",
-    "app_outdated": "Ein Fehler ist aufgetreten: App veraltet",
-    "incompatible_device": "Ein Fehler ist aufgetreten: Inkompatibles Gerät",
-    "insufficient_storage": "Ein Fehler ist aufgetreten: Unzureichender Speicherplatz",
-    "biometric_unavailable": "Ein Fehler ist aufgetreten: Biometrie nicht verfügbar",
-    "device_offline": "Ein Fehler ist aufgetreten: Gerät offline",
-    "app_error": "Ein Fehler ist aufgetreten: App-Fehler",
-    "unsupported_operation": "Ein Fehler ist aufgetreten: Nicht unterstützte Operation",
-    "database_error": "Ein Fehler ist aufgetreten: Datenbankfehler",
-    "insufficient_permissions": "Ein Fehler ist aufgetreten: Unzureichende Berechtigungen",
-    "subscription_required": "Ein Fehler ist aufgetreten: Abonnement erforderlich",
-    "parent_permission_required": "Ein Fehler ist aufgetreten: Elternerlaubnis erforderlich",
-    "child_cannot_access": "Ein Fehler ist aufgetreten: Kind kann nicht zugreifen",
-    "cannot_modify_other_user": "Ein Fehler ist aufgetreten: Kann anderen Benutzer nicht ändern",
-    "cannot_delete_system_data": "Ein Fehler ist aufgetreten: Kann Systemdaten nicht löschen",
-    "feature_disabled": "Ein Fehler ist aufgetreten: Funktion deaktiviert",
-    "trial_expired": "Ein Fehler ist aufgetreten: Testversion abgelaufen",
-    "chore_not_found": "Ein Fehler ist aufgetreten: Aufgabe nicht gefunden",
-    "chore_already_completed": "Ein Fehler ist aufgetreten: Aufgabe bereits abgeschlossen",
-    "chore_already_verified": "Ein Fehler ist aufgetreten: Aufgabe bereits überprüft",
-    "chore_assignment_failed": "Ein Fehler ist aufgetreten: Aufgabenzuweisung fehlgeschlagen",
-    "reward_not_found": "Ein Fehler ist aufgetreten: Belohnung nicht gefunden",
-    "insufficient_points": "Ein Fehler ist aufgetreten: Unzureichende Punkte",
-    "reward_already_claimed": "Ein Fehler ist aufgetreten: Belohnung bereits beansprucht",
-    "reward_already_redeemed": "Ein Fehler ist aufgetreten: Belohnung bereits eingelöst",
-    "reward_expired": "Ein Fehler ist aufgetreten: Belohnung abgelaufen",
-    "child_not_found": "Ein Fehler ist aufgetreten: Kind nicht gefunden",
-    "family_limit_reached": "Ein Fehler ist aufgetreten: Familienlimit erreicht",
-    "notification_failed": "Ein Fehler ist aufgetreten: Benachrichtigung fehlgeschlagen",
-    "reminder_creation_failed": "Ein Fehler ist aufgetreten: Erinnerungserstellung fehlgeschlagen",
-    "calendar_sync_failed": "Ein Fehler ist aufgetreten: Kalendersynchronisierung fehlgeschlagen",
-    "image_upload_failed": "Ein Fehler ist aufgetreten: Bild-Upload fehlgeschlagen",
-    "backup_failed": "Ein Fehler ist aufgetreten: Sicherung fehlgeschlagen",
-    "restore_failed": "Ein Fehler ist aufgetreten: Wiederherstellung fehlgeschlagen",
-    "export_failed": "Ein Fehler ist aufgetreten: Export fehlgeschlagen",
-    "import_failed": "Ein Fehler ist aufgetreten: Import fehlgeschlagen",
-    "unknown_error": "Ein Fehler ist aufgetreten: Unbekannter Fehler",
-    "operation_cancelled": "Ein Fehler ist aufgetreten: Operation abgebrochen",
-    "feature_not_implemented": "Ein Fehler ist aufgetreten: Funktion nicht implementiert",
-    "deprecated_feature": "Ein Fehler ist aufgetreten: Veraltete Funktion",
-    "beta_feature_error": "Ein Fehler ist aufgetreten: Beta-Funktionsfehler",
-    "configuration_error": "Ein Fehler ist aufgetreten: Konfigurationsfehler",
-    "environment_error": "Ein Fehler ist aufgetreten: Umgebungsfehler",
-    "resource_not_found": "Ein Fehler ist aufgetreten: Ressource nicht gefunden",
-    "resource_busy": "Ein Fehler ist aufgetreten: Ressource beschäftigt",
-    "operation_timeout": "Ein Fehler ist aufgetreten: Zeitüberschreitung der Operation"
+  "onboarding": {
+    "welcome": {
+      "title": "Willkommen bei ChoreKeeper",
+      "subtitle": "Aufgaben für Kinder spaßig und für Eltern einfach machen",
+      "getStarted": "Loslegen"
+    },
+    "userType": {
+      "title": "Ich bin ein...",
+      "parent": "Elternteil",
+      "child": "Kind"
+    },
+    "createAccount": {
+      "title": "Konto erstellen",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "createAccount": "Konto erstellen",
+      "alreadyHaveAccount": "Haben Sie bereits ein Konto? Anmelden"
+    },
+    "signIn": {
+      "title": "Anmelden",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "signIn": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "dontHaveAccount": "Haben Sie kein Konto? Erstellen Sie eines"
+    }
   },
-  "settings": {
-    "title": "Einstellungen",
-    "account": "Konto",
-    "notifications": "Benachrichtigungen",
-    "theme": "Design",
-    "language": "Sprache",
-    "security": "Sicherheit & Anmeldung",
-    "about": "Über",
-    "help": "Hilfe & Support",
-    "privacy": "Datenschutzrichtlinie",
-    "terms": "Nutzungsbedingungen",
-    "version": "Version",
-    "dark_mode": "Dunkelmodus",
-    "light_mode": "Hellmodus",
-    "system_theme": "Systemdesign verwenden",
-    "high_contrast": "Hoher Kontrast",
-    "use_device_language": "Gerätesprache verwenden",
-    "select_language": "Sprache auswählen",
-    "biometric_login": "Biometrische Anmeldung",
-    "auto_login": "Automatische Anmeldung",
-    "chore_management": "Aufgabenverwaltung",
-    "default_due_time": "Standard-Fälligkeitszeit",
-    "auto_verification": "Automatische Überprüfung",
-    "auto_verification_subtitle": "Erlaubt, dass Aufgaben ohne Überprüfung durch Eltern als erledigt markiert werden",
-    "customization": "Anpassung",
-    "custom_icons": "Benutzerdefinierte Symbole",
-    "custom_icons_subtitle": "Benutzerdefinierte Symbole hochladen und verwalten",
-    "theme_settings": "Design-Einstellungen",
-    "requires_tier": "Erfordert {tier}-Konto",
-    "profile": "Profil",
-    "avatar": "Avatar",
-    "change_avatar": "Avatar ändern",
-    "avatar_updated": "Avatar erfolgreich aktualisiert",
-    "appearance": "Appearance",
-    "signOut": "Sign Out",
-    "deleteAccount": "Delete Account"
+  "dashboard": {
+    "parent": {
+      "title": "Eltern-Dashboard",
+      "children": "Kinder",
+      "chores": "Aufgaben",
+      "rewards": "Belohnungen",
+      "settings": "Einstellungen",
+      "family": "Familie",
+      "statistics": "Statistiken",
+      "calendar": "Kalender"
+    },
+    "child": {
+      "title": "Mein Dashboard",
+      "myChores": "Meine Aufgaben",
+      "myRewards": "Meine Belohnungen",
+      "myPoints": "Meine Punkte",
+      "settings": "Einstellungen",
+      "completedChores": "Erledigte Aufgaben",
+      "achievements": "Erfolge"
+    },
+    "cork_board": "Pinnwand-Dashboard",
+    "push_pin": "Reißzwecke",
+    "pinned_item": "Angeheftetes Element",
+    "calendar_item": "Kalender",
+    "chores_item": "Aufgabenliste",
+    "rewards_item": "Belohnungen",
+    "points_item": "Punkteübersicht",
+    "family_item": "Familienverwaltung",
+    "statistics_item": "Statistiken und Berichte",
+    "achievements_item": "Erfolge",
+    "settings_gear": "Einstellungsmenü"
+  },
+  "children": {
+    "title": "Kinder",
+    "add": "Kind hinzufügen",
+    "detail": "Kind-Details",
+    "years_old": "Jahre alt",
+    "empty": {
+      "title": "Keine Kinder hinzugefügt",
+      "message": "Füge dein erstes Kind hinzu, um mit der Verwaltung von Aufgaben und Belohnungen zu beginnen"
+    }
   },
   "chores": {
     "title": "Aufgaben",
@@ -247,15 +170,7 @@
     "noDescription": "Keine Beschreibung vorhanden",
     "noDueDate": "Kein Fälligkeitsdatum",
     "lastCompleted": "Zuletzt abgeschlossen",
-    "frequency": {
-      "title": "Häufigkeit",
-      "once": "Einmalig",
-      "daily": "Täglich",
-      "weekly": "Wöchentlich",
-      "weeklyOnDay": "Wöchentlich am Tag",
-      "monthly": "Monatlich",
-      "custom": "Benutzerdefiniert"
-    },
+    "frequency": "Häufigkeit",
     "specificDays": "Bestimmte Tage",
     "dayOfMonth": "Tag des Monats",
     "deleteConfirmation": {
@@ -305,6 +220,15 @@
     "dueDate": "Fälligkeitsdatum",
     "dueTime": "Fälligkeitszeit",
     "assignTo": "Zuweisen an",
+    "frequencySettings": {
+      "title": "Häufigkeit",
+      "once": "Einmalig",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich",
+      "weeklyOnDay": "Wöchentlich am Tag",
+      "monthly": "Monatlich",
+      "custom": "Benutzerdefiniert"
+    },
     "status": {
       "title": "Status",
       "pending": "Ausstehend",
@@ -336,37 +260,18 @@
     "just_this_one": "Nur dieses",
     "view_calendar": "Kalender anzeigen"
   },
-  "family": {
-    "title": "Familie",
-    "add_child": "Kind hinzufügen",
-    "edit_child": "Kind bearbeiten",
-    "delete_child": "Kind löschen",
-    "child_name": "Name des Kindes",
-    "child_username": "Benutzername des Kindes",
-    "child_password": "Passwort des Kindes",
-    "confirm_password": "Passwort bestätigen",
-    "setup_code": "Einrichtungscode",
-    "no_children": "Keine Kinder gefunden",
-    "add_first_child": "Fügen Sie Ihr erstes Kind hinzu",
-    "confirm_delete": "Sind Sie sicher, dass Sie {name} löschen möchten?",
-    "account_created": "Kinderkonto erfolgreich erstellt",
-    "setup_instructions": "Geben Sie Ihrem Kind diesen Einrichtungscode, um die Kontoeinrichtung abzuschließen:",
-    "setup_expires": "Dieser Code läuft in 24 Stunden ab",
-    "link_child": "Bestehendes Kind verknüpfen",
-    "link": "Verknüpfen",
-    "enter_child_email": "E-Mail des Kindes eingeben",
-    "no_user_found": "Kein Benutzer mit dieser E-Mail gefunden",
-    "not_child_account": "Dieser Benutzer ist nicht als Kind registriert",
-    "child_already_linked": "Dieses Kind ist bereits in Ihrer Familie",
-    "account_removed": "Das Konto von {name} wurde entfernt",
-    "delete_account_completely": "Das Konto des Kindes vollständig löschen",
-    "remove_chores_points": "Alle Aufgaben und Punktehistorie entfernen",
-    "delete_settings": "Alle benutzerdefinierten Einstellungen und Präferenzen löschen",
-    "remove_permanently": "Dauerhaft entfernen",
-    "family_management": "Familienverwaltung"
-  },
   "rewards": {
     "title": "Belohnungen",
+    "addReward": "Belohnung hinzufügen",
+    "editReward": "Belohnung bearbeiten",
+    "deleteReward": "Belohnung löschen",
+    "rewardName": "Name der Belohnung",
+    "rewardDescription": "Beschreibung",
+    "pointCost": "Punktekosten",
+    "availableUntil": "Verfügbar bis",
+    "claimReward": "Belohnung beanspruchen",
+    "noRewards": "Keine Belohnungen gefunden",
+    "deleteConfirmation": "Sind Sie sicher, dass Sie diese Belohnung löschen möchten?",
     "add_reward": "Belohnung hinzufügen",
     "edit_reward": "Belohnung bearbeiten",
     "delete_reward": "Belohnung löschen",
@@ -405,16 +310,6 @@
     "no_upcoming_rewards": "Keine kommenden Belohnungen",
     "rewards_management": "Belohnungsverwaltung",
     "you_have_earned_rewards": "Sie haben {count} Belohnungen verdient!",
-    "addReward": "Add Reward",
-    "editReward": "Edit Reward",
-    "deleteReward": "Delete Reward",
-    "rewardName": "Reward Name",
-    "rewardDescription": "Description",
-    "pointCost": "Point Cost",
-    "availableUntil": "Available Until",
-    "claimReward": "Claim Reward",
-    "noRewards": "No rewards found",
-    "deleteConfirmation": "Are you sure you want to delete this reward?",
     "empty": {
       "parent": "Noch keine Belohnungen erstellt",
       "available": "Keine verfügbaren Belohnungen",
@@ -429,56 +324,118 @@
     "detail": "Belohnungsdetails",
     "unlockedOnly": "Nur Freigeschaltete anzeigen"
   },
-  "penalties": {
-    "title": "Strafen",
-    "add_penalty": "Strafe hinzufügen",
-    "edit_penalty": "Strafe bearbeiten",
-    "delete_penalty": "Strafe löschen",
-    "penalty_name": "Name der Strafe",
-    "please_enter_penalty_name": "Bitte geben Sie einen Namen für die Strafe ein",
-    "description": "Beschreibung",
-    "points_to_deduct": "Abzuziehende Punkte",
-    "please_enter_points_to_deduct": "Bitte geben Sie die abzuziehenden Punkte ein",
-    "points_must_be_positive": "Punkte müssen eine positive Zahl sein",
-    "below_threshold": "Unter Schwelle",
-    "at_threshold": "An Schwelle",
-    "above_threshold": "Über Schwelle",
-    "when_below": "Wenn unter",
-    "when_at": "Wenn an",
-    "when_above": "Wenn über",
-    "deducts": "Zieht ab",
-    "available_to": "Verfügbar für",
-    "status": "Status",
-    "available": "Verfügbar",
-    "applied": "Angewendet",
-    "waived": "Erlassen",
-    "expired": "Abgelaufen",
-    "apply": "Anwenden",
-    "waive": "Erlassen",
-    "no_penalties": "Keine Strafen gefunden",
-    "add_first_penalty": "Fügen Sie Ihre erste Strafe hinzu",
-    "confirm_delete": "Sind Sie sicher, dass Sie diese Strafe löschen möchten?",
-    "delete_penalty_confirmation": "Sind Sie sicher, dass Sie die Strafe '{name}' löschen möchten?",
-    "confirm_apply": "Sind Sie sicher, dass Sie diese Strafe anwenden möchten?",
-    "confirm_waive": "Sind Sie sicher, dass Sie diese Strafe erlassen möchten?",
-    "penalty_applied": "Strafe erfolgreich angewendet",
-    "penalty_waived": "Strafe erfolgreich erlassen",
-    "applied_on": "Angewendet am {date}",
-    "applicable_penalties": "Anwendbare Strafen"
+  "settings": {
+    "title": "Einstellungen",
+    "account": "Konto",
+    "profile": "Profil",
+    "notifications": "Benachrichtigungen",
+    "appearance": "Erscheinungsbild",
+    "language": "Sprache",
+    "help": "Hilfe",
+    "about": "Über",
+    "signOut": "Abmelden",
+    "deleteAccount": "Konto löschen",
+    "theme": {
+      "title": "Design",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "security": "Sicherheit & Anmeldung",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "version": "Version",
+    "dark_mode": "Dunkelmodus",
+    "light_mode": "Hellmodus",
+    "system_theme": "Systemdesign verwenden",
+    "high_contrast": "Hoher Kontrast",
+    "use_device_language": "Gerätesprache verwenden",
+    "select_language": "Sprache auswählen",
+    "biometric_login": "Biometrische Anmeldung",
+    "auto_login": "Automatische Anmeldung",
+    "chore_management": "Aufgabenverwaltung",
+    "default_due_time": "Standard-Fälligkeitszeit",
+    "auto_verification": "Automatische Überprüfung",
+    "auto_verification_subtitle": "Erlaubt, dass Aufgaben ohne Überprüfung durch Eltern als erledigt markiert werden",
+    "customization": "Anpassung",
+    "custom_icons": "Benutzerdefinierte Symbole",
+    "custom_icons_subtitle": "Benutzerdefinierte Symbole hochladen und verwalten",
+    "theme_settings": "Design-Einstellungen",
+    "requires_tier": "Erfordert {tier}-Konto",
+    "avatar": "Avatar",
+    "change_avatar": "Avatar ändern",
+    "avatar_updated": "Avatar erfolgreich aktualisiert",
+    "reminders": "Erinnerungen"
   },
-  "notifications": {
-    "title": "Benachrichtigungen",
-    "chore_expiry": "Erinnerungen zum Ablauf von Aufgaben",
-    "reminder_time": "Erinnerungszeit vor Fälligkeit",
-    "new_chore": "Benachrichtigungen über neue Aufgaben",
-    "reward_earned": "Benachrichtigungen über verdiente Belohnungen",
-    "chore_verified": "Benachrichtigungen über verifizierte Aufgaben",
-    "chore_rejected": "Benachrichtigungen über abgelehnte Aufgaben",
-    "chore_completed": "Benachrichtigungen über abgeschlossene Aufgaben",
-    "penalty": "Benachrichtigungen über Strafen",
-    "hours": "{count} Stunden",
-    "enable_all": "Alle Benachrichtigungen aktivieren",
-    "disable_all": "Alle Benachrichtigungen deaktivieren"
+  "statistics": {
+    "title": "Statistiken",
+    "loading": "Statistiken werden geladen...",
+    "noData": "Keine statistischen Daten verfügbar",
+    "summary": "Zusammenfassung",
+    "chart": "Leistungsdiagramm",
+    "chartPlaceholder": "Diagramm erscheint hier, wenn mehr Daten verfügbar sind",
+    "totalChores": "Gesamte Aufgaben",
+    "completedChores": "Abgeschlossen",
+    "pendingChores": "Ausstehend",
+    "missedChores": "Verpasst",
+    "totalPoints": "Gesamtpunkte",
+    "completionRate": "Abschlussrate",
+    "grouping": {
+      "day": "Täglich",
+      "week": "Wöchentlich",
+      "month": "Monatlich"
+    },
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "selectDateRange": "Datumsbereich auswählen"
+  },
+  "tutorial": {
+    "title": "Tutorial",
+    "skip": "Tutorial überspringen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Loslegen",
+    "close": "Schließen",
+    "parent": {
+      "welcome": {
+        "title": "Willkommen bei ChoreKeeper!",
+        "description": "Lassen Sie uns Ihr Konto in nur wenigen Minuten einrichten. ChoreKeeper hilft Ihnen, Aufgaben zu verwalten, Punkte zu verfolgen und Ihre Kinder für erledigte Aufgaben zu belohnen."
+      },
+      "features": {
+        "title": "Was ChoreKeeper bietet",
+        "description": "ChoreKeeper bietet Tools zum Erstellen und Zuweisen von Aufgaben, Verfolgen von Punkten und Einrichten von Belohnungen für Ihre Kinder. Sie können alles von einem Ort aus verwalten!"
+      },
+      "chores": {
+        "title": "Aufgaben verwalten",
+        "description": "Erstellen Sie Aufgaben, legen Sie Fälligkeitstermine fest und weisen Sie sie Ihren Kindern zu. Sie erhalten Benachrichtigungen und können Aufgaben als erledigt markieren, wenn sie fertig sind."
+      },
+      "rewards": {
+        "title": "Belohnungen einrichten",
+        "description": "Erstellen Sie Belohnungen, die Ihre Kinder durch das Sammeln von Punkten verdienen können. Legen Sie Punkteschwellen fest und lassen Sie sie auf ihre Ziele hinarbeiten!"
+      },
+      "add_child": {
+        "title": "Kind hinzufügen",
+        "description": "Um ein Kind hinzuzufügen, gehen Sie zur Registerkarte Familie und tippen Sie auf die Schaltfläche '+'. Geben Sie seinen Benutzernamen und Vornamen ein und teilen Sie dann den Einrichtungscode mit ihm, um die Kontoeinrichtung abzuschließen."
+      }
+    },
+    "child": {
+      "welcome": {
+        "title": "Willkommen bei ChoreKeeper!",
+        "description": "ChoreKeeper hilft dir, deine Aufgaben zu verfolgen und Punkte für deren Erledigung zu verdienen. Lass uns lernen, wie man die App benutzt!"
+      },
+      "chores": {
+        "title": "Aufgaben anzeigen und erledigen",
+        "description": "Deine Aufgaben werden auf dem Startbildschirm angezeigt. Tippe auf eine Aufgabe, um Details zu sehen, und markiere sie als erledigt, wenn du fertig bist. Deine Eltern werden erledigte Aufgaben überprüfen."
+      },
+      "points": {
+        "title": "Punkte und Belohnungen verfolgen",
+        "description": "Wenn du Aufgaben erledigst, verdienst du Punkte. Überprüfe deine Gesamtpunktzahl und sieh, welche Belohnungen du verdienen kannst. Behalte deinen Fortschritt für jede Belohnung im Auge!"
+      },
+      "settings": {
+        "title": "Persönliche Einstellungen",
+        "description": "Du kannst dein Profil anpassen, indem du deinen Avatar änderst und Aufgabenerinnerungen einrichtest. Tippe auf das Einstellungssymbol, um auf diese Optionen zuzugreifen."
+      }
+    }
   },
   "customization": {
     "title": "Anpassung",
@@ -532,274 +489,6 @@
       "filled": "Gefüllt",
       "outlined": "Umriss"
     }
-  },
-  "tutorial": {
-    "title": "Tutorial",
-    "skip": "Tutorial überspringen",
-    "back": "Zurück",
-    "next": "Weiter",
-    "finish": "Loslegen",
-    "close": "Schließen",
-    "parent": {
-      "welcome": {
-        "title": "Willkommen bei ChoreKeeper!",
-        "description": "Lassen Sie uns Ihr Konto in nur wenigen Minuten einrichten. ChoreKeeper hilft Ihnen, Aufgaben zu verwalten, Punkte zu verfolgen und Ihre Kinder für erledigte Aufgaben zu belohnen."
-      },
-      "features": {
-        "title": "Was ChoreKeeper bietet",
-        "description": "ChoreKeeper bietet Tools zum Erstellen und Zuweisen von Aufgaben, Verfolgen von Punkten und Einrichten von Belohnungen für Ihre Kinder. Sie können alles von einem Ort aus verwalten!"
-      },
-      "chores": {
-        "title": "Aufgaben verwalten",
-        "description": "Erstellen Sie Aufgaben, legen Sie Fälligkeitstermine fest und weisen Sie sie Ihren Kindern zu. Sie erhalten Benachrichtigungen und können Aufgaben als erledigt markieren, wenn sie fertig sind."
-      },
-      "rewards": {
-        "title": "Belohnungen einrichten",
-        "description": "Erstellen Sie Belohnungen, die Ihre Kinder durch das Sammeln von Punkten verdienen können. Legen Sie Punkteschwellen fest und lassen Sie sie auf ihre Ziele hinarbeiten!"
-      },
-      "add_child": {
-        "title": "Kind hinzufügen",
-        "description": "Um ein Kind hinzuzufügen, gehen Sie zur Registerkarte Familie und tippen Sie auf die Schaltfläche '+'. Geben Sie seinen Benutzernamen und Vornamen ein und teilen Sie dann den Einrichtungscode mit ihm, um die Kontoeinrichtung abzuschließen."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Willkommen bei ChoreKeeper!",
-        "description": "ChoreKeeper hilft dir, deine Aufgaben zu verfolgen und Punkte für deren Erledigung zu verdienen. Lass uns lernen, wie man die App benutzt!"
-      },
-      "chores": {
-        "title": "Aufgaben anzeigen und erledigen",
-        "description": "Deine Aufgaben werden auf dem Startbildschirm angezeigt. Tippe auf eine Aufgabe, um Details zu sehen, und markiere sie als erledigt, wenn du fertig bist. Deine Eltern werden erledigte Aufgaben überprüfen."
-      },
-      "points": {
-        "title": "Punkte und Belohnungen verfolgen",
-        "description": "Wenn du Aufgaben erledigst, verdienst du Punkte. Überprüfe deine Gesamtpunktzahl und sieh, welche Belohnungen du verdienen kannst. Behalte deinen Fortschritt für jede Belohnung im Auge!"
-      },
-      "settings": {
-        "title": "Persönliche Einstellungen",
-        "description": "Du kannst dein Profil anpassen, indem du deinen Avatar änderst und Aufgabenerinnerungen einrichtest. Tippe auf das Einstellungssymbol, um auf diese Optionen zuzugreifen."
-      }
-    }
-  },
-  "rewards_and_penalties": "Belohnungen & Strafen",
-  "select_child": "Kind auswählen",
-  "family_wide": "Familienübergreifend",
-  "no_rewards_yet": "Noch keine Belohnungen. Fügen Sie Ihre erste Belohnung hinzu!",
-  "no_penalties_yet": "Noch keine Strafen. Fügen Sie Ihre erste Strafe hinzu!",
-  "threshold": "Schwelle",
-  "point_value": "Punkte",
-  "period": "Zeitraum",
-  "please_enter_valid_number": "Bitte geben Sie eine gültige Zahl ein",
-  "dashboard": {
-    "parent": {
-      "title": "Eltern-Dashboard",
-      "children": "Kinder",
-      "chores": "Aufgaben",
-      "rewards": "Belohnungen",
-      "settings": "Einstellungen",
-      "family": "Familie",
-      "statistics": "Statistiken",
-      "calendar": "Kalender"
-    },
-    "child": {
-      "title": "Mein Dashboard",
-      "myChores": "Meine Aufgaben",
-      "myRewards": "Meine Belohnungen",
-      "myPoints": "Meine Punkte",
-      "settings": "Einstellungen",
-      "completedChores": "Erledigte Aufgaben",
-      "achievements": "Erfolge"
-    },
-    "cork_board": "Pinnwand-Dashboard",
-    "push_pin": "Reißzwecke",
-    "pinned_item": "Angeheftetes Element",
-    "calendar_item": "Kalender",
-    "chores_item": "Aufgabenliste",
-    "rewards_item": "Belohnungen",
-    "points_item": "Punkteübersicht",
-    "family_item": "Familienverwaltung",
-    "statistics_item": "Statistiken und Berichte",
-    "achievements_item": "Erfolge",
-    "settings_gear": "Einstellungsmenü"
-  },
-  "points_system": {
-    "dashboard": "Punkte-Dashboard",
-    "my_points": "Meine Punkte",
-    "error_loading": "Fehler beim Laden der Punkte",
-    "summary_for": "Punkteübersicht von {name}",
-    "total": "Gesamtpunkte",
-    "daily": "Tägliche Punkte",
-    "weekly": "Wöchentliche Punkte",
-    "monthly": "Monatliche Punkte",
-    "as_of": "Stand: {date}",
-    "today_at": "Heute um {time}",
-    "earned_for": "Verdient für",
-    "progress": "Fortschritt",
-    "remaining": "Verbleibend",
-    "adjust_points": "Punkte anpassen",
-    "add_points": "Punkte hinzufügen",
-    "remove_points": "Punkte abziehen",
-    "add_subtract": "Hinzufügen/Abziehen",
-    "enter_points": "Punkte eingeben",
-    "enter_reason": "Grund eingeben",
-    "points_adjusted": "Punkte erfolgreich angepasst",
-    "points_added": "Punkte erfolgreich hinzugefügt",
-    "points_removed": "Punkte erfolgreich abgezogen",
-    "points": "Punkte",
-    "reason": "Grund",
-    "recent_adjustments": "Aktuelle Anpassungen",
-    "sync_status": "Synchronisierungsstatus",
-    "synced": "Synchronisiert",
-    "not_synced": "Nicht Synchronisiert",
-    "sync_now": "Jetzt Synchronisieren",
-    "sync_in_progress": "Synchronisierung Läuft",
-    "sync_complete": "Synchronisierung Abgeschlossen",
-    "sync_failed": "Synchronisierung Fehlgeschlagen"
-  },
-  "common_ui": {
-    "reason_optional": "Grund (optional)",
-    "parent": "Elternteil",
-    "not_logged_in": "Nicht angemeldet",
-    "child_profile_not_found": "Kinderprofil nicht gefunden",
-    "no_children_yet": "Noch keine Kinder. Fügen Sie zuerst ein Kind hinzu!",
-    "error_loading_data": "Fehler beim Laden der Daten",
-    "retry": "Wiederholen",
-    "no_point_adjustments": "Keine Punkteanpassungen gefunden",
-    "point_adjustment_history": "Punkteanpassungsverlauf",
-    "sync_error": "Synchronisierungsfehler",
-    "sync_error_message": "Fehler bei der Synchronisierung der Punkteanpassungen. Bitte versuchen Sie es später erneut."
-  },
-  "onboarding": {
-    "welcome": {
-      "title": "Willkommen bei ChoreKeeper",
-      "subtitle": "Aufgaben für Kinder spaßig und für Eltern einfach machen",
-      "getStarted": "Loslegen"
-    },
-    "userType": {
-      "title": "Ich bin ein...",
-      "parent": "Elternteil",
-      "child": "Kind"
-    },
-    "createAccount": {
-      "title": "Konto erstellen",
-      "email": "E-Mail",
-      "password": "Passwort",
-      "confirmPassword": "Passwort bestätigen",
-      "createAccount": "Konto erstellen",
-      "alreadyHaveAccount": "Haben Sie bereits ein Konto? Anmelden"
-    },
-    "signIn": {
-      "title": "Anmelden",
-      "email": "E-Mail",
-      "password": "Passwort",
-      "signIn": "Anmelden",
-      "forgotPassword": "Passwort vergessen?",
-      "dontHaveAccount": "Haben Sie kein Konto? Erstellen Sie eines"
-    },
-    "skip": "Tutorial Überspringen",
-    "back": "Zurück",
-    "next": "Weiter",
-    "finish": "Loslegen",
-    "close": "Schließen",
-    "parent": {
-      "welcome": {
-        "title": "Willkommen bei ChoreKeeper!",
-        "description": "Lassen Sie uns Ihr Konto in nur wenigen Minuten einrichten. ChoreKeeper hilft Ihnen, Aufgaben zu verwalten, Punkte zu verfolgen und Ihre Kinder für erledigte Aufgaben zu belohnen."
-      },
-      "features": {
-        "title": "Was ChoreKeeper bietet",
-        "description": "ChoreKeeper bietet Tools zum Erstellen und Zuweisen von Aufgaben, Verfolgen von Punkten und Einrichten von Belohnungen für Ihre Kinder. Sie können alles von einem Ort aus verwalten!"
-      },
-      "chores": {
-        "title": "Aufgaben verwalten",
-        "description": "Erstellen Sie Aufgaben, legen Sie Fälligkeitstermine fest und weisen Sie sie Ihren Kindern zu. Sie erhalten Benachrichtigungen und können Aufgaben als erledigt markieren, wenn sie fertig sind."
-      },
-      "rewards": {
-        "title": "Belohnungen einrichten",
-        "description": "Erstellen Sie Belohnungen, die Ihre Kinder durch das Sammeln von Punkten verdienen können. Legen Sie Punkteschwellen fest und lassen Sie sie auf ihre Ziele hinarbeiten!"
-      },
-      "add_child": {
-        "title": "Ein Kind hinzufügen",
-        "description": "Um ein Kind hinzuzufügen, gehen Sie zur Registerkarte Familie und tippen Sie auf die Schaltfläche '+'. Geben Sie seinen Benutzernamen und Vornamen ein und teilen Sie dann den Einrichtungscode mit ihm, um die Kontoeinrichtung abzuschließen."
-      }
-    },
-    "child": {
-      "welcome": {
-        "title": "Willkommen bei ChoreKeeper!",
-        "description": "ChoreKeeper hilft dir, deine Aufgaben im Auge zu behalten und Punkte für erledigte Aufgaben zu sammeln. Lass uns lernen, wie man die App benutzt!"
-      },
-      "chores": {
-        "title": "Aufgaben anzeigen und erledigen",
-        "description": "Deine Aufgaben werden auf dem Startbildschirm angezeigt. Tippe auf eine Aufgabe, um Details zu sehen, und markiere sie als erledigt, wenn du fertig bist. Deine Eltern werden erledigte Aufgaben überprüfen."
-      },
-      "points": {
-        "title": "Punkte und Belohnungen verfolgen",
-        "description": "Wenn du Aufgaben erledigst, verdienst du Punkte. Überprüfe deine Gesamtpunktzahl und sieh, welche Belohnungen du verdienen kannst. Behalte deinen Fortschritt für jede Belohnung im Auge!"
-      },
-      "settings": {
-        "title": "Persönliche Einstellungen",
-        "description": "Du kannst dein Profil anpassen, indem du deinen Avatar änderst und Aufgabenerinnerungen einrichtest. Tippe auf das Einstellungssymbol, um auf diese Optionen zuzugreifen."
-      }
-    }
-  },
-  "help": {
-    "tutorial": "Tutorial",
-    "show_tutorial": "Tutorial anzeigen",
-    "help_center": "Hilfezentrum",
-    "faq": "Häufig gestellte Fragen",
-    "contact_support": "Support kontaktieren",
-    "getting_started": {
-      "title": "Erste Schritte",
-      "description": "Willkommen bei ChoreKeeper! Diese App hilft Ihnen, Aufgaben zu verwalten, Punkte zu verfolgen und Ihre Kinder für erledigte Aufgaben zu belohnen. Beginnen wir mit den Grundlagen."
-    },
-    "creating_chores": {
-      "title": "Aufgaben erstellen",
-      "description": "Um eine Aufgabe zu erstellen, tippen Sie auf die Schaltfläche '+' auf dem Aufgabenbildschirm. Geben Sie einen Namen, eine Beschreibung, einen Punktwert und ein Fälligkeitsdatum ein. Sie können Aufgaben auch täglich, wöchentlich oder monatlich wiederkehren lassen."
-    },
-    "assigning_chores": {
-      "title": "Aufgaben zuweisen",
-      "description": "Bei der Erstellung einer Aufgabe wählen Sie aus, welchem Kind sie zugewiesen werden soll. Sie können auch familienweite Aufgaben erstellen, die jedes Kind erledigen kann."
-    },
-    "tracking_points": {
-      "title": "Punkte verfolgen",
-      "description": "Punkte werden automatisch vergeben, wenn Aufgaben erledigt und überprüft werden. Sie können Punktestände und Verlauf im Punkte-Dashboard einsehen."
-    },
-    "creating_rewards": {
-      "title": "Belohnungen erstellen",
-      "description": "Um eine Belohnung zu erstellen, gehen Sie zum Belohnungsbildschirm und tippen Sie auf die Schaltfläche '+'. Geben Sie einen Namen, eine Beschreibung und eine Punkteschwelle ein. Sie können Belohnungen so einstellen, dass sie verdient werden, wenn Punkte einen bestimmten Wert erreichen oder wenn der höchste Punktestand in einem Zeitraum erreicht wird."
-    }
-  },
-  "children": {
-    "title": "Kinder",
-    "add": "Kind hinzufügen",
-    "detail": "Kind-Details",
-    "empty": {
-      "title": "Keine Kinder hinzugefügt",
-      "message": "Füge dein erstes Kind hinzu, um mit der Verwaltung von Aufgaben und Belohnungen zu beginnen"
-    },
-    "years_old": "Jahre alt"
-  },
-  "statistics": {
-    "title": "Statistiken",
-    "loading": "Statistiken werden geladen...",
-    "noData": "Keine statistischen Daten verfügbar",
-    "summary": "Zusammenfassung",
-    "chart": "Leistungsdiagramm",
-    "chartPlaceholder": "Diagramm erscheint hier, wenn mehr Daten verfügbar sind",
-    "totalChores": "Gesamte Aufgaben",
-    "completedChores": "Abgeschlossen",
-    "pendingChores": "Ausstehend",
-    "missedChores": "Verpasst",
-    "totalPoints": "Gesamtpunkte",
-    "completionRate": "Abschlussrate",
-    "grouping": {
-      "day": "Täglich",
-      "week": "Wöchentlich",
-      "month": "Monatlich"
-    },
-    "startDate": "Startdatum",
-    "endDate": "Enddatum",
-    "selectDateRange": "Datumsbereich auswählen"
   },
   "achievements": {
     "title": "Erfolge",

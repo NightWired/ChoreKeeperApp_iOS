@@ -32,7 +32,10 @@
     "switch_user": "Switch User",
     "login_as_different_user": "Login as Different User",
     "no_remembered_users": "No remembered users",
-    "child": "Child"
+    "child": "Child",
+    "about": "About",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
   },
   "auth": {
     "login": "Login",
@@ -76,9 +79,6 @@
     "email_verified": "Email verified successfully",
     "email_verification_banner": "Please verify your email address to ensure account security",
     "verify_now": "Verify Now",
-    "login_with_google": "Sign in with Google",
-    "login_with_apple": "Sign in with Apple",
-    "login_with_facebook": "Sign in with Facebook",
     "logout_confirmation": "Are you sure you want to log out?"
   },
   "onboarding": {
@@ -220,7 +220,7 @@
     "dueDate": "Due Date",
     "dueTime": "Due Time",
     "assignTo": "Assign To",
-    "frequency": {
+    "frequencySettings": {
       "title": "Frequency",
       "once": "Once",
       "daily": "Daily",
@@ -364,7 +364,8 @@
     "requires_tier": "Requires {tier} account",
     "avatar": "Avatar",
     "change_avatar": "Change Avatar",
-    "avatar_updated": "Avatar updated successfully"
+    "avatar_updated": "Avatar updated successfully",
+    "reminders": "Reminders"
   },
   "statistics": {
     "title": "Statistics",
