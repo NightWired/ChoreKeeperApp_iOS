@@ -8,6 +8,7 @@
 import SwiftUI
 import LocalizationHandler
 import ErrorHandler
+import ChoreHandler
 
 // Import RefreshTrigger
 extension RefreshTrigger {}
@@ -37,7 +38,7 @@ struct CorkboardItem: View {
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            .frame(width: 90, height: 100)
+            .frame(width: 110, height: 100)
             .padding(10)
             .background(
                 ZStack {
@@ -76,8 +77,69 @@ struct CorkboardItem: View {
 struct ParentDashboard: View {
     @State private var showLogoutConfirmation = false
     @State private var showSettings = false
+    @State private var showChoreList = false
+    @State private var showChoreCalendar = false
+    @State private var showChoreDetail: ChoreModel? = nil
+    @State private var showCreateChore = false
+
+    // Combined sheet state to prevent multiple sheets
+    enum ActiveSheet: Identifiable {
+        case settings
+        case choreList
+        case choreCalendar
+        case choreDetail(ChoreModel)
+        case createChore
+
+        var id: String {
+            switch self {
+            case .settings: return "settings"
+            case .choreList: return "choreList"
+            case .choreCalendar: return "choreCalendar"
+            case .choreDetail(let chore): return "choreDetail-\(chore.id)"
+            case .createChore: return "createChore"
+            }
+        }
+    }
+
+    @State private var activeSheet: ActiveSheet?
+    @State private var previousSheet: ActiveSheet?
     @ObservedObject private var refreshTrigger = RefreshTrigger.shared
     @EnvironmentObject private var appState: AppState
+
+    // Sample chores for demonstration
+    @State private var chores: [ChoreModel] = [
+        ChoreModel(
+            id: 1,
+            title: "Clean Room",
+            description: "Vacuum and dust the bedroom",
+            points: 10,
+            dueDate: Date().addingTimeInterval(86400),
+            isRecurring: false,
+            status: .pending,
+            iconId: "room"
+        ),
+        ChoreModel(
+            id: 2,
+            title: "Take Out Trash",
+            description: "Empty all trash cans",
+            points: 5,
+            dueDate: Date().addingTimeInterval(3600),
+            isRecurring: true,
+            recurringPattern: "weekly",
+            status: .pendingVerification,
+            iconId: "trash"
+        ),
+        ChoreModel(
+            id: 3,
+            title: "Homework",
+            description: "Math assignment",
+            points: 15,
+            dueDate: Date().addingTimeInterval(-3600),
+            isRecurring: false,
+            status: .completed,
+            iconId: "homework"
+        )
+    ]
 
     var body: some View {
         ZStack {
@@ -104,7 +166,7 @@ struct ParentDashboard: View {
 
                     // Settings button
                     Button(action: {
-                        showSettings = true
+                        activeSheet = .settings
                     }) {
                         Image(systemName: "gearshape.fill")
                             .font(.system(size: 24))
@@ -114,9 +176,6 @@ struct ParentDashboard: View {
                             .clipShape(Circle())
                             .shadow(radius: 2)
                     }
-                    .sheet(isPresented: $showSettings) {
-                        SettingsView(accountType: .parent)
-                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 16)
@@ -125,7 +184,7 @@ struct ParentDashboard: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         // First row
-                        HStack(spacing: 20) {
+                        HStack(spacing: 25) {
                             CorkboardItem(
                                 title: LocalizationHandler.localize("dashboard.parent.children"),
                                 systemImage: "person.3.fill",
@@ -136,11 +195,23 @@ struct ParentDashboard: View {
                             )
 
                             CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.chores"),
+                                title: LocalizationHandler.localize("dashboard.chores_item"),
                                 systemImage: "checklist",
                                 color: Color.green,
                                 action: {
-                                    // Navigate to chores management
+                                    activeSheet = .choreList
+                                }
+                            )
+                        }
+
+                        // Second row
+                        HStack(spacing: 25) {
+                            CorkboardItem(
+                                title: LocalizationHandler.localize("dashboard.calendar_item"),
+                                systemImage: "calendar",
+                                color: Color.red,
+                                action: {
+                                    activeSheet = .choreCalendar
                                 }
                             )
 
@@ -154,23 +225,14 @@ struct ParentDashboard: View {
                             )
                         }
 
-                        // Second row
-                        HStack(spacing: 20) {
+                        // Third row
+                        HStack(spacing: 25) {
                             CorkboardItem(
                                 title: LocalizationHandler.localize("dashboard.parent.statistics"),
                                 systemImage: "chart.bar.fill",
                                 color: Color.orange,
                                 action: {
                                     // Navigate to statistics
-                                }
-                            )
-
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.calendar"),
-                                systemImage: "calendar",
-                                color: Color.red,
-                                action: {
-                                    // Navigate to calendar
                                 }
                             )
 
@@ -201,6 +263,223 @@ struct ParentDashboard: View {
                 },
                 secondaryButton: .cancel(Text(LocalizationHandler.localize("common.cancel")))
             )
+        }
+        // Single sheet for all modal presentations
+        .sheet(item: $activeSheet) { sheet in
+            NavigationView {
+                switch sheet {
+                case .settings:
+                    SettingsView(accountType: .parent)
+
+                case .choreList:
+                    ChoreList(
+                        chores: chores,
+                        isParent: true,
+                        onChoreSelected: { chore in
+                            // Save the current sheet before showing the chore detail
+                            previousSheet = .choreList
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .choreDetail(chore)
+                            }
+                        },
+                        onChoreCompleted: { chore in
+                            updateChoreStatus(chore, status: .completed)
+                        },
+                        onChoreVerified: { chore in
+                            updateChoreStatus(chore, status: .verified)
+                        },
+                        onChoreRejected: { chore in
+                            updateChoreStatus(chore, status: .rejected)
+                        },
+                        onAddChore: {
+                            // Save the current sheet before showing create chore
+                            previousSheet = .choreList
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .createChore
+                            }
+                        }
+                    )
+
+                case .choreCalendar:
+                    ChoreCalendar(
+                        chores: chores,
+                        isParent: true,
+                        onChoreSelected: { chore in
+                            // Save the current sheet before showing the chore detail
+                            previousSheet = .choreCalendar
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .choreDetail(chore)
+                            }
+                        },
+                        onChoreCompleted: { chore in
+                            updateChoreStatus(chore, status: .completed)
+                        },
+                        onChoreVerified: { chore in
+                            updateChoreStatus(chore, status: .verified)
+                        },
+                        onChoreRejected: { chore in
+                            updateChoreStatus(chore, status: .rejected)
+                        },
+                        onAddChore: {
+                            // Save the current sheet before showing create chore
+                            previousSheet = .choreCalendar
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .createChore
+                            }
+                        }
+                    )
+
+                case .choreDetail(let chore):
+                    ChoreView(
+                        mode: .view,
+                        chore: chore,
+                        isParent: true,
+                        onSave: { updatedChore in
+                            updateChore(updatedChore)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onDelete: {
+                            deleteChore(chore)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onComplete: {
+                            updateChoreStatus(chore, status: .completed)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onVerify: {
+                            updateChoreStatus(chore, status: .verified)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onReject: {
+                            updateChoreStatus(chore, status: .rejected)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onCancel: {
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        }
+                    )
+
+                case .createChore:
+                    ChoreView(
+                        mode: .create,
+                        isParent: true,
+                        onSave: { newChore in
+                            addChore(newChore)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onDelete: {
+                            // Not used in create mode
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onComplete: {
+                            // Not used in create mode
+                        },
+                        onVerify: {
+                            // Not used in create mode
+                        },
+                        onReject: {
+                            // Not used in create mode
+                        },
+                        onCancel: {
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Helper Methods
+
+extension ParentDashboard {
+    // Add a new chore to the list
+    private func addChore(_ chore: ChoreModel) {
+        chores.append(chore)
+    }
+
+    // Update an existing chore
+    private func updateChore(_ updatedChore: ChoreModel) {
+        if let index = chores.firstIndex(where: { $0.id == updatedChore.id }) {
+            chores[index] = updatedChore
+        }
+    }
+
+    // Delete a chore
+    private func deleteChore(_ chore: ChoreModel) {
+        chores.removeAll { $0.id == chore.id }
+    }
+
+    // Update a chore's status
+    private func updateChoreStatus(_ chore: ChoreModel, status: ChoreStatus) {
+        if let index = chores.firstIndex(where: { $0.id == chore.id }) {
+            var updatedChore = chores[index]
+            updatedChore.status = status
+            chores[index] = updatedChore
+        }
+    }
+
+    // Handle sheet dismissal (for swipe-down gesture)
+    private func handleSheetDismissal() {
+        // If we have a previous sheet to return to, go there
+        if let previous = previousSheet {
+            // Small delay to ensure proper transition
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                activeSheet = previous
+                previousSheet = nil
+            }
+        } else {
+            // Otherwise just close the sheet
+            activeSheet = nil
         }
     }
 }

@@ -160,6 +160,11 @@
     "verify": "Überprüfen",
     "reject": "Ablehnen",
     "empty": "Keine Aufgaben gefunden",
+    "view_title": "Aufgabendetails",
+    "title_placeholder": "Aufgabentitel eingeben",
+    "selectIcon": "Symbol auswählen",
+    "createTitle": "Aufgabe erstellen",
+    "editTitle": "Aufgabe bearbeiten",
     "add_first_chore": "Fügen Sie Ihre erste Aufgabe hinzu",
     "parentChores": "Elternaufgaben",
     "childChores": "Kinderaufgaben",
@@ -170,7 +175,13 @@
     "noDescription": "Keine Beschreibung vorhanden",
     "noDueDate": "Kein Fälligkeitsdatum",
     "lastCompleted": "Zuletzt abgeschlossen",
-    "frequency": "Häufigkeit",
+    "frequency": {
+      "oneTime": "Einmalig",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich",
+      "monthly": "Monatlich",
+      "title": "Häufigkeit"
+    },
     "specificDays": "Bestimmte Tage",
     "dayOfMonth": "Tag des Monats",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Verpasst",
       "status": "Status",
       "category": "Kategorie"
+    },
+    "timeframe": {
+      "today": "Heute",
+      "week": "Diese Woche",
+      "month": "Dieser Monat"
     },
     "form": {
       "createTitle": "Aufgabe erstellen",
@@ -236,7 +252,8 @@
       "completed": "Abgeschlossen",
       "missed": "Verpasst",
       "overdue": "Überfällig",
-      "verified": "Überprüft"
+      "verified": "Überprüft",
+      "rejected": "Abgelehnt"
     },
     "markComplete": "Als erledigt markieren",
     "markIncomplete": "Als unvollständig markieren",
@@ -258,7 +275,49 @@
     "delete_recurring": "Alle Vorkommen oder nur dieses löschen?",
     "all_occurrences": "Alle Vorkommen",
     "just_this_one": "Nur dieses",
-    "view_calendar": "Kalender anzeigen"
+    "view_calendar": "Kalender anzeigen",
+    "calendar": {
+      "month": "Monat",
+      "week": "Woche",
+      "day": "Tag",
+      "noChoresForDate": "Keine Aufgaben für dieses Datum",
+      "addForDate": "Aufgabe für dieses Datum hinzufügen"
+    },
+    "iconCategories": {
+      "household": "Haushalt",
+      "personal": "Persönlich",
+      "outdoor": "Draußen",
+      "school": "Schule",
+      "pets": "Haustiere",
+      "misc": "Verschiedenes"
+    },
+    "icons": {
+      "dishes": "Geschirr",
+      "vacuum": "Staubsaugen",
+      "laundry": "Wäsche",
+      "trash": "Müll",
+      "bed": "Bett machen",
+      "dusting": "Abstauben",
+      "bathroom": "Bad reinigen",
+      "teeth": "Zähne putzen",
+      "shower": "Duschen",
+      "clothes": "Kleidung aufräumen",
+      "room": "Zimmer aufräumen",
+      "lawn": "Rasen mähen",
+      "garden": "Garten",
+      "snow": "Schnee schaufeln",
+      "car": "Auto waschen",
+      "homework": "Hausaufgaben",
+      "reading": "Lesen",
+      "backpack": "Rucksack packen",
+      "dog": "Hund ausführen",
+      "petFood": "Haustiere füttern",
+      "litterBox": "Katzenklo reinigen",
+      "custom": "Benutzerdefiniert",
+      "phone": "Telefonanruf",
+      "mail": "Post prüfen",
+      "groceries": "Einkaufen"
+    }
   },
   "rewards": {
     "title": "Belohnungen",
@@ -539,6 +598,30 @@
     "6000": "Fehler bei der Aufgabenverwaltung",
     "7000": "Fehler bei der Belohnungsverwaltung",
     "8000": "Fehler bei der Punkteverwaltung",
-    "9000": "Systemfehler"
+    "9000": "Systemfehler",
+    "choreManagement": {
+      "createFailed": "Fehler beim Erstellen der Aufgabe: {0}",
+      "updateFailed": "Fehler beim Aktualisieren der Aufgabe: {0}",
+      "deleteFailed": "Fehler beim Löschen der Aufgabe: {0}",
+      "choreNotFound": "Aufgabe mit ID nicht gefunden: {0}",
+      "invalidChoreData": "Ungültige Aufgabendaten: {0}",
+      "invalidRecurringPattern": "Ungültiges Wiederholungsmuster: {0}",
+      "invalidDueDate": "Ungültiges Fälligkeitsdatum: {0}",
+      "invalidPoints": "Ungültige Punkte: {0}",
+      "invalidTitle": "Ungültiger Titel: {0}",
+      "invalidUser": "Ungültiger Benutzer: {0}",
+      "invalidFamily": "Ungültige Familie: {0}",
+      "invalidStatus": "Ungültiger Status: {0}",
+      "permissionDenied": "Berechtigung verweigert: {0}",
+      "alreadyCompleted": "Aufgabe mit ID bereits abgeschlossen: {0}",
+      "alreadyVerified": "Aufgabe mit ID bereits überprüft: {0}",
+      "alreadyRejected": "Aufgabe mit ID bereits abgelehnt: {0}",
+      "alreadyMissed": "Aufgabe mit ID bereits verpasst: {0}",
+      "recurringGenerationFailed": "Fehler beim Generieren wiederkehrender Aufgaben: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Fehler bei der Punktezuweisung: {0}",
+      "pointDeductionFailed": "Fehler beim Abziehen von Punkten: {0}"
+    }
   }
 }

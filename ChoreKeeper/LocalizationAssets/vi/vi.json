@@ -160,6 +160,11 @@
     "verify": "Xác minh",
     "reject": "Từ chối",
     "empty": "Không tìm thấy việc nhà",
+    "view_title": "Chi tiết việc nhà",
+    "title_placeholder": "Nhập tiêu đề việc nhà",
+    "selectIcon": "Chọn biểu tượng",
+    "createTitle": "Tạo việc nhà",
+    "editTitle": "Chỉnh sửa việc nhà",
     "add_first_chore": "Thêm việc nhà đầu tiên của bạn",
     "parentChores": "Việc nhà của phụ huynh",
     "childChores": "Việc nhà của trẻ em",
@@ -170,7 +175,13 @@
     "noDescription": "Không có mô tả",
     "noDueDate": "Không có ngày đến hạn",
     "lastCompleted": "Hoàn thành lần cuối",
-    "frequency": "Tần suất",
+    "frequency": {
+      "oneTime": "Một lần",
+      "daily": "Hàng ngày",
+      "weekly": "Hàng tuần",
+      "monthly": "Hàng tháng",
+      "title": "Tần suất"
+    },
     "specificDays": "Ngày cụ thể",
     "dayOfMonth": "Ngày trong tháng",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Đã bỏ lỡ",
       "status": "Trạng thái",
       "category": "Danh mục"
+    },
+    "timeframe": {
+      "today": "Hôm nay",
+      "week": "Tuần này",
+      "month": "Tháng này"
     },
     "form": {
       "createTitle": "Tạo việc nhà",
@@ -236,7 +252,8 @@
       "completed": "Đã hoàn thành",
       "missed": "Đã bỏ lỡ",
       "overdue": "Quá hạn",
-      "verified": "Đã xác minh"
+      "verified": "Đã xác minh",
+      "rejected": "Đã từ chối"
     },
     "markComplete": "Đánh dấu là hoàn thành",
     "markIncomplete": "Đánh dấu là chưa hoàn thành",
@@ -258,7 +275,49 @@
     "delete_recurring": "Xóa tất cả các lần lặp lại hay chỉ lần này?",
     "all_occurrences": "Tất cả các lần lặp lại",
     "just_this_one": "Chỉ lần này",
-    "view_calendar": "Xem lịch"
+    "view_calendar": "Xem lịch",
+    "calendar": {
+      "month": "Tháng",
+      "week": "Tuần",
+      "day": "Ngày",
+      "noChoresForDate": "Không có việc nhà cho ngày này",
+      "addForDate": "Thêm việc nhà cho ngày này"
+    },
+    "iconCategories": {
+      "household": "Nhà cửa",
+      "personal": "Cá nhân",
+      "outdoor": "Ngoài trời",
+      "school": "Trường học",
+      "pets": "Thú cưng",
+      "misc": "Khác"
+    },
+    "icons": {
+      "dishes": "Bát đĩa",
+      "vacuum": "Hút bụi",
+      "laundry": "Giặt giũ",
+      "trash": "Rác",
+      "bed": "Dọn giường",
+      "dusting": "Lau bụi",
+      "bathroom": "Dọn phòng tắm",
+      "teeth": "Đánh răng",
+      "shower": "Tắm",
+      "clothes": "Sắp xếp quần áo",
+      "room": "Dọn phòng",
+      "lawn": "Cắt cỏ",
+      "garden": "Vườn",
+      "snow": "Dọn tuyết",
+      "car": "Rửa xe",
+      "homework": "Bài tập về nhà",
+      "reading": "Đọc sách",
+      "backpack": "Chuẩn bị ba lô",
+      "dog": "Dắt chó đi dạo",
+      "petFood": "Cho thú cưng ăn",
+      "litterBox": "Dọn hộp cát",
+      "custom": "Tùy chỉnh",
+      "phone": "Gọi điện thoại",
+      "mail": "Kiểm tra thư",
+      "groceries": "Mua sắm"
+    }
   },
   "rewards": {
     "title": "Phần thưởng",
@@ -539,6 +598,30 @@
     "6000": "Lỗi quản lý việc nhà",
     "7000": "Lỗi quản lý phần thưởng",
     "8000": "Lỗi quản lý điểm",
-    "9000": "Lỗi hệ thống"
+    "9000": "Lỗi hệ thống",
+    "choreManagement": {
+      "createFailed": "Không thể tạo việc nhà: {0}",
+      "updateFailed": "Không thể cập nhật việc nhà: {0}",
+      "deleteFailed": "Không thể xóa việc nhà: {0}",
+      "choreNotFound": "Không tìm thấy việc nhà với ID: {0}",
+      "invalidChoreData": "Dữ liệu việc nhà không hợp lệ: {0}",
+      "invalidRecurringPattern": "Mẫu lặp lại không hợp lệ: {0}",
+      "invalidDueDate": "Ngày đến hạn không hợp lệ: {0}",
+      "invalidPoints": "Điểm không hợp lệ: {0}",
+      "invalidTitle": "Tiêu đề không hợp lệ: {0}",
+      "invalidUser": "Người dùng không hợp lệ: {0}",
+      "invalidFamily": "Gia đình không hợp lệ: {0}",
+      "invalidStatus": "Trạng thái không hợp lệ: {0}",
+      "permissionDenied": "Quyền truy cập bị từ chối: {0}",
+      "alreadyCompleted": "Việc nhà với ID đã hoàn thành: {0}",
+      "alreadyVerified": "Việc nhà với ID đã được xác minh: {0}",
+      "alreadyRejected": "Việc nhà với ID đã bị từ chối: {0}",
+      "alreadyMissed": "Việc nhà với ID đã bị bỏ lỡ: {0}",
+      "recurringGenerationFailed": "Không thể tạo việc nhà lặp lại: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Không thể phân bổ điểm: {0}",
+      "pointDeductionFailed": "Không thể khấu trừ điểm: {0}"
+    }
   }
 }

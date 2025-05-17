@@ -68,6 +68,18 @@ This project is licensed under the terms found in the LICENSE file.
 
 ## Updates
 
+### May 16, 2025
+
+- Implemented ChoreHandler module for chore management:
+  - Created comprehensive chore model with support for recurring chores
+  - Implemented chore service for CRUD operations
+  - Added chore icon management with extensive icon library
+  - Created UI components for chore management (ChoreView, ChoreList, ChoreCalendar)
+  - Added test parent and child users for development purposes
+  - Implemented placeholder functionality for future Points and Rewards & Penalties modules
+  - Updated localization files with new keys for chore management
+  - Successfully integrated and tested in the app UI
+
 ### May 15, 2025
 
 - Implemented DataModels module with repository pattern for Core Data:

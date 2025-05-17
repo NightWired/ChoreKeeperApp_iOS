@@ -160,6 +160,11 @@
     "verify": "Zweryfikuj",
     "reject": "Odrzuć",
     "empty": "Nie znaleziono obowiązków domowych",
+    "view_title": "Szczegóły obowiązku",
+    "title_placeholder": "Wprowadź tytuł obowiązku",
+    "selectIcon": "Wybierz ikonę",
+    "createTitle": "Utwórz obowiązek",
+    "editTitle": "Edytuj obowiązek",
     "add_first_chore": "Dodaj swój pierwszy obowiązek domowy",
     "parentChores": "Obowiązki rodzica",
     "childChores": "Obowiązki dziecka",
@@ -170,7 +175,13 @@
     "noDescription": "Brak opisu",
     "noDueDate": "Brak terminu",
     "lastCompleted": "Ostatnio ukończony",
-    "frequency": "Częstotliwość",
+    "frequency": {
+      "oneTime": "Jednorazowo",
+      "daily": "Codziennie",
+      "weekly": "Co tydzień",
+      "monthly": "Co miesiąc",
+      "title": "Częstotliwość"
+    },
     "specificDays": "Określone dni",
     "dayOfMonth": "Dzień miesiąca",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Pominięte",
       "status": "Status",
       "category": "Kategoria"
+    },
+    "timeframe": {
+      "today": "Dzisiaj",
+      "week": "Ten tydzień",
+      "month": "Ten miesiąc"
     },
     "form": {
       "createTitle": "Utwórz obowiązek domowy",
@@ -236,7 +252,8 @@
       "completed": "Ukończony",
       "missed": "Pominięty",
       "overdue": "Zaległy",
-      "verified": "Zweryfikowany"
+      "verified": "Zweryfikowany",
+      "rejected": "Odrzucony"
     },
     "markComplete": "Oznacz jako ukończony",
     "markIncomplete": "Oznacz jako nieukończony",
@@ -258,7 +275,49 @@
     "delete_recurring": "Usunąć wszystkie wystąpienia czy tylko to jedno?",
     "all_occurrences": "Wszystkie wystąpienia",
     "just_this_one": "Tylko to jedno",
-    "view_calendar": "Zobacz kalendarz"
+    "view_calendar": "Zobacz kalendarz",
+    "calendar": {
+      "month": "Miesiąc",
+      "week": "Tydzień",
+      "day": "Dzień",
+      "noChoresForDate": "Brak obowiązków na tę datę",
+      "addForDate": "Dodaj obowiązek na tę datę"
+    },
+    "iconCategories": {
+      "household": "Domowe",
+      "personal": "Osobiste",
+      "outdoor": "Na zewnątrz",
+      "school": "Szkolne",
+      "pets": "Zwierzęta",
+      "misc": "Różne"
+    },
+    "icons": {
+      "dishes": "Naczynia",
+      "vacuum": "Odkurzanie",
+      "laundry": "Pranie",
+      "trash": "Śmieci",
+      "bed": "Ścielenie łóżka",
+      "dusting": "Odkurzanie",
+      "bathroom": "Czyszczenie łazienki",
+      "teeth": "Mycie zębów",
+      "shower": "Prysznic",
+      "clothes": "Porządkowanie ubrań",
+      "room": "Sprzątanie pokoju",
+      "lawn": "Koszenie trawy",
+      "garden": "Ogród",
+      "snow": "Odśnieżanie",
+      "car": "Mycie samochodu",
+      "homework": "Zadanie domowe",
+      "reading": "Czytanie",
+      "backpack": "Przygotowanie plecaka",
+      "dog": "Wyprowadzanie psa",
+      "petFood": "Karmienie zwierząt",
+      "litterBox": "Czyszczenie kuwety",
+      "custom": "Niestandardowe",
+      "phone": "Rozmowa telefoniczna",
+      "mail": "Sprawdzanie poczty",
+      "groceries": "Zakupy"
+    }
   },
   "rewards": {
     "title": "Nagrody",
@@ -539,6 +598,30 @@
     "6000": "Błąd zarządzania obowiązkami domowymi",
     "7000": "Błąd zarządzania nagrodami",
     "8000": "Błąd zarządzania punktami",
-    "9000": "Błąd systemowy"
+    "9000": "Błąd systemowy",
+    "choreManagement": {
+      "createFailed": "Nie udało się utworzyć obowiązku domowego: {0}",
+      "updateFailed": "Nie udało się zaktualizować obowiązku domowego: {0}",
+      "deleteFailed": "Nie udało się usunąć obowiązku domowego: {0}",
+      "choreNotFound": "Nie znaleziono obowiązku domowego o ID: {0}",
+      "invalidChoreData": "Nieprawidłowe dane obowiązku domowego: {0}",
+      "invalidRecurringPattern": "Nieprawidłowy wzorzec powtarzania: {0}",
+      "invalidDueDate": "Nieprawidłowa data wykonania: {0}",
+      "invalidPoints": "Nieprawidłowe punkty: {0}",
+      "invalidTitle": "Nieprawidłowy tytuł: {0}",
+      "invalidUser": "Nieprawidłowy użytkownik: {0}",
+      "invalidFamily": "Nieprawidłowa rodzina: {0}",
+      "invalidStatus": "Nieprawidłowy status: {0}",
+      "permissionDenied": "Odmowa uprawnień: {0}",
+      "alreadyCompleted": "Obowiązek domowy o ID już ukończony: {0}",
+      "alreadyVerified": "Obowiązek domowy o ID już zweryfikowany: {0}",
+      "alreadyRejected": "Obowiązek domowy o ID już odrzucony: {0}",
+      "alreadyMissed": "Obowiązek domowy o ID już pominięty: {0}",
+      "recurringGenerationFailed": "Nie udało się wygenerować powtarzających się obowiązków domowych: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Nie udało się przydzielić punktów: {0}",
+      "pointDeductionFailed": "Nie udało się odjąć punktów: {0}"
+    }
   }
 }

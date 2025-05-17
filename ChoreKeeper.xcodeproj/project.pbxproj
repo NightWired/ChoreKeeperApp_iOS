@@ -43,6 +43,8 @@
 		20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */; };
 		20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD52DD5A5A20077FC4F /* SettingsView.swift */; };
 		20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD72DD5A5B10077FC4F /* SettingsRow.swift */; };
+		20A008FA2DD8262600308F33 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A008F92DD8262600308F33 /* IconPickerView.swift */; };
+		20A008FD2DD8269C00308F33 /* TestUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A008FC2DD8269C00308F33 /* TestUsers.swift */; };
 		20A64D062DD515E200D941DF /* Darklight_Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D052DD515E200D941DF /* Darklight_Logo.svg */; };
 		20A64D0C2DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */; };
 		20A64D0D2DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */; };
@@ -51,6 +53,12 @@
 		20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A64D102DD517D200D941DF /* SplashScreen.swift */; };
 		20B033962DD6842600151F41 /* DataModels in Frameworks */ = {isa = PBXBuildFile; productRef = 20B033952DD6842600151F41 /* DataModels */; };
 		20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 20C40CA82DD54E9000570B1F /* ErrorHandler */; };
+		20C4DBB52DD7E3D600CEDE0D /* ChoreHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 20C4DBB42DD7E3D600CEDE0D /* ChoreHandler */; };
+		20C4DBB72DD7E40700CEDE0D /* ChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4DBB62DD7E40700CEDE0D /* ChoreView.swift */; };
+		20C4DBB92DD7E5B900CEDE0D /* ChoreCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4DBB82DD7E5B900CEDE0D /* ChoreCalendar.swift */; };
+		20C4DBBB2DD7E5C800CEDE0D /* ChoreCalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4DBBA2DD7E5C800CEDE0D /* ChoreCalendarItem.swift */; };
+		20C4DBBD2DD7E5D900CEDE0D /* ChoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4DBBC2DD7E5D900CEDE0D /* ChoreList.swift */; };
+		20C4DBBF2DD7E5E300CEDE0D /* ChoreListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4DBBE2DD7E5E300CEDE0D /* ChoreListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +118,8 @@
 		20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		20768DD52DD5A5A20077FC4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		20768DD72DD5A5B10077FC4F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		20A008F92DD8262600308F33 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
+		20A008FC2DD8269C00308F33 /* TestUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUsers.swift; sourceTree = "<group>"; };
 		20A64D052DD515E200D941DF /* Darklight_Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Darklight_Logo.svg; sourceTree = "<group>"; };
 		20A64D082DD5160100D941DF /* teacher_avatar_eyes_close_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_close_mouth_close.PNG; sourceTree = "<group>"; };
 		20A64D092DD5160100D941DF /* teacher_avatar_eyes_open_mouth_close.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teacher_avatar_eyes_open_mouth_close.PNG; sourceTree = "<group>"; };
@@ -118,6 +128,12 @@
 		20A64D102DD517D200D941DF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		20B033942DD683A800151F41 /* DataModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DataModels; path = SwiftModules/DataModels; sourceTree = "<group>"; };
 		20C40CA72DD54DFD00570B1F /* ErrorHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ErrorHandler; path = SwiftModules/ErrorHandler; sourceTree = "<group>"; };
+		20C4DBB32DD7E3C100CEDE0D /* ChoreHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ChoreHandler; path = SwiftModules/ChoreHandler; sourceTree = "<group>"; };
+		20C4DBB62DD7E40700CEDE0D /* ChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreView.swift; sourceTree = "<group>"; };
+		20C4DBB82DD7E5B900CEDE0D /* ChoreCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreCalendar.swift; sourceTree = "<group>"; };
+		20C4DBBA2DD7E5C800CEDE0D /* ChoreCalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreCalendarItem.swift; sourceTree = "<group>"; };
+		20C4DBBC2DD7E5D900CEDE0D /* ChoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreList.swift; sourceTree = "<group>"; };
+		20C4DBBE2DD7E5E300CEDE0D /* ChoreListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +144,7 @@
 				20B033962DD6842600151F41 /* DataModels in Frameworks */,
 				20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */,
 				201848FB2DD66E7E00F6BB66 /* CoreServices in Frameworks */,
+				20C4DBB52DD7E3D600CEDE0D /* ChoreHandler in Frameworks */,
 				204600A92DD4808700F2CE8E /* LocalizationHandler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +333,7 @@
 				20C40CA72DD54DFD00570B1F /* ErrorHandler */,
 				201848F92DD66E5700F6BB66 /* CoreServices */,
 				20B033942DD683A800151F41 /* DataModels */,
+				20C4DBB32DD7E3C100CEDE0D /* ChoreHandler */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -352,6 +370,7 @@
 		20549E032DD43819009ED830 /* ChoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				20A008FB2DD8269C00308F33 /* TestData */,
 				20768DD22DD5A5670077FC4F /* SharedUIComponents */,
 				20A64D032DD5158400D941DF /* GraphicsAssets */,
 				201BE4492DD46F82002D3370 /* LocalizationAssets */,
@@ -399,11 +418,25 @@
 		20768DD22DD5A5670077FC4F /* SharedUIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				20C4DBB62DD7E40700CEDE0D /* ChoreView.swift */,
 				20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */,
 				20768DD52DD5A5A20077FC4F /* SettingsView.swift */,
 				20768DD72DD5A5B10077FC4F /* SettingsRow.swift */,
+				20C4DBB82DD7E5B900CEDE0D /* ChoreCalendar.swift */,
+				20C4DBBA2DD7E5C800CEDE0D /* ChoreCalendarItem.swift */,
+				20C4DBBC2DD7E5D900CEDE0D /* ChoreList.swift */,
+				20C4DBBE2DD7E5E300CEDE0D /* ChoreListItem.swift */,
+				20A008F92DD8262600308F33 /* IconPickerView.swift */,
 			);
 			path = SharedUIComponents;
+			sourceTree = "<group>";
+		};
+		20A008FB2DD8269C00308F33 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				20A008FC2DD8269C00308F33 /* TestUsers.swift */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		20A64D032DD5158400D941DF /* GraphicsAssets */ = {
@@ -455,6 +488,7 @@
 				20C40CA82DD54E9000570B1F /* ErrorHandler */,
 				201848FA2DD66E7E00F6BB66 /* CoreServices */,
 				20B033952DD6842600151F41 /* DataModels */,
+				20C4DBB42DD7E3D600CEDE0D /* ChoreHandler */,
 			);
 			productName = ChoreKeeper;
 			productReference = 20549E012DD43819009ED830 /* ChoreKeeper.app */;
@@ -592,17 +626,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A008FD2DD8269C00308F33 /* TestUsers.swift in Sources */,
 				20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */,
 				20768DCF2DD58CF00077FC4F /* ParentDashboard.swift in Sources */,
+				20C4DBBF2DD7E5E300CEDE0D /* ChoreListItem.swift in Sources */,
+				20C4DBB72DD7E40700CEDE0D /* ChoreView.swift in Sources */,
 				20768DCD2DD58CD20077FC4F /* ChildLogin.swift in Sources */,
 				20768DC92DD58C970077FC4F /* LoginSelector.swift in Sources */,
 				20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */,
 				20549E0E2DD4381B009ED830 /* Persistence.swift in Sources */,
 				20549E112DD4381B009ED830 /* ChoreKeeper.xcdatamodeld in Sources */,
 				20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */,
+				20C4DBBD2DD7E5D900CEDE0D /* ChoreList.swift in Sources */,
 				20768DCB2DD58CBF0077FC4F /* ParentLogin.swift in Sources */,
+				20C4DBB92DD7E5B900CEDE0D /* ChoreCalendar.swift in Sources */,
 				20768DD12DD58CFF0077FC4F /* ChildDashboard.swift in Sources */,
+				20C4DBBB2DD7E5C800CEDE0D /* ChoreCalendarItem.swift in Sources */,
 				20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */,
+				20A008FA2DD8262600308F33 /* IconPickerView.swift in Sources */,
 				20549E072DD43819009ED830 /* ContentView.swift in Sources */,
 				20549E052DD43819009ED830 /* ChoreKeeperApp.swift in Sources */,
 			);
@@ -950,6 +991,10 @@
 		20C40CA82DD54E9000570B1F /* ErrorHandler */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ErrorHandler;
+		};
+		20C4DBB42DD7E3D600CEDE0D /* ChoreHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ChoreHandler;
 		};
 /* End XCSwiftPackageProductDependency section */
 

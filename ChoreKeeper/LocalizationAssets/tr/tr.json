@@ -160,6 +160,11 @@
     "verify": "Doğrula",
     "reject": "Reddet",
     "empty": "Ev işi bulunamadı",
+    "view_title": "Ev İşi Detayları",
+    "title_placeholder": "Ev işi başlığını gir",
+    "selectIcon": "Simge Seç",
+    "createTitle": "Ev İşi Oluştur",
+    "editTitle": "Ev İşini Düzenle",
     "add_first_chore": "İlk ev işini ekle",
     "parentChores": "Ebeveyn İşleri",
     "childChores": "Çocuk İşleri",
@@ -170,7 +175,13 @@
     "noDescription": "Açıklama yok",
     "noDueDate": "Son tarih yok",
     "lastCompleted": "Son Tamamlanma",
-    "frequency": "Sıklık",
+    "frequency": {
+      "oneTime": "Bir kez",
+      "daily": "Günlük",
+      "weekly": "Haftalık",
+      "monthly": "Aylık",
+      "title": "Sıklık"
+    },
     "specificDays": "Belirli Günler",
     "dayOfMonth": "Ayın Günü",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Kaçırıldı",
       "status": "Durum",
       "category": "Kategori"
+    },
+    "timeframe": {
+      "today": "Bugün",
+      "week": "Bu Hafta",
+      "month": "Bu Ay"
     },
     "form": {
       "createTitle": "Ev İşi Oluştur",
@@ -236,7 +252,8 @@
       "completed": "Tamamlandı",
       "missed": "Kaçırıldı",
       "overdue": "Gecikmiş",
-      "verified": "Doğrulanmış"
+      "verified": "Doğrulanmış",
+      "rejected": "Reddedildi"
     },
     "markComplete": "Tamamlandı olarak işaretle",
     "markIncomplete": "Tamamlanmadı olarak işaretle",
@@ -258,7 +275,49 @@
     "delete_recurring": "Tüm tekrarları mı yoksa sadece bunu mu silmek istiyorsun?",
     "all_occurrences": "Tüm tekrarlar",
     "just_this_one": "Sadece bu",
-    "view_calendar": "Takvimi görüntüle"
+    "view_calendar": "Takvimi görüntüle",
+    "calendar": {
+      "month": "Ay",
+      "week": "Hafta",
+      "day": "Gün",
+      "noChoresForDate": "Bu tarih için ev işi yok",
+      "addForDate": "Bu tarih için ev işi ekle"
+    },
+    "iconCategories": {
+      "household": "Ev",
+      "personal": "Kişisel",
+      "outdoor": "Dış Mekan",
+      "school": "Okul",
+      "pets": "Evcil Hayvanlar",
+      "misc": "Çeşitli"
+    },
+    "icons": {
+      "dishes": "Bulaşık",
+      "vacuum": "Elektrikli Süpürge",
+      "laundry": "Çamaşır",
+      "trash": "Çöp",
+      "bed": "Yatak Yapma",
+      "dusting": "Toz Alma",
+      "bathroom": "Banyo Temizliği",
+      "teeth": "Diş Fırçalama",
+      "shower": "Duş",
+      "clothes": "Kıyafet Düzenleme",
+      "room": "Oda Temizliği",
+      "lawn": "Çim Biçme",
+      "garden": "Bahçe",
+      "snow": "Kar Temizleme",
+      "car": "Araba Yıkama",
+      "homework": "Ev Ödevi",
+      "reading": "Okuma",
+      "backpack": "Sırt Çantası Hazırlama",
+      "dog": "Köpek Gezdirme",
+      "petFood": "Evcil Hayvan Besleme",
+      "litterBox": "Kedi Tuvaleti Temizleme",
+      "custom": "Özel",
+      "phone": "Telefon Görüşmesi",
+      "mail": "Posta Kontrol",
+      "groceries": "Market Alışverişi"
+    }
   },
   "rewards": {
     "title": "Ödüller",
@@ -539,6 +598,30 @@
     "6000": "Ev işi yönetimi hatası",
     "7000": "Ödül yönetimi hatası",
     "8000": "Puan yönetimi hatası",
-    "9000": "Sistem hatası"
+    "9000": "Sistem hatası",
+    "choreManagement": {
+      "createFailed": "Ev işi oluşturulamadı: {0}",
+      "updateFailed": "Ev işi güncellenemedi: {0}",
+      "deleteFailed": "Ev işi silinemedi: {0}",
+      "choreNotFound": "ID ile ev işi bulunamadı: {0}",
+      "invalidChoreData": "Geçersiz ev işi verisi: {0}",
+      "invalidRecurringPattern": "Geçersiz tekrarlama düzeni: {0}",
+      "invalidDueDate": "Geçersiz bitiş tarihi: {0}",
+      "invalidPoints": "Geçersiz puanlar: {0}",
+      "invalidTitle": "Geçersiz başlık: {0}",
+      "invalidUser": "Geçersiz kullanıcı: {0}",
+      "invalidFamily": "Geçersiz aile: {0}",
+      "invalidStatus": "Geçersiz durum: {0}",
+      "permissionDenied": "İzin reddedildi: {0}",
+      "alreadyCompleted": "ID ile ev işi zaten tamamlandı: {0}",
+      "alreadyVerified": "ID ile ev işi zaten doğrulandı: {0}",
+      "alreadyRejected": "ID ile ev işi zaten reddedildi: {0}",
+      "alreadyMissed": "ID ile ev işi zaten kaçırıldı: {0}",
+      "recurringGenerationFailed": "Tekrarlanan ev işleri oluşturulamadı: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Puan tahsisi başarısız: {0}",
+      "pointDeductionFailed": "Puan düşme işlemi başarısız: {0}"
+    }
   }
 }

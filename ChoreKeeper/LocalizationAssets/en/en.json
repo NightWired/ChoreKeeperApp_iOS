@@ -37,6 +37,17 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service"
   },
+  "general": {
+    "daysOfWeek": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
+  },
   "auth": {
     "login": "Login",
     "signup": "Sign Up",
@@ -160,6 +171,11 @@
     "verify": "Verify",
     "reject": "Reject",
     "empty": "No chores found",
+    "view_title": "Chore Details",
+    "title_placeholder": "Enter chore title",
+    "selectIcon": "Select Icon",
+    "createTitle": "Create Chore",
+    "editTitle": "Edit Chore",
     "add_first_chore": "Add your first chore",
     "parentChores": "Parent Chores",
     "childChores": "Child Chores",
@@ -170,7 +186,13 @@
     "noDescription": "No description provided",
     "noDueDate": "No due date",
     "lastCompleted": "Last Completed",
-    "frequency": "Frequency",
+    "frequency": {
+      "oneTime": "One Time",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "title": "Frequency"
+    },
     "specificDays": "Specific Days",
     "dayOfMonth": "Day of Month",
     "deleteConfirmation": {
@@ -190,6 +212,11 @@
       "missed": "Missed",
       "status": "Status",
       "category": "Category"
+    },
+    "timeframe": {
+      "today": "Today",
+      "week": "This Week",
+      "month": "This Month"
     },
     "form": {
       "createTitle": "Create Chore",
@@ -232,11 +259,12 @@
     "status": {
       "title": "Status",
       "pending": "Pending",
-      "pendingVerification": "Pending Verification",
       "completed": "Completed",
+      "pendingVerification": "Pending Verification",
+      "verified": "Verified",
+      "rejected": "Rejected",
       "missed": "Missed",
-      "overdue": "Overdue",
-      "verified": "Verified"
+      "overdue": "Overdue"
     },
     "markComplete": "Mark Complete",
     "markIncomplete": "Mark Incomplete",
@@ -258,7 +286,49 @@
     "delete_recurring": "Delete all occurrences or just this one?",
     "all_occurrences": "All Occurrences",
     "just_this_one": "Just This One",
-    "view_calendar": "View Calendar"
+    "view_calendar": "View Calendar",
+    "calendar": {
+      "month": "Month",
+      "week": "Week",
+      "day": "Day",
+      "noChoresForDate": "No chores for this date",
+      "addForDate": "Add chore for this date"
+    },
+    "iconCategories": {
+      "household": "Household",
+      "personal": "Personal",
+      "outdoor": "Outdoor",
+      "school": "School",
+      "pets": "Pets",
+      "misc": "Miscellaneous"
+    },
+    "icons": {
+      "dishes": "Dishes",
+      "vacuum": "Vacuum",
+      "laundry": "Laundry",
+      "trash": "Trash",
+      "bed": "Make Bed",
+      "dusting": "Dusting",
+      "bathroom": "Clean Bathroom",
+      "teeth": "Brush Teeth",
+      "shower": "Take Shower",
+      "clothes": "Put Away Clothes",
+      "room": "Clean Room",
+      "lawn": "Mow Lawn",
+      "garden": "Garden",
+      "snow": "Shovel Snow",
+      "car": "Wash Car",
+      "homework": "Homework",
+      "reading": "Reading",
+      "backpack": "Pack Backpack",
+      "dog": "Walk Dog",
+      "petFood": "Feed Pets",
+      "litterBox": "Clean Litter Box",
+      "custom": "Custom",
+      "phone": "Phone Call",
+      "mail": "Check Mail",
+      "groceries": "Groceries"
+    }
   },
   "rewards": {
     "title": "Rewards",
@@ -539,6 +609,30 @@
     "6000": "Chore management error",
     "7000": "Reward management error",
     "8000": "Point management error",
-    "9000": "System error"
+    "9000": "System error",
+    "choreManagement": {
+      "createFailed": "Failed to create chore: {0}",
+      "updateFailed": "Failed to update chore: {0}",
+      "deleteFailed": "Failed to delete chore: {0}",
+      "choreNotFound": "Chore not found with ID: {0}",
+      "invalidChoreData": "Invalid chore data: {0}",
+      "invalidRecurringPattern": "Invalid recurring pattern: {0}",
+      "invalidDueDate": "Invalid due date: {0}",
+      "invalidPoints": "Invalid points: {0}",
+      "invalidTitle": "Invalid title: {0}",
+      "invalidUser": "Invalid user: {0}",
+      "invalidFamily": "Invalid family: {0}",
+      "invalidStatus": "Invalid status: {0}",
+      "permissionDenied": "Permission denied: {0}",
+      "alreadyCompleted": "Chore already completed with ID: {0}",
+      "alreadyVerified": "Chore already verified with ID: {0}",
+      "alreadyRejected": "Chore already rejected with ID: {0}",
+      "alreadyMissed": "Chore already missed with ID: {0}",
+      "recurringGenerationFailed": "Failed to generate recurring chores: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Failed to allocate points: {0}",
+      "pointDeductionFailed": "Failed to deduct points: {0}"
+    }
   }
 }

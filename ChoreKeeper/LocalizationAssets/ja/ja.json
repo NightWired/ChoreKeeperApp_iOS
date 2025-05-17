@@ -160,6 +160,11 @@
     "verify": "検証",
     "reject": "拒否",
     "empty": "家事が見つかりません",
+    "view_title": "家事の詳細",
+    "title_placeholder": "家事のタイトルを入力",
+    "selectIcon": "アイコンを選択",
+    "createTitle": "家事を作成",
+    "editTitle": "家事を編集",
     "add_first_chore": "最初の家事を追加",
     "parentChores": "親の家事",
     "childChores": "子どもの家事",
@@ -170,7 +175,13 @@
     "noDescription": "説明がありません",
     "noDueDate": "期限日がありません",
     "lastCompleted": "最後に完了した日",
-    "frequency": "頻度",
+    "frequency": {
+      "oneTime": "一度だけ",
+      "daily": "毎日",
+      "weekly": "毎週",
+      "monthly": "毎月",
+      "title": "頻度"
+    },
     "specificDays": "特定の曜日",
     "dayOfMonth": "月の日",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "未完了",
       "status": "状態",
       "category": "カテゴリー"
+    },
+    "timeframe": {
+      "today": "今日",
+      "week": "今週",
+      "month": "今月"
     },
     "form": {
       "createTitle": "家事を作成",
@@ -236,7 +252,8 @@
       "completed": "完了",
       "missed": "未完了",
       "overdue": "期限切れ",
-      "verified": "検証済み"
+      "verified": "検証済み",
+      "rejected": "拒否"
     },
     "markComplete": "完了としてマーク",
     "markIncomplete": "未完了としてマーク",
@@ -258,7 +275,49 @@
     "delete_recurring": "すべての繰り返しを削除しますか、それともこれだけですか？",
     "all_occurrences": "すべての繰り返し",
     "just_this_one": "これだけ",
-    "view_calendar": "カレンダーを表示"
+    "view_calendar": "カレンダーを表示",
+    "calendar": {
+      "month": "月",
+      "week": "週",
+      "day": "日",
+      "noChoresForDate": "この日付の家事はありません",
+      "addForDate": "この日付に家事を追加"
+    },
+    "iconCategories": {
+      "household": "家庭",
+      "personal": "個人",
+      "outdoor": "屋外",
+      "school": "学校",
+      "pets": "ペット",
+      "misc": "その他"
+    },
+    "icons": {
+      "dishes": "食器",
+      "vacuum": "掃除機",
+      "laundry": "洗濯",
+      "trash": "ゴミ",
+      "bed": "ベッドメイク",
+      "dusting": "ほこり払い",
+      "bathroom": "浴室掃除",
+      "teeth": "歯磨き",
+      "shower": "シャワー",
+      "clothes": "衣類整理",
+      "room": "部屋掃除",
+      "lawn": "芝刈り",
+      "garden": "庭仕事",
+      "snow": "雪かき",
+      "car": "洗車",
+      "homework": "宿題",
+      "reading": "読書",
+      "backpack": "バックパック準備",
+      "dog": "犬の散歩",
+      "petFood": "ペットの餌やり",
+      "litterBox": "猫砂掃除",
+      "custom": "カスタム",
+      "phone": "電話",
+      "mail": "郵便確認",
+      "groceries": "買い物"
+    }
   },
   "rewards": {
     "title": "報酬",
@@ -539,6 +598,30 @@
     "6000": "家事管理エラー",
     "7000": "報酬管理エラー",
     "8000": "ポイント管理エラー",
-    "9000": "システムエラー"
+    "9000": "システムエラー",
+    "choreManagement": {
+      "createFailed": "家事の作成に失敗しました: {0}",
+      "updateFailed": "家事の更新に失敗しました: {0}",
+      "deleteFailed": "家事の削除に失敗しました: {0}",
+      "choreNotFound": "ID: {0} の家事が見つかりません",
+      "invalidChoreData": "無効な家事データ: {0}",
+      "invalidRecurringPattern": "無効な繰り返しパターン: {0}",
+      "invalidDueDate": "無効な期限日: {0}",
+      "invalidPoints": "無効なポイント: {0}",
+      "invalidTitle": "無効なタイトル: {0}",
+      "invalidUser": "無効なユーザー: {0}",
+      "invalidFamily": "無効な家族: {0}",
+      "invalidStatus": "無効な状態: {0}",
+      "permissionDenied": "権限が拒否されました: {0}",
+      "alreadyCompleted": "ID: {0} の家事はすでに完了しています",
+      "alreadyVerified": "ID: {0} の家事はすでに検証済みです",
+      "alreadyRejected": "ID: {0} の家事はすでに拒否されています",
+      "alreadyMissed": "ID: {0} の家事はすでに未完了です",
+      "recurringGenerationFailed": "繰り返し家事の生成に失敗しました: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "ポイントの割り当てに失敗しました: {0}",
+      "pointDeductionFailed": "ポイントの差し引きに失敗しました: {0}"
+    }
   }
 }

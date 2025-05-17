@@ -160,6 +160,11 @@
     "verify": "Vérifier",
     "reject": "Rejeter",
     "empty": "Aucune tâche trouvée",
+    "view_title": "Détails de la tâche",
+    "title_placeholder": "Entrez le titre de la tâche",
+    "selectIcon": "Sélectionner une icône",
+    "createTitle": "Créer une tâche",
+    "editTitle": "Modifier la tâche",
     "add_first_chore": "Ajoutez votre première tâche",
     "parentChores": "Tâches des parents",
     "childChores": "Tâches des enfants",
@@ -170,7 +175,13 @@
     "noDescription": "Aucune description fournie",
     "noDueDate": "Pas de date d'échéance",
     "lastCompleted": "Dernière terminée",
-    "frequency": "Fréquence",
+    "frequency": {
+      "oneTime": "Une fois",
+      "daily": "Quotidienne",
+      "weekly": "Hebdomadaire",
+      "monthly": "Mensuelle",
+      "title": "Fréquence"
+    },
     "specificDays": "Jours spécifiques",
     "dayOfMonth": "Jour du mois",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Manquées",
       "status": "Statut",
       "category": "Catégorie"
+    },
+    "timeframe": {
+      "today": "Aujourd'hui",
+      "week": "Cette semaine",
+      "month": "Ce mois-ci"
     },
     "form": {
       "createTitle": "Créer une tâche",
@@ -236,7 +252,8 @@
       "completed": "Terminée",
       "missed": "Manquée",
       "overdue": "En retard",
-      "verified": "Vérifiée"
+      "verified": "Vérifiée",
+      "rejected": "Rejetée"
     },
     "markComplete": "Marquer comme terminée",
     "markIncomplete": "Marquer comme non terminée",
@@ -258,7 +275,49 @@
     "delete_recurring": "Supprimer toutes les occurrences ou seulement celle-ci?",
     "all_occurrences": "Toutes les occurrences",
     "just_this_one": "Seulement celle-ci",
-    "view_calendar": "Voir le calendrier"
+    "view_calendar": "Voir le calendrier",
+    "calendar": {
+      "month": "Mois",
+      "week": "Semaine",
+      "day": "Jour",
+      "noChoresForDate": "Aucune tâche pour cette date",
+      "addForDate": "Ajouter une tâche pour cette date"
+    },
+    "iconCategories": {
+      "household": "Maison",
+      "personal": "Personnel",
+      "outdoor": "Extérieur",
+      "school": "École",
+      "pets": "Animaux",
+      "misc": "Divers"
+    },
+    "icons": {
+      "dishes": "Vaisselle",
+      "vacuum": "Aspirateur",
+      "laundry": "Lessive",
+      "trash": "Poubelle",
+      "bed": "Faire le lit",
+      "dusting": "Dépoussiérer",
+      "bathroom": "Nettoyer la salle de bain",
+      "teeth": "Brosser les dents",
+      "shower": "Prendre une douche",
+      "clothes": "Ranger les vêtements",
+      "room": "Nettoyer la chambre",
+      "lawn": "Tondre la pelouse",
+      "garden": "Jardinage",
+      "snow": "Déneiger",
+      "car": "Laver la voiture",
+      "homework": "Devoirs",
+      "reading": "Lecture",
+      "backpack": "Préparer le sac",
+      "dog": "Promener le chien",
+      "petFood": "Nourrir les animaux",
+      "litterBox": "Nettoyer la litière",
+      "custom": "Personnalisé",
+      "phone": "Appel téléphonique",
+      "mail": "Vérifier le courrier",
+      "groceries": "Courses"
+    }
   },
   "rewards": {
     "title": "Récompenses",
@@ -539,6 +598,30 @@
     "6000": "Erreur de gestion des tâches",
     "7000": "Erreur de gestion des récompenses",
     "8000": "Erreur de gestion des points",
-    "9000": "Erreur système"
+    "9000": "Erreur système",
+    "choreManagement": {
+      "createFailed": "Échec de la création de la tâche: {0}",
+      "updateFailed": "Échec de la mise à jour de la tâche: {0}",
+      "deleteFailed": "Échec de la suppression de la tâche: {0}",
+      "choreNotFound": "Tâche non trouvée avec l'ID: {0}",
+      "invalidChoreData": "Données de tâche invalides: {0}",
+      "invalidRecurringPattern": "Modèle de récurrence invalide: {0}",
+      "invalidDueDate": "Date d'échéance invalide: {0}",
+      "invalidPoints": "Points invalides: {0}",
+      "invalidTitle": "Titre invalide: {0}",
+      "invalidUser": "Utilisateur invalide: {0}",
+      "invalidFamily": "Famille invalide: {0}",
+      "invalidStatus": "Statut invalide: {0}",
+      "permissionDenied": "Permission refusée: {0}",
+      "alreadyCompleted": "Tâche déjà terminée avec l'ID: {0}",
+      "alreadyVerified": "Tâche déjà vérifiée avec l'ID: {0}",
+      "alreadyRejected": "Tâche déjà rejetée avec l'ID: {0}",
+      "alreadyMissed": "Tâche déjà manquée avec l'ID: {0}",
+      "recurringGenerationFailed": "Échec de la génération des tâches récurrentes: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Échec de l'allocation des points: {0}",
+      "pointDeductionFailed": "Échec de la déduction des points: {0}"
+    }
   }
 }

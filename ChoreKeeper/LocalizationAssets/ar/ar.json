@@ -160,6 +160,11 @@
     "verify": "تحقق",
     "reject": "رفض",
     "empty": "لم يتم العثور على مهام",
+    "view_title": "تفاصيل المهمة",
+    "title_placeholder": "أدخل عنوان المهمة",
+    "selectIcon": "اختر أيقونة",
+    "createTitle": "إنشاء مهمة",
+    "editTitle": "تعديل المهمة",
     "add_first_chore": "أضف مهمتك الأولى",
     "parentChores": "مهام الوالدين",
     "childChores": "مهام الأطفال",
@@ -170,7 +175,13 @@
     "noDescription": "لم يتم تقديم وصف",
     "noDueDate": "لا يوجد تاريخ استحقاق",
     "lastCompleted": "آخر إكمال",
-    "frequency": "التكرار",
+    "frequency": {
+      "oneTime": "مرة واحدة",
+      "daily": "يومي",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "title": "التكرار"
+    },
     "specificDays": "أيام محددة",
     "dayOfMonth": "يوم من الشهر",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "فائتة",
       "status": "الحالة",
       "category": "الفئة"
+    },
+    "timeframe": {
+      "today": "اليوم",
+      "week": "هذا الأسبوع",
+      "month": "هذا الشهر"
     },
     "form": {
       "createTitle": "إنشاء مهمة",
@@ -236,7 +252,8 @@
       "completed": "مكتملة",
       "missed": "فائتة",
       "overdue": "متأخرة",
-      "verified": "تم التحقق"
+      "verified": "تم التحقق",
+      "rejected": "مرفوضة"
     },
     "markComplete": "تحديد كمكتملة",
     "markIncomplete": "تحديد كغير مكتملة",
@@ -258,7 +275,49 @@
     "delete_recurring": "حذف جميع التكرارات أم هذه فقط؟",
     "all_occurrences": "جميع التكرارات",
     "just_this_one": "هذه فقط",
-    "view_calendar": "عرض التقويم"
+    "view_calendar": "عرض التقويم",
+    "calendar": {
+      "month": "شهر",
+      "week": "أسبوع",
+      "day": "يوم",
+      "noChoresForDate": "لا توجد مهام لهذا التاريخ",
+      "addForDate": "إضافة مهمة لهذا التاريخ"
+    },
+    "iconCategories": {
+      "household": "المنزل",
+      "personal": "شخصي",
+      "outdoor": "خارجي",
+      "school": "المدرسة",
+      "pets": "الحيوانات الأليفة",
+      "misc": "متنوع"
+    },
+    "icons": {
+      "dishes": "الأطباق",
+      "vacuum": "المكنسة الكهربائية",
+      "laundry": "الغسيل",
+      "trash": "القمامة",
+      "bed": "ترتيب السرير",
+      "dusting": "إزالة الغبار",
+      "bathroom": "تنظيف الحمام",
+      "teeth": "تنظيف الأسنان",
+      "shower": "الاستحمام",
+      "clothes": "ترتيب الملابس",
+      "room": "تنظيف الغرفة",
+      "lawn": "جز العشب",
+      "garden": "الحديقة",
+      "snow": "إزالة الثلج",
+      "car": "غسل السيارة",
+      "homework": "الواجب المنزلي",
+      "reading": "القراءة",
+      "backpack": "تجهيز الحقيبة",
+      "dog": "المشي مع الكلب",
+      "petFood": "إطعام الحيوانات الأليفة",
+      "litterBox": "تنظيف صندوق الفضلات",
+      "custom": "مخصص",
+      "phone": "مكالمة هاتفية",
+      "mail": "التحقق من البريد",
+      "groceries": "البقالة"
+    }
   },
   "rewards": {
     "title": "المكافآت",
@@ -539,6 +598,30 @@
     "6000": "خطأ في إدارة المهام",
     "7000": "خطأ في إدارة المكافآت",
     "8000": "خطأ في إدارة النقاط",
-    "9000": "خطأ في النظام"
+    "9000": "خطأ في النظام",
+    "choreManagement": {
+      "createFailed": "فشل في إنشاء المهمة: {0}",
+      "updateFailed": "فشل في تحديث المهمة: {0}",
+      "deleteFailed": "فشل في حذف المهمة: {0}",
+      "choreNotFound": "لم يتم العثور على المهمة بالمعرف: {0}",
+      "invalidChoreData": "بيانات المهمة غير صالحة: {0}",
+      "invalidRecurringPattern": "نمط التكرار غير صالح: {0}",
+      "invalidDueDate": "تاريخ الاستحقاق غير صالح: {0}",
+      "invalidPoints": "النقاط غير صالحة: {0}",
+      "invalidTitle": "العنوان غير صالح: {0}",
+      "invalidUser": "المستخدم غير صالح: {0}",
+      "invalidFamily": "العائلة غير صالحة: {0}",
+      "invalidStatus": "الحالة غير صالحة: {0}",
+      "permissionDenied": "تم رفض الإذن: {0}",
+      "alreadyCompleted": "المهمة مكتملة بالفعل بالمعرف: {0}",
+      "alreadyVerified": "المهمة تم التحقق منها بالفعل بالمعرف: {0}",
+      "alreadyRejected": "المهمة مرفوضة بالفعل بالمعرف: {0}",
+      "alreadyMissed": "المهمة فائتة بالفعل بالمعرف: {0}",
+      "recurringGenerationFailed": "فشل في إنشاء المهام المتكررة: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "فشل في تخصيص النقاط: {0}",
+      "pointDeductionFailed": "فشل في خصم النقاط: {0}"
+    }
   }
 }

@@ -160,6 +160,11 @@
     "verify": "सत्यापित करें",
     "reject": "अस्वीकार करें",
     "empty": "कोई कार्य नहीं मिला",
+    "view_title": "कार्य विवरण",
+    "title_placeholder": "कार्य शीर्षक दर्ज करें",
+    "selectIcon": "आइकन चुनें",
+    "createTitle": "कार्य बनाएं",
+    "editTitle": "कार्य संपादित करें",
     "add_first_chore": "अपना पहला कार्य जोड़ें",
     "parentChores": "अभिभावक कार्य",
     "childChores": "बच्चे के कार्य",
@@ -170,7 +175,13 @@
     "noDescription": "कोई विवरण प्रदान नहीं किया गया",
     "noDueDate": "कोई नियत तिथि नहीं",
     "lastCompleted": "अंतिम पूर्ण",
-    "frequency": "आवृत्ति",
+    "frequency": {
+      "oneTime": "एक बार",
+      "daily": "दैनिक",
+      "weekly": "साप्ताहिक",
+      "monthly": "मासिक",
+      "title": "आवृत्ति"
+    },
     "specificDays": "विशिष्ट दिन",
     "dayOfMonth": "महीने का दिन",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "छूटे हुए",
       "status": "स्थिति",
       "category": "श्रेणी"
+    },
+    "timeframe": {
+      "today": "आज",
+      "week": "इस सप्ताह",
+      "month": "इस महीने"
     },
     "form": {
       "createTitle": "कार्य बनाएं",
@@ -236,7 +252,8 @@
       "completed": "पूर्ण",
       "missed": "छूटा हुआ",
       "overdue": "अतिदेय",
-      "verified": "सत्यापित"
+      "verified": "सत्यापित",
+      "rejected": "अस्वीकृत"
     },
     "markComplete": "पूर्ण के रूप में चिह्नित करें",
     "markIncomplete": "अपूर्ण के रूप में चिह्नित करें",
@@ -258,7 +275,49 @@
     "delete_recurring": "सभी घटनाओं को हटाएं या केवल इसे?",
     "all_occurrences": "सभी घटनाएं",
     "just_this_one": "केवल यह एक",
-    "view_calendar": "कैलेंडर देखें"
+    "view_calendar": "कैलेंडर देखें",
+    "calendar": {
+      "month": "महीना",
+      "week": "सप्ताह",
+      "day": "दिन",
+      "noChoresForDate": "इस तिथि के लिए कोई कार्य नहीं",
+      "addForDate": "इस तिथि के लिए कार्य जोड़ें"
+    },
+    "iconCategories": {
+      "household": "घरेलू",
+      "personal": "व्यक्तिगत",
+      "outdoor": "बाहरी",
+      "school": "स्कूल",
+      "pets": "पालतू जानवर",
+      "misc": "विविध"
+    },
+    "icons": {
+      "dishes": "बर्तन",
+      "vacuum": "वैक्यूम",
+      "laundry": "कपड़े धोना",
+      "trash": "कचरा",
+      "bed": "बिस्तर बनाना",
+      "dusting": "धूल साफ करना",
+      "bathroom": "बाथरूम साफ करना",
+      "teeth": "दांत ब्रश करना",
+      "shower": "स्नान करना",
+      "clothes": "कपड़े व्यवस्थित करना",
+      "room": "कमरा साफ करना",
+      "lawn": "घास काटना",
+      "garden": "बगीचा",
+      "snow": "बर्फ हटाना",
+      "car": "कार धोना",
+      "homework": "होमवर्क",
+      "reading": "पढ़ना",
+      "backpack": "बैकपैक तैयार करना",
+      "dog": "कुत्ते को घुमाना",
+      "petFood": "पालतू जानवरों को खिलाना",
+      "litterBox": "लिटर बॉक्स साफ करना",
+      "custom": "कस्टम",
+      "phone": "फोन कॉल",
+      "mail": "मेल जांचना",
+      "groceries": "किराना सामान"
+    }
   },
   "rewards": {
     "title": "पुरस्कार",
@@ -539,6 +598,30 @@
     "6000": "कार्य प्रबंधन त्रुटि",
     "7000": "पुरस्कार प्रबंधन त्रुटि",
     "8000": "अंक प्रबंधन त्रुटि",
-    "9000": "सिस्टम त्रुटि"
+    "9000": "सिस्टम त्रुटि",
+    "choreManagement": {
+      "createFailed": "कार्य बनाने में विफल: {0}",
+      "updateFailed": "कार्य अपडेट करने में विफल: {0}",
+      "deleteFailed": "कार्य हटाने में विफल: {0}",
+      "choreNotFound": "आईडी के साथ कार्य नहीं मिला: {0}",
+      "invalidChoreData": "अमान्य कार्य डेटा: {0}",
+      "invalidRecurringPattern": "अमान्य आवर्ती पैटर्न: {0}",
+      "invalidDueDate": "अमान्य नियत तिथि: {0}",
+      "invalidPoints": "अमान्य अंक: {0}",
+      "invalidTitle": "अमान्य शीर्षक: {0}",
+      "invalidUser": "अमान्य उपयोगकर्ता: {0}",
+      "invalidFamily": "अमान्य परिवार: {0}",
+      "invalidStatus": "अमान्य स्थिति: {0}",
+      "permissionDenied": "अनुमति अस्वीकृत: {0}",
+      "alreadyCompleted": "आईडी के साथ कार्य पहले से ही पूर्ण है: {0}",
+      "alreadyVerified": "आईडी के साथ कार्य पहले से ही सत्यापित है: {0}",
+      "alreadyRejected": "आईडी के साथ कार्य पहले से ही अस्वीकृत है: {0}",
+      "alreadyMissed": "आईडी के साथ कार्य पहले से ही छूट गया है: {0}",
+      "recurringGenerationFailed": "आवर्ती कार्य उत्पन्न करने में विफल: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "अंक आवंटन में विफल: {0}",
+      "pointDeductionFailed": "अंक कटौती में विफल: {0}"
+    }
   }
 }

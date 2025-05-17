@@ -160,6 +160,11 @@
     "verify": "Verifiëren",
     "reject": "Afwijzen",
     "empty": "Geen huishoudelijke taken gevonden",
+    "view_title": "Details huishoudelijke taak",
+    "title_placeholder": "Voer titel huishoudelijke taak in",
+    "selectIcon": "Pictogram selecteren",
+    "createTitle": "Huishoudelijke taak maken",
+    "editTitle": "Huishoudelijke taak bewerken",
     "add_first_chore": "Voeg je eerste huishoudelijke taak toe",
     "parentChores": "Ouderlijke taken",
     "childChores": "Kindertaken",
@@ -170,7 +175,13 @@
     "noDescription": "Geen beschrijving opgegeven",
     "noDueDate": "Geen vervaldatum",
     "lastCompleted": "Laatst voltooid",
-    "frequency": "Frequentie",
+    "frequency": {
+      "oneTime": "Eenmalig",
+      "daily": "Dagelijks",
+      "weekly": "Wekelijks",
+      "monthly": "Maandelijks",
+      "title": "Frequentie"
+    },
     "specificDays": "Specifieke dagen",
     "dayOfMonth": "Dag van de maand",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Gemist",
       "status": "Status",
       "category": "Categorie"
+    },
+    "timeframe": {
+      "today": "Vandaag",
+      "week": "Deze week",
+      "month": "Deze maand"
     },
     "form": {
       "createTitle": "Huishoudelijke taak maken",
@@ -236,7 +252,8 @@
       "completed": "Voltooid",
       "missed": "Gemist",
       "overdue": "Te laat",
-      "verified": "Geverifieerd"
+      "verified": "Geverifieerd",
+      "rejected": "Afgewezen"
     },
     "markComplete": "Markeren als voltooid",
     "markIncomplete": "Markeren als onvoltooid",
@@ -258,7 +275,49 @@
     "delete_recurring": "Alle voorkomens verwijderen of alleen deze?",
     "all_occurrences": "Alle voorkomens",
     "just_this_one": "Alleen deze",
-    "view_calendar": "Kalender bekijken"
+    "view_calendar": "Kalender bekijken",
+    "calendar": {
+      "month": "Maand",
+      "week": "Week",
+      "day": "Dag",
+      "noChoresForDate": "Geen huishoudelijke taken voor deze datum",
+      "addForDate": "Huishoudelijke taak toevoegen voor deze datum"
+    },
+    "iconCategories": {
+      "household": "Huishouden",
+      "personal": "Persoonlijk",
+      "outdoor": "Buiten",
+      "school": "School",
+      "pets": "Huisdieren",
+      "misc": "Diversen"
+    },
+    "icons": {
+      "dishes": "Afwas",
+      "vacuum": "Stofzuigen",
+      "laundry": "Was",
+      "trash": "Vuilnis",
+      "bed": "Bed opmaken",
+      "dusting": "Afstoffen",
+      "bathroom": "Badkamer schoonmaken",
+      "teeth": "Tanden poetsen",
+      "shower": "Douchen",
+      "clothes": "Kleding opruimen",
+      "room": "Kamer opruimen",
+      "lawn": "Gras maaien",
+      "garden": "Tuin",
+      "snow": "Sneeuw ruimen",
+      "car": "Auto wassen",
+      "homework": "Huiswerk",
+      "reading": "Lezen",
+      "backpack": "Rugzak klaarmaken",
+      "dog": "Hond uitlaten",
+      "petFood": "Huisdieren voeren",
+      "litterBox": "Kattenbak verschonen",
+      "custom": "Aangepast",
+      "phone": "Telefoongesprek",
+      "mail": "Post controleren",
+      "groceries": "Boodschappen"
+    }
   },
   "rewards": {
     "title": "Beloningen",
@@ -539,6 +598,30 @@
     "6000": "Fout bij beheer van huishoudelijke taken",
     "7000": "Fout bij beloningenbeheer",
     "8000": "Fout bij puntenbeheer",
-    "9000": "Systeemfout"
+    "9000": "Systeemfout",
+    "choreManagement": {
+      "createFailed": "Huishoudelijke taak aanmaken mislukt: {0}",
+      "updateFailed": "Huishoudelijke taak bijwerken mislukt: {0}",
+      "deleteFailed": "Huishoudelijke taak verwijderen mislukt: {0}",
+      "choreNotFound": "Huishoudelijke taak niet gevonden met ID: {0}",
+      "invalidChoreData": "Ongeldige gegevens huishoudelijke taak: {0}",
+      "invalidRecurringPattern": "Ongeldig terugkeerpatroon: {0}",
+      "invalidDueDate": "Ongeldige vervaldatum: {0}",
+      "invalidPoints": "Ongeldige punten: {0}",
+      "invalidTitle": "Ongeldige titel: {0}",
+      "invalidUser": "Ongeldige gebruiker: {0}",
+      "invalidFamily": "Ongeldige familie: {0}",
+      "invalidStatus": "Ongeldige status: {0}",
+      "permissionDenied": "Toestemming geweigerd: {0}",
+      "alreadyCompleted": "Huishoudelijke taak met ID al voltooid: {0}",
+      "alreadyVerified": "Huishoudelijke taak met ID al geverifieerd: {0}",
+      "alreadyRejected": "Huishoudelijke taak met ID al afgewezen: {0}",
+      "alreadyMissed": "Huishoudelijke taak met ID al gemist: {0}",
+      "recurringGenerationFailed": "Genereren van terugkerende huishoudelijke taken mislukt: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Puntentoewijzing mislukt: {0}",
+      "pointDeductionFailed": "Puntenaftrek mislukt: {0}"
+    }
   }
 }

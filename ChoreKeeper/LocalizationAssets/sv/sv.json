@@ -160,6 +160,11 @@
     "verify": "Verifiera",
     "reject": "Avvisa",
     "empty": "Inga sysslor hittades",
+    "view_title": "Syssla detaljer",
+    "title_placeholder": "Ange sysslans titel",
+    "selectIcon": "Välj ikon",
+    "createTitle": "Skapa syssla",
+    "editTitle": "Redigera syssla",
     "add_first_chore": "Lägg till din första syssla",
     "parentChores": "Föräldrars sysslor",
     "childChores": "Barns sysslor",
@@ -170,7 +175,13 @@
     "noDescription": "Ingen beskrivning tillgänglig",
     "noDueDate": "Inget slutdatum",
     "lastCompleted": "Senast slutförd",
-    "frequency": "Frekvens",
+    "frequency": {
+      "oneTime": "En gång",
+      "daily": "Dagligen",
+      "weekly": "Veckovis",
+      "monthly": "Månadsvis",
+      "title": "Frekvens"
+    },
     "specificDays": "Specifika dagar",
     "dayOfMonth": "Dag i månaden",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Missade",
       "status": "Status",
       "category": "Kategori"
+    },
+    "timeframe": {
+      "today": "Idag",
+      "week": "Denna vecka",
+      "month": "Denna månad"
     },
     "form": {
       "createTitle": "Skapa syssla",
@@ -236,7 +252,8 @@
       "completed": "Slutförd",
       "missed": "Missad",
       "overdue": "Försenad",
-      "verified": "Verifierad"
+      "verified": "Verifierad",
+      "rejected": "Avvisad"
     },
     "markComplete": "Markera som slutförd",
     "markIncomplete": "Markera som ofullständig",
@@ -258,7 +275,49 @@
     "delete_recurring": "Ta bort alla förekomster eller bara denna?",
     "all_occurrences": "Alla förekomster",
     "just_this_one": "Bara denna",
-    "view_calendar": "Visa kalender"
+    "view_calendar": "Visa kalender",
+    "calendar": {
+      "month": "Månad",
+      "week": "Vecka",
+      "day": "Dag",
+      "noChoresForDate": "Inga sysslor för detta datum",
+      "addForDate": "Lägg till syssla för detta datum"
+    },
+    "iconCategories": {
+      "household": "Hushåll",
+      "personal": "Personligt",
+      "outdoor": "Utomhus",
+      "school": "Skola",
+      "pets": "Husdjur",
+      "misc": "Övrigt"
+    },
+    "icons": {
+      "dishes": "Disk",
+      "vacuum": "Dammsuga",
+      "laundry": "Tvätt",
+      "trash": "Sopor",
+      "bed": "Bädda säng",
+      "dusting": "Damma",
+      "bathroom": "Städa badrum",
+      "teeth": "Borsta tänder",
+      "shower": "Duscha",
+      "clothes": "Städa kläder",
+      "room": "Städa rum",
+      "lawn": "Klippa gräs",
+      "garden": "Trädgård",
+      "snow": "Skotta snö",
+      "car": "Tvätta bil",
+      "homework": "Läxor",
+      "reading": "Läsning",
+      "backpack": "Förbereda ryggsäck",
+      "dog": "Gå ut med hund",
+      "petFood": "Mata husdjur",
+      "litterBox": "Rengöra kattlåda",
+      "custom": "Anpassad",
+      "phone": "Telefonsamtal",
+      "mail": "Kolla post",
+      "groceries": "Handla"
+    }
   },
   "rewards": {
     "title": "Belöningar",
@@ -539,6 +598,30 @@
     "6000": "Fel vid hantering av hushållssysslor",
     "7000": "Fel vid hantering av belöningar",
     "8000": "Fel vid hantering av poäng",
-    "9000": "Systemfel"
+    "9000": "Systemfel",
+    "choreManagement": {
+      "createFailed": "Misslyckades med att skapa syssla: {0}",
+      "updateFailed": "Misslyckades med att uppdatera syssla: {0}",
+      "deleteFailed": "Misslyckades med att ta bort syssla: {0}",
+      "choreNotFound": "Syssla hittades inte med ID: {0}",
+      "invalidChoreData": "Ogiltig syssladata: {0}",
+      "invalidRecurringPattern": "Ogiltigt återkommande mönster: {0}",
+      "invalidDueDate": "Ogiltigt förfallodatum: {0}",
+      "invalidPoints": "Ogiltiga poäng: {0}",
+      "invalidTitle": "Ogiltig titel: {0}",
+      "invalidUser": "Ogiltig användare: {0}",
+      "invalidFamily": "Ogiltig familj: {0}",
+      "invalidStatus": "Ogiltig status: {0}",
+      "permissionDenied": "Behörighet nekad: {0}",
+      "alreadyCompleted": "Syssla med ID redan slutförd: {0}",
+      "alreadyVerified": "Syssla med ID redan verifierad: {0}",
+      "alreadyRejected": "Syssla med ID redan avvisad: {0}",
+      "alreadyMissed": "Syssla med ID redan missad: {0}",
+      "recurringGenerationFailed": "Misslyckades med att generera återkommande sysslor: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Misslyckades med poängtilldelning: {0}",
+      "pointDeductionFailed": "Misslyckades med poängavdrag: {0}"
+    }
   }
 }

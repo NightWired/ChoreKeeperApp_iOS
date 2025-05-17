@@ -160,6 +160,11 @@
     "verify": "Verificar",
     "reject": "Rejeitar",
     "empty": "Nenhuma tarefa encontrada",
+    "view_title": "Detalhes da Tarefa",
+    "title_placeholder": "Digite o título da tarefa",
+    "selectIcon": "Selecionar Ícone",
+    "createTitle": "Criar Tarefa",
+    "editTitle": "Editar Tarefa",
     "add_first_chore": "Adicione sua primeira tarefa",
     "parentChores": "Tarefas dos Responsáveis",
     "childChores": "Tarefas das Crianças",
@@ -170,7 +175,13 @@
     "noDescription": "Nenhuma descrição fornecida",
     "noDueDate": "Sem data de vencimento",
     "lastCompleted": "Última Conclusão",
-    "frequency": "Frequência",
+    "frequency": {
+      "oneTime": "Uma vez",
+      "daily": "Diariamente",
+      "weekly": "Semanalmente",
+      "monthly": "Mensalmente",
+      "title": "Frequência"
+    },
     "specificDays": "Dias Específicos",
     "dayOfMonth": "Dia do Mês",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Perdidas",
       "status": "Status",
       "category": "Categoria"
+    },
+    "timeframe": {
+      "today": "Hoje",
+      "week": "Esta Semana",
+      "month": "Este Mês"
     },
     "form": {
       "createTitle": "Criar Tarefa",
@@ -236,7 +252,8 @@
       "completed": "Concluída",
       "missed": "Perdida",
       "overdue": "Atrasada",
-      "verified": "Verificada"
+      "verified": "Verificada",
+      "rejected": "Rejeitada"
     },
     "markComplete": "Marcar como Concluída",
     "markIncomplete": "Marcar como Incompleta",
@@ -258,7 +275,49 @@
     "delete_recurring": "Excluir todas as ocorrências ou apenas esta?",
     "all_occurrences": "Todas as Ocorrências",
     "just_this_one": "Apenas Esta",
-    "view_calendar": "Ver Calendário"
+    "view_calendar": "Ver Calendário",
+    "calendar": {
+      "month": "Mês",
+      "week": "Semana",
+      "day": "Dia",
+      "noChoresForDate": "Nenhuma tarefa para esta data",
+      "addForDate": "Adicionar tarefa para esta data"
+    },
+    "iconCategories": {
+      "household": "Casa",
+      "personal": "Pessoal",
+      "outdoor": "Exterior",
+      "school": "Escola",
+      "pets": "Animais",
+      "misc": "Diversos"
+    },
+    "icons": {
+      "dishes": "Louça",
+      "vacuum": "Aspirador",
+      "laundry": "Roupa",
+      "trash": "Lixo",
+      "bed": "Fazer a cama",
+      "dusting": "Tirar pó",
+      "bathroom": "Limpar banheiro",
+      "teeth": "Escovar dentes",
+      "shower": "Tomar banho",
+      "clothes": "Arrumar roupas",
+      "room": "Limpar quarto",
+      "lawn": "Cortar grama",
+      "garden": "Jardim",
+      "snow": "Remover neve",
+      "car": "Lavar carro",
+      "homework": "Lição de casa",
+      "reading": "Leitura",
+      "backpack": "Preparar mochila",
+      "dog": "Passear com o cão",
+      "petFood": "Alimentar animais",
+      "litterBox": "Limpar caixa de areia",
+      "custom": "Personalizado",
+      "phone": "Telefonema",
+      "mail": "Verificar correio",
+      "groceries": "Compras"
+    }
   },
   "rewards": {
     "title": "Recompensas",
@@ -539,6 +598,30 @@
     "6000": "Erro na gestão de tarefas",
     "7000": "Erro na gestão de recompensas",
     "8000": "Erro na gestão de pontos",
-    "9000": "Erro do sistema"
+    "9000": "Erro do sistema",
+    "choreManagement": {
+      "createFailed": "Falha ao criar tarefa: {0}",
+      "updateFailed": "Falha ao atualizar tarefa: {0}",
+      "deleteFailed": "Falha ao excluir tarefa: {0}",
+      "choreNotFound": "Tarefa não encontrada com ID: {0}",
+      "invalidChoreData": "Dados de tarefa inválidos: {0}",
+      "invalidRecurringPattern": "Padrão de recorrência inválido: {0}",
+      "invalidDueDate": "Data de vencimento inválida: {0}",
+      "invalidPoints": "Pontos inválidos: {0}",
+      "invalidTitle": "Título inválido: {0}",
+      "invalidUser": "Usuário inválido: {0}",
+      "invalidFamily": "Família inválida: {0}",
+      "invalidStatus": "Status inválido: {0}",
+      "permissionDenied": "Permissão negada: {0}",
+      "alreadyCompleted": "Tarefa já concluída com ID: {0}",
+      "alreadyVerified": "Tarefa já verificada com ID: {0}",
+      "alreadyRejected": "Tarefa já rejeitada com ID: {0}",
+      "alreadyMissed": "Tarefa já perdida com ID: {0}",
+      "recurringGenerationFailed": "Falha ao gerar tarefas recorrentes: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Falha na alocação de pontos: {0}",
+      "pointDeductionFailed": "Falha na dedução de pontos: {0}"
+    }
   }
 }

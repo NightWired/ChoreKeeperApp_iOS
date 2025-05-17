@@ -160,6 +160,11 @@
     "verify": "Verifica",
     "reject": "Rifiuta",
     "empty": "Nessuna faccenda trovata",
+    "view_title": "Dettagli Faccenda",
+    "title_placeholder": "Inserisci titolo faccenda",
+    "selectIcon": "Seleziona Icona",
+    "createTitle": "Crea Faccenda",
+    "editTitle": "Modifica Faccenda",
     "add_first_chore": "Aggiungi la tua prima faccenda",
     "parentChores": "Faccende dei Genitori",
     "childChores": "Faccende dei Bambini",
@@ -170,7 +175,13 @@
     "noDescription": "Nessuna descrizione fornita",
     "noDueDate": "Nessuna data di scadenza",
     "lastCompleted": "Ultima completata",
-    "frequency": "Frequenza",
+    "frequency": {
+      "oneTime": "Una volta",
+      "daily": "Giornaliera",
+      "weekly": "Settimanale",
+      "monthly": "Mensile",
+      "title": "Frequenza"
+    },
     "specificDays": "Giorni specifici",
     "dayOfMonth": "Giorno del mese",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "Mancate",
       "status": "Stato",
       "category": "Categoria"
+    },
+    "timeframe": {
+      "today": "Oggi",
+      "week": "Questa Settimana",
+      "month": "Questo Mese"
     },
     "form": {
       "createTitle": "Crea Faccenda",
@@ -236,7 +252,8 @@
       "completed": "Completata",
       "missed": "Mancata",
       "overdue": "In ritardo",
-      "verified": "Verificata"
+      "verified": "Verificata",
+      "rejected": "Rifiutata"
     },
     "markComplete": "Segna come Completata",
     "markIncomplete": "Segna come Incompleta",
@@ -258,7 +275,49 @@
     "delete_recurring": "Eliminare tutte le occorrenze o solo questa?",
     "all_occurrences": "Tutte le Occorrenze",
     "just_this_one": "Solo Questa",
-    "view_calendar": "Visualizza Calendario"
+    "view_calendar": "Visualizza Calendario",
+    "calendar": {
+      "month": "Mese",
+      "week": "Settimana",
+      "day": "Giorno",
+      "noChoresForDate": "Nessuna faccenda per questa data",
+      "addForDate": "Aggiungi faccenda per questa data"
+    },
+    "iconCategories": {
+      "household": "Casa",
+      "personal": "Personale",
+      "outdoor": "Esterno",
+      "school": "Scuola",
+      "pets": "Animali",
+      "misc": "Varie"
+    },
+    "icons": {
+      "dishes": "Piatti",
+      "vacuum": "Aspirapolvere",
+      "laundry": "Bucato",
+      "trash": "Spazzatura",
+      "bed": "Fare il letto",
+      "dusting": "Spolverare",
+      "bathroom": "Pulire il bagno",
+      "teeth": "Lavare i denti",
+      "shower": "Fare la doccia",
+      "clothes": "Sistemare i vestiti",
+      "room": "Pulire la stanza",
+      "lawn": "Tagliare l'erba",
+      "garden": "Giardino",
+      "snow": "Spalare la neve",
+      "car": "Lavare l'auto",
+      "homework": "Compiti",
+      "reading": "Lettura",
+      "backpack": "Preparare lo zaino",
+      "dog": "Portare a spasso il cane",
+      "petFood": "Nutrire gli animali",
+      "litterBox": "Pulire la lettiera",
+      "custom": "Personalizzato",
+      "phone": "Telefonata",
+      "mail": "Controllare la posta",
+      "groceries": "Spesa"
+    }
   },
   "rewards": {
     "title": "Ricompense",
@@ -539,6 +598,30 @@
     "6000": "Errore nella gestione delle faccende",
     "7000": "Errore nella gestione delle ricompense",
     "8000": "Errore nella gestione dei punti",
-    "9000": "Errore di sistema"
+    "9000": "Errore di sistema",
+    "choreManagement": {
+      "createFailed": "Impossibile creare la faccenda: {0}",
+      "updateFailed": "Impossibile aggiornare la faccenda: {0}",
+      "deleteFailed": "Impossibile eliminare la faccenda: {0}",
+      "choreNotFound": "Faccenda non trovata con ID: {0}",
+      "invalidChoreData": "Dati faccenda non validi: {0}",
+      "invalidRecurringPattern": "Schema ricorrente non valido: {0}",
+      "invalidDueDate": "Data di scadenza non valida: {0}",
+      "invalidPoints": "Punti non validi: {0}",
+      "invalidTitle": "Titolo non valido: {0}",
+      "invalidUser": "Utente non valido: {0}",
+      "invalidFamily": "Famiglia non valida: {0}",
+      "invalidStatus": "Stato non valido: {0}",
+      "permissionDenied": "Permesso negato: {0}",
+      "alreadyCompleted": "Faccenda già completata con ID: {0}",
+      "alreadyVerified": "Faccenda già verificata con ID: {0}",
+      "alreadyRejected": "Faccenda già rifiutata con ID: {0}",
+      "alreadyMissed": "Faccenda già mancata con ID: {0}",
+      "recurringGenerationFailed": "Impossibile generare faccende ricorrenti: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "Impossibile assegnare punti: {0}",
+      "pointDeductionFailed": "Impossibile detrarre punti: {0}"
+    }
   }
 }

@@ -160,6 +160,11 @@
     "verify": "验证",
     "reject": "拒绝",
     "empty": "未找到家务",
+    "view_title": "家务详情",
+    "title_placeholder": "输入家务标题",
+    "selectIcon": "选择图标",
+    "createTitle": "创建家务",
+    "editTitle": "编辑家务",
     "add_first_chore": "添加您的第一个家务",
     "parentChores": "家长家务",
     "childChores": "孩子家务",
@@ -170,7 +175,13 @@
     "noDescription": "未提供描述",
     "noDueDate": "无截止日期",
     "lastCompleted": "上次完成",
-    "frequency": "频率",
+    "frequency": {
+      "oneTime": "一次",
+      "daily": "每日",
+      "weekly": "每周",
+      "monthly": "每月",
+      "title": "频率"
+    },
     "specificDays": "特定日期",
     "dayOfMonth": "每月日期",
     "deleteConfirmation": {
@@ -190,6 +201,11 @@
       "missed": "已错过",
       "status": "状态",
       "category": "类别"
+    },
+    "timeframe": {
+      "today": "今天",
+      "week": "本周",
+      "month": "本月"
     },
     "form": {
       "createTitle": "创建家务",
@@ -236,7 +252,8 @@
       "completed": "已完成",
       "missed": "已错过",
       "overdue": "已逾期",
-      "verified": "已验证"
+      "verified": "已验证",
+      "rejected": "已拒绝"
     },
     "markComplete": "标记为完成",
     "markIncomplete": "标记为未完成",
@@ -258,7 +275,49 @@
     "delete_recurring": "删除所有重复项还是仅删除此项？",
     "all_occurrences": "所有重复项",
     "just_this_one": "仅此项",
-    "view_calendar": "查看日历"
+    "view_calendar": "查看日历",
+    "calendar": {
+      "month": "月",
+      "week": "周",
+      "day": "日",
+      "noChoresForDate": "该日期没有家务",
+      "addForDate": "为该日期添加家务"
+    },
+    "iconCategories": {
+      "household": "家庭",
+      "personal": "个人",
+      "outdoor": "户外",
+      "school": "学校",
+      "pets": "宠物",
+      "misc": "其他"
+    },
+    "icons": {
+      "dishes": "餐具",
+      "vacuum": "吸尘器",
+      "laundry": "洗衣",
+      "trash": "垃圾",
+      "bed": "整理床铺",
+      "dusting": "除尘",
+      "bathroom": "清洁浴室",
+      "teeth": "刷牙",
+      "shower": "淋浴",
+      "clothes": "整理衣物",
+      "room": "清洁房间",
+      "lawn": "修剪草坪",
+      "garden": "园艺",
+      "snow": "清除积雪",
+      "car": "洗车",
+      "homework": "家庭作业",
+      "reading": "阅读",
+      "backpack": "准备背包",
+      "dog": "遛狗",
+      "petFood": "喂养宠物",
+      "litterBox": "清理猫砂盆",
+      "custom": "自定义",
+      "phone": "电话",
+      "mail": "检查邮件",
+      "groceries": "购物"
+    }
   },
   "rewards": {
     "title": "奖励",
@@ -539,6 +598,30 @@
     "6000": "家务管理错误",
     "7000": "奖励管理错误",
     "8000": "积分管理错误",
-    "9000": "系统错误"
+    "9000": "系统错误",
+    "choreManagement": {
+      "createFailed": "创建家务失败: {0}",
+      "updateFailed": "更新家务失败: {0}",
+      "deleteFailed": "删除家务失败: {0}",
+      "choreNotFound": "未找到ID为{0}的家务",
+      "invalidChoreData": "无效的家务数据: {0}",
+      "invalidRecurringPattern": "无效的重复模式: {0}",
+      "invalidDueDate": "无效的截止日期: {0}",
+      "invalidPoints": "无效的积分: {0}",
+      "invalidTitle": "无效的标题: {0}",
+      "invalidUser": "无效的用户: {0}",
+      "invalidFamily": "无效的家庭: {0}",
+      "invalidStatus": "无效的状态: {0}",
+      "permissionDenied": "权限被拒绝: {0}",
+      "alreadyCompleted": "ID为{0}的家务已完成",
+      "alreadyVerified": "ID为{0}的家务已验证",
+      "alreadyRejected": "ID为{0}的家务已拒绝",
+      "alreadyMissed": "ID为{0}的家务已错过",
+      "recurringGenerationFailed": "生成重复家务失败: {0}"
+    },
+    "pointManagement": {
+      "pointAllocationFailed": "积分分配失败: {0}",
+      "pointDeductionFailed": "积分扣除失败: {0}"
+    }
   }
 }

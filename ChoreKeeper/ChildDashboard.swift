@@ -8,6 +8,7 @@
 import SwiftUI
 import LocalizationHandler
 import ErrorHandler
+import ChoreHandler
 
 // Import RefreshTrigger
 extension RefreshTrigger {}
@@ -37,7 +38,7 @@ struct ChildCorkboardItem: View {
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            .frame(width: 100, height: 110)
+            .frame(width: 120, height: 110)
             .padding(12)
             .background(
                 ZStack {
@@ -89,9 +90,57 @@ struct PointsDisplay: View {
 struct ChildDashboard: View {
     @State private var showLogoutConfirmation = false
     @State private var showSettings = false
+    @State private var showChoreList = false
+    @State private var showChoreCalendar = false
+    @State private var showChoreDetail: ChoreModel? = nil
     @State private var points = 125 // Example points
+
+    // Combined sheet state to prevent multiple sheets
+    enum ActiveSheet: Identifiable {
+        case settings
+        case choreList
+        case choreCalendar
+        case choreDetail(ChoreModel)
+
+        var id: String {
+            switch self {
+            case .settings: return "settings"
+            case .choreList: return "choreList"
+            case .choreCalendar: return "choreCalendar"
+            case .choreDetail(let chore): return "choreDetail-\(chore.id)"
+            }
+        }
+    }
+
+    @State private var activeSheet: ActiveSheet?
+    @State private var previousSheet: ActiveSheet?
     @ObservedObject private var refreshTrigger = RefreshTrigger.shared
     @EnvironmentObject private var appState: AppState
+
+    // Sample chores for demonstration
+    @State private var chores: [ChoreModel] = [
+        ChoreModel(
+            id: 1,
+            title: "Clean Room",
+            description: "Vacuum and dust the bedroom",
+            points: 10,
+            dueDate: Date().addingTimeInterval(86400),
+            isRecurring: false,
+            status: .pending,
+            iconId: "room"
+        ),
+        ChoreModel(
+            id: 2,
+            title: "Take Out Trash",
+            description: "Empty all trash cans",
+            points: 5,
+            dueDate: Date().addingTimeInterval(3600),
+            isRecurring: true,
+            recurringPattern: "weekly",
+            status: .pending,
+            iconId: "trash"
+        )
+    ]
 
     var body: some View {
         ZStack {
@@ -135,7 +184,7 @@ struct ChildDashboard: View {
 
                     // Settings button
                     Button(action: {
-                        showSettings = true
+                        activeSheet = .settings
                     }) {
                         Image(systemName: "gearshape.fill")
                             .font(.system(size: 24))
@@ -145,9 +194,6 @@ struct ChildDashboard: View {
                             .clipShape(Circle())
                             .shadow(radius: 2)
                     }
-                    .sheet(isPresented: $showSettings) {
-                        SettingsView(accountType: .child)
-                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 16)
@@ -156,13 +202,13 @@ struct ChildDashboard: View {
                 ScrollView {
                     VStack(spacing: 25) {
                         // First row - larger, more colorful items for children
-                        HStack(spacing: 25) {
+                        HStack(spacing: 30) {
                             ChildCorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.child.myChores"),
+                                title: LocalizationHandler.localize("dashboard.chores_item"),
                                 systemImage: "checklist",
                                 color: Color.blue,
                                 action: {
-                                    // Navigate to chores
+                                    activeSheet = .choreList
                                 }
                             )
 
@@ -177,7 +223,7 @@ struct ChildDashboard: View {
                         }
 
                         // Second row
-                        HStack(spacing: 25) {
+                        HStack(spacing: 30) {
                             ChildCorkboardItem(
                                 title: LocalizationHandler.localize("dashboard.child.myPoints"),
                                 systemImage: "star.fill",
@@ -187,6 +233,18 @@ struct ChildDashboard: View {
                                 }
                             )
 
+                            ChildCorkboardItem(
+                                title: LocalizationHandler.localize("dashboard.calendar_item"),
+                                systemImage: "calendar",
+                                color: Color.red,
+                                action: {
+                                    activeSheet = .choreCalendar
+                                }
+                            )
+                        }
+
+                        // Third row
+                        HStack(spacing: 25) {
                             ChildCorkboardItem(
                                 title: LocalizationHandler.localize("dashboard.child.achievements"),
                                 systemImage: "trophy.fill",
@@ -214,6 +272,161 @@ struct ChildDashboard: View {
                 },
                 secondaryButton: .cancel(Text(LocalizationHandler.localize("common.cancel")))
             )
+        }
+        // Single sheet for all modal presentations
+        .sheet(item: $activeSheet) { sheet in
+            NavigationView {
+                switch sheet {
+                case .settings:
+                    SettingsView(accountType: .child)
+
+                case .choreList:
+                    ChoreList(
+                        chores: chores,
+                        isParent: false,
+                        onChoreSelected: { chore in
+                            // Save the current sheet before showing the chore detail
+                            previousSheet = .choreList
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .choreDetail(chore)
+                            }
+                        },
+                        onChoreCompleted: { chore in
+                            updateChoreStatus(chore, status: .pendingVerification)
+                            // In a real app, this would also update points
+                            points += Int(chore.points)
+                        },
+                        onChoreVerified: { _ in
+                            // Child can't verify chores
+                        },
+                        onChoreRejected: { _ in
+                            // Child can't reject chores
+                        },
+                        onAddChore: {
+                            // Child can't add chores
+                        }
+                    )
+
+                case .choreCalendar:
+                    ChoreCalendar(
+                        chores: chores,
+                        isParent: false,
+                        onChoreSelected: { chore in
+                            // Save the current sheet before showing the chore detail
+                            previousSheet = .choreCalendar
+                            // Delay to ensure proper sheet dismissal before showing the next one
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                activeSheet = .choreDetail(chore)
+                            }
+                        },
+                        onChoreCompleted: { chore in
+                            updateChoreStatus(chore, status: .pendingVerification)
+                            // In a real app, this would also update points
+                            points += Int(chore.points)
+                        },
+                        onChoreVerified: { _ in
+                            // Child can't verify chores
+                        },
+                        onChoreRejected: { _ in
+                            // Child can't reject chores
+                        },
+                        onAddChore: {
+                            // Child can't add chores
+                        }
+                    )
+
+                case .choreDetail(let chore):
+                    ChoreView(
+                        mode: .view,
+                        chore: chore,
+                        isParent: false,
+                        onSave: { _ in
+                            // Child can't edit chores
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onDelete: {
+                            // Child can't delete chores
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onComplete: {
+                            updateChoreStatus(chore, status: .pendingVerification)
+                            // In a real app, this would also update points
+                            points += Int(chore.points)
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onVerify: {
+                            // Child can't verify chores
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onReject: {
+                            // Child can't reject chores
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        },
+                        onCancel: {
+                            // Return to previous sheet
+                            if let previous = previousSheet {
+                                activeSheet = previous
+                            } else {
+                                activeSheet = nil
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Helper Methods
+
+extension ChildDashboard {
+    // Update a chore's status
+    private func updateChoreStatus(_ chore: ChoreModel, status: ChoreStatus) {
+        if let index = chores.firstIndex(where: { $0.id == chore.id }) {
+            var updatedChore = chores[index]
+            updatedChore.status = status
+            chores[index] = updatedChore
+        }
+    }
+
+    // Handle sheet dismissal (for swipe-down gesture)
+    private func handleSheetDismissal() {
+        // If we have a previous sheet to return to, go there
+        if let previous = previousSheet {
+            // Small delay to ensure proper transition
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                activeSheet = previous
+                previousSheet = nil
+            }
+        } else {
+            // Otherwise just close the sheet
+            activeSheet = nil
         }
     }
 }
