@@ -68,6 +68,18 @@ This project is licensed under the terms found in the LICENSE file.
 
 ## Updates
 
+### May 18, 2025
+
+- Refactored navigation and UI handling for better consistency:
+  - Improved sheet and view navigation throughout the app
+  - Fixed logout functionality to properly return to login screen
+  - Enhanced language selection to work correctly with settings sheet
+  - Optimized theme management with notification-based updates
+  - Removed unnecessary debug code and test prints
+  - Fixed home button navigation to properly return to dashboard
+  - Added proper back button to ChoreView for improved navigation
+  - Centralized logout handling for better security and user experience
+
 ### May 16, 2025
 
 - Implemented ChoreHandler module for chore management:

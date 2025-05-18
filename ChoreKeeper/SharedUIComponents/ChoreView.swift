@@ -80,34 +80,57 @@ struct ChoreView: View {
     // MARK: - Body
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                // Header with icon and title
-                headerView
+        ZStack {
+            // Background
+            Color("BackgroundColor").ignoresSafeArea()
 
-                // Form fields
-                if currentMode == .create || (currentMode == .edit && isParent) {
-                    editableFormFields
-                } else {
-                    readOnlyFormFields
+            VStack(spacing: 0) {
+                // Header with back button
+                AppHeaderView(
+                    showHomeButton: true,
+                    isChildUser: !isParent,
+                    onHomeButtonTap: onCancel,
+                    onSettingsButtonTap: {
+                        // Show full settings view
+                    }
+                )
+
+                // Back button
+                HStack {
+                    Button(action: onCancel) {
+                        Text(LocalizationHandler.localize("common.back"))
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.vertical, 8)
+                    }
+
+                    Spacer()
                 }
+                .padding(.horizontal)
 
-                // Action buttons
-                actionButtons
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
+                        // Header with icon and title
+                        headerView
+
+                        // Form fields
+                        if currentMode == .create || (currentMode == .edit && isParent) {
+                            editableFormFields
+                        } else {
+                            readOnlyFormFields
+                        }
+
+                        // Action buttons
+                        actionButtons
+                    }
+                    .padding()
+                }
             }
-            .padding()
         }
-        .navigationTitle(navigationTitle)
-        .navigationBarItems(
-            leading: Button(action: onCancel) {
-                Text(LocalizationHandler.localize("common.cancel"))
-            },
-            trailing: trailingButton
-        )
+        .navigationBarHidden(true)
         .alert(isPresented: $showDeleteAlert) {
             Alert(
-                title: Text(LocalizationHandler.localize("chores.delete.title")),
-                message: Text(LocalizationHandler.localize("chores.delete.message")),
+                title: Text(LocalizationHandler.localize("chores.deleteConfirmation.title")),
+                message: Text(LocalizationHandler.localize("chores.deleteConfirmation.message")),
                 primaryButton: .destructive(Text(LocalizationHandler.localize("common.delete"))) {
                     onDelete()
                 },
@@ -306,7 +329,7 @@ struct ChoreView: View {
             // Description
             if !description.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(LocalizationHandler.localize("chores.description"))
+                    Text(LocalizationHandler.localize("chores.choreDescription"))
                         .font(.headline)
                         .foregroundColor(Color("TextColor"))
 
@@ -376,7 +399,22 @@ struct ChoreView: View {
                     Group {
                         switch chore.status {
                         case .pending:
-                            if !isParent {
+                            // Pending chore actions
+                            if isParent {
+                                // Parent can edit
+                                Button(action: {
+                                    withAnimation {
+                                        self.currentMode = .edit
+                                    }
+                                }) {
+                                    HStack {
+                                        Image(systemName: "pencil")
+                                        Text(LocalizationHandler.localize("chores.edit"))
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                }
+                                .buttonStyle(PrimaryButtonStyle())
+                            } else {
                                 // Child can mark as completed
                                 Button(action: onComplete) {
                                     HStack {
@@ -389,6 +427,7 @@ struct ChoreView: View {
                             }
 
                         case .pendingVerification:
+                            // Pending verification actions
                             if isParent {
                                 // Parent can verify or reject
                                 HStack(spacing: 16) {
@@ -412,34 +451,92 @@ struct ChoreView: View {
                                 }
                             }
 
-                        default:
-                            // No action buttons for other statuses
+                        case .completed, .verified:
+                            // Completed chore - no actions needed
                             EmptyView()
+
+                        case .rejected, .missed:
+                            // For rejected or missed chores, parent can edit
+                            if isParent {
+                                Button(action: {
+                                    withAnimation {
+                                        self.currentMode = .edit
+                                    }
+                                }) {
+                                    HStack {
+                                        Image(systemName: "pencil")
+                                        Text(LocalizationHandler.localize("chores.edit"))
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                }
+                                .buttonStyle(PrimaryButtonStyle())
+                            }
                         }
                     }
                 }
-            } else {
-                // Save button for create/edit mode
-                Button(action: saveChore) {
-                    HStack {
-                        Image(systemName: "checkmark.circle.fill")
-                        Text(LocalizationHandler.localize(currentMode == .create ? "chores.form.createTitle" : "chores.update"))
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(PrimaryButtonStyle())
-                .disabled(title.isEmpty)
-
-                // Delete button for edit mode
-                if currentMode == .edit && isParent {
-                    Button(action: { showDeleteAlert = true }) {
+            } else if currentMode == .create {
+                // Create mode buttons
+                VStack(spacing: 16) {
+                    // Save button
+                    Button(action: saveChore) {
                         HStack {
-                            Image(systemName: "trash.fill")
-                            Text(LocalizationHandler.localize("chores.delete.button"))
+                            Image(systemName: "checkmark.circle.fill")
+                            Text(LocalizationHandler.localize("common.save"))
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(DangerButtonStyle())
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(title.isEmpty)
+
+                    // Cancel button
+                    Button(action: onCancel) {
+                        HStack {
+                            Image(systemName: "xmark.circle.fill")
+                            Text(LocalizationHandler.localize("common.cancel"))
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                }
+            } else if currentMode == .edit {
+                // Edit mode buttons
+                VStack(spacing: 16) {
+                    // Save button
+                    Button(action: saveChore) {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                            Text(LocalizationHandler.localize("common.save"))
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(title.isEmpty)
+
+                    // Cancel button
+                    Button(action: {
+                        withAnimation {
+                            self.currentMode = .view
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: "xmark.circle.fill")
+                            Text(LocalizationHandler.localize("common.cancel"))
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+
+                    // Delete button (only for parent)
+                    if isParent {
+                        Button(action: { showDeleteAlert = true }) {
+                            HStack {
+                                Image(systemName: "trash.fill")
+                                Text(LocalizationHandler.localize("chores.delete"))
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(DangerButtonStyle())
+                    }
                 }
             }
         }
@@ -491,26 +588,8 @@ struct ChoreView: View {
     }
 
     private var trailingButton: some View {
-        Group {
-            if currentMode == .create || (currentMode == .edit && isParent) {
-                Button(action: saveChore) {
-                    Text(LocalizationHandler.localize("common.save"))
-                }
-                .disabled(title.isEmpty)
-            } else {
-                if isParent {
-                    Button(action: {
-                        withAnimation {
-                            self.currentMode = .edit
-                        }
-                    }) {
-                        Text(LocalizationHandler.localize("common.edit"))
-                    }
-                } else {
-                    EmptyView()
-                }
-            }
-        }
+        // No longer needed as functionality is in actionButtons
+        EmptyView()
     }
 
     // MARK: - Helper Methods
@@ -557,16 +636,7 @@ struct ChoreView: View {
 
     // MARK: - Computed Properties
 
-    private var navigationTitle: String {
-        switch currentMode {
-        case .create:
-            return LocalizationHandler.localize("chores.createTitle")
-        case .edit:
-            return LocalizationHandler.localize("chores.editTitle")
-        case .view:
-            return LocalizationHandler.localize("chores.view_title")
-        }
-    }
+
 
     private var formattedDueDate: String {
         let formatter = DateFormatter()
@@ -650,6 +720,7 @@ struct ChoreView_Previews: PreviewProvider {
                     onReject: {},
                     onCancel: {}
                 )
+
             }
             .previewDisplayName("Create Mode (Parent)")
 
@@ -676,6 +747,7 @@ struct ChoreView_Previews: PreviewProvider {
                     onReject: {},
                     onCancel: {}
                 )
+
             }
             .previewDisplayName("View Mode (Parent)")
 
@@ -701,6 +773,7 @@ struct ChoreView_Previews: PreviewProvider {
                     onReject: {},
                     onCancel: {}
                 )
+
             }
             .previewDisplayName("View Mode (Child)")
         }

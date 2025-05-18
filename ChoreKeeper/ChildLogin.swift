@@ -78,33 +78,87 @@ struct ChildLogin: View {
                         }
 
                         // Login button
-                        NavigationLink(destination: ChildDashboard(), isActive: $navigateToDashboard) {
-                            Button(action: {
-                                // Validate and handle login
-                                if validateInput() {
-                                    // In a real app, we would authenticate with a server
-                                    // For now, just navigate to dashboard
-                                    appState.isLoggedIn = true
-                                    navigateToDashboard = true
+                        Button(action: {
+                            // Validate and handle login
+                            if validateInput() {
+                                print("ChildLogin: Login validated - Starting login process")
+                                // In a real app, we would authenticate with a server
+                                // For now, just log in
+
+                                // The user role is already set in LoginSelector
+                                // Just verify it's correct
+                                let currentRole = UserDefaults.standard.string(forKey: "user_role")
+                                if currentRole != "child" {
+                                    print("ChildLogin: Warning - user role was not child, setting it now")
+                                    print("ChildLogin: Role changed from \(currentRole ?? "nil") to child, posting notification")
+
+                                    UserDefaults.standard.set("child", forKey: "user_role")
+                                    UserDefaults.standard.synchronize()
+
+                                    // Post notification that user role changed
+                                    NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil)
+                                } else {
+                                    print("ChildLogin: User role is already child")
                                 }
-                            }) {
-                                Text(LocalizationHandler.localize("auth.login"))
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color("SecondaryAccentColor"))
-                                    .cornerRadius(8)
+
+                                // First dismiss the login view to prevent navigation issues
+                                print("ChildLogin: Dismissing login view")
+                                presentationMode.wrappedValue.dismiss()
+
+                                // Set logged in state after a short delay to ensure the view is dismissed
+                                print("ChildLogin: Will set isLoggedIn to true after dismissal")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    print("ChildLogin: Setting isLoggedIn to true")
+                                    appState.isLoggedIn = true
+                                    print("ChildLogin: Login complete, isLoggedIn=\(appState.isLoggedIn)")
+                                }
                             }
+                        }) {
+                            Text(LocalizationHandler.localize("auth.login"))
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("SecondaryAccentColor"))
+                                .cornerRadius(8)
                         }
+
+                        // No longer need a NavigationLink since we're using app state
                     }
                     .padding(.horizontal, 30)
 
                     // Developer bypass button (only in development)
                     #if DEBUG
                     Button(action: {
-                        appState.isLoggedIn = true
-                        navigateToDashboard = true
+                        print("ChildLogin: Developer bypass - Starting login process")
+
+                        // The user role is already set in LoginSelector
+                        // Just verify it's correct
+                        let currentRole = UserDefaults.standard.string(forKey: "user_role")
+                        if currentRole != "child" {
+                            print("ChildLogin: Developer bypass - Warning: user role was not child, setting it now")
+                            print("ChildLogin: Developer bypass - Role changed from \(currentRole ?? "nil") to child, posting notification")
+
+                            UserDefaults.standard.set("child", forKey: "user_role")
+                            UserDefaults.standard.synchronize()
+
+                            // Post notification that user role changed
+                            NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil)
+                        } else {
+                            print("ChildLogin: Developer bypass - User role is already child")
+                        }
+
+                        // First dismiss the login view to prevent navigation issues
+                        print("ChildLogin: Developer bypass - Dismissing login view")
+                        presentationMode.wrappedValue.dismiss()
+
+                        // Set logged in state after a short delay to ensure the view is dismissed
+                        print("ChildLogin: Developer bypass - Will set isLoggedIn to true after dismissal")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            print("ChildLogin: Developer bypass - Setting isLoggedIn to true")
+                            appState.isLoggedIn = true
+                            print("ChildLogin: Developer bypass - Login complete, isLoggedIn=\(appState.isLoggedIn)")
+                        }
                     }) {
                         Text("Developer Bypass")
                             .font(.caption)

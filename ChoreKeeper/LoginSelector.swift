@@ -13,6 +13,7 @@ extension RefreshTrigger {}
 
 struct LoginSelector: View {
     @ObservedObject private var refreshTrigger = RefreshTrigger.shared
+    @EnvironmentObject private var appState: AppState
     @State private var showChildLogin = false
     @State private var showParentLogin = false
 
@@ -41,6 +42,15 @@ struct LoginSelector: View {
                 VStack(spacing: 20) {
                     // Child button
                     Button(action: {
+                        let newRole = "child";
+                        // Set the user role to child
+                        UserDefaults.standard.set(newRole, forKey: "user_role")
+                        UserDefaults.standard.synchronize()
+                        print("LoginSelector: Set user role to child")
+                        
+                        print("LoginSelector: Role changed to child, posting notification")
+                        NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil, userInfo: ["role": newRole])
+
                         showChildLogin = true
                     }) {
                         HStack {
@@ -60,6 +70,15 @@ struct LoginSelector: View {
 
                     // Parent button
                     Button(action: {
+                        let newRole = "parent";
+                        // Set the user role to parent
+                        UserDefaults.standard.set(newRole, forKey: "user_role")
+                        UserDefaults.standard.synchronize()
+                        print("LoginSelector: Set user role to parent")
+                        
+                        print("LoginSelector: Role changed to parent, posting notification")
+                        NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil, userInfo: ["role": newRole])
+
                         showParentLogin = true
                     }) {
                         HStack {
@@ -102,11 +121,20 @@ struct LoginSelector: View {
                 EmptyView()
             }
         }
+        .onAppear {
+            print("LoginSelector appeared - isLoggedIn: \(appState.isLoggedIn)")
+
+            // Do NOT reset isLoggedIn here as it can interfere with the login process
+            // The app will handle the login state transition automatically
+        }
     }
 }
 
 struct LoginSelector_Previews: PreviewProvider {
     static var previews: some View {
-        LoginSelector()
+        NavigationView {
+            LoginSelector()
+                .environmentObject(AppState())
+        }
     }
 }

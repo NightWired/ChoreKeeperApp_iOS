@@ -149,25 +149,52 @@ struct ParentLogin: View {
                         }
 
                         // Login button
-                        NavigationLink(destination: ParentDashboard(), isActive: $navigateToDashboard) {
-                            Button(action: {
-                                // Validate and handle login
-                                if validateInput() {
-                                    // In a real app, we would authenticate with a server
-                                    // For now, just navigate to dashboard
-                                    appState.isLoggedIn = true
-                                    navigateToDashboard = true
+                        Button(action: {
+                            // Validate and handle login
+                            if validateInput() {
+                                print("ParentLogin: Login validated - Starting login process")
+                                // In a real app, we would authenticate with a server
+                                // For now, just log in
+
+                                // The user role is already set in LoginSelector
+                                // Just verify it's correct
+                                let currentRole = UserDefaults.standard.string(forKey: "user_role")
+                                if currentRole != "parent" {
+                                    print("ParentLogin: Warning - user role was not parent, setting it now")
+                                    print("ParentLogin: Role changed from \(currentRole ?? "nil") to parent, posting notification")
+
+                                    UserDefaults.standard.set("parent", forKey: "user_role")
+                                    UserDefaults.standard.synchronize()
+
+                                    // Post notification that user role changed
+                                    NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil)
+                                } else {
+                                    print("ParentLogin: User role is already parent")
                                 }
-                            }) {
-                                Text(LocalizationHandler.localize("auth.login"))
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color("AccentColor"))
-                                    .cornerRadius(8)
+
+                                // First dismiss the login view to prevent navigation issues
+                                print("ParentLogin: Dismissing login view")
+                                presentationMode.wrappedValue.dismiss()
+
+                                // Set logged in state after a short delay to ensure the view is dismissed
+                                print("ParentLogin: Will set isLoggedIn to true after dismissal")
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    print("ParentLogin: Setting isLoggedIn to true")
+                                    appState.isLoggedIn = true
+                                    print("ParentLogin: Login complete, isLoggedIn=\(appState.isLoggedIn)")
+                                }
                             }
+                        }) {
+                            Text(LocalizationHandler.localize("auth.login"))
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("AccentColor"))
+                                .cornerRadius(8)
                         }
+
+                        // No longer need a NavigationLink since we're using app state
                     }
                     .padding(.horizontal, 30)
 
@@ -198,8 +225,35 @@ struct ParentLogin: View {
                     // Developer bypass button (only in development)
                     #if DEBUG
                     Button(action: {
-                        appState.isLoggedIn = true
-                        navigateToDashboard = true
+                        print("ParentLogin: Developer bypass - Starting login process")
+
+                        // The user role is already set in LoginSelector
+                        // Just verify it's correct
+                        let currentRole = UserDefaults.standard.string(forKey: "user_role")
+                        if currentRole != "parent" {
+                            print("ParentLogin: Developer bypass - Warning: user role was not parent, setting it now")
+                            print("ParentLogin: Developer bypass - Role changed from \(currentRole ?? "nil") to parent, posting notification")
+
+                            UserDefaults.standard.set("parent", forKey: "user_role")
+                            UserDefaults.standard.synchronize()
+
+                            // Post notification that user role changed
+                            NotificationCenter.default.post(name: Notification.Name("UserRoleChanged"), object: nil)
+                        } else {
+                            print("ParentLogin: Developer bypass - User role is already parent")
+                        }
+
+                        // First dismiss the login view to prevent navigation issues
+                        print("ParentLogin: Developer bypass - Dismissing login view")
+                        presentationMode.wrappedValue.dismiss()
+
+                        // Set logged in state after a short delay to ensure the view is dismissed
+                        print("ParentLogin: Developer bypass - Will set isLoggedIn to true after dismissal")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            print("ParentLogin: Developer bypass - Setting isLoggedIn to true")
+                            appState.isLoggedIn = true
+                            print("ParentLogin: Developer bypass - Login complete, isLoggedIn=\(appState.isLoggedIn)")
+                        }
                     }) {
                         Text("Developer Bypass")
                             .font(.caption)

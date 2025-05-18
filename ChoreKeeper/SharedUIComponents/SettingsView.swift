@@ -27,6 +27,8 @@ struct SettingsView: View {
     @State private var showDeleteAccountConfirmation = false
 
     var accountType: AccountType
+    var onLanguageSelect: (() -> Void)? = nil
+    var onLogout: (() -> Void)? = nil
 
     var body: some View {
         NavigationView {
@@ -80,9 +82,42 @@ struct SettingsView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.vertical, 8)
+                    .onChange(of: themeManager.theme) { newValue in
+                        print("SettingsView: Theme changed to \(newValue.rawValue)")
+                    }
 
                     // Language selector
-                    LanguageSelector(displayMode: .settingsRow)
+                    if let languageSelectCallback = onLanguageSelect {
+                        Button(action: languageSelectCallback) {
+                            HStack {
+                                Image(systemName: "globe")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color("AccentColor"))
+
+                                Text(LocalizationHandler.localize("settings.language"))
+                                    .foregroundColor(Color("TextColor"))
+
+                                Spacer()
+
+                                // Show currently selected language
+                                let currentLanguageCode = UserDefaults.standard.string(forKey: "app_language") ?? "device"
+                                let displayText = currentLanguageCode == "device"
+                                    ? LocalizationHandler.localize("settings.use_device_language")
+                                    : LocalizationHandler.currentLanguage().displayName
+
+                                Text(displayText)
+                                    .foregroundColor(Color("SecondaryTextColor"))
+                                    .font(.subheadline)
+
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color("SecondaryTextColor"))
+                            }
+                            .padding(.vertical, 8)
+                        }
+                    } else {
+                        LanguageSelector(displayMode: .settingsRow)
+                    }
                 }
 
                 // Notifications section
@@ -175,22 +210,21 @@ struct SettingsView: View {
                 Section {
                     // Logout button
                     Button(action: {
+                        // Always show the confirmation dialog
                         showLogoutConfirmation = true
                     }) {
                         SettingsRow(
                             icon: "rectangle.portrait.and.arrow.right",
                             iconColor: .red,
                             title: "common.logout",
-                            type: .action,
-                            action: {
-                                showLogoutConfirmation = true
-                            }
+                            type: .action
                         )
                     }
 
                     // Delete account (parent only)
                     if accountType == .parent {
                         Button(action: {
+                            print("SettingsView: Delete account button tapped - DIRECT ACTION")
                             showDeleteAccountConfirmation = true
                         }) {
                             SettingsRow(
@@ -210,8 +244,25 @@ struct SettingsView: View {
                     title: Text(LocalizationHandler.localize("common.logout")),
                     message: Text(LocalizationHandler.localize("auth.logout_confirmation")),
                     primaryButton: .destructive(Text(LocalizationHandler.localize("common.yes"))) {
-                        // Handle logout
-                        appState.logout()
+                        // Handle logout by posting a notification
+                        print("SettingsView: Logout confirmed, dismissing sheet")
+
+                        // First dismiss the sheet
+                        presentationMode.wrappedValue.dismiss()
+
+                        // Give time for the sheet to dismiss before posting the logout notification
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            print("SettingsView: Posting LogoutUser notification")
+
+                            // Post the notification
+                            NotificationCenter.default.post(name: Notification.Name("LogoutUser"), object: nil)
+
+                            // Also directly set isLoggedIn to false as a fallback
+                            print("SettingsView: Direct fallback - setting isLoggedIn to false")
+                            DispatchQueue.main.async {
+                                appState.isLoggedIn = false
+                            }
+                        }
                     },
                     secondaryButton: .cancel(Text(LocalizationHandler.localize("common.cancel")))
                 )
@@ -224,16 +275,24 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             // Parent settings preview
-            SettingsView(accountType: .parent)
-                .environmentObject(AppState())
-                .environmentObject(ThemeManager())
-                .previewDisplayName("Parent Settings")
+            SettingsView(
+                accountType: .parent,
+                onLanguageSelect: {},
+                onLogout: {}
+            )
+            .environmentObject(AppState())
+            .environmentObject(ThemeManager())
+            .previewDisplayName("Parent Settings")
 
             // Child settings preview
-            SettingsView(accountType: .child)
-                .environmentObject(AppState())
-                .environmentObject(ThemeManager())
-                .previewDisplayName("Child Settings")
+            SettingsView(
+                accountType: .child,
+                onLanguageSelect: {},
+                onLogout: {}
+            )
+            .environmentObject(AppState())
+            .environmentObject(ThemeManager())
+            .previewDisplayName("Child Settings")
         }
     }
 }

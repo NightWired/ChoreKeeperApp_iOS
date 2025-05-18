@@ -29,52 +29,64 @@ struct SettingsRow: View {
     var showNavigationArrow: Bool = true // Whether to show the navigation arrow (for navigation rows)
 
     var body: some View {
-        Button(action: {
-            if type != .toggle {
-                action?()
-            }
-        }) {
-            HStack(spacing: 16) {
-                // Icon
-                Image(systemName: icon)
-                    .font(.system(size: 20))
-                    .foregroundColor(iconColor)
-                    .frame(width: 24, height: 24)
-
-                // Title
-                Text(LocalizationHandler.localize(title))
-                    .foregroundColor(Color("TextColor"))
-
-                Spacer()
-
-                // Different trailing elements based on row type
-                switch type {
-                case .navigation:
-                    if let value = value {
-                        Text(value)
-                            .foregroundColor(Color("SecondaryTextColor"))
-                            .font(.subheadline)
-                    }
-
-                    if showNavigationArrow {
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: 14))
-                            .foregroundColor(Color("SecondaryTextColor"))
-                    }
-
-                case .toggle:
-                    if let isOn = isOn {
-                        Toggle("", isOn: isOn)
-                            .labelsHidden()
-                    }
-
-                case .action:
-                    EmptyView()
+        Group {
+            if type == .action {
+                // For action type, just return the content without a button
+                // This allows the parent view to wrap it in a button
+                rowContent
+            } else {
+                // For navigation and toggle types, use a button
+                Button(action: {
+                    action?()
+                }) {
+                    rowContent
                 }
+                .buttonStyle(PlainButtonStyle())
             }
-            .padding(.vertical, 12)
         }
-        .buttonStyle(PlainButtonStyle())
+    }
+
+    // Extract the row content to avoid duplication
+    private var rowContent: some View {
+        HStack(spacing: 16) {
+            // Icon
+            Image(systemName: icon)
+                .font(.system(size: 20))
+                .foregroundColor(iconColor)
+                .frame(width: 24, height: 24)
+
+            // Title
+            Text(LocalizationHandler.localize(title))
+                .foregroundColor(Color("TextColor"))
+
+            Spacer()
+
+            // Different trailing elements based on row type
+            switch type {
+            case .navigation:
+                if let value = value {
+                    Text(value)
+                        .foregroundColor(Color("SecondaryTextColor"))
+                        .font(.subheadline)
+                }
+
+                if showNavigationArrow {
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 14))
+                        .foregroundColor(Color("SecondaryTextColor"))
+                }
+
+            case .toggle:
+                if let isOn = isOn {
+                    Toggle("", isOn: isOn)
+                        .labelsHidden()
+                }
+
+            case .action:
+                EmptyView()
+            }
+        }
+        .padding(.vertical, 12)
     }
 }
 

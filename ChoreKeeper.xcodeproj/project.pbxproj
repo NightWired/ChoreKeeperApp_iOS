@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200B9B222DD9332C00A7D7C5 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B9B212DD9332C00A7D7C5 /* AccountType.swift */; };
+		200B9B262DD933B300A7D7C5 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B9B252DD933B300A7D7C5 /* ThemeManager.swift */; };
+		200E91F62DD9CB1E00A326DE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200E91F52DD9CB1E00A326DE /* AppState.swift */; };
 		201848FB2DD66E7E00F6BB66 /* CoreServices in Frameworks */ = {isa = PBXBuildFile; productRef = 201848FA2DD66E7E00F6BB66 /* CoreServices */; };
 		201BE46C2DD4702D002D3370 /* fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44B2DD4702C002D3370 /* fr.json */; };
 		201BE46D2DD4702D002D3370 /* zh.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE44D2DD4702C002D3370 /* zh.json */; };
@@ -43,6 +46,9 @@
 		20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */; };
 		20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD52DD5A5A20077FC4F /* SettingsView.swift */; };
 		20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20768DD72DD5A5B10077FC4F /* SettingsRow.swift */; };
+		209E18612DD9DDEE0077E8F9 /* AppTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E18602DD9DDEE0077E8F9 /* AppTransitions.swift */; };
+		209E18632DD9DE020077E8F9 /* AppDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E18622DD9DE020077E8F9 /* AppDestination.swift */; };
+		209E18652DD9DE270077E8F9 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E18642DD9DE270077E8F9 /* AppHeaderView.swift */; };
 		20A008FA2DD8262600308F33 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A008F92DD8262600308F33 /* IconPickerView.swift */; };
 		20A008FD2DD8269C00308F33 /* TestUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A008FC2DD8269C00308F33 /* TestUsers.swift */; };
 		20A64D062DD515E200D941DF /* Darklight_Logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 20A64D052DD515E200D941DF /* Darklight_Logo.svg */; };
@@ -79,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200B9B212DD9332C00A7D7C5 /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		200B9B252DD933B300A7D7C5 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		200E91F52DD9CB1E00A326DE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		201848F92DD66E5700F6BB66 /* CoreServices */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CoreServices; path = SwiftModules/CoreServices; sourceTree = "<group>"; };
 		201BE44B2DD4702C002D3370 /* fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fr.json; sourceTree = "<group>"; };
 		201BE44D2DD4702C002D3370 /* zh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zh.json; sourceTree = "<group>"; };
@@ -118,6 +127,9 @@
 		20768DD32DD5A58D0077FC4F /* LanguageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelector.swift; sourceTree = "<group>"; };
 		20768DD52DD5A5A20077FC4F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		20768DD72DD5A5B10077FC4F /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		209E18602DD9DDEE0077E8F9 /* AppTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransitions.swift; sourceTree = "<group>"; };
+		209E18622DD9DE020077E8F9 /* AppDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDestination.swift; sourceTree = "<group>"; };
+		209E18642DD9DE270077E8F9 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		20A008F92DD8262600308F33 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		20A008FC2DD8269C00308F33 /* TestUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUsers.swift; sourceTree = "<group>"; };
 		20A64D052DD515E200D941DF /* Darklight_Logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Darklight_Logo.svg; sourceTree = "<group>"; };
@@ -370,6 +382,8 @@
 		20549E032DD43819009ED830 /* ChoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				200B9B252DD933B300A7D7C5 /* ThemeManager.swift */,
+				200B9B212DD9332C00A7D7C5 /* AccountType.swift */,
 				20A008FB2DD8269C00308F33 /* TestData */,
 				20768DD22DD5A5670077FC4F /* SharedUIComponents */,
 				20A64D032DD5158400D941DF /* GraphicsAssets */,
@@ -386,6 +400,9 @@
 				20768DCC2DD58CD20077FC4F /* ChildLogin.swift */,
 				20768DCE2DD58CF00077FC4F /* ParentDashboard.swift */,
 				20768DD02DD58CFF0077FC4F /* ChildDashboard.swift */,
+				200E91F52DD9CB1E00A326DE /* AppState.swift */,
+				209E18602DD9DDEE0077E8F9 /* AppTransitions.swift */,
+				209E18622DD9DE020077E8F9 /* AppDestination.swift */,
 			);
 			path = ChoreKeeper;
 			sourceTree = "<group>";
@@ -427,6 +444,7 @@
 				20C4DBBC2DD7E5D900CEDE0D /* ChoreList.swift */,
 				20C4DBBE2DD7E5E300CEDE0D /* ChoreListItem.swift */,
 				20A008F92DD8262600308F33 /* IconPickerView.swift */,
+				209E18642DD9DE270077E8F9 /* AppHeaderView.swift */,
 			);
 			path = SharedUIComponents;
 			sourceTree = "<group>";
@@ -630,10 +648,13 @@
 				20768DD82DD5A5B10077FC4F /* SettingsRow.swift in Sources */,
 				20768DCF2DD58CF00077FC4F /* ParentDashboard.swift in Sources */,
 				20C4DBBF2DD7E5E300CEDE0D /* ChoreListItem.swift in Sources */,
+				209E18652DD9DE270077E8F9 /* AppHeaderView.swift in Sources */,
 				20C4DBB72DD7E40700CEDE0D /* ChoreView.swift in Sources */,
 				20768DCD2DD58CD20077FC4F /* ChildLogin.swift in Sources */,
 				20768DC92DD58C970077FC4F /* LoginSelector.swift in Sources */,
 				20A64D112DD517D200D941DF /* SplashScreen.swift in Sources */,
+				209E18612DD9DDEE0077E8F9 /* AppTransitions.swift in Sources */,
+				209E18632DD9DE020077E8F9 /* AppDestination.swift in Sources */,
 				20549E0E2DD4381B009ED830 /* Persistence.swift in Sources */,
 				20549E112DD4381B009ED830 /* ChoreKeeper.xcdatamodeld in Sources */,
 				20768DD42DD5A58D0077FC4F /* LanguageSelector.swift in Sources */,
@@ -642,6 +663,9 @@
 				20C4DBB92DD7E5B900CEDE0D /* ChoreCalendar.swift in Sources */,
 				20768DD12DD58CFF0077FC4F /* ChildDashboard.swift in Sources */,
 				20C4DBBB2DD7E5C800CEDE0D /* ChoreCalendarItem.swift in Sources */,
+				200B9B262DD933B300A7D7C5 /* ThemeManager.swift in Sources */,
+				200B9B222DD9332C00A7D7C5 /* AccountType.swift in Sources */,
+				200E91F62DD9CB1E00A326DE /* AppState.swift in Sources */,
 				20768DD62DD5A5A20077FC4F /* SettingsView.swift in Sources */,
 				20A008FA2DD8262600308F33 /* IconPickerView.swift in Sources */,
 				20549E072DD43819009ED830 /* ContentView.swift in Sources */,

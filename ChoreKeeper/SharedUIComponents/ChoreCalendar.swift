@@ -9,9 +9,12 @@ import SwiftUI
 import LocalizationHandler
 import ChoreHandler
 
-struct ChoreCalendar: View {
-    // MARK: - Properties
+struct CalendarDay: Identifiable {
+    let id: UUID
+    let date: Date?
+}
 
+struct ChoreCalendar: View {
     var chores: [ChoreModel]
     var isParent: Bool
     var onChoreSelected: (ChoreModel) -> Void
@@ -20,6 +23,7 @@ struct ChoreCalendar: View {
     var onChoreRejected: (ChoreModel) -> Void
     var onAddChore: () -> Void
 
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedDate = Date()
     @State private var calendarMode: CalendarMode = .month
 
@@ -27,34 +31,73 @@ struct ChoreCalendar: View {
     private let daysInWeek = 7
     private let columns = Array(repeating: GridItem(.flexible()), count: 7)
 
-    // MARK: - Body
-
     var body: some View {
-        VStack(spacing: 0) {
-            // Calendar header
-            calendarHeader
-                .padding(.horizontal)
-                .padding(.top)
+        ZStack {
+            Color("BackgroundColor").ignoresSafeArea()
 
-            // Calendar view
-            switch calendarMode {
-            case .month:
-                monthView
-            case .week:
-                weekView
-            case .day:
-                dayView
+            VStack(spacing: 0) {
+                // Header with home button
+                AppHeaderView(
+                    showHomeButton: true,
+                    isChildUser: !isParent,
+                    onHomeButtonTap: {
+                        presentationMode.wrappedValue.dismiss()
+                    },
+                    onSettingsButtonTap: {
+                        // Show full settings view
+                    }
+                )
+
+                // Back button and Add button
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text(LocalizationHandler.localize("common.back"))
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.vertical, 8)
+                    }
+
+                    Spacer()
+
+                    if isParent {
+                        Button(action: {
+                            // Navigate to add chore using the callback
+                            print("ChoreCalendar: Navigating to AddChore")
+                            onAddChore()
+                        }) {
+                            HStack(spacing: 4) {
+                                Image(systemName: "plus.circle")
+                                    .font(.body)
+                                Text(LocalizationHandler.localize("chores.add"))
+                                    .font(.body)
+                            }
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.vertical, 8)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+
+                calendarHeader
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+
+                switch calendarMode {
+                case .month:
+                    monthView
+                case .week:
+                    weekView
+                case .day:
+                    dayView
+                }
             }
         }
-        .navigationTitle(LocalizationHandler.localize("chores.title"))
-        .navigationBarItems(trailing: addButton)
+        .navigationBarHidden(true)
     }
-
-    // MARK: - Subviews
 
     private var calendarHeader: some View {
         VStack(spacing: 16) {
-            // Month and year display with navigation
             HStack {
                 Button(action: previousMonth) {
                     Image(systemName: "chevron.left")
@@ -75,7 +118,6 @@ struct ChoreCalendar: View {
                 }
             }
 
-            // Calendar mode selector
             Picker("", selection: $calendarMode) {
                 Text(LocalizationHandler.localize("chores.calendar.day"))
                     .tag(CalendarMode.day)
@@ -85,8 +127,8 @@ struct ChoreCalendar: View {
                     .tag(CalendarMode.month)
             }
             .pickerStyle(SegmentedPickerStyle())
+            .animation(nil, value: calendarMode)
 
-            // Day of week headers (for month and week views)
             if calendarMode != .day {
                 HStack {
                     ForEach(0..<daysInWeek, id: \.self) { index in
@@ -105,8 +147,8 @@ struct ChoreCalendar: View {
     private var monthView: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(daysInMonth(), id: \.self) { date in
-                    if let date = date {
+                ForEach(daysInMonth(), id: \.id) { calendarDay in
+                    if let date = calendarDay.date {
                         let isSelected = calendar.isDate(date, inSameDayAs: selectedDate)
                         let isToday = calendar.isDateInToday(date)
                         let dayChores = choresForDate(date)
@@ -116,7 +158,6 @@ struct ChoreCalendar: View {
                             calendarMode = .day
                         }) {
                             VStack(spacing: 4) {
-                                // Day number
                                 Text("\(calendar.component(.day, from: date))")
                                     .font(.system(size: 16, weight: isSelected ? .bold : .regular))
                                     .foregroundColor(isSelected ? .white : (isToday ? Color("AccentColor") : Color("TextColor")))
@@ -124,19 +165,21 @@ struct ChoreCalendar: View {
                                     .background(isSelected ? Color("AccentColor") : (isToday ? Color("AccentColor").opacity(0.1) : Color.clear))
                                     .clipShape(Circle())
 
-                                // Chore indicators (up to 3)
                                 if !dayChores.isEmpty {
                                     HStack(spacing: 2) {
                                         ForEach(dayChores.prefix(3), id: \.id) { chore in
                                             ChoreCalendarItem(
                                                 chore: chore,
                                                 size: 20,
-                                                onTap: { onChoreSelected(chore) }
+                                                onTap: {
+                                                    // Navigate to chore detail using the callback
+                                                    print("ChoreCalendar: Navigating to ChoreDetail for chore \(chore.id)")
+                                                    onChoreSelected(chore)
+                                                }
                                             )
                                         }
                                     }
 
-                                    // Show count if more than 3
                                     if dayChores.count > 3 {
                                         Text("+\(dayChores.count - 3)")
                                             .font(.system(size: 10))
@@ -150,9 +193,7 @@ struct ChoreCalendar: View {
                             .padding(.vertical, 4)
                         }
                         .buttonStyle(PlainButtonStyle())
-                        .id("calendarDay-\(date.hashValue)")
                     } else {
-                        // Empty cell for days not in current month
                         Color.clear
                             .frame(height: 70)
                     }
@@ -165,7 +206,7 @@ struct ChoreCalendar: View {
     private var weekView: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 8) {
-                ForEach(daysInWeek(for: selectedDate), id: \.self) { date in
+                ForEach(daysInWeek(for: selectedDate), id: \.hashValue) { date in
                     let isSelected = calendar.isDate(date, inSameDayAs: selectedDate)
                     let isToday = calendar.isDateInToday(date)
                     let dayChores = choresForDate(date)
@@ -175,7 +216,6 @@ struct ChoreCalendar: View {
                         calendarMode = .day
                     }) {
                         VStack(spacing: 4) {
-                            // Day number
                             Text("\(calendar.component(.day, from: date))")
                                 .font(.system(size: 16, weight: isSelected ? .bold : .regular))
                                 .foregroundColor(isSelected ? .white : (isToday ? Color("AccentColor") : Color("TextColor")))
@@ -183,17 +223,19 @@ struct ChoreCalendar: View {
                                 .background(isSelected ? Color("AccentColor") : (isToday ? Color("AccentColor").opacity(0.1) : Color.clear))
                                 .clipShape(Circle())
 
-                            // Chores for the day
                             VStack(spacing: 4) {
                                 ForEach(dayChores.prefix(5), id: \.id) { chore in
                                     ChoreCalendarItem(
                                         chore: chore,
                                         size: 24,
-                                        onTap: { onChoreSelected(chore) }
+                                        onTap: {
+                                            // Navigate to chore detail using the callback
+                                            print("ChoreCalendar: Navigating to ChoreDetail for chore \(chore.id)")
+                                            onChoreSelected(chore)
+                                        }
                                     )
                                 }
 
-                                // Show count if more than 5
                                 if dayChores.count > 5 {
                                     Text("+\(dayChores.count - 5)")
                                         .font(.system(size: 12))
@@ -207,7 +249,6 @@ struct ChoreCalendar: View {
                         .padding(.vertical, 4)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .id("calendarWeekDay-\(date.hashValue)")
                 }
             }
             .padding()
@@ -216,7 +257,6 @@ struct ChoreCalendar: View {
 
     private var dayView: some View {
         VStack(spacing: 16) {
-            // Selected day header
             HStack {
                 VStack(alignment: .leading) {
                     Text(dayOfWeekString)
@@ -230,7 +270,6 @@ struct ChoreCalendar: View {
 
                 Spacer()
 
-                // Today button
                 if !calendar.isDateInToday(selectedDate) {
                     Button(action: {
                         selectedDate = Date()
@@ -247,11 +286,9 @@ struct ChoreCalendar: View {
             }
             .padding(.horizontal)
 
-            // Chores for the selected day
             let dayChores = choresForDate(selectedDate)
 
             if dayChores.isEmpty {
-                // Empty state
                 VStack(spacing: 16) {
                     Spacer()
 
@@ -275,17 +312,20 @@ struct ChoreCalendar: View {
                 }
                 .frame(maxWidth: .infinity)
             } else {
-                // List of chores
                 ScrollView {
                     LazyVStack(spacing: 12) {
-                        ForEach(dayChores) { chore in
+                        ForEach(dayChores, id: \.id) { chore in
                             ChoreListItem(
                                 chore: chore,
                                 isParent: isParent,
                                 onComplete: { onChoreCompleted(chore) },
                                 onVerify: { onChoreVerified(chore) },
                                 onReject: { onChoreRejected(chore) },
-                                onTap: { onChoreSelected(chore) }
+                                onTap: {
+                                    // Navigate to chore detail using the callback
+                                    print("ChoreCalendar: Navigating to ChoreDetail for chore \(chore.id)")
+                                    onChoreSelected(chore)
+                                }
                             )
                         }
                     }
@@ -304,52 +344,37 @@ struct ChoreCalendar: View {
         .disabled(!isParent)
     }
 
-    // MARK: - Helper Methods
-
-    private func daysInMonth() -> [Date?] {
-        var days = [Date?]()
-
-        // Get the first day of the month
-        let firstDayOfMonth = calendar.date(
-            from: calendar.dateComponents([.year, .month], from: selectedDate)
-        )!
-
-        // Get the weekday of the first day (1-7, where 1 is Sunday)
+    private func daysInMonth() -> [CalendarDay] {
+        var days = [CalendarDay]()
+        let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: selectedDate))!
         let firstWeekday = calendar.component(.weekday, from: firstDayOfMonth)
 
-        // Add empty cells for days before the first day of the month
         for _ in 1..<firstWeekday {
-            days.append(nil)
+            days.append(CalendarDay(id: UUID(), date: nil))
         }
 
-        // Get the number of days in the month
         let daysInMonth = calendar.range(of: .day, in: .month, for: firstDayOfMonth)!.count
-
-        // Add a cell for each day in the month
         for day in 1...daysInMonth {
-            let date = calendar.date(byAdding: .day, value: day - 1, to: firstDayOfMonth)!
-            days.append(date)
+            if let date = calendar.date(byAdding: .day, value: day - 1, to: firstDayOfMonth) {
+                days.append(CalendarDay(id: UUID(), date: date))
+            }
         }
 
-        // Add empty cells to complete the last week if needed
         let remainingCells = (daysInWeek - (days.count % daysInWeek)) % daysInWeek
         for _ in 0..<remainingCells {
-            days.append(nil)
+            days.append(CalendarDay(id: UUID(), date: nil))
         }
 
         return days
     }
 
     private func daysInWeek(for date: Date) -> [Date] {
-        // Get the first day of the week containing the given date
         let weekday = calendar.component(.weekday, from: date)
-        let daysToSubtract = weekday - 1 // Adjust to get Sunday as the first day
-
+        let daysToSubtract = weekday - 1
         guard let firstDayOfWeek = calendar.date(byAdding: .day, value: -daysToSubtract, to: date) else {
             return []
         }
 
-        // Create an array of the 7 days in the week
         var days = [Date]()
         for day in 0..<daysInWeek {
             if let date = calendar.date(byAdding: .day, value: day, to: firstDayOfWeek) {
@@ -383,8 +408,6 @@ struct ChoreCalendar: View {
         }
     }
 
-    // MARK: - Computed Properties
-
     private var monthYearString: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
@@ -404,84 +427,78 @@ struct ChoreCalendar: View {
     }
 }
 
-// MARK: - Supporting Types
-
 enum CalendarMode {
     case day
     case week
     case month
 }
 
-// MARK: - Previews
-
 struct ChoreCalendar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ChoreCalendar(
-                chores: [
-                    ChoreModel(
-                        id: 1,
-                        title: "Clean Room",
-                        description: "Vacuum and dust the bedroom",
-                        points: 10,
-                        dueDate: Date(),
-                        isRecurring: false,
-                        status: .pending,
-                        iconId: "room"
-                    ),
-                    ChoreModel(
-                        id: 2,
-                        title: "Take Out Trash",
-                        description: "Empty all trash cans",
-                        points: 5,
-                        dueDate: Date(),
-                        isRecurring: true,
-                        status: .pendingVerification,
-                        iconId: "trash"
-                    ),
-                    ChoreModel(
-                        id: 3,
-                        title: "Homework",
-                        description: "Math assignment",
-                        points: 15,
-                        dueDate: Date().addingTimeInterval(86400),
-                        isRecurring: false,
-                        status: .completed,
-                        iconId: "homework"
-                    )
-                ],
-                isParent: true,
-                onChoreSelected: { _ in },
-                onChoreCompleted: { _ in },
-                onChoreVerified: { _ in },
-                onChoreRejected: { _ in },
-                onAddChore: {}
-            )
-        }
+        ChoreCalendar(
+            chores: [
+                ChoreModel(
+                    id: 1,
+                    title: "Clean Room",
+                    description: "Vacuum and dust the bedroom",
+                    points: 10,
+                    dueDate: Date(),
+                    isRecurring: false,
+                    status: .pending,
+                    iconId: "room"
+                ),
+                ChoreModel(
+                    id: 2,
+                    title: "Take Out Trash",
+                    description: "Empty all trash cans",
+                    points: 5,
+                    dueDate: Date(),
+                    isRecurring: true,
+                    status: .pendingVerification,
+                    iconId: "trash"
+                ),
+                ChoreModel(
+                    id: 3,
+                    title: "Homework",
+                    description: "Math assignment",
+                    points: 15,
+                    dueDate: Date().addingTimeInterval(86400),
+                    isRecurring: false,
+                    status: .completed,
+                    iconId: "homework"
+                )
+            ],
+            isParent: true,
+            onChoreSelected: { _ in },
+            onChoreCompleted: { _ in },
+            onChoreVerified: { _ in },
+            onChoreRejected: { _ in },
+            onAddChore: {}
+        )
+
         .previewDisplayName("Parent View")
 
-        NavigationView {
-            ChoreCalendar(
-                chores: [
-                    ChoreModel(
-                        id: 1,
-                        title: "Clean Room",
-                        description: "Vacuum and dust the bedroom",
-                        points: 10,
-                        dueDate: Date(),
-                        isRecurring: false,
-                        status: .pending,
-                        iconId: "room"
-                    )
-                ],
-                isParent: false,
-                onChoreSelected: { _ in },
-                onChoreCompleted: { _ in },
-                onChoreVerified: { _ in },
-                onChoreRejected: { _ in },
-                onAddChore: {}
-            )
-        }
+        ChoreCalendar(
+            chores: [
+                ChoreModel(
+                    id: 1,
+                    title: "Clean Room",
+                    description: "Vacuum and dust the bedroom",
+                    points: 10,
+                    dueDate: Date(),
+                    isRecurring: false,
+                    status: .pending,
+                    iconId: "room"
+                )
+            ],
+            isParent: false,
+            onChoreSelected: { _ in },
+            onChoreCompleted: { _ in },
+            onChoreVerified: { _ in },
+            onChoreRejected: { _ in },
+            onAddChore: {}
+        )
+
         .previewDisplayName("Child View")
     }
 }

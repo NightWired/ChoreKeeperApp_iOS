@@ -20,42 +20,95 @@ struct ChoreList: View {
     var onChoreRejected: (ChoreModel) -> Void
     var onAddChore: () -> Void
 
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedFilter: ChoreFilter = .all
     @State private var selectedTimeFrame: TimeFrame = .today
 
     // MARK: - Body
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Filter controls
-            filterHeader
-                .padding(.horizontal)
-                .padding(.top)
+        ZStack {
+            // Background
+            Color("BackgroundColor").ignoresSafeArea()
 
-            if filteredChores.isEmpty {
-                // Empty state
-                emptyStateView
-            } else {
-                // Chore list
-                ScrollView {
-                    LazyVStack(spacing: 12) {
-                        ForEach(filteredChores) { chore in
-                            ChoreListItem(
-                                chore: chore,
-                                isParent: isParent,
-                                onComplete: { onChoreCompleted(chore) },
-                                onVerify: { onChoreVerified(chore) },
-                                onReject: { onChoreRejected(chore) },
-                                onTap: { onChoreSelected(chore) }
-                            )
+            VStack(spacing: 0) {
+                // Header with home button
+                AppHeaderView(
+                    showHomeButton: true,
+                    isChildUser: !isParent,
+                    onHomeButtonTap: {
+                        presentationMode.wrappedValue.dismiss()
+                    },
+                    onSettingsButtonTap: {
+                        // Show full settings view
+                    }
+                )
+
+                // Back button and Add button
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text(LocalizationHandler.localize("common.back"))
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.vertical, 8)
+                    }
+
+                    Spacer()
+
+                    // Add button (only for parent)
+                    if isParent {
+                        Button(action: {
+                            // Navigate to add chore using the callback
+                            print("ChoreList: Navigating to AddChore")
+                            onAddChore()
+                        }) {
+                            HStack(spacing: 4) {
+                                Image(systemName: "plus.circle")
+                                    .font(.body)
+                                Text(LocalizationHandler.localize("chores.add"))
+                                    .font(.body)
+                            }
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.vertical, 8)
                         }
                     }
-                    .padding()
+                }
+                .padding(.horizontal)
+
+                // Filter controls
+                filterHeader
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+
+                if filteredChores.isEmpty {
+                    // Empty state
+                    emptyStateView
+                } else {
+                    // Chore list
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(filteredChores) { chore in
+                                ChoreListItem(
+                                    chore: chore,
+                                    isParent: isParent,
+                                    onComplete: { onChoreCompleted(chore) },
+                                    onVerify: { onChoreVerified(chore) },
+                                    onReject: { onChoreRejected(chore) },
+                                    onTap: {
+                                        // Navigate to chore detail using the callback
+                                        print("ChoreList: Navigating to ChoreDetail for chore \(chore.id)")
+                                        onChoreSelected(chore)
+                                    }
+                                )
+                            }
+                        }
+                        .padding()
+                    }
                 }
             }
         }
-        .navigationTitle(LocalizationHandler.localize("chores.title"))
-        .navigationBarItems(trailing: addButton)
+        .navigationBarHidden(true)
     }
 
     // MARK: - Subviews
@@ -249,6 +302,7 @@ struct ChoreList_Previews: PreviewProvider {
                 onAddChore: {}
             )
         }
+
         .previewDisplayName("Parent View")
 
         NavigationView {
@@ -283,6 +337,7 @@ struct ChoreList_Previews: PreviewProvider {
                 onAddChore: {}
             )
         }
+
         .previewDisplayName("Child View")
 
         NavigationView {
@@ -296,6 +351,7 @@ struct ChoreList_Previews: PreviewProvider {
                 onAddChore: {}
             )
         }
+
         .previewDisplayName("Empty State")
     }
 }

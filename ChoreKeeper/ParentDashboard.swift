@@ -77,34 +77,14 @@ struct CorkboardItem: View {
 struct ParentDashboard: View {
     @State private var showLogoutConfirmation = false
     @State private var showSettings = false
-    @State private var showChoreList = false
-    @State private var showChoreCalendar = false
-    @State private var showChoreDetail: ChoreModel? = nil
-    @State private var showCreateChore = false
-
-    // Combined sheet state to prevent multiple sheets
-    enum ActiveSheet: Identifiable {
-        case settings
-        case choreList
-        case choreCalendar
-        case choreDetail(ChoreModel)
-        case createChore
-
-        var id: String {
-            switch self {
-            case .settings: return "settings"
-            case .choreList: return "choreList"
-            case .choreCalendar: return "choreCalendar"
-            case .choreDetail(let chore): return "choreDetail-\(chore.id)"
-            case .createChore: return "createChore"
-            }
-        }
-    }
-
-    @State private var activeSheet: ActiveSheet?
-    @State private var previousSheet: ActiveSheet?
+    @State private var navigationPath = NavigationPath()
     @ObservedObject private var refreshTrigger = RefreshTrigger.shared
     @EnvironmentObject private var appState: AppState
+
+    // For debugging
+    init() {
+        print("ParentDashboard initialized")
+    }
 
     // Sample chores for demonstration
     @State private var chores: [ChoreModel] = [
@@ -142,325 +122,140 @@ struct ParentDashboard: View {
     ]
 
     var body: some View {
-        ZStack {
-            // Cork board background
-            Color(red: 0.82, green: 0.69, blue: 0.52) // Cork color
-                .ignoresSafeArea()
-                .overlay(
-                    // Cork texture
-                    Image("CorkTexture") // You'll need to add this asset
-                        .resizable(resizingMode: .tile)
-                        .opacity(0.3)
-                        .ignoresSafeArea()
+        NavigationStack(path: $navigationPath) {
+            VStack(spacing: 0) {
+                // Header
+                AppHeaderView(
+                    showHomeButton: false,
+                    isChildUser: false,
+                    onHomeButtonTap: {},
+                    onSettingsButtonTap: { showSettings = true }
                 )
 
-            VStack {
-                // Header
-                HStack {
-                    Text(LocalizationHandler.localize("dashboard.parent.title"))
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("TextColor"))
+                // Cork board background
+                ZStack {
+                    // Cork board background
+                    Color(red: 0.82, green: 0.69, blue: 0.52) // Cork color
+                        .ignoresSafeArea()
+                        .overlay(
+                            // Cork texture
+                            Image("CorkTexture") // You'll need to add this asset
+                                .resizable(resizingMode: .tile)
+                                .opacity(0.3)
+                                .ignoresSafeArea()
+                        )
 
-                    Spacer()
+                    // Cork board content
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            // Add padding at the top
+                            Spacer()
+                                .frame(height: 20)
+                            // First row
+                            HStack(spacing: 25) {
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.children"),
+                                    systemImage: "person.3.fill",
+                                    color: Color.blue,
+                                    action: {
+                                        // Navigate to children management
+                                    }
+                                )
 
-                    // Settings button
-                    Button(action: {
-                        activeSheet = .settings
-                    }) {
-                        Image(systemName: "gearshape.fill")
-                            .font(.system(size: 24))
-                            .foregroundColor(Color("AccentColor"))
-                            .padding(8)
-                            .background(Color.white)
-                            .clipShape(Circle())
-                            .shadow(radius: 2)
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.chores_item"),
+                                    systemImage: "checklist",
+                                    color: Color.green,
+                                    action: {
+                                        // Navigate to chore list using standard navigation
+                                        print("Navigating to ChoreList")
+                                        navigationPath.append(AppDestination.choreList)
+                                    }
+                                )
+                            }
+
+                            // Second row
+                            HStack(spacing: 25) {
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.calendar_item"),
+                                    systemImage: "calendar",
+                                    color: Color.red,
+                                    action: {
+                                        // Navigate to calendar using standard navigation
+                                        print("Navigating to ChoreCalendar")
+                                        navigationPath.append(AppDestination.choreCalendar)
+                                    }
+                                )
+
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.rewards"),
+                                    systemImage: "gift.fill",
+                                    color: Color.purple,
+                                    action: {
+                                        // Navigate to rewards management
+                                    }
+                                )
+                            }
+
+                            // Third row
+                            HStack(spacing: 25) {
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.statistics"),
+                                    systemImage: "chart.bar.fill",
+                                    color: Color.orange,
+                                    action: {
+                                        // Navigate to statistics
+                                    }
+                                )
+
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.family"),
+                                    systemImage: "house.fill",
+                                    color: Color(red: 0.2, green: 0.5, blue: 0.8),
+                                    action: {
+                                        // Navigate to family management
+                                    }
+                                )
+                            }
+
+                            // Additional items can be added here
+                        }
+                        .padding()
                     }
-                }
-                .padding(.horizontal)
-                .padding(.top, 16)
-
-                // Cork board content
-                ScrollView {
-                    VStack(spacing: 20) {
-                        // First row
-                        HStack(spacing: 25) {
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.children"),
-                                systemImage: "person.3.fill",
-                                color: Color.blue,
-                                action: {
-                                    // Navigate to children management
-                                }
-                            )
-
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.chores_item"),
-                                systemImage: "checklist",
-                                color: Color.green,
-                                action: {
-                                    activeSheet = .choreList
-                                }
-                            )
-                        }
-
-                        // Second row
-                        HStack(spacing: 25) {
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.calendar_item"),
-                                systemImage: "calendar",
-                                color: Color.red,
-                                action: {
-                                    activeSheet = .choreCalendar
-                                }
-                            )
-
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.rewards"),
-                                systemImage: "gift.fill",
-                                color: Color.purple,
-                                action: {
-                                    // Navigate to rewards management
-                                }
-                            )
-                        }
-
-                        // Third row
-                        HStack(spacing: 25) {
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.statistics"),
-                                systemImage: "chart.bar.fill",
-                                color: Color.orange,
-                                action: {
-                                    // Navigate to statistics
-                                }
-                            )
-
-                            CorkboardItem(
-                                title: LocalizationHandler.localize("dashboard.parent.family"),
-                                systemImage: "house.fill",
-                                color: Color(red: 0.2, green: 0.5, blue: 0.8),
-                                action: {
-                                    // Navigate to family management
-                                }
-                            )
-                        }
-
-                        // Additional items can be added here
-                    }
-                    .padding()
                 }
             }
-        }
-        .navigationBarHidden(true)
-        .alert(isPresented: $showLogoutConfirmation) {
-            Alert(
-                title: Text(LocalizationHandler.localize("common.logout")),
-                message: Text(LocalizationHandler.localize("auth.logout_confirmation")),
-                primaryButton: .destructive(Text(LocalizationHandler.localize("common.yes"))) {
-                    // Handle logout using the app state
-                    appState.logout()
-                },
-                secondaryButton: .cancel(Text(LocalizationHandler.localize("common.cancel")))
-            )
-        }
-        // Single sheet for all modal presentations
-        .sheet(item: $activeSheet) { sheet in
-            NavigationView {
-                switch sheet {
-                case .settings:
-                    SettingsView(accountType: .parent)
-
-                case .choreList:
-                    ChoreList(
-                        chores: chores,
-                        isParent: true,
-                        onChoreSelected: { chore in
-                            // Save the current sheet before showing the chore detail
-                            previousSheet = .choreList
-                            // Delay to ensure proper sheet dismissal before showing the next one
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                activeSheet = .choreDetail(chore)
-                            }
-                        },
-                        onChoreCompleted: { chore in
-                            updateChoreStatus(chore, status: .completed)
-                        },
-                        onChoreVerified: { chore in
-                            updateChoreStatus(chore, status: .verified)
-                        },
-                        onChoreRejected: { chore in
-                            updateChoreStatus(chore, status: .rejected)
-                        },
-                        onAddChore: {
-                            // Save the current sheet before showing create chore
-                            previousSheet = .choreList
-                            // Delay to ensure proper sheet dismissal before showing the next one
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                activeSheet = .createChore
-                            }
-                        }
-                    )
-
-                case .choreCalendar:
-                    ChoreCalendar(
-                        chores: chores,
-                        isParent: true,
-                        onChoreSelected: { chore in
-                            // Save the current sheet before showing the chore detail
-                            previousSheet = .choreCalendar
-                            // Delay to ensure proper sheet dismissal before showing the next one
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                activeSheet = .choreDetail(chore)
-                            }
-                        },
-                        onChoreCompleted: { chore in
-                            updateChoreStatus(chore, status: .completed)
-                        },
-                        onChoreVerified: { chore in
-                            updateChoreStatus(chore, status: .verified)
-                        },
-                        onChoreRejected: { chore in
-                            updateChoreStatus(chore, status: .rejected)
-                        },
-                        onAddChore: {
-                            // Save the current sheet before showing create chore
-                            previousSheet = .choreCalendar
-                            // Delay to ensure proper sheet dismissal before showing the next one
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                activeSheet = .createChore
-                            }
-                        }
-                    )
-
-                case .choreDetail(let chore):
-                    ChoreView(
-                        mode: .view,
-                        chore: chore,
-                        isParent: true,
-                        onSave: { updatedChore in
-                            updateChore(updatedChore)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onDelete: {
-                            deleteChore(chore)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onComplete: {
-                            updateChoreStatus(chore, status: .completed)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onVerify: {
-                            updateChoreStatus(chore, status: .verified)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onReject: {
-                            updateChoreStatus(chore, status: .rejected)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onCancel: {
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        }
-                    )
-
-                case .createChore:
-                    ChoreView(
-                        mode: .create,
-                        isParent: true,
-                        onSave: { newChore in
-                            addChore(newChore)
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onDelete: {
-                            // Not used in create mode
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        },
-                        onComplete: {
-                            // Not used in create mode
-                        },
-                        onVerify: {
-                            // Not used in create mode
-                        },
-                        onReject: {
-                            // Not used in create mode
-                        },
-                        onCancel: {
-                            // Return to previous sheet
-                            if let previous = previousSheet {
-                                activeSheet = previous
-                            } else {
-                                activeSheet = nil
-                            }
-                        }
-                    )
-                }
+            .navigationBarHidden(true)
+            .navigationDestination(for: AppDestination.self) { destination in
+                destinationView(for: destination)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name("ReturnToDashboard"))) { _ in
+                print("ParentDashboard: Received ReturnToDashboard notification, resetting navigationPath")
+                navigationPath = NavigationPath()
             }
         }
     }
-}
 
-// MARK: - Helper Methods
+    // MARK: - Helper Methods
 
-extension ParentDashboard {
     // Add a new chore to the list
-    private func addChore(_ chore: ChoreModel) {
+    func addChore(_ chore: ChoreModel) {
         chores.append(chore)
     }
 
     // Update an existing chore
-    private func updateChore(_ updatedChore: ChoreModel) {
+    func updateChore(_ updatedChore: ChoreModel) {
         if let index = chores.firstIndex(where: { $0.id == updatedChore.id }) {
             chores[index] = updatedChore
         }
     }
 
     // Delete a chore
-    private func deleteChore(_ chore: ChoreModel) {
+    func deleteChore(_ chore: ChoreModel) {
         chores.removeAll { $0.id == chore.id }
     }
 
     // Update a chore's status
-    private func updateChoreStatus(_ chore: ChoreModel, status: ChoreStatus) {
+    func updateChoreStatus(_ chore: ChoreModel, status: ChoreStatus) {
         if let index = chores.firstIndex(where: { $0.id == chore.id }) {
             var updatedChore = chores[index]
             updatedChore.status = status
@@ -468,25 +263,133 @@ extension ParentDashboard {
         }
     }
 
-    // Handle sheet dismissal (for swipe-down gesture)
-    private func handleSheetDismissal() {
-        // If we have a previous sheet to return to, go there
-        if let previous = previousSheet {
-            // Small delay to ensure proper transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                activeSheet = previous
-                previousSheet = nil
+    @ViewBuilder
+    private func destinationView(for destination: AppDestination) -> some View {
+        switch destination {
+        case .choreList:
+            ChoreList(
+                chores: chores,
+                isParent: true,
+                onChoreSelected: { chore in
+                    // Navigate to chore detail
+                    print("Navigating to ChoreDetail for chore \(chore.id)")
+                    navigationPath.append(AppDestination.choreDetail(id: chore.id))
+                },
+                onChoreCompleted: { chore in
+                    updateChoreStatus(chore, status: .completed)
+                },
+                onChoreVerified: { chore in
+                    updateChoreStatus(chore, status: .verified)
+                },
+                onChoreRejected: { chore in
+                    updateChoreStatus(chore, status: .rejected)
+                },
+                onAddChore: {
+                    // Navigate to add chore
+                    print("Navigating to AddChore")
+                    navigationPath.append(AppDestination.addChore)
+                }
+            )
+        case .choreCalendar:
+            ChoreCalendar(
+                chores: chores,
+                isParent: true,
+                onChoreSelected: { chore in
+                    // Navigate to chore detail
+                    print("Navigating to ChoreDetail for chore \(chore.id)")
+                    navigationPath.append(AppDestination.choreDetail(id: chore.id))
+                },
+                onChoreCompleted: { chore in
+                    updateChoreStatus(chore, status: .completed)
+                },
+                onChoreVerified: { chore in
+                    updateChoreStatus(chore, status: .verified)
+                },
+                onChoreRejected: { chore in
+                    updateChoreStatus(chore, status: .rejected)
+                },
+                onAddChore: {
+                    // Navigate to add chore
+                    print("Navigating to AddChore")
+                    navigationPath.append(AppDestination.addChore)
+                }
+            )
+        case .choreDetail(let id):
+            if let chore = chores.first(where: { $0.id == id }) {
+                ChoreView(
+                    mode: .view,
+                    chore: chore,
+                    isParent: true,
+                    onSave: { updatedChore in
+                        // Handle save
+                        navigationPath.removeLast()
+                    },
+                    onDelete: {
+                        // Handle delete
+                        navigationPath.removeLast()
+                    },
+                    onComplete: {
+                        // Handle complete
+                        navigationPath.removeLast()
+                    },
+                    onVerify: {
+                        // Handle verify
+                        navigationPath.removeLast()
+                    },
+                    onReject: {
+                        // Handle reject
+                        navigationPath.removeLast()
+                    },
+                    onCancel: {
+                        navigationPath.removeLast()
+                    }
+                )
+                .navigationBarHidden(true)
+            } else {
+                Text("Chore not found")
+                    .font(.title)
+                    .padding()
             }
-        } else {
-            // Otherwise just close the sheet
-            activeSheet = nil
+
+        case .addChore:
+            ChoreView(
+                mode: .create,
+                isParent: true,
+                onSave: { newChore in
+                    // Handle save new chore
+                    navigationPath.removeLast()
+                },
+                onDelete: {
+                    navigationPath.removeLast()
+                },
+                onComplete: {
+                    navigationPath.removeLast()
+                },
+                onVerify: {
+                    navigationPath.removeLast()
+                },
+                onReject: {
+                    navigationPath.removeLast()
+                },
+                onCancel: {
+                    navigationPath.removeLast()
+                }
+            )
+            .navigationBarHidden(true)
+
+        default:
+            Text("Coming soon!")
+                .font(.title)
+                .padding()
         }
     }
 }
 
 struct ParentDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        ParentDashboard()
-            .environmentObject(AppState())
+        NavigationStack {
+            ParentDashboard()
+                .environmentObject(AppState())
+        }
     }
 }
