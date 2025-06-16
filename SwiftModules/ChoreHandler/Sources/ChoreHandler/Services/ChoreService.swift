@@ -23,6 +23,9 @@ public class ChoreService: ChoreServiceProtocol {
     /// The point allocation service
     private let pointAllocationService: PointAllocationServiceProtocol
 
+    /// The chore data adapter for Core Data consistency
+    private let choreDataAdapter: ChoreDataAdapter
+
     // MARK: - Initialization
 
     /// Creates a new chore service
@@ -44,6 +47,7 @@ public class ChoreService: ChoreServiceProtocol {
         self.choreValidator = choreValidator
         self.choreScheduler = choreScheduler
         self.pointAllocationService = pointAllocationService
+        self.choreDataAdapter = ChoreDataAdapter.shared
     }
 
     // MARK: - ChoreServiceProtocol Implementation
@@ -102,6 +106,14 @@ public class ChoreService: ChoreServiceProtocol {
         // Get the created chore
         guard let chore = try choreRepository.getChore(id: choreId) else {
             throw ChoreError.createFailed("Failed to retrieve created chore").toAppError()
+        }
+
+        // Sync to Core Data for consistency
+        do {
+            _ = try choreDataAdapter.syncToDataModels(chore)
+        } catch {
+            Logger.warning("Failed to sync chore to Core Data: \(error.localizedDescription)")
+            // Don't fail the operation, just log the warning
         }
 
         // Log the creation
@@ -350,6 +362,13 @@ public class ChoreService: ChoreServiceProtocol {
         // Get the updated chore
         guard let updatedChore = try choreRepository.getChore(id: id) else {
             throw ChoreError.choreNotFound(id).toAppError()
+        }
+
+        // Sync to Core Data for consistency
+        do {
+            _ = try choreDataAdapter.syncToDataModels(updatedChore)
+        } catch {
+            Logger.warning("Failed to sync chore update to Core Data: \(error.localizedDescription)")
         }
 
         return updatedChore

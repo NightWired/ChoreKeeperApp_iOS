@@ -4,6 +4,7 @@ import LocalizationHandler
 import ErrorHandler
 import CoreServices
 import DataModels
+import PointsHandler
 
 // Import RefreshTrigger from LoginSelector
 extension RefreshTrigger {}
@@ -67,6 +68,20 @@ struct ChoreKeeperApp: App {
         // Initialize data models
         let coreDataStack = CoreDataStack(persistentContainer: persistenceController.container)
         DataModels.initialize(with: coreDataStack)
+
+        // Initialize points handler
+        let pointsConfig = PointsConfiguration(
+            allowNegativeBalances: false,
+            maxTransactionHistory: 1000,
+            autoResetDailyTotals: true,
+            autoResetWeeklyTotals: true,
+            autoResetMonthlyTotals: true,
+            defaultChorePoints: 10,
+            trackCompletionInPeriods: true,
+            trackMissedInPeriods: false,
+            trackAdjustmentsInPeriods: true
+        )
+        PointsHandler.initialize(with: pointsConfig)
     }
 
     var body: some Scene {

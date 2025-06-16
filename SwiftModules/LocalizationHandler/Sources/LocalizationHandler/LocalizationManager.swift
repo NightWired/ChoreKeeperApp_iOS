@@ -73,25 +73,32 @@ public class LocalizationManager {
     private func loadLocalizationFile(for language: Language) -> [String: Any]? {
         let parser = LocalizationParser()
 
+        #if DEBUG
+        let verbose = true
+        #else
+        let verbose = false
+        #endif
+
         // Try to load from all registered bundles
         for bundle in registeredBundles {
-            // 1. Try to find the file in the bundle's LocalizationAssets directory
-            if let bundleURL = bundle.resourceURL {
-                let localizationAssetsURL = bundleURL.appendingPathComponent("LocalizationAssets")
-
-                if let fileURL = parser.localizationFileURL(for: language, baseURL: localizationAssetsURL),
-                   let data = try? Data(contentsOf: fileURL),
-                   let json = parser.parseData(data) {
-                    print("Loaded localization from bundle LocalizationAssets: \(fileURL.path)")
-                    return json
-                }
-            }
-
-            // 2. Try to find the file using bundle resource lookup with directory
+            // 1. Try to find the file using bundle resource lookup with directory
+            // This is the most reliable method for accessing resources in the app bundle
             if let bundlePath = bundle.path(forResource: language.rawValue, ofType: "json", inDirectory: "LocalizationAssets/\(language.rawValue)"),
                let data = try? Data(contentsOf: URL(fileURLWithPath: bundlePath)),
                let json = parser.parseData(data) {
-                print("Loaded localization from bundle path: \(bundlePath)")
+                if verbose {
+                    print("Loaded localization from bundle path: \(bundlePath)")
+                }
+                return json
+            }
+
+            // 2. Try to find the file in the LocalizationAssets directory using nested path
+            if let bundlePath = bundle.path(forResource: "LocalizationAssets/\(language.rawValue)/\(language.rawValue)", ofType: "json"),
+               let data = try? Data(contentsOf: URL(fileURLWithPath: bundlePath)),
+               let json = parser.parseData(data) {
+                if verbose {
+                    print("Loaded localization from nested bundle resource: \(bundlePath)")
+                }
                 return json
             }
 
@@ -99,21 +106,17 @@ public class LocalizationManager {
             if let bundlePath = bundle.path(forResource: language.rawValue, ofType: "json"),
                let data = try? Data(contentsOf: URL(fileURLWithPath: bundlePath)),
                let json = parser.parseData(data) {
-                print("Loaded localization from bundle resource: \(bundlePath)")
-                return json
-            }
-
-            // 4. Try to find the file in the LocalizationAssets directory using nested path
-            if let bundlePath = bundle.path(forResource: "LocalizationAssets/\(language.rawValue)/\(language.rawValue)", ofType: "json"),
-               let data = try? Data(contentsOf: URL(fileURLWithPath: bundlePath)),
-               let json = parser.parseData(data) {
-                print("Loaded localization from nested bundle resource: \(bundlePath)")
+                if verbose {
+                    print("Loaded localization from bundle resource: \(bundlePath)")
+                }
                 return json
             }
         }
 
         // If we couldn't load from any file in any bundle, use mock data for testing
-        print("Using mock localization data for language: \(language.rawValue)")
+        if verbose {
+            print("Using mock localization data for language: \(language.rawValue)")
+        }
         return mockLocalizationData(for: language)
     }
 

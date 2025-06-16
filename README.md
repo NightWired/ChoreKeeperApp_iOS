@@ -4,11 +4,14 @@ ChoreKeeper is an iOS application designed to help users manage and track househ
 
 ## Features
 
-- Track and manage household chores
-- Assign tasks to family members
-- Set due dates and reminders
-- Monitor completion status
-- View chore history
+- **Chore Management**: Track and manage household chores with recurring patterns
+- **Family Assignment**: Assign tasks to family members with role-based access
+- **Point System**: Earn and track points for completed chores with detailed breakdowns
+- **Status Tracking**: Monitor completion status with verification workflow
+- **Multi-language Support**: Available in 17 languages with device language detection
+- **Avatar System**: Customizable user avatars with DiceBear integration
+- **Dashboard Views**: Role-specific dashboards for parents and children
+- **Real-time Updates**: Live point totals and chore status updates
 
 ## Requirements
 
@@ -44,6 +47,15 @@ open ChoreKeeperApp.xcworkspace
 
 ChoreKeeper is developed using a modular architecture. Each module is located in the `SwiftModules/` directory and can be built independently using Swift Package Manager.
 
+#### Completed Modules:
+- **LocalizationHandler**: Multi-language support with 17 languages
+- **ErrorHandler**: Centralized error management with localized messages
+- **CoreServices**: Shared utilities and logging infrastructure
+- **Avatar**: User avatar management with DiceBear integration
+- **DataModels**: Core Data repository pattern with comprehensive entities
+- **PointsHandler**: Point management system with transaction tracking
+- **ChoreHandler**: Chore management with recurring patterns and point integration
+
 To build a module:
 
 ```bash
@@ -67,6 +79,29 @@ The Core Data model is defined in `ChoreKeeper/ChoreKeeper.xcdatamodeld/ChoreKee
 This project is licensed under the terms found in the LICENSE file.
 
 ## Updates
+
+### June 16, 2025
+
+- **Completed ChoreHandler Module Integration**:
+  - Enhanced ChoreHandler with PointAllocationService for automatic point allocation/deduction
+  - Created ChoreDataAdapter to bridge ChoreModel structs and Core Data entities
+  - Added ChoreRepository to DataModels module for consistent data access
+  - Integrated real point allocation when chores are completed or missed
+  - Updated ChoreService to sync all operations with Core Data for consistency
+
+- **Enhanced UI Integration**:
+  - Updated ChildDashboard with real PointsHandler integration
+  - Enhanced PointsDisplay component with expandable detailed breakdowns (daily/weekly/monthly)
+  - Added real-time point loading and refresh functionality
+  - Updated ParentDashboard with point management navigation
+  - Fixed RefreshTrigger and AppState usage patterns for proper compilation
+  - Added AppDestination.pointManagement case for navigation
+
+- **Improved Data Consistency**:
+  - All modules now properly utilize CoreServices and DataModels packages
+  - Consistent repository patterns across all data access
+  - Proper error handling using ErrorHandler module throughout
+  - Localization integration for all user-facing text
 
 ### May 18, 2025
 

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import LocalizationHandler
+import PointsHandler
+import DataModels
 import ErrorHandler
 import ChoreHandler
 
@@ -154,15 +156,6 @@ struct ParentDashboard: View {
                             // First row
                             HStack(spacing: 25) {
                                 CorkboardItem(
-                                    title: LocalizationHandler.localize("dashboard.parent.children"),
-                                    systemImage: "person.3.fill",
-                                    color: Color.blue,
-                                    action: {
-                                        // Navigate to children management
-                                    }
-                                )
-
-                                CorkboardItem(
                                     title: LocalizationHandler.localize("dashboard.chores_item"),
                                     systemImage: "checklist",
                                     color: Color.green,
@@ -172,10 +165,7 @@ struct ParentDashboard: View {
                                         navigationPath.append(AppDestination.choreList)
                                     }
                                 )
-                            }
 
-                            // Second row
-                            HStack(spacing: 25) {
                                 CorkboardItem(
                                     title: LocalizationHandler.localize("dashboard.calendar_item"),
                                     systemImage: "calendar",
@@ -186,19 +176,21 @@ struct ParentDashboard: View {
                                         navigationPath.append(AppDestination.choreCalendar)
                                     }
                                 )
-
-                                CorkboardItem(
-                                    title: LocalizationHandler.localize("dashboard.parent.rewards"),
-                                    systemImage: "gift.fill",
-                                    color: Color.purple,
-                                    action: {
-                                        // Navigate to rewards management
-                                    }
-                                )
                             }
 
-                            // Third row
+                            // Second row
                             HStack(spacing: 25) {
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("points.title"),
+                                    systemImage: "star.fill",
+                                    color: Color.yellow,
+                                    action: {
+                                        // Navigate to point management
+                                        print("Navigating to Point Management")
+                                        navigationPath.append(AppDestination.pointManagement)
+                                    }
+                                )
+
                                 CorkboardItem(
                                     title: LocalizationHandler.localize("dashboard.parent.statistics"),
                                     systemImage: "chart.bar.fill",
@@ -207,7 +199,31 @@ struct ParentDashboard: View {
                                         // Navigate to statistics
                                     }
                                 )
+                            }
 
+                            // Third row
+                            HStack(spacing: 25) {
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.rewards"),
+                                    systemImage: "gift.fill",
+                                    color: Color.purple,
+                                    action: {
+                                        // Navigate to rewards management
+                                    }
+                                )
+
+                                CorkboardItem(
+                                    title: LocalizationHandler.localize("dashboard.parent.children"),
+                                    systemImage: "person.3.fill",
+                                    color: Color.blue,
+                                    action: {
+                                        // Navigate to children management
+                                    }
+                                )
+                            }
+
+                            // Fourth row
+                            HStack(spacing: 25) {
                                 CorkboardItem(
                                     title: LocalizationHandler.localize("dashboard.parent.family"),
                                     systemImage: "house.fill",
@@ -376,6 +392,12 @@ struct ParentDashboard: View {
                 }
             )
             .navigationBarHidden(true)
+
+        case .pointManagement:
+            Text("Point Management")
+                .font(.title)
+                .padding()
+                .navigationBarHidden(true)
 
         default:
             Text("Coming soon!")

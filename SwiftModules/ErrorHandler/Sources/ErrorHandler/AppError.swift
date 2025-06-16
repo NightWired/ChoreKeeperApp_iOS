@@ -119,3 +119,49 @@ public struct AppError: Error, Identifiable, Equatable {
         )
     }
 }
+
+// MARK: - Point Management Convenience Methods
+
+public extension AppError {
+    /// Creates point management errors
+    enum PointManagement {
+        case pointAllocationFailed(String)
+        case pointDeductionFailed(String)
+        case insufficientPoints(String)
+        case invalidPointAmount(String)
+        case pointCalculationError(String)
+        case pointTransactionFailed(String)
+        case negativeBalanceNotAllowed(String)
+        case pointAdjustmentFailed(String)
+        case pointStatisticsError(String)
+        case pointHistoryError(String)
+    }
+
+    /// Creates a point management error
+    /// - Parameter pointError: The specific point management error
+    /// - Returns: An AppError instance
+    static func pointManagement(_ pointError: PointManagement) -> AppError {
+        switch pointError {
+        case .pointAllocationFailed(let message):
+            return AppError(code: .pointAllocationFailed, message: message)
+        case .pointDeductionFailed(let message):
+            return AppError(code: .pointDeductionFailed, message: message)
+        case .insufficientPoints(let message):
+            return AppError(code: .insufficientPoints, message: message)
+        case .invalidPointAmount(let message):
+            return AppError(code: .invalidPointAmount, message: message)
+        case .pointCalculationError(let message):
+            return AppError(code: .pointCalculationError, message: message)
+        case .pointTransactionFailed(let message):
+            return AppError(code: .pointTransactionFailed, message: message)
+        case .negativeBalanceNotAllowed(let message):
+            return AppError(code: .negativeBalanceNotAllowed, message: message)
+        case .pointAdjustmentFailed(let message):
+            return AppError(code: .pointAdjustmentFailed, message: message)
+        case .pointStatisticsError(let message):
+            return AppError(code: .pointStatisticsError, message: message)
+        case .pointHistoryError(let message):
+            return AppError(code: .pointHistoryError, message: message)
+        }
+    }
+}

@@ -89,6 +89,16 @@ public class UserRepository: AbstractRepository<NSManagedObject> {
         return users.first
     }
 
+    /// Fetch a user by UUID
+    /// - Parameter uuid: The UUID to fetch
+    /// - Returns: The user with the specified UUID, or nil if not found
+    /// - Throws: Error if the fetch fails
+    public func fetchByUUID(_ uuid: UUID) throws -> NSManagedObject? {
+        let predicate = NSPredicate(format: "id == %@ AND deletedAt == nil", uuid as CVarArg)
+        let users = try fetch(with: predicate)
+        return users.first
+    }
+
     /// Soft delete a user
     /// - Parameter user: The user to delete
     /// - Throws: Error if the deletion fails

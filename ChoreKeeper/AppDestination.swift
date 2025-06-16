@@ -23,6 +23,7 @@ enum AppDestination: Hashable {
     case rewards
     case statistics
     case family
+    case pointManagement
 
     // Other destinations can be added as needed
 }

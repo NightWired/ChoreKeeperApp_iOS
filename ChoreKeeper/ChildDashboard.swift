@@ -7,6 +7,8 @@
 
 import SwiftUI
 import LocalizationHandler
+import PointsHandler
+import DataModels
 import ErrorHandler
 import ChoreHandler
 
@@ -66,16 +68,62 @@ struct ChildCorkboardItem: View {
 }
 
 struct PointsDisplay: View {
-    let points: Int
+    let currentPoints: Int
+    let dailyPoints: Int
+    let weeklyPoints: Int
+    let monthlyPoints: Int
+    @State private var showDetails = false
 
     var body: some View {
-        HStack(spacing: 5) {
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
+        Button(action: {
+            showDetails.toggle()
+        }) {
+            VStack(spacing: 4) {
+                HStack(spacing: 5) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
 
-            Text("\(points)")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(Color("TextColor"))
+                    Text("\(currentPoints)")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(Color("TextColor"))
+                }
+
+                if showDetails {
+                    VStack(spacing: 2) {
+                        HStack {
+                            Text(LocalizationHandler.localize("points.summary.today"))
+                                .font(.caption)
+                                .foregroundColor(Color("SecondaryTextColor"))
+                            Spacer()
+                            Text("\(dailyPoints)")
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(Color("TextColor"))
+                        }
+
+                        HStack {
+                            Text(LocalizationHandler.localize("points.summary.this_week"))
+                                .font(.caption)
+                                .foregroundColor(Color("SecondaryTextColor"))
+                            Spacer()
+                            Text("\(weeklyPoints)")
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(Color("TextColor"))
+                        }
+
+                        HStack {
+                            Text(LocalizationHandler.localize("points.summary.this_month"))
+                                .font(.caption)
+                                .foregroundColor(Color("SecondaryTextColor"))
+                            Spacer()
+                            Text("\(monthlyPoints)")
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(Color("TextColor"))
+                        }
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.top, 4)
+                }
+            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
@@ -84,6 +132,7 @@ struct PointsDisplay: View {
                 .fill(Color.white)
                 .shadow(color: Color.black.opacity(0.2), radius: 2, x: 1, y: 1)
         )
+        .animation(.easeInOut(duration: 0.3), value: showDetails)
     }
 }
 
@@ -91,9 +140,13 @@ struct ChildDashboard: View {
     @State private var showLogoutConfirmation = false
     @State private var showSettings = false
     @State private var navigationPath = NavigationPath()
-    @State private var points = 125 // Example points
+    @State private var pointTotals: PointTotals = PointTotals(current: 0, daily: 0, weekly: 0, monthly: 0)
+    @State private var isLoadingPoints = false
     @ObservedObject private var refreshTrigger = RefreshTrigger.shared
     @EnvironmentObject private var appState: AppState
+
+    private let pointService = PointService.shared
+    private let userRepository = UserRepository.shared
 
     // Sample chores for demonstration
     @State private var chores: [ChoreModel] = [
@@ -161,7 +214,12 @@ struct ChildDashboard: View {
                         // Points display
                         HStack {
                             Spacer()
-                            PointsDisplay(points: points)
+                            PointsDisplay(
+                                currentPoints: Int(pointTotals.current),
+                                dailyPoints: Int(pointTotals.daily),
+                                weeklyPoints: Int(pointTotals.weekly),
+                                monthlyPoints: Int(pointTotals.monthly)
+                            )
                             Spacer()
                         }
                         .padding(.horizontal)
@@ -244,6 +302,12 @@ struct ChildDashboard: View {
                 print("ChildDashboard: Received ReturnToDashboard notification, resetting navigationPath")
                 navigationPath = NavigationPath()
             }
+            .onAppear {
+                loadPointTotals()
+            }
+            .onReceive(refreshTrigger.$refreshID) { _ in
+                loadPointTotals()
+            }
         }
     }
 
@@ -254,6 +318,41 @@ struct ChildDashboard: View {
             var updatedChore = chores[index]
             updatedChore.status = status
             chores[index] = updatedChore
+        }
+    }
+
+    private func loadPointTotals() {
+        guard !isLoadingPoints else { return }
+
+        isLoadingPoints = true
+
+        Task {
+            do {
+                // Get current user from UserDefaults
+                guard let userIdString = UserDefaults.standard.string(forKey: "user_id"),
+                      let currentUserId = UUID(uuidString: userIdString),
+                      let user = try userRepository.fetchByUUID(currentUserId) else {
+                    print("No current user found")
+                    await MainActor.run {
+                        isLoadingPoints = false
+                    }
+                    return
+                }
+
+                // Get point totals
+                let totals = try pointService.getPointTotals(for: user)
+
+                await MainActor.run {
+                    self.pointTotals = totals
+                    self.isLoadingPoints = false
+                }
+
+            } catch {
+                print("Failed to load point totals: \(error.localizedDescription)")
+                await MainActor.run {
+                    isLoadingPoints = false
+                }
+            }
         }
     }
 
@@ -271,8 +370,8 @@ struct ChildDashboard: View {
                 },
                 onChoreCompleted: { chore in
                     updateChoreStatus(chore, status: .pendingVerification)
-                    // In a real app, this would also update points
-                    points += Int(chore.points)
+                    // Points will be allocated when the chore is verified by a parent
+                    loadPointTotals() // Refresh points display
                 },
                 onChoreVerified: { _ in
                     // Children can't verify chores
@@ -295,8 +394,8 @@ struct ChildDashboard: View {
                 },
                 onChoreCompleted: { chore in
                     updateChoreStatus(chore, status: .pendingVerification)
-                    // In a real app, this would also update points
-                    points += Int(chore.points)
+                    // Points will be allocated when the chore is verified by a parent
+                    loadPointTotals() // Refresh points display
                 },
                 onChoreVerified: { _ in
                     // Children can't verify chores
@@ -323,8 +422,8 @@ struct ChildDashboard: View {
                         navigationPath.removeLast()
                     },
                     onComplete: {
-                        // Handle complete
-                        points += Int(chore.points)
+                        // Handle complete - points will be allocated when verified
+                        loadPointTotals() // Refresh points display
                         navigationPath.removeLast()
                     },
                     onVerify: {

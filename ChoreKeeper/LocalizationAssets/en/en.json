@@ -572,23 +572,106 @@
     }
   },
   "points": {
+    "title": "Points",
+    "current_total": "Current Total",
+    "daily_total": "Daily Total",
+    "weekly_total": "Weekly Total",
+    "monthly_total": "Monthly Total",
+    "earned": "Earned",
+    "spent": "Spent",
+    "balance": "Balance",
     "summary": {
       "title": "Points Summary",
       "total": "Total",
       "daily": "Daily",
       "weekly": "Weekly",
-      "monthly": "Monthly"
+      "monthly": "Monthly",
+      "current_balance": "Current Balance",
+      "today": "Today",
+      "this_week": "This Week",
+      "this_month": "This Month"
     },
     "adjustment": {
       "title": "Adjust Points",
+      "manual_adjustment": "Manual Point Adjustment",
       "amount": "Amount",
       "reason": "Reason",
-      "submit": "Submit"
+      "submit": "Submit",
+      "add_points": "Add Points",
+      "subtract_points": "Subtract Points",
+      "adjustment_reason_placeholder": "Enter reason for adjustment",
+      "positive_adjustment": "Point Addition",
+      "negative_adjustment": "Point Deduction",
+      "confirm_adjustment": "Confirm Adjustment",
+      "adjustment_confirmation": "Are you sure you want to {action} {amount} points {direction} {user}?",
+      "to": "to",
+      "from": "from",
+      "add": "add",
+      "subtract": "subtract"
     },
     "history": {
       "title": "Points History",
-      "empty": "No point adjustments yet",
-      "noReason": "No reason provided"
+      "transaction_history": "Transaction History",
+      "empty": "No point transactions yet",
+      "no_transactions": "No transactions found",
+      "noReason": "No reason provided",
+      "filter_by_type": "Filter by Type",
+      "filter_by_period": "Filter by Period",
+      "all_types": "All Types",
+      "all_periods": "All Periods",
+      "show_details": "Show Details",
+      "hide_details": "Hide Details"
+    },
+    "transactions": {
+      "types": {
+        "chore_completion": "Chore Completion",
+        "chore_missed": "Chore Missed",
+        "manual_adjustment": "Manual Adjustment",
+        "reward_redemption": "Reward Redemption",
+        "penalty_applied": "Penalty Applied",
+        "bonus": "Bonus",
+        "correction": "Correction"
+      },
+      "earned_from_chore": "Earned from completing '{chore}'",
+      "lost_from_missed_chore": "Lost from missing '{chore}'",
+      "manual_addition": "Manual addition by {parent}",
+      "manual_deduction": "Manual deduction by {parent}",
+      "spent_on_reward": "Spent on reward '{reward}'",
+      "penalty_deduction": "Penalty deduction: '{penalty}'",
+      "bonus_points": "Bonus points",
+      "correction_adjustment": "Correction adjustment"
+    },
+    "statistics": {
+      "total_earned": "Total Earned",
+      "total_spent": "Total Spent",
+      "net_points": "Net Points",
+      "average_daily": "Average Daily",
+      "average_weekly": "Average Weekly",
+      "average_monthly": "Average Monthly",
+      "highest_daily": "Highest Daily",
+      "highest_weekly": "Highest Weekly",
+      "highest_monthly": "Highest Monthly",
+      "current_streak": "Current Streak",
+      "longest_streak": "Longest Streak",
+      "days": "days"
+    },
+    "errors": {
+      "insufficient_points": "Insufficient points for this action",
+      "invalid_amount": "Invalid point amount",
+      "adjustment_failed": "Failed to adjust points",
+      "calculation_error": "Point calculation error",
+      "transaction_failed": "Transaction failed",
+      "negative_balance_not_allowed": "Negative balance not allowed",
+      "amount_too_large": "Amount is too large",
+      "amount_required": "Amount is required",
+      "reason_required": "Reason is required for manual adjustments"
+    },
+    "messages": {
+      "points_added": "Successfully added {amount} points",
+      "points_subtracted": "Successfully subtracted {amount} points",
+      "adjustment_saved": "Point adjustment saved successfully",
+      "transaction_recorded": "Transaction recorded successfully",
+      "balance_updated": "Point balance updated"
     }
   },
   "error": {

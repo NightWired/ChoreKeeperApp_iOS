@@ -28,6 +28,7 @@
 		201BE47A2DD4702D002D3370 /* sv.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4672DD4702D002D3370 /* sv.json */; };
 		201BE47B2DD4702D002D3370 /* vi.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE4692DD4702D002D3370 /* vi.json */; };
 		201BE47C2DD4702D002D3370 /* hi.json in Resources */ = {isa = PBXBuildFile; fileRef = 201BE46B2DD4702D002D3370 /* hi.json */; };
+		2028B7BD2E00B53A00B832B8 /* PointsHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 2028B7BC2E00B53A00B832B8 /* PointsHandler */; };
 		204600A92DD4808700F2CE8E /* LocalizationHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 204600A82DD4808700F2CE8E /* LocalizationHandler */; };
 		20549E052DD43819009ED830 /* ChoreKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E042DD43819009ED830 /* ChoreKeeperApp.swift */; };
 		20549E072DD43819009ED830 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549E062DD43819009ED830 /* ContentView.swift */; };
@@ -106,6 +107,7 @@
 		201BE4672DD4702D002D3370 /* sv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sv.json; sourceTree = "<group>"; };
 		201BE4692DD4702D002D3370 /* vi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vi.json; sourceTree = "<group>"; };
 		201BE46B2DD4702D002D3370 /* hi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hi.json; sourceTree = "<group>"; };
+		2028B7BB2E00B50900B832B8 /* PointsHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PointsHandler; path = SwiftModules/PointsHandler; sourceTree = "<group>"; };
 		204600A42DD47AAE00F2CE8E /* LocalizationHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LocalizationHandler; path = SwiftModules/LocalizationHandler; sourceTree = "<group>"; };
 		20549E012DD43819009ED830 /* ChoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20549E042DD43819009ED830 /* ChoreKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreKeeperApp.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				20C40CA92DD54E9000570B1F /* ErrorHandler in Frameworks */,
 				201848FB2DD66E7E00F6BB66 /* CoreServices in Frameworks */,
 				20C4DBB52DD7E3D600CEDE0D /* ChoreHandler in Frameworks */,
+				2028B7BD2E00B53A00B832B8 /* PointsHandler in Frameworks */,
 				204600A92DD4808700F2CE8E /* LocalizationHandler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +349,7 @@
 				201848F92DD66E5700F6BB66 /* CoreServices */,
 				20B033942DD683A800151F41 /* DataModels */,
 				20C4DBB32DD7E3C100CEDE0D /* ChoreHandler */,
+				2028B7BB2E00B50900B832B8 /* PointsHandler */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -507,6 +511,7 @@
 				201848FA2DD66E7E00F6BB66 /* CoreServices */,
 				20B033952DD6842600151F41 /* DataModels */,
 				20C4DBB42DD7E3D600CEDE0D /* ChoreHandler */,
+				2028B7BC2E00B53A00B832B8 /* PointsHandler */,
 			);
 			productName = ChoreKeeper;
 			productReference = 20549E012DD43819009ED830 /* ChoreKeeper.app */;
@@ -1003,6 +1008,10 @@
 		201848FA2DD66E7E00F6BB66 /* CoreServices */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreServices;
+		};
+		2028B7BC2E00B53A00B832B8 /* PointsHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PointsHandler;
 		};
 		204600A82DD4808700F2CE8E /* LocalizationHandler */ = {
 			isa = XCSwiftPackageProductDependency;

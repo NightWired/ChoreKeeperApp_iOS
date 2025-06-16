@@ -129,6 +129,38 @@ public enum AppErrorCode: Int, Codable, Equatable, CaseIterable {
     /// Database error
     case databaseError = 3008
 
+    // MARK: - Point Management Errors (8000-8999)
+
+    /// Point allocation failed
+    case pointAllocationFailed = 8000
+
+    /// Point deduction failed
+    case pointDeductionFailed = 8001
+
+    /// Insufficient points
+    case insufficientPoints = 8002
+
+    /// Invalid point amount
+    case invalidPointAmount = 8003
+
+    /// Point calculation error
+    case pointCalculationError = 8004
+
+    /// Point transaction failed
+    case pointTransactionFailed = 8005
+
+    /// Negative balance not allowed
+    case negativeBalanceNotAllowed = 8006
+
+    /// Point adjustment failed
+    case pointAdjustmentFailed = 8007
+
+    /// Point statistics error
+    case pointStatisticsError = 8008
+
+    /// Point history error
+    case pointHistoryError = 8009
+
     // MARK: - Properties
 
     /// The localization key for the error code
@@ -165,6 +197,14 @@ public enum AppErrorCode: Int, Codable, Equatable, CaseIterable {
         case .dataSaveFailed, .dataLoadFailed, .dataDeleteFailed, .dataValidationFailed,
              .dataCorruption, .databaseError:
             return .high
+
+        case .pointAllocationFailed, .pointDeductionFailed, .pointTransactionFailed,
+             .pointAdjustmentFailed, .pointCalculationError, .pointStatisticsError,
+             .pointHistoryError:
+            return .high
+
+        case .insufficientPoints, .invalidPointAmount, .negativeBalanceNotAllowed:
+            return .medium
         }
     }
 

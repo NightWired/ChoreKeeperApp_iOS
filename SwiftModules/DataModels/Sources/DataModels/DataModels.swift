@@ -29,6 +29,9 @@ public final class DataModels {
         // Initialize repositories
         UserRepository.initialize(with: coreDataStack)
         PeriodSettingsRepository.initialize(with: coreDataStack)
+        PointRepository.initialize(with: coreDataStack)
+        PointTransactionRepository.initialize(with: coreDataStack)
+        ChoreRepository.initialize(with: coreDataStack)
 
         // Log initialization
         Logger.info("DataModels module initialized")
@@ -41,6 +44,9 @@ public final class DataModels {
         // Reset repositories
         UserRepository.reset()
         PeriodSettingsRepository.reset()
+        PointRepository.reset()
+        PointTransactionRepository.reset()
+        ChoreRepository.reset()
 
         Logger.info("DataModels module reset")
     }

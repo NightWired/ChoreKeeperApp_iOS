@@ -20,7 +20,8 @@ let package = Package(
         .package(name: "CoreServices", path: "../CoreServices"),
         .package(name: "ErrorHandler", path: "../ErrorHandler"),
         .package(name: "LocalizationHandler", path: "../LocalizationHandler"),
-        .package(name: "DataModels", path: "../DataModels")
+        .package(name: "DataModels", path: "../DataModels"),
+        .package(name: "PointsHandler", path: "../PointsHandler")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -31,7 +32,8 @@ let package = Package(
                 "CoreServices",
                 "ErrorHandler",
                 "LocalizationHandler",
-                "DataModels"
+                "DataModels",
+                "PointsHandler"
             ]),
         .testTarget(
             name: "ChoreHandlerTests",

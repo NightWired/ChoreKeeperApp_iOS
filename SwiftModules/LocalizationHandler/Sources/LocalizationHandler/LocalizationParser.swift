@@ -35,7 +35,9 @@ public class LocalizationParser {
                 return json
             }
         } catch {
+            #if DEBUG
             print("Error parsing localization data: \(error)")
+            #endif
         }
 
         return nil
@@ -47,33 +49,44 @@ public class LocalizationParser {
     ///   - baseURL: The base URL for localization files
     /// - Returns: The URL of the localization file, or nil if the file does not exist
     public func localizationFileURL(for language: Language, baseURL: URL) -> URL? {
+        #if DEBUG
+        let verbose = true
+        #else
+        let verbose = false
+        #endif
+
         // First try the standard path: baseURL/language/language.json
         let languageURL = baseURL.appendingPathComponent(language.rawValue)
         let fileURL = languageURL.appendingPathComponent("\(language.rawValue).json")
 
-        print("Checking for localization file at: \(fileURL.path)")
         if fileManager.fileExists(atPath: fileURL.path) {
-            print("Found localization file at: \(fileURL.path)")
+            if verbose {
+                print("Found localization file at: \(fileURL.path)")
+            }
             return fileURL
         }
 
         // Fallback to check for Localizable.json (for backward compatibility)
         let fallbackURL = languageURL.appendingPathComponent("Localizable.json")
-        print("Checking for fallback localization file at: \(fallbackURL.path)")
         if fileManager.fileExists(atPath: fallbackURL.path) {
-            print("Found fallback localization file at: \(fallbackURL.path)")
+            if verbose {
+                print("Found fallback localization file at: \(fallbackURL.path)")
+            }
             return fallbackURL
         }
 
         // Try direct JSON file in the language directory
         let directURL = baseURL.appendingPathComponent("\(language.rawValue).json")
-        print("Checking for direct localization file at: \(directURL.path)")
         if fileManager.fileExists(atPath: directURL.path) {
-            print("Found direct localization file at: \(directURL.path)")
+            if verbose {
+                print("Found direct localization file at: \(directURL.path)")
+            }
             return directURL
         }
 
-        print("No localization file found for language: \(language.rawValue)")
+        if verbose {
+            print("No localization file found for language: \(language.rawValue)")
+        }
         return nil
     }
 
